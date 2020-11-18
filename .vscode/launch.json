@@ -1,0 +1,69 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        // config "Run Dev Android" and "Run Dev Iphone" will be user for multiple debuging,
+        {
+            "name": "Run Dev Android",
+            "request": "launch",
+            "deviceId": "SM",
+            "type": "dart",
+            "program": "lib/app/flavors/main_development.dart",
+            "flutterMode": "debug",
+            "args": [
+                "--flavor",
+                "development",
+            ]
+        },
+        {
+            "name": "Run Dev Emu",
+            "flutterMode": "debug",
+            "deviceId": "Emu",
+            "program": "lib/app/flavors/main_development.dart",
+            "type": "dart",
+            "args": [
+                "--flavor",
+                "development",
+            ]
+        },
+        {
+            "name": "Run Dev",
+            "program": "lib/app/flavors/main_development.dart",
+            "flutterMode": "debug",
+            "deviceId": "Android",
+            "type": "dart",
+            "args": [
+                "--flavor",
+                "development",
+            ]
+        },
+        {
+            "name": "Run Stage",
+            "program": "lib/app/flavors/main_staging.dart",
+            "flutterMode": "debug",
+            "type": "dart",
+            "args": [
+                "--flavor",
+                "staging"
+            ]
+        },
+        {
+            "name": "Run Prod",
+            "program": "lib/app/flavors/main_development.dart",
+            "flutterMode": "release",
+            "type": "dart",
+            "args": [
+                "--flavor",
+                "production"
+            ]
+        },
+    ],
+    "compounds": [
+        {
+            "name": "All Devices",
+            "configurations": [
+                "Run Dev Android",
+                "Run Dev Emu"
+            ],
+        }
+    ]
+}
