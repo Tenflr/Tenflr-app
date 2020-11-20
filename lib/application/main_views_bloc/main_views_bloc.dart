@@ -9,6 +9,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:local_auth/error_codes.dart' as auth_error;
 import 'package:local_auth/local_auth.dart';
+import 'package:tenflrpay/domain/payment/payment.dart';
 
 import '../../domain/budget/budgets.dart';
 import '../../domain/core/settings.dart';
@@ -59,36 +60,21 @@ class MainViewsBloc extends Bloc<MainViewsEvent, MainViewsState> {
       homePage: (e) async* {
         yield const MainViewsState.homePage();
       },
+      trustedPayDetail: (e) async* {
+        yield  MainViewsState.trustedPayDetail(payment: e.payment);
+      },
       savingsPage: (e) async* {
         yield const MainViewsState.savingsPage();
-      },
-      savingsInitPage: (e) async* {
-        yield const MainViewsState.savingsInitPage();
       },
       savingsDetailPage: (e) async* {
         yield MainViewsState.savingsDetailPage(
             savings: e.savings, duration: e.duration);
       },
-      createNewSavingsPage: (e) async* {
-        yield const MainViewsState.createNewSavingsPage();
-      },
       budgetPage: (e) async* {
         yield const MainViewsState.budgetPage();
       },
-      budgetInitPage: (e) async* {
-        yield const MainViewsState.budgetInitPage();
-      },
-      budgetAddPage: (e) async* {
-        yield const MainViewsState.budgetAddPage();
-      },
-      createNewBudgetPage: (e) async* {
-        yield const MainViewsState.createNewBudgetPage();
-      },
       budgetDetailPage: (e) async* {
         yield MainViewsState.budgetDetailPage(budget: e.budget);
-      },
-      sendBudgetGiftPage: (e) async* {
-        yield const MainViewsState.sendBudgetGiftPage();
       },
       trustedPayPage: (e) async* {
         // temporal modification
@@ -118,9 +104,6 @@ class MainViewsBloc extends Bloc<MainViewsEvent, MainViewsState> {
         //     }
         //   }
         // }
-      },
-      makeNewTrustedPaymentPage: (e) async* {
-        yield const MainViewsState.makeNewTrustedPaymentPage();
       },
       quickPaymentOverView: (e) async* {
         yield const MainViewsState.quickPaymentOverView();
