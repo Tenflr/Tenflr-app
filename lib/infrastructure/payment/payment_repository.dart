@@ -9,6 +9,7 @@ import 'package:tenflrpay/domain/core/settings.dart';
 import 'package:tenflrpay/domain/core/valid_objects.dart';
 import 'package:tenflrpay/domain/logs/logs.dart';
 import 'package:tenflrpay/domain/payment/i_payment_repository.dart';
+import 'package:tenflrpay/domain/user/user.dart';
 import 'package:tenflrpay/infrastructure/core/error_code_message.dart';
 import 'package:tenflrpay/infrastructure/logs/logs_dtos.dart';
 import 'package:tenflrpay/infrastructure/payment/payment_dtos.dart';
@@ -26,6 +27,7 @@ import 'package:ntp/ntp.dart';
 import 'package:rxdart/rxdart.dart';
 
 import 'package:kt_dart/kt.dart';
+import 'package:tenflrpay/infrastructure/user/user_dtos.dart';
 
 @LazySingleton(as: IPaymentRepository)
 class PaymentRepository implements IPaymentRepository {
@@ -729,5 +731,50 @@ class PaymentRepository implements IPaymentRepository {
       'type': type,
       "serverTime": FieldValue.serverTimestamp()
     });
+  }
+
+  @override
+  Future<Either<PaymentFailure, User>> searchUser(String userQuery) async {
+    User user;
+
+    // usercol.
+    final bool isEmailPk = userQuery.contains("@");
+
+    QuerySnapshot snapshot;
+
+    if (user == null ||
+        (user.email.getOrCrash() != userQuery && isEmailPk) &&
+            (user.phoneNumber.getOrCrash() != userQuery && !isEmailPk)) {
+      try {
+        // we are search for an email
+        if (isEmailPk) {
+          snapshot = await _firestore
+              .collection('users')
+              .where("email", isEqualTo: userQuery)
+              .getDocuments();
+        } else {
+          snapshot = await _firestore
+              .collection(APIPath.users)
+              .where("phoneNumber", isEqualTo: userQuery)
+              .getDocuments();
+        }
+        for (int i = 0; i < snapshot.documents.length; i++) {
+          final User _tempUser =
+              UserDto.fromJson(snapshot.documents[i].data).toDomain();
+          if (isEmailPk && _tempUser.providerId == "google" ||
+              !isEmailPk && _tempUser.providerId == "phone") {
+            user = _tempUser;
+            return right(_tempUser);
+          }
+        }
+        return left(const PaymentFailure.userNotFound());
+      } catch (e) {
+        return left(const PaymentFailure.unexpected());
+      }
+    } else if ((user.email.getOrCrash() == userQuery && isEmailPk) ||
+        (user.phoneNumber.getOrCrash() == userQuery && !isEmailPk)) {
+      return right(user);
+    }
+    return left(const PaymentFailure.unexpected());
   }
 }
