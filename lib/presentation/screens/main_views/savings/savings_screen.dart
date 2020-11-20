@@ -1,18 +1,13 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:provider/provider.dart';
-import 'package:tenflrpay/application/main_views_bloc/main_views_bloc.dart';
-import 'package:tenflrpay/application/saving/savings_actor_bloc/savings_actor_bloc.dart';
-import 'package:tenflrpay/application/saving/savings_list_bloc/savingslist_bloc.dart';
-import 'package:tenflrpay/presentation/core/hooks/scrol_controller_for_animation.dart';
-import 'package:tenflrpay/presentation/screens/main_views/savings/widgets/savings_list.dart';
-import 'package:tenflrpay/presentation/widgets/button.dart';
-import '../../../core/translations/translations.i18n.dart';
-import '../../../../routes/router.gr.dart';
+
+import '../../../../application/saving/savings_actor_bloc/savings_actor_bloc.dart';
+import '../../../../application/saving/savings_list_bloc/savingslist_bloc.dart';
 import '../../../../injection.dart';
+import '../../../core/translations/translations.i18n.dart';
+import 'widgets/savings_list.dart';
 
 class SavingsScreen extends StatelessWidget {
   const SavingsScreen();
@@ -32,15 +27,15 @@ class SavingsScreen extends StatelessWidget {
   }
 }
 
-class SavingsForm extends HookWidget {
+class SavingsForm extends StatelessWidget {
   const SavingsForm();
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    final hideFabAnimController = useAnimationController(
-        duration: kThemeAnimationDuration, initialValue: 1);
-    final scrollController =
-        useScrollControllerForAnimation(hideFabAnimController);
+    // final hideFabAnimController = useAnimationController(
+    //     duration: kThemeAnimationDuration, initialValue: 1);
+    // final scrollController =
+    //     useScrollControllerForAnimation(hideFabAnimController);
     return Container(
       // padding: const EdgeInsets.only(right: 16, left: 16),
       // color: AppColors.primaryBackground,
@@ -72,29 +67,9 @@ class SavingsForm extends HookWidget {
                       )).show(context),
                   (_) {}));
         },
-        child: Stack(
-          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            SavingsList(
-              controller: scrollController,
-              isMini: false,
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              // mainAxisAlignment: MainAxisAlignment.end,
-              child: FadeTransition(
-                opacity: hideFabAnimController,
-                child: ScaleTransition(
-                  scale: hideFabAnimController,
-                  child: Button(
-                    description: 'Create a Saving account'.i18n,
-                    onPressed: () =>
-                        ExtendedNavigator.of(context).pushCreateSavingsScreen(),
-                  ),
-                ),
-              ),
-            ),
-          ],
+        child: const SavingsList(
+          // controller: scrollController,
+          isMini: false,
         ),
       ),
     );
