@@ -11,6 +11,7 @@ import 'package:tenflrpay/domain/core/valid_objects.dart';
 import 'package:tenflrpay/domain/budget/i_budget_repository.dart';
 import 'package:tenflrpay/domain/logs/logs.dart';
 import 'package:tenflrpay/domain/payment/i_payment_repository.dart';
+import 'package:tenflrpay/domain/user/user.dart';
 import 'package:tenflrpay/infrastructure/budget/budget_dtos.dart';
 import 'package:tenflrpay/infrastructure/core/error_code_message.dart';
 import 'package:tenflrpay/infrastructure/repositories/api_path.dart';
@@ -24,6 +25,7 @@ import 'package:intl/intl.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:ntp/ntp.dart';
 import 'package:rxdart/rxdart.dart';
+import 'package:tenflrpay/infrastructure/user/user_dtos.dart';
 
 @LazySingleton(as: IBudgetRepository)
 class BudgetRepository implements IBudgetRepository {
@@ -129,254 +131,6 @@ class BudgetRepository implements IBudgetRepository {
         return null;
     }
   }
-
-//     // logs ref
-//     final CollectionReference senderLogsRef =
-//         await _firestore.transactionLogsCollection();
-
-// // weekly logs ref
-//     final DocumentReference payerWeeklyLogsRef =
-//         await _firestore.transactionsWeeklyLogsDocument(day);
-
-// // batch writer
-//     final WriteBatch batchOp = _firestore.batch();
-
-//     final Map<String, dynamic> payerLogData = {
-//       'createAt': serverTime,
-//       'amount': budget.totalAmount.getOrCrash(),
-//       'type': 'BudgetManager',
-//       'momoOperation': cashOut ? '+' : '-',
-//     };
-
-// // today's date
-//     final String todayDate = DateFormat('yyyy-MM-dd').format(DateTime.now());
-
-//     // weekly log data
-//     final Map<String, dynamic> weeklyData = {
-//       'todayDate': todayDate,
-//       'expenditure': 0.0,
-//       'income': budget.totalAmount.getOrCrash(),
-//       'createAt': serverTime,
-//       'index': DateTime.now().weekday
-//     };
-
-// // write to general logs first (for payer and receiver)
-//     batchOp.setData(
-//         senderLogsRef.document('momo-${budget.id.getOrCrash()}'), payerLogData);
-
-//     batchOp.commit();
-
-//     final senderResult = await _firestore.runTransaction((transaction) {
-//       return transaction.get(payerWeeklyLogsRef).then((doc) {
-//         if (!doc.exists) {
-//           // transaction.set(payerWeeklyLogsRef, weeklyData);
-//           transaction.set(payerWeeklyLogsRef, weeklyData);
-//         } else {
-//           final double newIncome =
-//               (doc.data['income'] as double) + budget.totalAmount.getOrCrash();
-//           final String date = doc.data['todayDate'] as String;
-//           if (date != todayDate) {
-//             transaction.set(payerWeeklyLogsRef, weeklyData);
-//           } else {
-//             transaction.update(
-//               payerWeeklyLogsRef,
-//               {
-//                 'todayDate': todayDate,
-//                 // 'expenditure': newIncome,
-//                 'income': newIncome,
-//                 'createAt': serverTime,
-//                 'id': budget.id.getOrCrash(),
-//               },
-//             );
-//           }
-//         }
-//       });
-//     });
-//   }
-
-//   @override
-//   Future<void> writeBudgetTransactionsLogs(Budget budget) async {
-//     // get day of the week
-//     final String day = DateFormat('EEEE').format(DateTime.now());
-//     // Server time stamp
-//     final FieldValue serverTime = FieldValue.serverTimestamp();
-
-// // today's date
-//     final String todayDate = DateFormat('yyyy-MM-dd').format(DateTime.now());
-
-//     // logs ref
-//     final DocumentReference senderLogsRef = _firestore.document(
-//         APIPath.budgetSentLogs(
-//             budget.senderId.getOrCrash(), budget.id.getOrCrash()));
-//     final DocumentReference receiverLogsRef = _firestore.document(
-//         APIPath.budgetReceivedLogs(
-//             budget.receiverId.getOrCrash(), budget.id.getOrCrash()));
-
-//     // weekly logs ref
-//     final DocumentReference senderWeeklyLogsRef =
-//         await _firestore.transactionsWeeklyLogsDocument(day);
-//     final DocumentReference receiverWeeklyLogsRef =
-//         await _firestore.transactionsWeeklyLogsDocument(day,
-//             receiverId: budget.receiverId.getOrCrash());
-
-// // batch writer
-//     final WriteBatch writeBatch = _firestore.batch();
-
-//     // initial data log
-//     final Map<String, dynamic> senderLogData = {
-//       'createAt': serverTime,
-//       'amount': budget.totalAmount.getOrCrash(),
-//       'type': 'BudgetManager',
-//       'operation': '-'
-//     };
-//     final Map<String, dynamic> receiverLogData = {
-//       'createAt': serverTime,
-//       'amount': budget.totalAmount.getOrCrash(),
-//       'type': 'BudgetManager',
-//       'operation': '+'
-//     };
-
-// // write to logs for payer and receiver
-//     writeBatch.setData(senderLogsRef, senderLogData);
-//     writeBatch.setData(receiverLogsRef, receiverLogData);
-
-//     writeBatch.commit();
-
-//     // weekly log data
-//     final Map<String, dynamic> senderWeeklyData = {
-//       'todayDate': todayDate,
-//       'expenditure': budget.totalAmount.getOrCrash(),
-//       'income': 0.0,
-//       'createAt': serverTime,
-//       'index': DateTime.now().weekday
-//     };
-//     final Map<String, dynamic> receiverWeeklyData = {
-//       'todayDate': todayDate,
-//       'expenditure': 0.0,
-//       'income': budget.totalAmount.getOrCrash(),
-//       'createAt': serverTime,
-//       'index': DateTime.now().weekday
-//     };
-
-//     final senderResult = await _firestore.runTransaction((transaction) {
-//       return transaction.get(senderWeeklyLogsRef).then((doc) {
-//         if (!doc.exists) {
-//           // transaction.set(payerWeeklyLogsRef, weeklyData);
-//           transaction.set(senderWeeklyLogsRef, senderWeeklyData);
-//         } else {
-//           final double newExpenditure = (doc.data['expenditure'] as double) +
-//               budget.totalAmount.getOrCrash();
-//           final String date = doc.data['todayDate'] as String;
-//           if (date != todayDate) {
-//             transaction.set(senderWeeklyLogsRef, senderWeeklyData);
-//           } else {
-//             transaction.update(
-//               senderWeeklyLogsRef,
-//               {
-//                 'todayDate': todayDate,
-//                 'expenditure': newExpenditure,
-//                 // 'income': newIncome,
-//                 'createAt': serverTime,
-//                 'id': budget.id.getOrCrash(),
-//               },
-//             );
-//           }
-//         }
-//       });
-//     });
-
-//     final receiverResult = await _firestore.runTransaction((transaction) {
-//       return transaction.get(receiverWeeklyLogsRef).then((doc) {
-//         if (!doc.exists) {
-//           // transaction.set(payerWeeklyLogsRef, weeklyData);
-//           transaction.set(receiverWeeklyLogsRef, receiverWeeklyData);
-//         } else {
-//           final double newIncome =
-//               (doc.data['income'] as double) + budget.totalAmount.getOrCrash();
-//           final String date = doc.data['todayDate'] as String;
-//           if (date != todayDate) {
-//             transaction.set(receiverWeeklyLogsRef, receiverWeeklyData);
-//           } else {
-//             transaction.update(
-//               receiverWeeklyLogsRef,
-//               {
-//                 'todayDate': todayDate,
-//                 'income': newIncome,
-//                 // 'expenditure': budget.amount.getOrCrash(),
-//                 'createAt': serverTime,
-//                 'index': DateTime.now().weekday
-//               },
-//             );
-//           }
-//         }
-//       });
-//     });
-//   }
-
-//   @override
-//   Future<void> writeBudgetCreatedLogs(Budget budget) async {
-//     // get day of the week
-//     final String day = DateFormat('EEEE').format(DateTime.now());
-//     // Server time stamp
-//     final FieldValue serverTime = FieldValue.serverTimestamp();
-
-//     // logs ref
-//     final DocumentReference userLogsRef = await _firestore.document(
-//         APIPath.budgetPersonalLogs(
-//             budget.senderId.getOrCrash(), budget.id.getOrCrash()));
-
-// // weekly logs ref
-//     final DocumentReference userWeeklyLogsRef =
-//         await _firestore.transactionsWeeklyLogsDocument(day);
-
-//     final Map<String, dynamic> userLogData = {
-//       'type': 'BudgetManager',
-//       'createAt': serverTime,
-//       'amount': budget.totalAmount.getOrCrash(),
-//     };
-
-// // write to logs for payer and receiver
-//     userLogsRef.setData(userLogData);
-//     //weekly logs
-
-// // today's date
-//     final String todayDate = DateFormat('yyyy-MM-dd').format(DateTime.now());
-
-//     // initial weekly log data
-//     final Map<String, dynamic> weeklyData = {
-//       'todayDate': todayDate,
-//       'income': 0.0,
-//       'expenditure': budget.totalAmount.getOrCrash(),
-//       'createAt': serverTime,
-//       'index': DateTime.now().weekday
-//     };
-
-//     // write to weekly logs second (for payer and receiver)
-//     final userResult = await _firestore.runTransaction((transaction) {
-//       return transaction.get(userWeeklyLogsRef).then((doc) {
-//         if (!doc.exists) {
-//           transaction.set(userWeeklyLogsRef, weeklyData);
-//         } else {
-//           final double newExpenditure = (doc.data['expenditure'] as double) +
-//               budget.totalAmount.getOrCrash();
-//           final String date = doc.data['todayDate'] as String;
-//           if (date != todayDate) {
-//             transaction.set(userWeeklyLogsRef, weeklyData);
-//           } else {
-//             transaction.update(
-//               userWeeklyLogsRef,
-//               {
-//                 'todayDate': todayDate,
-//                 'expenditure': newExpenditure,
-//                 'createAt': serverTime,
-//                 'index': DateTime.now().weekday
-//               },
-//             );
-//           }
-//         }
-//       });
-//     });
-//   }
 
   @override
   Future<Either<BudgetFailure, Unit>> autoUnlockBudgetPeriodically(
@@ -527,7 +281,8 @@ class BudgetRepository implements IBudgetRepository {
   }
 
   @override
-  Future<Either<BudgetFailure, Unit>> createBudget(Budget budget,  Logs log) async {
+  Future<Either<BudgetFailure, Unit>> createBudget(
+      Budget budget, Logs log) async {
     final batchOp = _firestore.batch();
     // check for  Perform
     final bool availableFunds =
@@ -593,7 +348,8 @@ class BudgetRepository implements IBudgetRepository {
           batchOp.commit();
           // write logs
           if (!result) {
-            await _paymentRepo.writeTrustedPayFundsRechargeLogs(budget.id.getOrCrash(), log,
+            await _paymentRepo.writeTrustedPayFundsRechargeLogs(
+                budget.id.getOrCrash(), log,
                 cashIn: true);
           }
           await _paymentRepo.writeTransactionsLogs(log);
@@ -648,7 +404,8 @@ class BudgetRepository implements IBudgetRepository {
           batchOp.commit();
           // write logs
           if (!result) {
-           await _paymentRepo.writeTrustedPayFundsRechargeLogs(budget.id.getOrCrash(), log,
+            await _paymentRepo.writeTrustedPayFundsRechargeLogs(
+                budget.id.getOrCrash(), log,
                 cashIn: true);
           }
           await _paymentRepo.writeTransactionsLogs(log);
@@ -879,5 +636,50 @@ class BudgetRepository implements IBudgetRepository {
       debugPrint("Error occured: code: ${e.code} , message: ${e.message}");
       return left(const BudgetFailure.unexpected());
     }
+  }
+
+  @override
+  Future<Either<BudgetFailure, User>> searchUser(String userQuery) async {
+    User user;
+
+    // usercol.
+    final bool isEmailPk = userQuery.contains("@");
+
+    QuerySnapshot snapshot;
+
+    if (user == null ||
+        (user.email.getOrCrash() != userQuery && isEmailPk) &&
+            (user.phoneNumber.getOrCrash() != userQuery && !isEmailPk)) {
+      try {
+        // we are search for an email
+        if (isEmailPk) {
+          snapshot = await _firestore
+              .collection('users')
+              .where("email", isEqualTo: userQuery)
+              .getDocuments();
+        } else {
+          snapshot = await _firestore
+              .collection(APIPath.users)
+              .where("phoneNumber", isEqualTo: userQuery)
+              .getDocuments();
+        }
+        for (int i = 0; i < snapshot.documents.length; i++) {
+          final User _tempUser =
+              UserDto.fromJson(snapshot.documents[i].data).toDomain();
+          if (isEmailPk && _tempUser.providerId == "google" ||
+              !isEmailPk && _tempUser.providerId == "phone") {
+            user = _tempUser;
+            return right(_tempUser);
+          }
+        }
+        return left(const BudgetFailure.userNotFound());
+      } catch (e) {
+        return left(const BudgetFailure.unexpected());
+      }
+    } else if ((user.email.getOrCrash() == userQuery && isEmailPk) ||
+        (user.phoneNumber.getOrCrash() == userQuery && !isEmailPk)) {
+      return right(user);
+    }
+    return left(const BudgetFailure.unexpected());
   }
 }
