@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:tenflrpay/application/budget/budget_input_collector/budgetinputcollector_bloc.dart';
+import 'package:tenflrpay/domain/core/valid_objects.dart';
 import 'package:tenflrpay/presentation/core/assets/colors.dart';
 import 'package:tenflrpay/presentation/core/styles/decorations.dart';
 import '../core/translations/translations.i18n.dart';
@@ -9,6 +12,11 @@ class CupertinoDurationPicker extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+    final duration = useState(0);
+    final number = useState(0);
+    final time = useState(1);
+    final today = DateTime.now();
+
     return Align(
       alignment: Alignment.center,
       child: Column(
@@ -28,12 +36,15 @@ class CupertinoDurationPicker extends HookWidget {
 
                   backgroundColor: TfColors.secondary,
                   itemExtent: 40,
-                  onSelectedItemChanged: (_) {},
-                  children: const [
-                    Text('1'),
-                    Text('2'),
-                    Text('3'),
-                  ],
+                  onSelectedItemChanged: (int i) {
+                    setTime(number, time, duration, i + 1);
+                    context.bloc<BudgetInputCollectorBloc>().add(
+                        BudgetInputCollectorEvent.lockPeriodChanged(
+                            unlockDate: ValidDate(DateTime(today.year,
+                                today.month, today.day + time.value))));
+                  },
+                  children:
+                      List<Text>.generate(30, (index) => Text("${index + 1}")),
                 ),
               ),
               Container(
@@ -46,10 +57,11 @@ class CupertinoDurationPicker extends HookWidget {
                   backgroundColor: TfColors.secondary,
                   itemExtent: 40,
                   onSelectedItemChanged: (_) {},
-                  children:  [
+                  children: [
                     Text('days'.i18n),
                     Text('weeks'.i18n),
                     Text('months'.i18n),
+                    Text('years'.i18n),
                   ],
                 ),
               ),
@@ -58,5 +70,40 @@ class CupertinoDurationPicker extends HookWidget {
         ],
       ),
     );
+  }
+
+  void setTime(
+    ValueNotifier<int> number,
+    ValueNotifier<int> time,
+    ValueNotifier<int> duration,
+    int numb,
+  ) {
+    switch (duration.value) {
+      case 0:
+        number.value = numb;
+        duration.value = 0;
+        time.value = number.value;
+
+        break;
+      case 1:
+        duration.value = 1;
+        number.value = numb;
+        time.value = 7 * number.value;
+
+        break;
+      case 2:
+        duration.value = 2;
+        number.value = numb;
+        time.value = 30 * number.value;
+
+        break;
+      case 3:
+        duration.value = 3;
+        number.value = numb;
+        time.value = 365 * number.value;
+
+        break;
+      default:
+    }
   }
 }
