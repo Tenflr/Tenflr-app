@@ -8,6 +8,7 @@ abstract class TrustedPayInputCollectorState
     @required bool showErrorMessage,
     @required bool isSaving,
     @required bool isEditing,
+    @required bool userFound,
     @required Payment payment,
     @required Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption,
   }) = _TrustedPayInputCollectorState;
@@ -15,6 +16,7 @@ abstract class TrustedPayInputCollectorState
       TrustedPayInputCollectorState(
         showErrorMessage: false,
         isSaving: false,
+        userFound: false,
         isEditing: false,
         payment: Payment.empty(),
         saveFailureOrSuccessOption: none(),
