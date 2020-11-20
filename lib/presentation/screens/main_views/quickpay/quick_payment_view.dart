@@ -101,6 +101,7 @@ class QuickPaymentBody extends HookWidget {
 
         if (context.bloc<QuickPaymentBloc>().state.shouldValidatePayment) {
           _confirmPayment(context, user);
+         
         }
       },
       child: Container(
@@ -131,10 +132,10 @@ class QuickPaymentBody extends HookWidget {
                           requestPay.value = true;
                         },
                       ),
-                      SizedBox(width: size.width * 0.5,  child: const Divider()),
+                      SizedBox(width: size.width * 0.5, child: const Divider()),
                       Button(
                         description: 'Scan to Pay'.i18n,
-                          width: size.width * 0.8,
+                        width: size.width * 0.8,
                         onPressed: () {
                           requestPay.value = false;
                           context
@@ -220,6 +221,10 @@ _confirmPayment(BuildContext context, User user) {
               .bloc<QuickPaymentBloc>()
               .add(QuickPaymentEvent.initialize(user));
           Navigator.of(context, rootNavigator: true).pop();
+           FlushbarHelper.createLoading(
+                  message: "Processing Payment".i18n,
+                  linearProgressIndicator: const LinearProgressIndicator())
+              .show(context);
         },
         color: Colors.red[400],
         child: FittedBox(
@@ -238,6 +243,7 @@ _confirmPayment(BuildContext context, User user) {
           context
               .bloc<QuickPaymentBloc>()
               .add(QuickPaymentEvent.validatePayment(user));
+
           Navigator.of(context, rootNavigator: true).pop();
         },
         gradient: const LinearGradient(colors: [
