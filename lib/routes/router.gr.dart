@@ -23,6 +23,8 @@ import '../presentation/screens/on_boarding/splash_screen.dart';
 import '../presentation/screens/on_boarding/welcome_login_screen.dart';
 import '../presentation/screens/settings/settings.dart';
 import '../presentation/screens/settings/user_profile.dart';
+import '../presentation/widgets/deposit_screen.dart';
+import '../presentation/widgets/withdraw_screen.dart';
 
 class Routes {
   static const String splashScreen = '/';
@@ -39,6 +41,8 @@ class Routes {
   static const String sendTrustedPaymentScreen = '/send-trusted-payment-screen';
   static const String budgetCreateScreen = '/budget-create-screen';
   static const String requestPaymentScreen = '/request-payment-screen';
+  static const String depositScreen = '/deposit-screen';
+  static const String withdrawScren = '/withdraw-scren';
   static const all = <String>{
     splashScreen,
     getStarted,
@@ -52,6 +56,8 @@ class Routes {
     sendTrustedPaymentScreen,
     budgetCreateScreen,
     requestPaymentScreen,
+    depositScreen,
+    withdrawScren,
   };
 }
 
@@ -73,6 +79,8 @@ class Router extends RouterBase {
     RouteDef(Routes.sendTrustedPaymentScreen, page: SendTrustedPaymentScreen),
     RouteDef(Routes.budgetCreateScreen, page: BudgetCreateScreen),
     RouteDef(Routes.requestPaymentScreen, page: RequestPaymentScreen),
+    RouteDef(Routes.depositScreen, page: DepositScreen),
+    RouteDef(Routes.withdrawScren, page: WithdrawScren),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -145,17 +153,20 @@ class Router extends RouterBase {
       );
     },
     SendTrustedPaymentScreen: (data) {
+      final args =
+          data.getArgs<SendTrustedPaymentScreenArguments>(nullOk: false);
       return MaterialPageRoute<dynamic>(
-        builder: (context) => SendTrustedPaymentScreen(),
+        builder: (context) => SendTrustedPaymentScreen(user: args.user),
         settings: data,
       );
     },
     BudgetCreateScreen: (data) {
-      final args = data.getArgs<BudgetCreateScreenArguments>(
-        orElse: () => BudgetCreateScreenArguments(),
-      );
+      final args = data.getArgs<BudgetCreateScreenArguments>(nullOk: false);
       return MaterialPageRoute<dynamic>(
-        builder: (context) => BudgetCreateScreen(isGift: args.isGift),
+        builder: (context) => BudgetCreateScreen(
+          isGift: args.isGift,
+          user: args.user,
+        ),
         settings: data,
       );
     },
@@ -166,6 +177,19 @@ class Router extends RouterBase {
           user: args.user,
           key: args.key,
         ),
+        settings: data,
+      );
+    },
+    DepositScreen: (data) {
+      final args = data.getArgs<DepositScreenArguments>(nullOk: false);
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => DepositScreen(user: args.user),
+        settings: data,
+      );
+    },
+    WithdrawScren: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => WithdrawScren(),
         settings: data,
       );
     },
@@ -219,15 +243,21 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
   Future<dynamic> pushCreateSavingsScreen() =>
       push<dynamic>(Routes.createSavingsScreen);
 
-  Future<dynamic> pushSendTrustedPaymentScreen() =>
-      push<dynamic>(Routes.sendTrustedPaymentScreen);
+  Future<dynamic> pushSendTrustedPaymentScreen({
+    @required User user,
+  }) =>
+      push<dynamic>(
+        Routes.sendTrustedPaymentScreen,
+        arguments: SendTrustedPaymentScreenArguments(user: user),
+      );
 
   Future<dynamic> pushBudgetCreateScreen({
     bool isGift = true,
+    @required User user,
   }) =>
       push<dynamic>(
         Routes.budgetCreateScreen,
-        arguments: BudgetCreateScreenArguments(isGift: isGift),
+        arguments: BudgetCreateScreenArguments(isGift: isGift, user: user),
       );
 
   Future<dynamic> pushRequestPaymentScreen({
@@ -238,6 +268,16 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
         Routes.requestPaymentScreen,
         arguments: RequestPaymentScreenArguments(user: user, key: key),
       );
+
+  Future<dynamic> pushDepositScreen({
+    @required User user,
+  }) =>
+      push<dynamic>(
+        Routes.depositScreen,
+        arguments: DepositScreenArguments(user: user),
+      );
+
+  Future<dynamic> pushWithdrawScren() => push<dynamic>(Routes.withdrawScren);
 }
 
 /// ************************************************************************
@@ -264,10 +304,17 @@ class HomeScreenArguments {
   HomeScreenArguments({@required this.user});
 }
 
+/// SendTrustedPaymentScreen arguments holder class
+class SendTrustedPaymentScreenArguments {
+  final User user;
+  SendTrustedPaymentScreenArguments({@required this.user});
+}
+
 /// BudgetCreateScreen arguments holder class
 class BudgetCreateScreenArguments {
   final bool isGift;
-  BudgetCreateScreenArguments({this.isGift = true});
+  final User user;
+  BudgetCreateScreenArguments({this.isGift = true, @required this.user});
 }
 
 /// RequestPaymentScreen arguments holder class
@@ -275,4 +322,10 @@ class RequestPaymentScreenArguments {
   final User user;
   final Key key;
   RequestPaymentScreenArguments({@required this.user, this.key});
+}
+
+/// DepositScreen arguments holder class
+class DepositScreenArguments {
+  final User user;
+  DepositScreenArguments({@required this.user});
 }
