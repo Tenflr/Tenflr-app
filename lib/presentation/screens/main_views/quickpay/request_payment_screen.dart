@@ -62,14 +62,19 @@ class RequestPaymentForm extends HookWidget {
     final ValueNotifier<int> newSize = useState(0);
 
     return BlocConsumer<QuickPaymentWatcherBloc, QuickPaymentWatcherState>(
+     
       listener: (context, state) {
         if (oldSize.value < newSize.value) {
-          Navigator.of(context).pop();
+          // Navigator.of(context).pop();
+          // Navigator.of(context).pop();
+
           FlushbarHelper.createSuccess(
                   message:
                       "You have successfully received a new Payment 😎".i18n)
               .show(context);
           oldSize.value = newSize.value;
+          Navigator.of(context, rootNavigator: true).pop();
+          Navigator.of(context, rootNavigator: true).pop();
         }
       },
       builder: (context, state) {
