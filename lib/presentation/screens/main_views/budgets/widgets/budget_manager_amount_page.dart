@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
+import 'package:tenflrpay/application/budget/budget_input_collector/budgetinputcollector_bloc.dart';
+import 'package:tenflrpay/domain/core/valid_objects.dart';
 
 import '../../../../core/styles/text_styles.dart';
 import '../../../../core/translations/translations.i18n.dart';
@@ -45,6 +48,20 @@ class BudgetManagerAmountPage extends StatelessWidget {
                     Text('Enter the amount...'.i18n),
                     DefaultPrimaryMoneyInput(
                       imagePath: null,
+                      onChanged: (value) {
+                        context.bloc<BudgetInputCollectorBloc>().add(
+                            BudgetInputCollectorEvent.amountToManageChanged(
+                                amount: MoneyAmount(double.parse(value))));
+                      },
+                      onEditingComplete: () {
+                        // node.nextFocus();
+
+                        FocusScope.of(context).unfocus();
+
+                        controller.nextPage(
+                            duration: const Duration(milliseconds: 500),
+                            curve: Curves.easeIn);
+                      },
                       // moneyMaskEditingController: moneyController,
                     ),
                   ])),
