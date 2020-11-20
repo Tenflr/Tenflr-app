@@ -21,7 +21,7 @@ class QuickPaymentList extends StatelessWidget {
           );
         }
     return Container(
-      height:size.height * 0.5, 
+      height:size.height * 0.78, 
       child: ListView.separated(
         controller: controller,
         itemCount: quickPaymants.size,
