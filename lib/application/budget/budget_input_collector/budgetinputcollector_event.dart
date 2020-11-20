@@ -17,4 +17,6 @@ abstract class BudgetInputCollectorEvent with _$BudgetInputCollectorEvent {
       {@required User receiver}) = _ReceiverChanged;
   const factory BudgetInputCollectorEvent.managerAccountNameChanged(
       {@required AccountName accountName}) = _ManagerAccountNameChanged;
+  const factory BudgetInputCollectorEvent.searchUser(
+      {@required String userQuery}) = _SearcherUserQuery;
 }
