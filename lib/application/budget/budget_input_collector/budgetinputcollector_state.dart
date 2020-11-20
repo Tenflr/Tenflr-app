@@ -8,6 +8,7 @@ abstract class BudgetInputCollectorState with _$BudgetInputCollectorState {
     @required bool isEditing,
     @required Budget budget,
     @required String searchTerm,
+    @required bool userFound,
     @required Option<Either<BudgetFailure, Unit>> saveFailureOrSuccessOption,
   }) = _BudgetInputCollectorState;
   factory BudgetInputCollectorState.empty() => BudgetInputCollectorState(
@@ -15,6 +16,7 @@ abstract class BudgetInputCollectorState with _$BudgetInputCollectorState {
         showErrorMessage: false,
         isEditing: false,
         isSaving: false,
+        userFound: false,
         budget: Budget.empty(),
         searchTerm: '',
       );
