@@ -19,4 +19,6 @@ abstract class TrustedPayInputCollectorEvent
       {@required MoneyAmount amount}) = _AmountToCreditChanged;
   const factory TrustedPayInputCollectorEvent.creditTrustedPay() =
       _CreditTrustedPay;
+  const factory TrustedPayInputCollectorEvent.searchUser(String userQuery) =
+      _UserSearch;
 }
