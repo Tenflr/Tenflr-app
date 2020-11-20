@@ -1,56 +1,59 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tenflrpay/application/main_views_bloc/main_views_bloc.dart';
 import 'package:tenflrpay/domain/budget/budgets.dart';
 import 'package:tenflrpay/presentation/core/styles/decorations.dart';
 import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
 import '../../../../core/translations/translations.i18n.dart';
 
 class BudgetTile extends StatelessWidget {
-  final String title;
   final Budget budget;
   final int index;
-  final String subTitle;
-  final String locked;
-  final String cashed;
-  final bool isGift;
-  const BudgetTile(
-      {this.isGift = false,
-    @required  this.budget,
-      this.index,
-      this.cashed = '2,500',
-      this.title = "Allowances",
-      this.subTitle = 'XAF 102,500.0',
-      this.locked = '100,000',
-      Key key})
+  const BudgetTile({@required this.budget, this.index, Key key})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Container(
       decoration: DefaultDecoration.all,
-      margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-      child: ListTile(
-        title: Text(
-          title.i18n,
-          style: BudgetScreensStyle.tileTitle(size),
-        ),
-        subtitle: Text(
-          subTitle.i18n,
-          style: BudgetScreensStyle.tileSubTitle(size),
-        ),
-        trailing: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(
-              locked.i18n,
-              style: BudgetScreensStyle.locked(size),
+      margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+      child: Stack(
+        children: [
+          if (budget.isGift)
+            const Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Align(child: Text('Gift')),
             ),
-            Text(
-              cashed.i18n,
-              style: BudgetScreensStyle.cash(size),
+          ListTile(
+            onTap: () {
+              context
+                  .bloc<MainViewsBloc>()
+                  .add(MainViewsEvent.budgetDetailPage(budget: budget));
+            },
+            title: Text(
+              budget.accountName.getOrCrash(),
+              style: BudgetScreensStyle.tileTitle(size),
             ),
-          ],
-        ),
+            subtitle: Text(
+              'XAF ${budget.totalAmount.getOrCrash().toStringAsFixed(1)}',
+              style: BudgetScreensStyle.tileSubTitle(size),
+            ),
+            trailing: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  '${budget.amountLocked.getOrCrash().toStringAsFixed(1)}',
+                  style: BudgetScreensStyle.locked(size),
+                ),
+                Text(
+                  '${budget.amountCashed.getOrCrash().toStringAsFixed(1)}',
+                  style: BudgetScreensStyle.cash(size),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
