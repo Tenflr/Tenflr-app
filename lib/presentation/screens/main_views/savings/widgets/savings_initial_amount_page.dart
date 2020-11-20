@@ -56,11 +56,11 @@ class _SavingsAmountPageState extends State<SavingsAmountPage> {
                     DefaultPrimaryMoneyInput(
                       imagePath: null,
                       // moneyMaskEditingController: moneyController,
-                      
+
                       onChanged: (value) {
                         context.bloc<SavingsInputCollectorBloc>().add(
                             SavingsInputCollectorEvent.amountChanged(
-                                amount: MoneyAmount(moneyController.numberValue)));
+                                amount: MoneyAmount(double.parse(value))));
                       },
                       onEditingComplete: () {
                         FocusScope.of(context).unfocus();
