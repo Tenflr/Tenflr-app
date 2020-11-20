@@ -68,6 +68,13 @@ class _$BudgetInputCollectorEventTearOff {
       accountName: accountName,
     );
   }
+
+// ignore: unused_element
+  _SearcherUserQuery searchUser({@required String userQuery}) {
+    return _SearcherUserQuery(
+      userQuery: userQuery,
+    );
+  }
 }
 
 /// @nodoc
@@ -86,6 +93,7 @@ mixin _$BudgetInputCollectorEvent {
     @required Result receiverInfoChanged(String searchTerm),
     @required Result receiverChanged(User receiver),
     @required Result managerAccountNameChanged(AccountName accountName),
+    @required Result searchUser(String userQuery),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -97,6 +105,7 @@ mixin _$BudgetInputCollectorEvent {
     Result receiverInfoChanged(String searchTerm),
     Result receiverChanged(User receiver),
     Result managerAccountNameChanged(AccountName accountName),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -110,6 +119,7 @@ mixin _$BudgetInputCollectorEvent {
     @required Result receiverChanged(_ReceiverChanged value),
     @required
         Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    @required Result searchUser(_SearcherUserQuery value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -121,6 +131,7 @@ mixin _$BudgetInputCollectorEvent {
     Result receiverInfoChanged(_ReceiverInfoChanged value),
     Result receiverChanged(_ReceiverChanged value),
     Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    Result searchUser(_SearcherUserQuery value),
     @required Result orElse(),
   });
 }
@@ -231,6 +242,7 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     @required Result receiverInfoChanged(String searchTerm),
     @required Result receiverChanged(User receiver),
     @required Result managerAccountNameChanged(AccountName accountName),
+    @required Result searchUser(String userQuery),
   }) {
     assert(initialized != null);
     assert(submitted != null);
@@ -240,6 +252,7 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     assert(receiverInfoChanged != null);
     assert(receiverChanged != null);
     assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
     return initialized(user);
   }
 
@@ -254,6 +267,7 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     Result receiverInfoChanged(String searchTerm),
     Result receiverChanged(User receiver),
     Result managerAccountNameChanged(AccountName accountName),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -275,6 +289,7 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     @required Result receiverChanged(_ReceiverChanged value),
     @required
         Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    @required Result searchUser(_SearcherUserQuery value),
   }) {
     assert(initialized != null);
     assert(submitted != null);
@@ -284,6 +299,7 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     assert(receiverInfoChanged != null);
     assert(receiverChanged != null);
     assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
     return initialized(this);
   }
 
@@ -298,6 +314,7 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     Result receiverInfoChanged(_ReceiverInfoChanged value),
     Result receiverChanged(_ReceiverChanged value),
     Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    Result searchUser(_SearcherUserQuery value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -368,6 +385,7 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     @required Result receiverInfoChanged(String searchTerm),
     @required Result receiverChanged(User receiver),
     @required Result managerAccountNameChanged(AccountName accountName),
+    @required Result searchUser(String userQuery),
   }) {
     assert(initialized != null);
     assert(submitted != null);
@@ -377,6 +395,7 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     assert(receiverInfoChanged != null);
     assert(receiverChanged != null);
     assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
     return submitted();
   }
 
@@ -391,6 +410,7 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     Result receiverInfoChanged(String searchTerm),
     Result receiverChanged(User receiver),
     Result managerAccountNameChanged(AccountName accountName),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -412,6 +432,7 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     @required Result receiverChanged(_ReceiverChanged value),
     @required
         Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    @required Result searchUser(_SearcherUserQuery value),
   }) {
     assert(initialized != null);
     assert(submitted != null);
@@ -421,6 +442,7 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     assert(receiverInfoChanged != null);
     assert(receiverChanged != null);
     assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
     return submitted(this);
   }
 
@@ -435,6 +457,7 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     Result receiverInfoChanged(_ReceiverInfoChanged value),
     Result receiverChanged(_ReceiverChanged value),
     Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    Result searchUser(_SearcherUserQuery value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -530,6 +553,7 @@ class _$_AmountToManageChanged
     @required Result receiverInfoChanged(String searchTerm),
     @required Result receiverChanged(User receiver),
     @required Result managerAccountNameChanged(AccountName accountName),
+    @required Result searchUser(String userQuery),
   }) {
     assert(initialized != null);
     assert(submitted != null);
@@ -539,6 +563,7 @@ class _$_AmountToManageChanged
     assert(receiverInfoChanged != null);
     assert(receiverChanged != null);
     assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
     return amountToManageChanged(amount);
   }
 
@@ -553,6 +578,7 @@ class _$_AmountToManageChanged
     Result receiverInfoChanged(String searchTerm),
     Result receiverChanged(User receiver),
     Result managerAccountNameChanged(AccountName accountName),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -574,6 +600,7 @@ class _$_AmountToManageChanged
     @required Result receiverChanged(_ReceiverChanged value),
     @required
         Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    @required Result searchUser(_SearcherUserQuery value),
   }) {
     assert(initialized != null);
     assert(submitted != null);
@@ -583,6 +610,7 @@ class _$_AmountToManageChanged
     assert(receiverInfoChanged != null);
     assert(receiverChanged != null);
     assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
     return amountToManageChanged(this);
   }
 
@@ -597,6 +625,7 @@ class _$_AmountToManageChanged
     Result receiverInfoChanged(_ReceiverInfoChanged value),
     Result receiverChanged(_ReceiverChanged value),
     Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    Result searchUser(_SearcherUserQuery value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -697,6 +726,7 @@ class _$_LockPeriodChanged
     @required Result receiverInfoChanged(String searchTerm),
     @required Result receiverChanged(User receiver),
     @required Result managerAccountNameChanged(AccountName accountName),
+    @required Result searchUser(String userQuery),
   }) {
     assert(initialized != null);
     assert(submitted != null);
@@ -706,6 +736,7 @@ class _$_LockPeriodChanged
     assert(receiverInfoChanged != null);
     assert(receiverChanged != null);
     assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
     return lockPeriodChanged(unlockDate);
   }
 
@@ -720,6 +751,7 @@ class _$_LockPeriodChanged
     Result receiverInfoChanged(String searchTerm),
     Result receiverChanged(User receiver),
     Result managerAccountNameChanged(AccountName accountName),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -741,6 +773,7 @@ class _$_LockPeriodChanged
     @required Result receiverChanged(_ReceiverChanged value),
     @required
         Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    @required Result searchUser(_SearcherUserQuery value),
   }) {
     assert(initialized != null);
     assert(submitted != null);
@@ -750,6 +783,7 @@ class _$_LockPeriodChanged
     assert(receiverInfoChanged != null);
     assert(receiverChanged != null);
     assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
     return lockPeriodChanged(this);
   }
 
@@ -764,6 +798,7 @@ class _$_LockPeriodChanged
     Result receiverInfoChanged(_ReceiverInfoChanged value),
     Result receiverChanged(_ReceiverChanged value),
     Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    Result searchUser(_SearcherUserQuery value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -865,6 +900,7 @@ class _$_PayoutModeChanged
     @required Result receiverInfoChanged(String searchTerm),
     @required Result receiverChanged(User receiver),
     @required Result managerAccountNameChanged(AccountName accountName),
+    @required Result searchUser(String userQuery),
   }) {
     assert(initialized != null);
     assert(submitted != null);
@@ -874,6 +910,7 @@ class _$_PayoutModeChanged
     assert(receiverInfoChanged != null);
     assert(receiverChanged != null);
     assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
     return payoutModeChanged(payoutMode);
   }
 
@@ -888,6 +925,7 @@ class _$_PayoutModeChanged
     Result receiverInfoChanged(String searchTerm),
     Result receiverChanged(User receiver),
     Result managerAccountNameChanged(AccountName accountName),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -909,6 +947,7 @@ class _$_PayoutModeChanged
     @required Result receiverChanged(_ReceiverChanged value),
     @required
         Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    @required Result searchUser(_SearcherUserQuery value),
   }) {
     assert(initialized != null);
     assert(submitted != null);
@@ -918,6 +957,7 @@ class _$_PayoutModeChanged
     assert(receiverInfoChanged != null);
     assert(receiverChanged != null);
     assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
     return payoutModeChanged(this);
   }
 
@@ -932,6 +972,7 @@ class _$_PayoutModeChanged
     Result receiverInfoChanged(_ReceiverInfoChanged value),
     Result receiverChanged(_ReceiverChanged value),
     Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    Result searchUser(_SearcherUserQuery value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1033,6 +1074,7 @@ class _$_ReceiverInfoChanged
     @required Result receiverInfoChanged(String searchTerm),
     @required Result receiverChanged(User receiver),
     @required Result managerAccountNameChanged(AccountName accountName),
+    @required Result searchUser(String userQuery),
   }) {
     assert(initialized != null);
     assert(submitted != null);
@@ -1042,6 +1084,7 @@ class _$_ReceiverInfoChanged
     assert(receiverInfoChanged != null);
     assert(receiverChanged != null);
     assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
     return receiverInfoChanged(searchTerm);
   }
 
@@ -1056,6 +1099,7 @@ class _$_ReceiverInfoChanged
     Result receiverInfoChanged(String searchTerm),
     Result receiverChanged(User receiver),
     Result managerAccountNameChanged(AccountName accountName),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1077,6 +1121,7 @@ class _$_ReceiverInfoChanged
     @required Result receiverChanged(_ReceiverChanged value),
     @required
         Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    @required Result searchUser(_SearcherUserQuery value),
   }) {
     assert(initialized != null);
     assert(submitted != null);
@@ -1086,6 +1131,7 @@ class _$_ReceiverInfoChanged
     assert(receiverInfoChanged != null);
     assert(receiverChanged != null);
     assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
     return receiverInfoChanged(this);
   }
 
@@ -1100,6 +1146,7 @@ class _$_ReceiverInfoChanged
     Result receiverInfoChanged(_ReceiverInfoChanged value),
     Result receiverChanged(_ReceiverChanged value),
     Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    Result searchUser(_SearcherUserQuery value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1211,6 +1258,7 @@ class _$_ReceiverChanged
     @required Result receiverInfoChanged(String searchTerm),
     @required Result receiverChanged(User receiver),
     @required Result managerAccountNameChanged(AccountName accountName),
+    @required Result searchUser(String userQuery),
   }) {
     assert(initialized != null);
     assert(submitted != null);
@@ -1220,6 +1268,7 @@ class _$_ReceiverChanged
     assert(receiverInfoChanged != null);
     assert(receiverChanged != null);
     assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
     return receiverChanged(receiver);
   }
 
@@ -1234,6 +1283,7 @@ class _$_ReceiverChanged
     Result receiverInfoChanged(String searchTerm),
     Result receiverChanged(User receiver),
     Result managerAccountNameChanged(AccountName accountName),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1255,6 +1305,7 @@ class _$_ReceiverChanged
     @required Result receiverChanged(_ReceiverChanged value),
     @required
         Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    @required Result searchUser(_SearcherUserQuery value),
   }) {
     assert(initialized != null);
     assert(submitted != null);
@@ -1264,6 +1315,7 @@ class _$_ReceiverChanged
     assert(receiverInfoChanged != null);
     assert(receiverChanged != null);
     assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
     return receiverChanged(this);
   }
 
@@ -1278,6 +1330,7 @@ class _$_ReceiverChanged
     Result receiverInfoChanged(_ReceiverInfoChanged value),
     Result receiverChanged(_ReceiverChanged value),
     Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    Result searchUser(_SearcherUserQuery value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1382,6 +1435,7 @@ class _$_ManagerAccountNameChanged
     @required Result receiverInfoChanged(String searchTerm),
     @required Result receiverChanged(User receiver),
     @required Result managerAccountNameChanged(AccountName accountName),
+    @required Result searchUser(String userQuery),
   }) {
     assert(initialized != null);
     assert(submitted != null);
@@ -1391,6 +1445,7 @@ class _$_ManagerAccountNameChanged
     assert(receiverInfoChanged != null);
     assert(receiverChanged != null);
     assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
     return managerAccountNameChanged(accountName);
   }
 
@@ -1405,6 +1460,7 @@ class _$_ManagerAccountNameChanged
     Result receiverInfoChanged(String searchTerm),
     Result receiverChanged(User receiver),
     Result managerAccountNameChanged(AccountName accountName),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1426,6 +1482,7 @@ class _$_ManagerAccountNameChanged
     @required Result receiverChanged(_ReceiverChanged value),
     @required
         Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    @required Result searchUser(_SearcherUserQuery value),
   }) {
     assert(initialized != null);
     assert(submitted != null);
@@ -1435,6 +1492,7 @@ class _$_ManagerAccountNameChanged
     assert(receiverInfoChanged != null);
     assert(receiverChanged != null);
     assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
     return managerAccountNameChanged(this);
   }
 
@@ -1449,6 +1507,7 @@ class _$_ManagerAccountNameChanged
     Result receiverInfoChanged(_ReceiverInfoChanged value),
     Result receiverChanged(_ReceiverChanged value),
     Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    Result searchUser(_SearcherUserQuery value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1468,6 +1527,177 @@ abstract class _ManagerAccountNameChanged implements BudgetInputCollectorEvent {
 }
 
 /// @nodoc
+abstract class _$SearcherUserQueryCopyWith<$Res> {
+  factory _$SearcherUserQueryCopyWith(
+          _SearcherUserQuery value, $Res Function(_SearcherUserQuery) then) =
+      __$SearcherUserQueryCopyWithImpl<$Res>;
+  $Res call({String userQuery});
+}
+
+/// @nodoc
+class __$SearcherUserQueryCopyWithImpl<$Res>
+    extends _$BudgetInputCollectorEventCopyWithImpl<$Res>
+    implements _$SearcherUserQueryCopyWith<$Res> {
+  __$SearcherUserQueryCopyWithImpl(
+      _SearcherUserQuery _value, $Res Function(_SearcherUserQuery) _then)
+      : super(_value, (v) => _then(v as _SearcherUserQuery));
+
+  @override
+  _SearcherUserQuery get _value => super._value as _SearcherUserQuery;
+
+  @override
+  $Res call({
+    Object userQuery = freezed,
+  }) {
+    return _then(_SearcherUserQuery(
+      userQuery: userQuery == freezed ? _value.userQuery : userQuery as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_SearcherUserQuery
+    with DiagnosticableTreeMixin
+    implements _SearcherUserQuery {
+  const _$_SearcherUserQuery({@required this.userQuery})
+      : assert(userQuery != null);
+
+  @override
+  final String userQuery;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'BudgetInputCollectorEvent.searchUser(userQuery: $userQuery)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'BudgetInputCollectorEvent.searchUser'))
+      ..add(DiagnosticsProperty('userQuery', userQuery));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SearcherUserQuery &&
+            (identical(other.userQuery, userQuery) ||
+                const DeepCollectionEquality()
+                    .equals(other.userQuery, userQuery)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userQuery);
+
+  @override
+  _$SearcherUserQueryCopyWith<_SearcherUserQuery> get copyWith =>
+      __$SearcherUserQueryCopyWithImpl<_SearcherUserQuery>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result initialized(User user),
+    @required Result submitted(),
+    @required Result amountToManageChanged(MoneyAmount amount),
+    @required Result lockPeriodChanged(ValidDate unlockDate),
+    @required Result payoutModeChanged(PayoutModeObject payoutMode),
+    @required Result receiverInfoChanged(String searchTerm),
+    @required Result receiverChanged(User receiver),
+    @required Result managerAccountNameChanged(AccountName accountName),
+    @required Result searchUser(String userQuery),
+  }) {
+    assert(initialized != null);
+    assert(submitted != null);
+    assert(amountToManageChanged != null);
+    assert(lockPeriodChanged != null);
+    assert(payoutModeChanged != null);
+    assert(receiverInfoChanged != null);
+    assert(receiverChanged != null);
+    assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
+    return searchUser(userQuery);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result initialized(User user),
+    Result submitted(),
+    Result amountToManageChanged(MoneyAmount amount),
+    Result lockPeriodChanged(ValidDate unlockDate),
+    Result payoutModeChanged(PayoutModeObject payoutMode),
+    Result receiverInfoChanged(String searchTerm),
+    Result receiverChanged(User receiver),
+    Result managerAccountNameChanged(AccountName accountName),
+    Result searchUser(String userQuery),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (searchUser != null) {
+      return searchUser(userQuery);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result initialized(_Initialized value),
+    @required Result submitted(_Submitted value),
+    @required Result amountToManageChanged(_AmountToManageChanged value),
+    @required Result lockPeriodChanged(_LockPeriodChanged value),
+    @required Result payoutModeChanged(_PayoutModeChanged value),
+    @required Result receiverInfoChanged(_ReceiverInfoChanged value),
+    @required Result receiverChanged(_ReceiverChanged value),
+    @required
+        Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    @required Result searchUser(_SearcherUserQuery value),
+  }) {
+    assert(initialized != null);
+    assert(submitted != null);
+    assert(amountToManageChanged != null);
+    assert(lockPeriodChanged != null);
+    assert(payoutModeChanged != null);
+    assert(receiverInfoChanged != null);
+    assert(receiverChanged != null);
+    assert(managerAccountNameChanged != null);
+    assert(searchUser != null);
+    return searchUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result initialized(_Initialized value),
+    Result submitted(_Submitted value),
+    Result amountToManageChanged(_AmountToManageChanged value),
+    Result lockPeriodChanged(_LockPeriodChanged value),
+    Result payoutModeChanged(_PayoutModeChanged value),
+    Result receiverInfoChanged(_ReceiverInfoChanged value),
+    Result receiverChanged(_ReceiverChanged value),
+    Result managerAccountNameChanged(_ManagerAccountNameChanged value),
+    Result searchUser(_SearcherUserQuery value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (searchUser != null) {
+      return searchUser(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SearcherUserQuery implements BudgetInputCollectorEvent {
+  const factory _SearcherUserQuery({@required String userQuery}) =
+      _$_SearcherUserQuery;
+
+  String get userQuery;
+  _$SearcherUserQueryCopyWith<_SearcherUserQuery> get copyWith;
+}
+
+/// @nodoc
 class _$BudgetInputCollectorStateTearOff {
   const _$BudgetInputCollectorStateTearOff();
 
@@ -1484,6 +1714,8 @@ class _$BudgetInputCollectorStateTearOff {
       @required
           String searchTerm,
       @required
+          bool userFound,
+      @required
           Option<Either<BudgetFailure, Unit>> saveFailureOrSuccessOption}) {
     return _BudgetInputCollectorState(
       showErrorMessage: showErrorMessage,
@@ -1491,6 +1723,7 @@ class _$BudgetInputCollectorStateTearOff {
       isEditing: isEditing,
       budget: budget,
       searchTerm: searchTerm,
+      userFound: userFound,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption,
     );
   }
@@ -1507,6 +1740,7 @@ mixin _$BudgetInputCollectorState {
   bool get isEditing;
   Budget get budget;
   String get searchTerm;
+  bool get userFound;
   Option<Either<BudgetFailure, Unit>> get saveFailureOrSuccessOption;
 
   $BudgetInputCollectorStateCopyWith<BudgetInputCollectorState> get copyWith;
@@ -1523,6 +1757,7 @@ abstract class $BudgetInputCollectorStateCopyWith<$Res> {
       bool isEditing,
       Budget budget,
       String searchTerm,
+      bool userFound,
       Option<Either<BudgetFailure, Unit>> saveFailureOrSuccessOption});
 
   $BudgetCopyWith<$Res> get budget;
@@ -1544,6 +1779,7 @@ class _$BudgetInputCollectorStateCopyWithImpl<$Res>
     Object isEditing = freezed,
     Object budget = freezed,
     Object searchTerm = freezed,
+    Object userFound = freezed,
     Object saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1555,6 +1791,7 @@ class _$BudgetInputCollectorStateCopyWithImpl<$Res>
       budget: budget == freezed ? _value.budget : budget as Budget,
       searchTerm:
           searchTerm == freezed ? _value.searchTerm : searchTerm as String,
+      userFound: userFound == freezed ? _value.userFound : userFound as bool,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption as Option<Either<BudgetFailure, Unit>>,
@@ -1585,6 +1822,7 @@ abstract class _$BudgetInputCollectorStateCopyWith<$Res>
       bool isEditing,
       Budget budget,
       String searchTerm,
+      bool userFound,
       Option<Either<BudgetFailure, Unit>> saveFailureOrSuccessOption});
 
   @override
@@ -1610,6 +1848,7 @@ class __$BudgetInputCollectorStateCopyWithImpl<$Res>
     Object isEditing = freezed,
     Object budget = freezed,
     Object searchTerm = freezed,
+    Object userFound = freezed,
     Object saveFailureOrSuccessOption = freezed,
   }) {
     return _then(_BudgetInputCollectorState(
@@ -1621,6 +1860,7 @@ class __$BudgetInputCollectorStateCopyWithImpl<$Res>
       budget: budget == freezed ? _value.budget : budget as Budget,
       searchTerm:
           searchTerm == freezed ? _value.searchTerm : searchTerm as String,
+      userFound: userFound == freezed ? _value.userFound : userFound as bool,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
           : saveFailureOrSuccessOption as Option<Either<BudgetFailure, Unit>>,
@@ -1638,12 +1878,14 @@ class _$_BudgetInputCollectorState
       @required this.isEditing,
       @required this.budget,
       @required this.searchTerm,
+      @required this.userFound,
       @required this.saveFailureOrSuccessOption})
       : assert(showErrorMessage != null),
         assert(isSaving != null),
         assert(isEditing != null),
         assert(budget != null),
         assert(searchTerm != null),
+        assert(userFound != null),
         assert(saveFailureOrSuccessOption != null);
 
   @override
@@ -1657,11 +1899,13 @@ class _$_BudgetInputCollectorState
   @override
   final String searchTerm;
   @override
+  final bool userFound;
+  @override
   final Option<Either<BudgetFailure, Unit>> saveFailureOrSuccessOption;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'BudgetInputCollectorState(showErrorMessage: $showErrorMessage, isSaving: $isSaving, isEditing: $isEditing, budget: $budget, searchTerm: $searchTerm, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'BudgetInputCollectorState(showErrorMessage: $showErrorMessage, isSaving: $isSaving, isEditing: $isEditing, budget: $budget, searchTerm: $searchTerm, userFound: $userFound, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
   }
 
   @override
@@ -1674,6 +1918,7 @@ class _$_BudgetInputCollectorState
       ..add(DiagnosticsProperty('isEditing', isEditing))
       ..add(DiagnosticsProperty('budget', budget))
       ..add(DiagnosticsProperty('searchTerm', searchTerm))
+      ..add(DiagnosticsProperty('userFound', userFound))
       ..add(DiagnosticsProperty(
           'saveFailureOrSuccessOption', saveFailureOrSuccessOption));
   }
@@ -1696,6 +1941,9 @@ class _$_BudgetInputCollectorState
             (identical(other.searchTerm, searchTerm) ||
                 const DeepCollectionEquality()
                     .equals(other.searchTerm, searchTerm)) &&
+            (identical(other.userFound, userFound) ||
+                const DeepCollectionEquality()
+                    .equals(other.userFound, userFound)) &&
             (identical(other.saveFailureOrSuccessOption,
                     saveFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
@@ -1711,6 +1959,7 @@ class _$_BudgetInputCollectorState
       const DeepCollectionEquality().hash(isEditing) ^
       const DeepCollectionEquality().hash(budget) ^
       const DeepCollectionEquality().hash(searchTerm) ^
+      const DeepCollectionEquality().hash(userFound) ^
       const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
 
   @override
@@ -1733,6 +1982,8 @@ abstract class _BudgetInputCollectorState implements BudgetInputCollectorState {
           @required
               String searchTerm,
           @required
+              bool userFound,
+          @required
               Option<Either<BudgetFailure, Unit>> saveFailureOrSuccessOption}) =
       _$_BudgetInputCollectorState;
 
@@ -1746,6 +1997,8 @@ abstract class _BudgetInputCollectorState implements BudgetInputCollectorState {
   Budget get budget;
   @override
   String get searchTerm;
+  @override
+  bool get userFound;
   @override
   Option<Either<BudgetFailure, Unit>> get saveFailureOrSuccessOption;
   @override
