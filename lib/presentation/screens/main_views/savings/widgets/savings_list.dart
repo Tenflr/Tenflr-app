@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kt_dart/kt.dart';
@@ -11,20 +13,27 @@ import 'package:tenflrpay/application/saving/savings_list_bloc/savingslist_bloc.
 import 'package:tenflrpay/domain/core/constant_list.dart';
 import 'package:tenflrpay/domain/saving/savings.dart';
 import 'package:tenflrpay/presentation/core/assets/colors.dart';
+import 'package:tenflrpay/presentation/core/hooks/scrol_controller_for_animation.dart';
 import 'package:tenflrpay/presentation/core/styles/decorations.dart';
 import 'package:tenflrpay/presentation/screens/main_views/savings/widgets/savingsTile.dart';
+import 'package:tenflrpay/presentation/widgets/button.dart';
 import '../../../../core/translations/translations.i18n.dart';
+import '../../../../../routes/router.gr.dart';
+import '../savings_initial_screen.dart';
 
-class SavingsList extends StatelessWidget {
+class SavingsList extends HookWidget{
   final EdgeInsetsGeometry padding;
   final EdgeInsetsGeometry margin;
-  final ScrollController controller;
   final bool isMini;
   const SavingsList(
-      {this.padding, this.isMini = true, this.controller, this.margin});
+      {this.padding, this.isMini = true,  this.margin});
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+    final hideFabAnimController = useAnimationController(
+        duration: kThemeAnimationDuration, initialValue: 1);
+    final scrollController =
+        useScrollControllerForAnimation(hideFabAnimController);
     context.bloc<SavingsListBloc>().add(const SavingsListEvent.watchAll());
     final Widget _list = Container(
         height: size.height * 0.7,
@@ -58,7 +67,7 @@ class SavingsList extends StatelessWidget {
                       child: ListView.builder(
                         physics: const BouncingScrollPhysics(),
 
-                        // controller: widget.controller,
+                        controller: scrollController,
                         itemBuilder: (BuildContext context, int index) {
                           final saving = e.savings[index];
                           if (saving.failureOption.isNone()) {
@@ -161,9 +170,7 @@ class SavingsList extends StatelessWidget {
                       ),
                     );
                   } else if (savings == null || savings.isEmpty()) {
-                    context
-                        .bloc<MainViewsBloc>()
-                        .add(const MainViewsEvent.savingsInitPage());
+                    return const SavingsInitialScreen();
                   }
                   return const Center(
                     child: CircularProgressIndicator(),
@@ -174,6 +181,21 @@ class SavingsList extends StatelessWidget {
                 ), //TODO: [STUR-21] CriticalFailureDisplay(failure: e.noteFailure),
               );
             }),
+            Align(
+              alignment: Alignment.bottomCenter,
+              // mainAxisAlignment: MainAxisAlignment.end,
+              child: FadeTransition(
+                opacity: hideFabAnimController,
+                child: ScaleTransition(
+                  scale: hideFabAnimController,
+                  child: Button(
+                    description: 'Create a Saving account'.i18n,
+                    onPressed: () =>
+                        ExtendedNavigator.of(context).pushCreateSavingsScreen(),
+                  ),
+                ),
+              ),
+            ),
             if (isMini)
               Align(
                 alignment: Alignment.topLeft,
