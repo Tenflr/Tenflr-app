@@ -79,6 +79,35 @@ class BudgetInputCollectorBloc
           saveFailureOrSuccessOption: none(),
         );
       },
+      searchUser: (e) async* {
+        final Either<BudgetFailure, User> failureOrUserfound =
+            await _budgetRepo.searchUser(e.userQuery);
+
+        yield failureOrUserfound.fold(
+            (failure) => state.copyWith(
+                  saveFailureOrSuccessOption: none(),
+                  showErrorMessage: true,
+                  userFound: false,
+                  budget: state.budget.copyWith(
+                    receiverId: UniqueId(),
+                    rPhotoUrl: '',
+                    rDisplayName: ValidNames(''),
+                    rPhoneNumber: ValidPhoneNumber(''),
+                  ),
+                ),
+            (receiver) => state.copyWith(
+                  saveFailureOrSuccessOption: none(),
+                  showErrorMessage: false,
+                  budget: state.budget.copyWith(
+                    receiverId: receiver.id,
+                    rPhotoUrl: receiver.photoUrl,
+                    rDisplayName: receiver.displayName,
+                    rPhoneNumber: receiver.phoneNumber,
+                    isGift: true,
+                  ),
+                  userFound: true,
+                ));
+      },
       amountToManageChanged: (e) async* {
         yield state.copyWith(
           budget: state.budget.copyWith(
