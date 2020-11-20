@@ -8,6 +8,7 @@ abstract class PaymentFailure with _$PaymentFailure {
   const factory PaymentFailure.insufficientFundsInTrustedFunds() = _InsufficientFundsInTrustedFunds;
   const factory PaymentFailure.userWithIdNotFound() = _UserWithIdNotFound;
   const factory PaymentFailure.paymentWithMomoFailed() = _PaymentWithMomoFailed;
+  const factory PaymentFailure.userNotFound() = _UserNotFound;
 
 
   // payment actor failure
