@@ -486,7 +486,6 @@ DEPENDENCIES:
   - package_info (from `.symlinks/plugins/package_info/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - shared_preferences (from `.symlinks/plugins/shared_preferences/ios`)
-  - SwiftProtobuf (~> 1.0)
   - trust_fall (from `.symlinks/plugins/trust_fall/ios`)
   - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
 
@@ -628,6 +627,6 @@ SPEC CHECKSUMS:
   trust_fall: 89fc4fbfe2ca9994ffa64185c6cc48225ca0204c
   url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
 
-PODFILE CHECKSUM: d02d9957a7324c0c101f43271a1b7214779a6c0f
+PODFILE CHECKSUM: eff04162b5181e905e230052facf61a8f92fdfff
 
 COCOAPODS: 1.9.3
