@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tenflrpay/application/budget/budget_input_collector/budgetinputcollector_bloc.dart';
+import 'package:tenflrpay/domain/core/valid_objects.dart';
 import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
 import 'package:tenflrpay/presentation/widgets/button.dart';
 import 'package:tenflrpay/presentation/widgets/default_primary_input_field.dart';
@@ -18,8 +21,8 @@ class BudgetManagerAccountNamePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const SizedBox(
-            // height: 3,
-          ),
+              // height: 3,
+              ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -32,12 +35,26 @@ class BudgetManagerAccountNamePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-               Center(
+              Center(
                   child: DefaultPrimaryTextInputField(
-                    description: 'Budget manager name'.i18n,
-                    // hintText: '',
-                    hintText: 'Ex: Allowance'.i18n,
-                  )),
+                    maxLength: 20,
+                description: 'Budget manager name'.i18n,
+                // hintText: '',
+                hintText: 'Ex: Allowance'.i18n,
+                onChanged: (value) {
+                  context.bloc<BudgetInputCollectorBloc>().add(
+                      BudgetInputCollectorEvent.managerAccountNameChanged(
+                          accountName: AccountName(value)));
+                },
+                 onEditingComplete: () {
+                  // node.nextFocus();
+                  FocusScope.of(context).unfocus();
+
+                  controller.nextPage(
+                      duration: const Duration(milliseconds: 500),
+                      curve: Curves.easeIn);
+                },
+              )),
             ],
           ),
           Column(
@@ -47,7 +64,9 @@ class BudgetManagerAccountNamePage extends StatelessWidget {
                   alignment: Alignment.bottomRight,
                   child: Button(
                     onPressed: () {
-                      controller.nextPage(duration: const Duration(milliseconds: 500), curve: Curves.easeIn);
+                      controller.nextPage(
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.easeIn);
                     },
                     description: 'Next'.i18n,
                     toRight: true,
