@@ -4,6 +4,7 @@ import 'package:tenflrpay/domain/logs/logs.dart';
 import 'package:dartz/dartz.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:meta/meta.dart';
+import 'package:tenflrpay/domain/user/user.dart';
 
 abstract class IBudgetRepository {
   // watch Personal Manager
@@ -55,4 +56,5 @@ abstract class IBudgetRepository {
 /// if the PayMode is yearly then, the Payout amount >= XFA 50,000
 
   Future<Either<BudgetFailure, Budget>> computeBudget(Budget budget);
+  Future<Either<BudgetFailure, User>> searchUser(String userQuery);
 }
