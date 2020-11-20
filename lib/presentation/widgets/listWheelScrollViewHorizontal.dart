@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class ListWheelScrollViewX extends StatelessWidget {
-  final Widget Function(BuildContext, int) builder;
+  // final Widget Function(BuildContext, int) builder;
   final Axis scrollDirection;
   final FixedExtentScrollController controller;
   final double itemExtent;
@@ -11,7 +11,7 @@ class ListWheelScrollViewX extends StatelessWidget {
   final void Function(int) onSelectedItemChanged;
   const ListWheelScrollViewX({
     Key key,
-    @required this.builder,
+    // @required this.builder,
     @required this.itemExtent,
     this.children,
     this.controller,
