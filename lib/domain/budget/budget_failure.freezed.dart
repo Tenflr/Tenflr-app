@@ -89,6 +89,11 @@ class _$BudgetFailureTearOff {
   }
 
 // ignore: unused_element
+  _UserNotForm userNotFound() {
+    return const _UserNotForm();
+  }
+
+// ignore: unused_element
   _UnableToHideBudgetUntilUnlock unableToHideBudgetUntilUnlock() {
     return const _UnableToHideBudgetUntilUnlock();
   }
@@ -142,6 +147,7 @@ mixin _$BudgetFailure {
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -166,6 +172,7 @@ mixin _$BudgetFailure {
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -201,6 +208,7 @@ mixin _$BudgetFailure {
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -233,6 +241,7 @@ mixin _$BudgetFailure {
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -313,6 +322,7 @@ class _$_Unexpected implements _Unexpected {
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -335,6 +345,7 @@ class _$_Unexpected implements _Unexpected {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -362,6 +373,7 @@ class _$_Unexpected implements _Unexpected {
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -405,6 +417,7 @@ class _$_Unexpected implements _Unexpected {
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -433,6 +446,7 @@ class _$_Unexpected implements _Unexpected {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -462,6 +476,7 @@ class _$_Unexpected implements _Unexpected {
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -537,6 +552,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -559,6 +575,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -586,6 +603,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -629,6 +647,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -657,6 +676,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -686,6 +706,7 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -760,6 +781,7 @@ class _$_UnableToCreate implements _UnableToCreate {
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -782,6 +804,7 @@ class _$_UnableToCreate implements _UnableToCreate {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -809,6 +832,7 @@ class _$_UnableToCreate implements _UnableToCreate {
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -852,6 +876,7 @@ class _$_UnableToCreate implements _UnableToCreate {
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -880,6 +905,7 @@ class _$_UnableToCreate implements _UnableToCreate {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -909,6 +935,7 @@ class _$_UnableToCreate implements _UnableToCreate {
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -983,6 +1010,7 @@ class _$_UnableToSendBudget implements _UnableToSendBudget {
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -1005,6 +1033,7 @@ class _$_UnableToSendBudget implements _UnableToSendBudget {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -1032,6 +1061,7 @@ class _$_UnableToSendBudget implements _UnableToSendBudget {
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -1075,6 +1105,7 @@ class _$_UnableToSendBudget implements _UnableToSendBudget {
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -1103,6 +1134,7 @@ class _$_UnableToSendBudget implements _UnableToSendBudget {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -1132,6 +1164,7 @@ class _$_UnableToSendBudget implements _UnableToSendBudget {
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -1211,6 +1244,7 @@ class _$_UnsufficientFundsInTrustedFunds
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -1233,6 +1267,7 @@ class _$_UnsufficientFundsInTrustedFunds
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -1260,6 +1295,7 @@ class _$_UnsufficientFundsInTrustedFunds
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -1303,6 +1339,7 @@ class _$_UnsufficientFundsInTrustedFunds
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -1331,6 +1368,7 @@ class _$_UnsufficientFundsInTrustedFunds
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -1360,6 +1398,7 @@ class _$_UnsufficientFundsInTrustedFunds
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -1435,6 +1474,7 @@ class _$_PaymentWithMomoFailed implements _PaymentWithMomoFailed {
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -1457,6 +1497,7 @@ class _$_PaymentWithMomoFailed implements _PaymentWithMomoFailed {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -1484,6 +1525,7 @@ class _$_PaymentWithMomoFailed implements _PaymentWithMomoFailed {
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -1527,6 +1569,7 @@ class _$_PaymentWithMomoFailed implements _PaymentWithMomoFailed {
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -1555,6 +1598,7 @@ class _$_PaymentWithMomoFailed implements _PaymentWithMomoFailed {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -1584,6 +1628,7 @@ class _$_PaymentWithMomoFailed implements _PaymentWithMomoFailed {
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -1658,6 +1703,7 @@ class _$_InvalidDailyPayRate implements _InvalidDailyPayRate {
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -1680,6 +1726,7 @@ class _$_InvalidDailyPayRate implements _InvalidDailyPayRate {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -1707,6 +1754,7 @@ class _$_InvalidDailyPayRate implements _InvalidDailyPayRate {
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -1750,6 +1798,7 @@ class _$_InvalidDailyPayRate implements _InvalidDailyPayRate {
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -1778,6 +1827,7 @@ class _$_InvalidDailyPayRate implements _InvalidDailyPayRate {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -1807,6 +1857,7 @@ class _$_InvalidDailyPayRate implements _InvalidDailyPayRate {
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -1881,6 +1932,7 @@ class _$_InvalidWeeklyPayRate implements _InvalidWeeklyPayRate {
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -1903,6 +1955,7 @@ class _$_InvalidWeeklyPayRate implements _InvalidWeeklyPayRate {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -1930,6 +1983,7 @@ class _$_InvalidWeeklyPayRate implements _InvalidWeeklyPayRate {
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -1973,6 +2027,7 @@ class _$_InvalidWeeklyPayRate implements _InvalidWeeklyPayRate {
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -2001,6 +2056,7 @@ class _$_InvalidWeeklyPayRate implements _InvalidWeeklyPayRate {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -2030,6 +2086,7 @@ class _$_InvalidWeeklyPayRate implements _InvalidWeeklyPayRate {
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -2104,6 +2161,7 @@ class _$_InvalidMonthlyPayRate implements _InvalidMonthlyPayRate {
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -2126,6 +2184,7 @@ class _$_InvalidMonthlyPayRate implements _InvalidMonthlyPayRate {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -2153,6 +2212,7 @@ class _$_InvalidMonthlyPayRate implements _InvalidMonthlyPayRate {
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -2196,6 +2256,7 @@ class _$_InvalidMonthlyPayRate implements _InvalidMonthlyPayRate {
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -2224,6 +2285,7 @@ class _$_InvalidMonthlyPayRate implements _InvalidMonthlyPayRate {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -2253,6 +2315,7 @@ class _$_InvalidMonthlyPayRate implements _InvalidMonthlyPayRate {
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -2327,6 +2390,7 @@ class _$_InvalidYearlyPayRate implements _InvalidYearlyPayRate {
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -2349,6 +2413,7 @@ class _$_InvalidYearlyPayRate implements _InvalidYearlyPayRate {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -2376,6 +2441,7 @@ class _$_InvalidYearlyPayRate implements _InvalidYearlyPayRate {
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -2419,6 +2485,7 @@ class _$_InvalidYearlyPayRate implements _InvalidYearlyPayRate {
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -2447,6 +2514,7 @@ class _$_InvalidYearlyPayRate implements _InvalidYearlyPayRate {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -2476,6 +2544,7 @@ class _$_InvalidYearlyPayRate implements _InvalidYearlyPayRate {
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -2551,6 +2620,7 @@ class _$_UnexpectedFieldInBudget implements _UnexpectedFieldInBudget {
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -2573,6 +2643,7 @@ class _$_UnexpectedFieldInBudget implements _UnexpectedFieldInBudget {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -2600,6 +2671,7 @@ class _$_UnexpectedFieldInBudget implements _UnexpectedFieldInBudget {
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -2643,6 +2715,7 @@ class _$_UnexpectedFieldInBudget implements _UnexpectedFieldInBudget {
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -2671,6 +2744,7 @@ class _$_UnexpectedFieldInBudget implements _UnexpectedFieldInBudget {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -2700,6 +2774,7 @@ class _$_UnexpectedFieldInBudget implements _UnexpectedFieldInBudget {
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -2778,6 +2853,7 @@ class _$_InvalidNoDaysForYearlyPayRate
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -2800,6 +2876,7 @@ class _$_InvalidNoDaysForYearlyPayRate
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -2827,6 +2904,7 @@ class _$_InvalidNoDaysForYearlyPayRate
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -2870,6 +2948,7 @@ class _$_InvalidNoDaysForYearlyPayRate
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -2898,6 +2977,7 @@ class _$_InvalidNoDaysForYearlyPayRate
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -2927,6 +3007,7 @@ class _$_InvalidNoDaysForYearlyPayRate
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -3006,6 +3087,7 @@ class _$_InvalidNoDaysForWeeklyPayRate
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -3028,6 +3110,7 @@ class _$_InvalidNoDaysForWeeklyPayRate
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -3055,6 +3138,7 @@ class _$_InvalidNoDaysForWeeklyPayRate
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -3098,6 +3182,7 @@ class _$_InvalidNoDaysForWeeklyPayRate
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -3126,6 +3211,7 @@ class _$_InvalidNoDaysForWeeklyPayRate
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -3155,6 +3241,7 @@ class _$_InvalidNoDaysForWeeklyPayRate
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -3234,6 +3321,7 @@ class _$_InvalidNoDaysForMonthlyPayRate
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -3256,6 +3344,7 @@ class _$_InvalidNoDaysForMonthlyPayRate
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -3283,6 +3372,7 @@ class _$_InvalidNoDaysForMonthlyPayRate
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -3326,6 +3416,7 @@ class _$_InvalidNoDaysForMonthlyPayRate
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -3354,6 +3445,7 @@ class _$_InvalidNoDaysForMonthlyPayRate
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -3383,6 +3475,7 @@ class _$_InvalidNoDaysForMonthlyPayRate
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -3461,6 +3554,7 @@ class _$_InvalidNoDaysForDailyPayRate implements _InvalidNoDaysForDailyPayRate {
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -3483,6 +3577,7 @@ class _$_InvalidNoDaysForDailyPayRate implements _InvalidNoDaysForDailyPayRate {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -3510,6 +3605,7 @@ class _$_InvalidNoDaysForDailyPayRate implements _InvalidNoDaysForDailyPayRate {
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -3553,6 +3649,7 @@ class _$_InvalidNoDaysForDailyPayRate implements _InvalidNoDaysForDailyPayRate {
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -3581,6 +3678,7 @@ class _$_InvalidNoDaysForDailyPayRate implements _InvalidNoDaysForDailyPayRate {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -3610,6 +3708,7 @@ class _$_InvalidNoDaysForDailyPayRate implements _InvalidNoDaysForDailyPayRate {
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -3629,6 +3728,234 @@ class _$_InvalidNoDaysForDailyPayRate implements _InvalidNoDaysForDailyPayRate {
 abstract class _InvalidNoDaysForDailyPayRate implements BudgetFailure {
   const factory _InvalidNoDaysForDailyPayRate() =
       _$_InvalidNoDaysForDailyPayRate;
+}
+
+/// @nodoc
+abstract class _$UserNotFormCopyWith<$Res> {
+  factory _$UserNotFormCopyWith(
+          _UserNotForm value, $Res Function(_UserNotForm) then) =
+      __$UserNotFormCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$UserNotFormCopyWithImpl<$Res> extends _$BudgetFailureCopyWithImpl<$Res>
+    implements _$UserNotFormCopyWith<$Res> {
+  __$UserNotFormCopyWithImpl(
+      _UserNotForm _value, $Res Function(_UserNotForm) _then)
+      : super(_value, (v) => _then(v as _UserNotForm));
+
+  @override
+  _UserNotForm get _value => super._value as _UserNotForm;
+}
+
+/// @nodoc
+class _$_UserNotForm implements _UserNotForm {
+  const _$_UserNotForm();
+
+  @override
+  String toString() {
+    return 'BudgetFailure.userNotFound()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _UserNotForm);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result unexpected(),
+    @required Result insufficientPermissions(),
+    @required Result unableToCreateBudget(),
+    @required Result unableToSendBudget(),
+    @required Result insufficientFundsInTrustedFunds(),
+    @required Result paymentWithMomoFailed(),
+    @required Result invalidDailyPayRate(),
+    @required Result invalidWeeklyPayRate(),
+    @required Result invalidMonthlyPayRate(),
+    @required Result invalidYearlyPayRate(),
+    @required Result unexpectedFieldInBudget(),
+    @required Result invalidNoDaysForYearlyPayRate(),
+    @required Result invalidNoDaysForWeeklyPayRate(),
+    @required Result invalidNoDaysForMonthlyPayRate(),
+    @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
+    @required Result unableToHideBudgetUntilUnlock(),
+    @required Result unableToDeleteCompleteBudget(),
+    @required Result unableToForceUnlock(),
+    @required Result unableToCashUnlock(),
+    @required Result timeOutOfSync(),
+    @required Result unableToUnlockBudgetPeriodically(),
+  }) {
+    assert(unexpected != null);
+    assert(insufficientPermissions != null);
+    assert(unableToCreateBudget != null);
+    assert(unableToSendBudget != null);
+    assert(insufficientFundsInTrustedFunds != null);
+    assert(paymentWithMomoFailed != null);
+    assert(invalidDailyPayRate != null);
+    assert(invalidWeeklyPayRate != null);
+    assert(invalidMonthlyPayRate != null);
+    assert(invalidYearlyPayRate != null);
+    assert(unexpectedFieldInBudget != null);
+    assert(invalidNoDaysForYearlyPayRate != null);
+    assert(invalidNoDaysForWeeklyPayRate != null);
+    assert(invalidNoDaysForMonthlyPayRate != null);
+    assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
+    assert(unableToHideBudgetUntilUnlock != null);
+    assert(unableToDeleteCompleteBudget != null);
+    assert(unableToForceUnlock != null);
+    assert(unableToCashUnlock != null);
+    assert(timeOutOfSync != null);
+    assert(unableToUnlockBudgetPeriodically != null);
+    return userNotFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result unexpected(),
+    Result insufficientPermissions(),
+    Result unableToCreateBudget(),
+    Result unableToSendBudget(),
+    Result insufficientFundsInTrustedFunds(),
+    Result paymentWithMomoFailed(),
+    Result invalidDailyPayRate(),
+    Result invalidWeeklyPayRate(),
+    Result invalidMonthlyPayRate(),
+    Result invalidYearlyPayRate(),
+    Result unexpectedFieldInBudget(),
+    Result invalidNoDaysForYearlyPayRate(),
+    Result invalidNoDaysForWeeklyPayRate(),
+    Result invalidNoDaysForMonthlyPayRate(),
+    Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
+    Result unableToHideBudgetUntilUnlock(),
+    Result unableToDeleteCompleteBudget(),
+    Result unableToForceUnlock(),
+    Result unableToCashUnlock(),
+    Result timeOutOfSync(),
+    Result unableToUnlockBudgetPeriodically(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (userNotFound != null) {
+      return userNotFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result unexpected(_Unexpected value),
+    @required Result insufficientPermissions(_InsufficientPermissions value),
+    @required Result unableToCreateBudget(_UnableToCreate value),
+    @required Result unableToSendBudget(_UnableToSendBudget value),
+    @required
+        Result insufficientFundsInTrustedFunds(
+            _UnsufficientFundsInTrustedFunds value),
+    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result invalidDailyPayRate(_InvalidDailyPayRate value),
+    @required Result invalidWeeklyPayRate(_InvalidWeeklyPayRate value),
+    @required Result invalidMonthlyPayRate(_InvalidMonthlyPayRate value),
+    @required Result invalidYearlyPayRate(_InvalidYearlyPayRate value),
+    @required Result unexpectedFieldInBudget(_UnexpectedFieldInBudget value),
+    @required
+        Result invalidNoDaysForYearlyPayRate(
+            _InvalidNoDaysForYearlyPayRate value),
+    @required
+        Result invalidNoDaysForWeeklyPayRate(
+            _InvalidNoDaysForWeeklyPayRate value),
+    @required
+        Result invalidNoDaysForMonthlyPayRate(
+            _InvalidNoDaysForMonthlyPayRate value),
+    @required
+        Result invalidNoDaysForDailyPayRate(
+            _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
+    @required
+        Result unableToHideBudgetUntilUnlock(
+            _UnableToHideBudgetUntilUnlock value),
+    @required
+        Result unableToDeleteCompleteBudget(
+            _UnableToDeleteCompleteBudget value),
+    @required Result unableToForceUnlock(_UnableToForceUnlock value),
+    @required Result unableToCashUnlock(_UnableToCashUnlock value),
+    @required Result timeOutOfSync(_TimeOutOfSync value),
+    @required
+        Result unableToUnlockBudgetPeriodically(
+            _UnableToUnlockPeriodically value),
+  }) {
+    assert(unexpected != null);
+    assert(insufficientPermissions != null);
+    assert(unableToCreateBudget != null);
+    assert(unableToSendBudget != null);
+    assert(insufficientFundsInTrustedFunds != null);
+    assert(paymentWithMomoFailed != null);
+    assert(invalidDailyPayRate != null);
+    assert(invalidWeeklyPayRate != null);
+    assert(invalidMonthlyPayRate != null);
+    assert(invalidYearlyPayRate != null);
+    assert(unexpectedFieldInBudget != null);
+    assert(invalidNoDaysForYearlyPayRate != null);
+    assert(invalidNoDaysForWeeklyPayRate != null);
+    assert(invalidNoDaysForMonthlyPayRate != null);
+    assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
+    assert(unableToHideBudgetUntilUnlock != null);
+    assert(unableToDeleteCompleteBudget != null);
+    assert(unableToForceUnlock != null);
+    assert(unableToCashUnlock != null);
+    assert(timeOutOfSync != null);
+    assert(unableToUnlockBudgetPeriodically != null);
+    return userNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result unexpected(_Unexpected value),
+    Result insufficientPermissions(_InsufficientPermissions value),
+    Result unableToCreateBudget(_UnableToCreate value),
+    Result unableToSendBudget(_UnableToSendBudget value),
+    Result insufficientFundsInTrustedFunds(
+        _UnsufficientFundsInTrustedFunds value),
+    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result invalidDailyPayRate(_InvalidDailyPayRate value),
+    Result invalidWeeklyPayRate(_InvalidWeeklyPayRate value),
+    Result invalidMonthlyPayRate(_InvalidMonthlyPayRate value),
+    Result invalidYearlyPayRate(_InvalidYearlyPayRate value),
+    Result unexpectedFieldInBudget(_UnexpectedFieldInBudget value),
+    Result invalidNoDaysForYearlyPayRate(_InvalidNoDaysForYearlyPayRate value),
+    Result invalidNoDaysForWeeklyPayRate(_InvalidNoDaysForWeeklyPayRate value),
+    Result invalidNoDaysForMonthlyPayRate(
+        _InvalidNoDaysForMonthlyPayRate value),
+    Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
+    Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
+    Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
+    Result unableToForceUnlock(_UnableToForceUnlock value),
+    Result unableToCashUnlock(_UnableToCashUnlock value),
+    Result timeOutOfSync(_TimeOutOfSync value),
+    Result unableToUnlockBudgetPeriodically(_UnableToUnlockPeriodically value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (userNotFound != null) {
+      return userNotFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UserNotForm implements BudgetFailure {
+  const factory _UserNotForm() = _$_UserNotForm;
 }
 
 /// @nodoc
@@ -3689,6 +4016,7 @@ class _$_UnableToHideBudgetUntilUnlock
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -3711,6 +4039,7 @@ class _$_UnableToHideBudgetUntilUnlock
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -3738,6 +4067,7 @@ class _$_UnableToHideBudgetUntilUnlock
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -3781,6 +4111,7 @@ class _$_UnableToHideBudgetUntilUnlock
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -3809,6 +4140,7 @@ class _$_UnableToHideBudgetUntilUnlock
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -3838,6 +4170,7 @@ class _$_UnableToHideBudgetUntilUnlock
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -3916,6 +4249,7 @@ class _$_UnableToDeleteCompleteBudget implements _UnableToDeleteCompleteBudget {
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -3938,6 +4272,7 @@ class _$_UnableToDeleteCompleteBudget implements _UnableToDeleteCompleteBudget {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -3965,6 +4300,7 @@ class _$_UnableToDeleteCompleteBudget implements _UnableToDeleteCompleteBudget {
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -4008,6 +4344,7 @@ class _$_UnableToDeleteCompleteBudget implements _UnableToDeleteCompleteBudget {
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -4036,6 +4373,7 @@ class _$_UnableToDeleteCompleteBudget implements _UnableToDeleteCompleteBudget {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -4065,6 +4403,7 @@ class _$_UnableToDeleteCompleteBudget implements _UnableToDeleteCompleteBudget {
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -4140,6 +4479,7 @@ class _$_UnableToForceUnlock implements _UnableToForceUnlock {
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -4162,6 +4502,7 @@ class _$_UnableToForceUnlock implements _UnableToForceUnlock {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -4189,6 +4530,7 @@ class _$_UnableToForceUnlock implements _UnableToForceUnlock {
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -4232,6 +4574,7 @@ class _$_UnableToForceUnlock implements _UnableToForceUnlock {
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -4260,6 +4603,7 @@ class _$_UnableToForceUnlock implements _UnableToForceUnlock {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -4289,6 +4633,7 @@ class _$_UnableToForceUnlock implements _UnableToForceUnlock {
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -4363,6 +4708,7 @@ class _$_UnableToCashUnlock implements _UnableToCashUnlock {
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -4385,6 +4731,7 @@ class _$_UnableToCashUnlock implements _UnableToCashUnlock {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -4412,6 +4759,7 @@ class _$_UnableToCashUnlock implements _UnableToCashUnlock {
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -4455,6 +4803,7 @@ class _$_UnableToCashUnlock implements _UnableToCashUnlock {
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -4483,6 +4832,7 @@ class _$_UnableToCashUnlock implements _UnableToCashUnlock {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -4512,6 +4862,7 @@ class _$_UnableToCashUnlock implements _UnableToCashUnlock {
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -4586,6 +4937,7 @@ class _$_TimeOutOfSync implements _TimeOutOfSync {
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -4608,6 +4960,7 @@ class _$_TimeOutOfSync implements _TimeOutOfSync {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -4635,6 +4988,7 @@ class _$_TimeOutOfSync implements _TimeOutOfSync {
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -4678,6 +5032,7 @@ class _$_TimeOutOfSync implements _TimeOutOfSync {
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -4706,6 +5061,7 @@ class _$_TimeOutOfSync implements _TimeOutOfSync {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -4735,6 +5091,7 @@ class _$_TimeOutOfSync implements _TimeOutOfSync {
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
@@ -4811,6 +5168,7 @@ class _$_UnableToUnlockPeriodically implements _UnableToUnlockPeriodically {
     @required Result invalidNoDaysForWeeklyPayRate(),
     @required Result invalidNoDaysForMonthlyPayRate(),
     @required Result invalidNoDaysForDailyPayRate(),
+    @required Result userNotFound(),
     @required Result unableToHideBudgetUntilUnlock(),
     @required Result unableToDeleteCompleteBudget(),
     @required Result unableToForceUnlock(),
@@ -4833,6 +5191,7 @@ class _$_UnableToUnlockPeriodically implements _UnableToUnlockPeriodically {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -4860,6 +5219,7 @@ class _$_UnableToUnlockPeriodically implements _UnableToUnlockPeriodically {
     Result invalidNoDaysForWeeklyPayRate(),
     Result invalidNoDaysForMonthlyPayRate(),
     Result invalidNoDaysForDailyPayRate(),
+    Result userNotFound(),
     Result unableToHideBudgetUntilUnlock(),
     Result unableToDeleteCompleteBudget(),
     Result unableToForceUnlock(),
@@ -4903,6 +5263,7 @@ class _$_UnableToUnlockPeriodically implements _UnableToUnlockPeriodically {
     @required
         Result invalidNoDaysForDailyPayRate(
             _InvalidNoDaysForDailyPayRate value),
+    @required Result userNotFound(_UserNotForm value),
     @required
         Result unableToHideBudgetUntilUnlock(
             _UnableToHideBudgetUntilUnlock value),
@@ -4931,6 +5292,7 @@ class _$_UnableToUnlockPeriodically implements _UnableToUnlockPeriodically {
     assert(invalidNoDaysForWeeklyPayRate != null);
     assert(invalidNoDaysForMonthlyPayRate != null);
     assert(invalidNoDaysForDailyPayRate != null);
+    assert(userNotFound != null);
     assert(unableToHideBudgetUntilUnlock != null);
     assert(unableToDeleteCompleteBudget != null);
     assert(unableToForceUnlock != null);
@@ -4960,6 +5322,7 @@ class _$_UnableToUnlockPeriodically implements _UnableToUnlockPeriodically {
     Result invalidNoDaysForMonthlyPayRate(
         _InvalidNoDaysForMonthlyPayRate value),
     Result invalidNoDaysForDailyPayRate(_InvalidNoDaysForDailyPayRate value),
+    Result userNotFound(_UserNotForm value),
     Result unableToHideBudgetUntilUnlock(_UnableToHideBudgetUntilUnlock value),
     Result unableToDeleteCompleteBudget(_UnableToDeleteCompleteBudget value),
     Result unableToForceUnlock(_UnableToForceUnlock value),
