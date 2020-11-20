@@ -75,13 +75,13 @@ class TenflrPayCardTextStyle {
   static TextStyle number(Size size) => TextStyle(
         fontFamily: 'Apple Symbols',
         // color: TfColors.lightBlue,
-        color: TfColors.blue,
+        // color: TfColors.blue,
         fontSize: size.width * 0.03,
         // fontWeight: FontWeight.bold,
       );
   static TextStyle email(Size size) => TextStyle(
         fontFamily: 'Apple Symbols',
-        color: TfColors.blue,
+        // color: TfColors.blue,
         fontSize: size.width * 0.03,
         // fontWeight: FontWeight.bold,
       );
