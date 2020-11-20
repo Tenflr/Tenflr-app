@@ -18,6 +18,7 @@ abstract class BudgetFailure with _$BudgetFailure {
   const factory BudgetFailure.invalidNoDaysForWeeklyPayRate() = _InvalidNoDaysForWeeklyPayRate;
   const factory BudgetFailure.invalidNoDaysForMonthlyPayRate() = _InvalidNoDaysForMonthlyPayRate;
   const factory BudgetFailure.invalidNoDaysForDailyPayRate() = _InvalidNoDaysForDailyPayRate;
+  const factory BudgetFailure.userNotFound() = _UserNotForm;
 
   // Budget actor failures
   const factory BudgetFailure.unableToHideBudgetUntilUnlock() = _UnableToHideBudgetUntilUnlock;
