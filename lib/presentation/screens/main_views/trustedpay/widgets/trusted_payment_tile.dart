@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tenflrpay/application/main_views_bloc/main_views_bloc.dart';
 import 'package:tenflrpay/domain/core/settings.dart';
 import 'package:tenflrpay/domain/payment/payment.dart';
 
@@ -12,18 +14,7 @@ import '../../../../core/translations/translations.i18n.dart';
 class TrustedPaymentTile extends StatelessWidget {
   final Payment payment;
   final int index;
-  final String title;
-  final String subTitle;
-  final bool isSent;
-  final String dateTime;
-  const TrustedPaymentTile(
-      {this.isSent = false,
-      @required this.payment,
-      this.index,
-      this.dateTime = '15 Nov 2020',
-      this.subTitle = "user@gmail.com",
-      this.title = 'XAF 102,500.0',
-      Key key})
+  const TrustedPaymentTile({@required this.payment, this.index, Key key})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -35,23 +26,27 @@ class TrustedPaymentTile extends StatelessWidget {
 
     return Container(
       decoration: DefaultDecoration.all,
-      margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
       child: ListTile(
+          onTap: () {
+            context
+                .bloc<MainViewsBloc>()
+                .add(MainViewsEvent.trustedPayDetail(payment: payment));
+          },
           title: Text(
-            'XAF ${payment.amount.getOrCrash().toStringAsFixed(1)}' ??
-                title.i18n,
+            'XAF ${payment.amount.getOrCrash().toStringAsFixed(1)}',
             style: BudgetScreensStyle.tileTitle(size),
           ),
           subtitle: Text(
-            isSent
-                ? 'XAF ${payment.rPhoneNumber.getOrCrash()}'
-                : ' XAF ${payment.pPhoneNumber.getOrCrash()}',
+            !isSent
+                ? '${payment.rPhoneNumber.getOrCrash()}'
+                : '${payment.pPhoneNumber.getOrCrash()}',
             style: BudgetScreensStyle.tileSubTitle(size),
           ),
           trailing: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              isSent
+              !isSent
                   ? const Icon(
                       TfIcons.red_arrow_up,
                       color: TfColors.red,
