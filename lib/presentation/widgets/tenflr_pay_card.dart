@@ -1,20 +1,29 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
+import 'package:tenflrpay/application/trusted_funds_bloc/trusted_funds_bloc.dart';
 import 'package:tenflrpay/domain/user/user.dart';
 import 'package:tenflrpay/presentation/core/assets/images.dart';
+import 'package:tenflrpay/presentation/core/assets/svg.dart';
 import 'package:tenflrpay/presentation/core/styles/decorations.dart';
 
 import '../core/assets/colors.dart';
 import '../core/icons/TfIcons_icons.dart';
 import '../core/styles/text_styles.dart';
 import '../core/translations/translations.i18n.dart';
+import '../../routes/router.gr.dart';
 
 class TenflrPayCard extends StatelessWidget {
   const TenflrPayCard();
+  String get currency => "XAF";
+
   @override
   Widget build(BuildContext context) {
     final User user = Provider.of<User>(context, listen: false);
-
+    context.bloc<TrustedFundsBloc>().add(const TrustedFundsEvent.watchFunds());
     final Size size = MediaQuery.of(context).size;
     return Container(
       decoration: DefaultDecoration.all,
@@ -28,7 +37,12 @@ class TenflrPayCard extends StatelessWidget {
               // Icon(TfIcons.trustedpaylogo)
               Row(
                 children: [
-                  Image.asset(TfImages.tp_logo),
+                  SizedBox(
+                  height: 25,
+                  width: 25,
+                  child: SvgPicture.asset(TfSvg.tp_logo),
+                  ),
+                  // Image.asset(TfImages.tp_logo),
                   const SizedBox(width: 5),
                   Text(
                     "TenflrPay",
@@ -47,11 +61,54 @@ class TenflrPayCard extends StatelessWidget {
               )
             ],
           ),
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 15),
-            child: Text(
-              '3,459.8 XFA',
-              style: TenflrPayCardTextStyle.amount(size),
+          BlocConsumer<TrustedFundsBloc, TrustedFundsState>(
+            listenWhen: (p, c) {
+              final pAmount =
+                  p.maybeMap(orElse: () => null, loadSuccess: (e) => e.amount);
+              final cAmount =
+                  c.maybeMap(orElse: () => null, loadSuccess: (e) => e.amount);
+              return pAmount != cAmount;
+            },
+            listener: (context, state) {
+              state.maybeMap(
+                orElse: () => null,
+                loadFailure: (_) => FlushbarHelper.createError(
+                        message:
+                            'An Error occured getting your TrustedPay balance. Please contact support!!'
+                                .i18n)
+                    .show(context),
+              );
+            },
+            buildWhen: (p, c) {
+              final pAmount =
+                  p.maybeMap(orElse: () => null, loadSuccess: (e) => e.amount);
+              final cAmount =
+                  c.maybeMap(orElse: () => null, loadSuccess: (e) => e.amount);
+              return pAmount != cAmount;
+            },
+            builder: (context, state) => state.maybeMap(
+              initial: (s) => Text(
+                "$currency 0.0",
+                textAlign: TextAlign.center,
+                style: TenflrPayCardTextStyle.amount(size),
+              ),
+              loadSuccess: (s) => Padding(
+                padding: const EdgeInsets.symmetric(vertical: 15),
+                child: FittedBox(
+                  fit: BoxFit.fitWidth,
+                  child: Text(
+                    "$currency ${s.amount.getOrCrash().toStringAsFixed(1)}",
+                    textAlign: TextAlign.center,
+                    style: TenflrPayCardTextStyle.amount(size),
+                  ),
+                ),
+              ),
+              loadFailure: (s) => Text(
+                "$currency 0.0}",
+                textAlign: TextAlign.center,
+                style: TenflrPayCardTextStyle.amount(size),
+              ),
+              orElse: () => null,
             ),
           ),
           Row(
@@ -63,7 +120,9 @@ class TenflrPayCard extends StatelessWidget {
                 style: TenflrPayCardTextStyle.history(size),
               ),
               RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    ExtendedNavigator.of(context).pushDepositScreen(user:user);
+                  },
                   color: TfColors.secondary,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
