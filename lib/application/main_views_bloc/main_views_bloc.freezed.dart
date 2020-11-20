@@ -24,11 +24,6 @@ class _$MainViewsEventTearOff {
   }
 
 // ignore: unused_element
-  _SavingsInitPageE savingsInitPage() {
-    return const _SavingsInitPageE();
-  }
-
-// ignore: unused_element
   _SavingsDetailPageE savingsDetailPage(
       {@required Savings savings, @required int duration}) {
     return _SavingsDetailPageE(
@@ -38,28 +33,8 @@ class _$MainViewsEventTearOff {
   }
 
 // ignore: unused_element
-  _CreateNewSavingsPageE createNewSavingsPage() {
-    return const _CreateNewSavingsPageE();
-  }
-
-// ignore: unused_element
   _BudgetPageE budgetPage() {
     return const _BudgetPageE();
-  }
-
-// ignore: unused_element
-  _BudgetInitPageE budgetInitPage() {
-    return const _BudgetInitPageE();
-  }
-
-// ignore: unused_element
-  _BudgetAddPageE budgetAddPage() {
-    return const _BudgetAddPageE();
-  }
-
-// ignore: unused_element
-  _CreateNewBudgetPage createNewBudgetPage() {
-    return const _CreateNewBudgetPage();
   }
 
 // ignore: unused_element
@@ -70,11 +45,6 @@ class _$MainViewsEventTearOff {
   }
 
 // ignore: unused_element
-  _SendBudgetGiftPageE sendBudgetGiftPage() {
-    return const _SendBudgetGiftPageE();
-  }
-
-// ignore: unused_element
   _TrustedPayPageE trustedPayPage({@required String pin}) {
     return _TrustedPayPageE(
       pin: pin,
@@ -82,8 +52,10 @@ class _$MainViewsEventTearOff {
   }
 
 // ignore: unused_element
-  _MakeNewTrustedPaymentPageE makeNewTrustedPaymentPage() {
-    return const _MakeNewTrustedPaymentPageE();
+  _TtrustedPayDetail trustedPayDetail({@required Payment payment}) {
+    return _TtrustedPayDetail(
+      payment: payment,
+    );
   }
 
 // ignore: unused_element
@@ -107,17 +79,11 @@ mixin _$MainViewsEvent {
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result createNewSavingsPage(),
     @required Result budgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result createNewBudgetPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result trustedPayPage(String pin),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result trustedPayAuthCancel(),
     @required Result quickPaymentOverView(),
   });
@@ -125,17 +91,11 @@ mixin _$MainViewsEvent {
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
     Result savingsDetailPage(Savings savings, int duration),
-    Result createNewSavingsPage(),
     Result budgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result createNewBudgetPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result trustedPayPage(String pin),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result trustedPayAuthCancel(),
     Result quickPaymentOverView(),
     @required Result orElse(),
@@ -144,18 +104,11 @@ mixin _$MainViewsEvent {
   Result map<Result extends Object>({
     @required Result homePage(_HomePageE value),
     @required Result savingsPage(_SavingsPageE value),
-    @required Result savingsInitPage(_SavingsInitPageE value),
     @required Result savingsDetailPage(_SavingsDetailPageE value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPageE value),
     @required Result budgetPage(_BudgetPageE value),
-    @required Result budgetInitPage(_BudgetInitPageE value),
-    @required Result budgetAddPage(_BudgetAddPageE value),
-    @required Result createNewBudgetPage(_CreateNewBudgetPage value),
     @required Result budgetDetailPage(_BudgetDetailPageE value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     @required Result trustedPayPage(_TrustedPayPageE value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    @required Result trustedPayDetail(_TtrustedPayDetail value),
     @required Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     @required Result quickPaymentOverView(_QuickPaymentOverView value),
   });
@@ -163,17 +116,11 @@ mixin _$MainViewsEvent {
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePageE value),
     Result savingsPage(_SavingsPageE value),
-    Result savingsInitPage(_SavingsInitPageE value),
     Result savingsDetailPage(_SavingsDetailPageE value),
-    Result createNewSavingsPage(_CreateNewSavingsPageE value),
     Result budgetPage(_BudgetPageE value),
-    Result budgetInitPage(_BudgetInitPageE value),
-    Result budgetAddPage(_BudgetAddPageE value),
-    Result createNewBudgetPage(_CreateNewBudgetPage value),
     Result budgetDetailPage(_BudgetDetailPageE value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     Result trustedPayPage(_TrustedPayPageE value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    Result trustedPayDetail(_TtrustedPayDetail value),
     Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     Result quickPaymentOverView(_QuickPaymentOverView value),
     @required Result orElse(),
@@ -242,33 +189,21 @@ class _$_HomePageE with DiagnosticableTreeMixin implements _HomePageE {
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result createNewSavingsPage(),
     @required Result budgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result createNewBudgetPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result trustedPayPage(String pin),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result trustedPayAuthCancel(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
     return homePage();
@@ -279,17 +214,11 @@ class _$_HomePageE with DiagnosticableTreeMixin implements _HomePageE {
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
     Result savingsDetailPage(Savings savings, int duration),
-    Result createNewSavingsPage(),
     Result budgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result createNewBudgetPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result trustedPayPage(String pin),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result trustedPayAuthCancel(),
     Result quickPaymentOverView(),
     @required Result orElse(),
@@ -306,34 +235,21 @@ class _$_HomePageE with DiagnosticableTreeMixin implements _HomePageE {
   Result map<Result extends Object>({
     @required Result homePage(_HomePageE value),
     @required Result savingsPage(_SavingsPageE value),
-    @required Result savingsInitPage(_SavingsInitPageE value),
     @required Result savingsDetailPage(_SavingsDetailPageE value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPageE value),
     @required Result budgetPage(_BudgetPageE value),
-    @required Result budgetInitPage(_BudgetInitPageE value),
-    @required Result budgetAddPage(_BudgetAddPageE value),
-    @required Result createNewBudgetPage(_CreateNewBudgetPage value),
     @required Result budgetDetailPage(_BudgetDetailPageE value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     @required Result trustedPayPage(_TrustedPayPageE value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    @required Result trustedPayDetail(_TtrustedPayDetail value),
     @required Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     @required Result quickPaymentOverView(_QuickPaymentOverView value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
     return homePage(this);
@@ -344,17 +260,11 @@ class _$_HomePageE with DiagnosticableTreeMixin implements _HomePageE {
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePageE value),
     Result savingsPage(_SavingsPageE value),
-    Result savingsInitPage(_SavingsInitPageE value),
     Result savingsDetailPage(_SavingsDetailPageE value),
-    Result createNewSavingsPage(_CreateNewSavingsPageE value),
     Result budgetPage(_BudgetPageE value),
-    Result budgetInitPage(_BudgetInitPageE value),
-    Result budgetAddPage(_BudgetAddPageE value),
-    Result createNewBudgetPage(_CreateNewBudgetPage value),
     Result budgetDetailPage(_BudgetDetailPageE value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     Result trustedPayPage(_TrustedPayPageE value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    Result trustedPayDetail(_TtrustedPayDetail value),
     Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     Result quickPaymentOverView(_QuickPaymentOverView value),
     @required Result orElse(),
@@ -418,33 +328,21 @@ class _$_SavingsPageE with DiagnosticableTreeMixin implements _SavingsPageE {
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result createNewSavingsPage(),
     @required Result budgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result createNewBudgetPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result trustedPayPage(String pin),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result trustedPayAuthCancel(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
     return savingsPage();
@@ -455,17 +353,11 @@ class _$_SavingsPageE with DiagnosticableTreeMixin implements _SavingsPageE {
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
     Result savingsDetailPage(Savings savings, int duration),
-    Result createNewSavingsPage(),
     Result budgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result createNewBudgetPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result trustedPayPage(String pin),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result trustedPayAuthCancel(),
     Result quickPaymentOverView(),
     @required Result orElse(),
@@ -482,34 +374,21 @@ class _$_SavingsPageE with DiagnosticableTreeMixin implements _SavingsPageE {
   Result map<Result extends Object>({
     @required Result homePage(_HomePageE value),
     @required Result savingsPage(_SavingsPageE value),
-    @required Result savingsInitPage(_SavingsInitPageE value),
     @required Result savingsDetailPage(_SavingsDetailPageE value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPageE value),
     @required Result budgetPage(_BudgetPageE value),
-    @required Result budgetInitPage(_BudgetInitPageE value),
-    @required Result budgetAddPage(_BudgetAddPageE value),
-    @required Result createNewBudgetPage(_CreateNewBudgetPage value),
     @required Result budgetDetailPage(_BudgetDetailPageE value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     @required Result trustedPayPage(_TrustedPayPageE value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    @required Result trustedPayDetail(_TtrustedPayDetail value),
     @required Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     @required Result quickPaymentOverView(_QuickPaymentOverView value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
     return savingsPage(this);
@@ -520,17 +399,11 @@ class _$_SavingsPageE with DiagnosticableTreeMixin implements _SavingsPageE {
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePageE value),
     Result savingsPage(_SavingsPageE value),
-    Result savingsInitPage(_SavingsInitPageE value),
     Result savingsDetailPage(_SavingsDetailPageE value),
-    Result createNewSavingsPage(_CreateNewSavingsPageE value),
     Result budgetPage(_BudgetPageE value),
-    Result budgetInitPage(_BudgetInitPageE value),
-    Result budgetAddPage(_BudgetAddPageE value),
-    Result createNewBudgetPage(_CreateNewBudgetPage value),
     Result budgetDetailPage(_BudgetDetailPageE value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     Result trustedPayPage(_TrustedPayPageE value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    Result trustedPayDetail(_TtrustedPayDetail value),
     Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     Result quickPaymentOverView(_QuickPaymentOverView value),
     @required Result orElse(),
@@ -545,185 +418,6 @@ class _$_SavingsPageE with DiagnosticableTreeMixin implements _SavingsPageE {
 
 abstract class _SavingsPageE implements MainViewsEvent {
   const factory _SavingsPageE() = _$_SavingsPageE;
-}
-
-/// @nodoc
-abstract class _$SavingsInitPageECopyWith<$Res> {
-  factory _$SavingsInitPageECopyWith(
-          _SavingsInitPageE value, $Res Function(_SavingsInitPageE) then) =
-      __$SavingsInitPageECopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SavingsInitPageECopyWithImpl<$Res>
-    extends _$MainViewsEventCopyWithImpl<$Res>
-    implements _$SavingsInitPageECopyWith<$Res> {
-  __$SavingsInitPageECopyWithImpl(
-      _SavingsInitPageE _value, $Res Function(_SavingsInitPageE) _then)
-      : super(_value, (v) => _then(v as _SavingsInitPageE));
-
-  @override
-  _SavingsInitPageE get _value => super._value as _SavingsInitPageE;
-}
-
-/// @nodoc
-class _$_SavingsInitPageE
-    with DiagnosticableTreeMixin
-    implements _SavingsInitPageE {
-  const _$_SavingsInitPageE();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MainViewsEvent.savingsInitPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'MainViewsEvent.savingsInitPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SavingsInitPageE);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result homePage(),
-    @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result createNewSavingsPage(),
-    @required Result budgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
-    @required Result trustedPayPage(String pin),
-    @required Result makeNewTrustedPaymentPage(),
-    @required Result trustedPayAuthCancel(),
-    @required Result quickPaymentOverView(),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
-    assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(trustedPayAuthCancel != null);
-    assert(quickPaymentOverView != null);
-    return savingsInitPage();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result homePage(),
-    Result savingsPage(),
-    Result savingsInitPage(),
-    Result savingsDetailPage(Savings savings, int duration),
-    Result createNewSavingsPage(),
-    Result budgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result createNewBudgetPage(),
-    Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
-    Result trustedPayPage(String pin),
-    Result makeNewTrustedPaymentPage(),
-    Result trustedPayAuthCancel(),
-    Result quickPaymentOverView(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (savingsInitPage != null) {
-      return savingsInitPage();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result homePage(_HomePageE value),
-    @required Result savingsPage(_SavingsPageE value),
-    @required Result savingsInitPage(_SavingsInitPageE value),
-    @required Result savingsDetailPage(_SavingsDetailPageE value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPageE value),
-    @required Result budgetPage(_BudgetPageE value),
-    @required Result budgetInitPage(_BudgetInitPageE value),
-    @required Result budgetAddPage(_BudgetAddPageE value),
-    @required Result createNewBudgetPage(_CreateNewBudgetPage value),
-    @required Result budgetDetailPage(_BudgetDetailPageE value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
-    @required Result trustedPayPage(_TrustedPayPageE value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
-    @required Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
-    @required Result quickPaymentOverView(_QuickPaymentOverView value),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
-    assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(trustedPayAuthCancel != null);
-    assert(quickPaymentOverView != null);
-    return savingsInitPage(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result homePage(_HomePageE value),
-    Result savingsPage(_SavingsPageE value),
-    Result savingsInitPage(_SavingsInitPageE value),
-    Result savingsDetailPage(_SavingsDetailPageE value),
-    Result createNewSavingsPage(_CreateNewSavingsPageE value),
-    Result budgetPage(_BudgetPageE value),
-    Result budgetInitPage(_BudgetInitPageE value),
-    Result budgetAddPage(_BudgetAddPageE value),
-    Result createNewBudgetPage(_CreateNewBudgetPage value),
-    Result budgetDetailPage(_BudgetDetailPageE value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
-    Result trustedPayPage(_TrustedPayPageE value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
-    Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
-    Result quickPaymentOverView(_QuickPaymentOverView value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (savingsInitPage != null) {
-      return savingsInitPage(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SavingsInitPageE implements MainViewsEvent {
-  const factory _SavingsInitPageE() = _$_SavingsInitPageE;
 }
 
 /// @nodoc
@@ -823,33 +517,21 @@ class _$_SavingsDetailPageE
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result createNewSavingsPage(),
     @required Result budgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result createNewBudgetPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result trustedPayPage(String pin),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result trustedPayAuthCancel(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
     return savingsDetailPage(savings, duration);
@@ -860,17 +542,11 @@ class _$_SavingsDetailPageE
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
     Result savingsDetailPage(Savings savings, int duration),
-    Result createNewSavingsPage(),
     Result budgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result createNewBudgetPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result trustedPayPage(String pin),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result trustedPayAuthCancel(),
     Result quickPaymentOverView(),
     @required Result orElse(),
@@ -887,34 +563,21 @@ class _$_SavingsDetailPageE
   Result map<Result extends Object>({
     @required Result homePage(_HomePageE value),
     @required Result savingsPage(_SavingsPageE value),
-    @required Result savingsInitPage(_SavingsInitPageE value),
     @required Result savingsDetailPage(_SavingsDetailPageE value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPageE value),
     @required Result budgetPage(_BudgetPageE value),
-    @required Result budgetInitPage(_BudgetInitPageE value),
-    @required Result budgetAddPage(_BudgetAddPageE value),
-    @required Result createNewBudgetPage(_CreateNewBudgetPage value),
     @required Result budgetDetailPage(_BudgetDetailPageE value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     @required Result trustedPayPage(_TrustedPayPageE value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    @required Result trustedPayDetail(_TtrustedPayDetail value),
     @required Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     @required Result quickPaymentOverView(_QuickPaymentOverView value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
     return savingsDetailPage(this);
@@ -925,17 +588,11 @@ class _$_SavingsDetailPageE
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePageE value),
     Result savingsPage(_SavingsPageE value),
-    Result savingsInitPage(_SavingsInitPageE value),
     Result savingsDetailPage(_SavingsDetailPageE value),
-    Result createNewSavingsPage(_CreateNewSavingsPageE value),
     Result budgetPage(_BudgetPageE value),
-    Result budgetInitPage(_BudgetInitPageE value),
-    Result budgetAddPage(_BudgetAddPageE value),
-    Result createNewBudgetPage(_CreateNewBudgetPage value),
     Result budgetDetailPage(_BudgetDetailPageE value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     Result trustedPayPage(_TrustedPayPageE value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    Result trustedPayDetail(_TtrustedPayDetail value),
     Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     Result quickPaymentOverView(_QuickPaymentOverView value),
     @required Result orElse(),
@@ -956,185 +613,6 @@ abstract class _SavingsDetailPageE implements MainViewsEvent {
   Savings get savings;
   int get duration;
   _$SavingsDetailPageECopyWith<_SavingsDetailPageE> get copyWith;
-}
-
-/// @nodoc
-abstract class _$CreateNewSavingsPageECopyWith<$Res> {
-  factory _$CreateNewSavingsPageECopyWith(_CreateNewSavingsPageE value,
-          $Res Function(_CreateNewSavingsPageE) then) =
-      __$CreateNewSavingsPageECopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$CreateNewSavingsPageECopyWithImpl<$Res>
-    extends _$MainViewsEventCopyWithImpl<$Res>
-    implements _$CreateNewSavingsPageECopyWith<$Res> {
-  __$CreateNewSavingsPageECopyWithImpl(_CreateNewSavingsPageE _value,
-      $Res Function(_CreateNewSavingsPageE) _then)
-      : super(_value, (v) => _then(v as _CreateNewSavingsPageE));
-
-  @override
-  _CreateNewSavingsPageE get _value => super._value as _CreateNewSavingsPageE;
-}
-
-/// @nodoc
-class _$_CreateNewSavingsPageE
-    with DiagnosticableTreeMixin
-    implements _CreateNewSavingsPageE {
-  const _$_CreateNewSavingsPageE();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MainViewsEvent.createNewSavingsPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'MainViewsEvent.createNewSavingsPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _CreateNewSavingsPageE);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result homePage(),
-    @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result createNewSavingsPage(),
-    @required Result budgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
-    @required Result trustedPayPage(String pin),
-    @required Result makeNewTrustedPaymentPage(),
-    @required Result trustedPayAuthCancel(),
-    @required Result quickPaymentOverView(),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
-    assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(trustedPayAuthCancel != null);
-    assert(quickPaymentOverView != null);
-    return createNewSavingsPage();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result homePage(),
-    Result savingsPage(),
-    Result savingsInitPage(),
-    Result savingsDetailPage(Savings savings, int duration),
-    Result createNewSavingsPage(),
-    Result budgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result createNewBudgetPage(),
-    Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
-    Result trustedPayPage(String pin),
-    Result makeNewTrustedPaymentPage(),
-    Result trustedPayAuthCancel(),
-    Result quickPaymentOverView(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (createNewSavingsPage != null) {
-      return createNewSavingsPage();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result homePage(_HomePageE value),
-    @required Result savingsPage(_SavingsPageE value),
-    @required Result savingsInitPage(_SavingsInitPageE value),
-    @required Result savingsDetailPage(_SavingsDetailPageE value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPageE value),
-    @required Result budgetPage(_BudgetPageE value),
-    @required Result budgetInitPage(_BudgetInitPageE value),
-    @required Result budgetAddPage(_BudgetAddPageE value),
-    @required Result createNewBudgetPage(_CreateNewBudgetPage value),
-    @required Result budgetDetailPage(_BudgetDetailPageE value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
-    @required Result trustedPayPage(_TrustedPayPageE value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
-    @required Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
-    @required Result quickPaymentOverView(_QuickPaymentOverView value),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
-    assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(trustedPayAuthCancel != null);
-    assert(quickPaymentOverView != null);
-    return createNewSavingsPage(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result homePage(_HomePageE value),
-    Result savingsPage(_SavingsPageE value),
-    Result savingsInitPage(_SavingsInitPageE value),
-    Result savingsDetailPage(_SavingsDetailPageE value),
-    Result createNewSavingsPage(_CreateNewSavingsPageE value),
-    Result budgetPage(_BudgetPageE value),
-    Result budgetInitPage(_BudgetInitPageE value),
-    Result budgetAddPage(_BudgetAddPageE value),
-    Result createNewBudgetPage(_CreateNewBudgetPage value),
-    Result budgetDetailPage(_BudgetDetailPageE value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
-    Result trustedPayPage(_TrustedPayPageE value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
-    Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
-    Result quickPaymentOverView(_QuickPaymentOverView value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (createNewSavingsPage != null) {
-      return createNewSavingsPage(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CreateNewSavingsPageE implements MainViewsEvent {
-  const factory _CreateNewSavingsPageE() = _$_CreateNewSavingsPageE;
 }
 
 /// @nodoc
@@ -1184,33 +662,21 @@ class _$_BudgetPageE with DiagnosticableTreeMixin implements _BudgetPageE {
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result createNewSavingsPage(),
     @required Result budgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result createNewBudgetPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result trustedPayPage(String pin),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result trustedPayAuthCancel(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
     return budgetPage();
@@ -1221,17 +687,11 @@ class _$_BudgetPageE with DiagnosticableTreeMixin implements _BudgetPageE {
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
     Result savingsDetailPage(Savings savings, int duration),
-    Result createNewSavingsPage(),
     Result budgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result createNewBudgetPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result trustedPayPage(String pin),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result trustedPayAuthCancel(),
     Result quickPaymentOverView(),
     @required Result orElse(),
@@ -1248,34 +708,21 @@ class _$_BudgetPageE with DiagnosticableTreeMixin implements _BudgetPageE {
   Result map<Result extends Object>({
     @required Result homePage(_HomePageE value),
     @required Result savingsPage(_SavingsPageE value),
-    @required Result savingsInitPage(_SavingsInitPageE value),
     @required Result savingsDetailPage(_SavingsDetailPageE value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPageE value),
     @required Result budgetPage(_BudgetPageE value),
-    @required Result budgetInitPage(_BudgetInitPageE value),
-    @required Result budgetAddPage(_BudgetAddPageE value),
-    @required Result createNewBudgetPage(_CreateNewBudgetPage value),
     @required Result budgetDetailPage(_BudgetDetailPageE value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     @required Result trustedPayPage(_TrustedPayPageE value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    @required Result trustedPayDetail(_TtrustedPayDetail value),
     @required Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     @required Result quickPaymentOverView(_QuickPaymentOverView value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
     return budgetPage(this);
@@ -1286,17 +733,11 @@ class _$_BudgetPageE with DiagnosticableTreeMixin implements _BudgetPageE {
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePageE value),
     Result savingsPage(_SavingsPageE value),
-    Result savingsInitPage(_SavingsInitPageE value),
     Result savingsDetailPage(_SavingsDetailPageE value),
-    Result createNewSavingsPage(_CreateNewSavingsPageE value),
     Result budgetPage(_BudgetPageE value),
-    Result budgetInitPage(_BudgetInitPageE value),
-    Result budgetAddPage(_BudgetAddPageE value),
-    Result createNewBudgetPage(_CreateNewBudgetPage value),
     Result budgetDetailPage(_BudgetDetailPageE value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     Result trustedPayPage(_TrustedPayPageE value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    Result trustedPayDetail(_TtrustedPayDetail value),
     Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     Result quickPaymentOverView(_QuickPaymentOverView value),
     @required Result orElse(),
@@ -1311,543 +752,6 @@ class _$_BudgetPageE with DiagnosticableTreeMixin implements _BudgetPageE {
 
 abstract class _BudgetPageE implements MainViewsEvent {
   const factory _BudgetPageE() = _$_BudgetPageE;
-}
-
-/// @nodoc
-abstract class _$BudgetInitPageECopyWith<$Res> {
-  factory _$BudgetInitPageECopyWith(
-          _BudgetInitPageE value, $Res Function(_BudgetInitPageE) then) =
-      __$BudgetInitPageECopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$BudgetInitPageECopyWithImpl<$Res>
-    extends _$MainViewsEventCopyWithImpl<$Res>
-    implements _$BudgetInitPageECopyWith<$Res> {
-  __$BudgetInitPageECopyWithImpl(
-      _BudgetInitPageE _value, $Res Function(_BudgetInitPageE) _then)
-      : super(_value, (v) => _then(v as _BudgetInitPageE));
-
-  @override
-  _BudgetInitPageE get _value => super._value as _BudgetInitPageE;
-}
-
-/// @nodoc
-class _$_BudgetInitPageE
-    with DiagnosticableTreeMixin
-    implements _BudgetInitPageE {
-  const _$_BudgetInitPageE();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MainViewsEvent.budgetInitPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'MainViewsEvent.budgetInitPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _BudgetInitPageE);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result homePage(),
-    @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result createNewSavingsPage(),
-    @required Result budgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
-    @required Result trustedPayPage(String pin),
-    @required Result makeNewTrustedPaymentPage(),
-    @required Result trustedPayAuthCancel(),
-    @required Result quickPaymentOverView(),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
-    assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(trustedPayAuthCancel != null);
-    assert(quickPaymentOverView != null);
-    return budgetInitPage();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result homePage(),
-    Result savingsPage(),
-    Result savingsInitPage(),
-    Result savingsDetailPage(Savings savings, int duration),
-    Result createNewSavingsPage(),
-    Result budgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result createNewBudgetPage(),
-    Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
-    Result trustedPayPage(String pin),
-    Result makeNewTrustedPaymentPage(),
-    Result trustedPayAuthCancel(),
-    Result quickPaymentOverView(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (budgetInitPage != null) {
-      return budgetInitPage();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result homePage(_HomePageE value),
-    @required Result savingsPage(_SavingsPageE value),
-    @required Result savingsInitPage(_SavingsInitPageE value),
-    @required Result savingsDetailPage(_SavingsDetailPageE value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPageE value),
-    @required Result budgetPage(_BudgetPageE value),
-    @required Result budgetInitPage(_BudgetInitPageE value),
-    @required Result budgetAddPage(_BudgetAddPageE value),
-    @required Result createNewBudgetPage(_CreateNewBudgetPage value),
-    @required Result budgetDetailPage(_BudgetDetailPageE value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
-    @required Result trustedPayPage(_TrustedPayPageE value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
-    @required Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
-    @required Result quickPaymentOverView(_QuickPaymentOverView value),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
-    assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(trustedPayAuthCancel != null);
-    assert(quickPaymentOverView != null);
-    return budgetInitPage(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result homePage(_HomePageE value),
-    Result savingsPage(_SavingsPageE value),
-    Result savingsInitPage(_SavingsInitPageE value),
-    Result savingsDetailPage(_SavingsDetailPageE value),
-    Result createNewSavingsPage(_CreateNewSavingsPageE value),
-    Result budgetPage(_BudgetPageE value),
-    Result budgetInitPage(_BudgetInitPageE value),
-    Result budgetAddPage(_BudgetAddPageE value),
-    Result createNewBudgetPage(_CreateNewBudgetPage value),
-    Result budgetDetailPage(_BudgetDetailPageE value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
-    Result trustedPayPage(_TrustedPayPageE value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
-    Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
-    Result quickPaymentOverView(_QuickPaymentOverView value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (budgetInitPage != null) {
-      return budgetInitPage(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _BudgetInitPageE implements MainViewsEvent {
-  const factory _BudgetInitPageE() = _$_BudgetInitPageE;
-}
-
-/// @nodoc
-abstract class _$BudgetAddPageECopyWith<$Res> {
-  factory _$BudgetAddPageECopyWith(
-          _BudgetAddPageE value, $Res Function(_BudgetAddPageE) then) =
-      __$BudgetAddPageECopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$BudgetAddPageECopyWithImpl<$Res>
-    extends _$MainViewsEventCopyWithImpl<$Res>
-    implements _$BudgetAddPageECopyWith<$Res> {
-  __$BudgetAddPageECopyWithImpl(
-      _BudgetAddPageE _value, $Res Function(_BudgetAddPageE) _then)
-      : super(_value, (v) => _then(v as _BudgetAddPageE));
-
-  @override
-  _BudgetAddPageE get _value => super._value as _BudgetAddPageE;
-}
-
-/// @nodoc
-class _$_BudgetAddPageE
-    with DiagnosticableTreeMixin
-    implements _BudgetAddPageE {
-  const _$_BudgetAddPageE();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MainViewsEvent.budgetAddPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'MainViewsEvent.budgetAddPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _BudgetAddPageE);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result homePage(),
-    @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result createNewSavingsPage(),
-    @required Result budgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
-    @required Result trustedPayPage(String pin),
-    @required Result makeNewTrustedPaymentPage(),
-    @required Result trustedPayAuthCancel(),
-    @required Result quickPaymentOverView(),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
-    assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(trustedPayAuthCancel != null);
-    assert(quickPaymentOverView != null);
-    return budgetAddPage();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result homePage(),
-    Result savingsPage(),
-    Result savingsInitPage(),
-    Result savingsDetailPage(Savings savings, int duration),
-    Result createNewSavingsPage(),
-    Result budgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result createNewBudgetPage(),
-    Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
-    Result trustedPayPage(String pin),
-    Result makeNewTrustedPaymentPage(),
-    Result trustedPayAuthCancel(),
-    Result quickPaymentOverView(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (budgetAddPage != null) {
-      return budgetAddPage();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result homePage(_HomePageE value),
-    @required Result savingsPage(_SavingsPageE value),
-    @required Result savingsInitPage(_SavingsInitPageE value),
-    @required Result savingsDetailPage(_SavingsDetailPageE value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPageE value),
-    @required Result budgetPage(_BudgetPageE value),
-    @required Result budgetInitPage(_BudgetInitPageE value),
-    @required Result budgetAddPage(_BudgetAddPageE value),
-    @required Result createNewBudgetPage(_CreateNewBudgetPage value),
-    @required Result budgetDetailPage(_BudgetDetailPageE value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
-    @required Result trustedPayPage(_TrustedPayPageE value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
-    @required Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
-    @required Result quickPaymentOverView(_QuickPaymentOverView value),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
-    assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(trustedPayAuthCancel != null);
-    assert(quickPaymentOverView != null);
-    return budgetAddPage(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result homePage(_HomePageE value),
-    Result savingsPage(_SavingsPageE value),
-    Result savingsInitPage(_SavingsInitPageE value),
-    Result savingsDetailPage(_SavingsDetailPageE value),
-    Result createNewSavingsPage(_CreateNewSavingsPageE value),
-    Result budgetPage(_BudgetPageE value),
-    Result budgetInitPage(_BudgetInitPageE value),
-    Result budgetAddPage(_BudgetAddPageE value),
-    Result createNewBudgetPage(_CreateNewBudgetPage value),
-    Result budgetDetailPage(_BudgetDetailPageE value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
-    Result trustedPayPage(_TrustedPayPageE value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
-    Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
-    Result quickPaymentOverView(_QuickPaymentOverView value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (budgetAddPage != null) {
-      return budgetAddPage(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _BudgetAddPageE implements MainViewsEvent {
-  const factory _BudgetAddPageE() = _$_BudgetAddPageE;
-}
-
-/// @nodoc
-abstract class _$CreateNewBudgetPageCopyWith<$Res> {
-  factory _$CreateNewBudgetPageCopyWith(_CreateNewBudgetPage value,
-          $Res Function(_CreateNewBudgetPage) then) =
-      __$CreateNewBudgetPageCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$CreateNewBudgetPageCopyWithImpl<$Res>
-    extends _$MainViewsEventCopyWithImpl<$Res>
-    implements _$CreateNewBudgetPageCopyWith<$Res> {
-  __$CreateNewBudgetPageCopyWithImpl(
-      _CreateNewBudgetPage _value, $Res Function(_CreateNewBudgetPage) _then)
-      : super(_value, (v) => _then(v as _CreateNewBudgetPage));
-
-  @override
-  _CreateNewBudgetPage get _value => super._value as _CreateNewBudgetPage;
-}
-
-/// @nodoc
-class _$_CreateNewBudgetPage
-    with DiagnosticableTreeMixin
-    implements _CreateNewBudgetPage {
-  const _$_CreateNewBudgetPage();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MainViewsEvent.createNewBudgetPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'MainViewsEvent.createNewBudgetPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _CreateNewBudgetPage);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result homePage(),
-    @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result createNewSavingsPage(),
-    @required Result budgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
-    @required Result trustedPayPage(String pin),
-    @required Result makeNewTrustedPaymentPage(),
-    @required Result trustedPayAuthCancel(),
-    @required Result quickPaymentOverView(),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
-    assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(trustedPayAuthCancel != null);
-    assert(quickPaymentOverView != null);
-    return createNewBudgetPage();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result homePage(),
-    Result savingsPage(),
-    Result savingsInitPage(),
-    Result savingsDetailPage(Savings savings, int duration),
-    Result createNewSavingsPage(),
-    Result budgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result createNewBudgetPage(),
-    Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
-    Result trustedPayPage(String pin),
-    Result makeNewTrustedPaymentPage(),
-    Result trustedPayAuthCancel(),
-    Result quickPaymentOverView(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (createNewBudgetPage != null) {
-      return createNewBudgetPage();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result homePage(_HomePageE value),
-    @required Result savingsPage(_SavingsPageE value),
-    @required Result savingsInitPage(_SavingsInitPageE value),
-    @required Result savingsDetailPage(_SavingsDetailPageE value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPageE value),
-    @required Result budgetPage(_BudgetPageE value),
-    @required Result budgetInitPage(_BudgetInitPageE value),
-    @required Result budgetAddPage(_BudgetAddPageE value),
-    @required Result createNewBudgetPage(_CreateNewBudgetPage value),
-    @required Result budgetDetailPage(_BudgetDetailPageE value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
-    @required Result trustedPayPage(_TrustedPayPageE value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
-    @required Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
-    @required Result quickPaymentOverView(_QuickPaymentOverView value),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
-    assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(trustedPayAuthCancel != null);
-    assert(quickPaymentOverView != null);
-    return createNewBudgetPage(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result homePage(_HomePageE value),
-    Result savingsPage(_SavingsPageE value),
-    Result savingsInitPage(_SavingsInitPageE value),
-    Result savingsDetailPage(_SavingsDetailPageE value),
-    Result createNewSavingsPage(_CreateNewSavingsPageE value),
-    Result budgetPage(_BudgetPageE value),
-    Result budgetInitPage(_BudgetInitPageE value),
-    Result budgetAddPage(_BudgetAddPageE value),
-    Result createNewBudgetPage(_CreateNewBudgetPage value),
-    Result budgetDetailPage(_BudgetDetailPageE value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
-    Result trustedPayPage(_TrustedPayPageE value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
-    Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
-    Result quickPaymentOverView(_QuickPaymentOverView value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (createNewBudgetPage != null) {
-      return createNewBudgetPage(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CreateNewBudgetPage implements MainViewsEvent {
-  const factory _CreateNewBudgetPage() = _$_CreateNewBudgetPage;
 }
 
 /// @nodoc
@@ -1934,33 +838,21 @@ class _$_BudgetDetailPageE
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result createNewSavingsPage(),
     @required Result budgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result createNewBudgetPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result trustedPayPage(String pin),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result trustedPayAuthCancel(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
     return budgetDetailPage(budget);
@@ -1971,17 +863,11 @@ class _$_BudgetDetailPageE
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
     Result savingsDetailPage(Savings savings, int duration),
-    Result createNewSavingsPage(),
     Result budgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result createNewBudgetPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result trustedPayPage(String pin),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result trustedPayAuthCancel(),
     Result quickPaymentOverView(),
     @required Result orElse(),
@@ -1998,34 +884,21 @@ class _$_BudgetDetailPageE
   Result map<Result extends Object>({
     @required Result homePage(_HomePageE value),
     @required Result savingsPage(_SavingsPageE value),
-    @required Result savingsInitPage(_SavingsInitPageE value),
     @required Result savingsDetailPage(_SavingsDetailPageE value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPageE value),
     @required Result budgetPage(_BudgetPageE value),
-    @required Result budgetInitPage(_BudgetInitPageE value),
-    @required Result budgetAddPage(_BudgetAddPageE value),
-    @required Result createNewBudgetPage(_CreateNewBudgetPage value),
     @required Result budgetDetailPage(_BudgetDetailPageE value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     @required Result trustedPayPage(_TrustedPayPageE value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    @required Result trustedPayDetail(_TtrustedPayDetail value),
     @required Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     @required Result quickPaymentOverView(_QuickPaymentOverView value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
     return budgetDetailPage(this);
@@ -2036,17 +909,11 @@ class _$_BudgetDetailPageE
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePageE value),
     Result savingsPage(_SavingsPageE value),
-    Result savingsInitPage(_SavingsInitPageE value),
     Result savingsDetailPage(_SavingsDetailPageE value),
-    Result createNewSavingsPage(_CreateNewSavingsPageE value),
     Result budgetPage(_BudgetPageE value),
-    Result budgetInitPage(_BudgetInitPageE value),
-    Result budgetAddPage(_BudgetAddPageE value),
-    Result createNewBudgetPage(_CreateNewBudgetPage value),
     Result budgetDetailPage(_BudgetDetailPageE value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     Result trustedPayPage(_TrustedPayPageE value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    Result trustedPayDetail(_TtrustedPayDetail value),
     Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     Result quickPaymentOverView(_QuickPaymentOverView value),
     @required Result orElse(),
@@ -2065,185 +932,6 @@ abstract class _BudgetDetailPageE implements MainViewsEvent {
 
   Budget get budget;
   _$BudgetDetailPageECopyWith<_BudgetDetailPageE> get copyWith;
-}
-
-/// @nodoc
-abstract class _$SendBudgetGiftPageECopyWith<$Res> {
-  factory _$SendBudgetGiftPageECopyWith(_SendBudgetGiftPageE value,
-          $Res Function(_SendBudgetGiftPageE) then) =
-      __$SendBudgetGiftPageECopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SendBudgetGiftPageECopyWithImpl<$Res>
-    extends _$MainViewsEventCopyWithImpl<$Res>
-    implements _$SendBudgetGiftPageECopyWith<$Res> {
-  __$SendBudgetGiftPageECopyWithImpl(
-      _SendBudgetGiftPageE _value, $Res Function(_SendBudgetGiftPageE) _then)
-      : super(_value, (v) => _then(v as _SendBudgetGiftPageE));
-
-  @override
-  _SendBudgetGiftPageE get _value => super._value as _SendBudgetGiftPageE;
-}
-
-/// @nodoc
-class _$_SendBudgetGiftPageE
-    with DiagnosticableTreeMixin
-    implements _SendBudgetGiftPageE {
-  const _$_SendBudgetGiftPageE();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MainViewsEvent.sendBudgetGiftPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'MainViewsEvent.sendBudgetGiftPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SendBudgetGiftPageE);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result homePage(),
-    @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result createNewSavingsPage(),
-    @required Result budgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
-    @required Result trustedPayPage(String pin),
-    @required Result makeNewTrustedPaymentPage(),
-    @required Result trustedPayAuthCancel(),
-    @required Result quickPaymentOverView(),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
-    assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(trustedPayAuthCancel != null);
-    assert(quickPaymentOverView != null);
-    return sendBudgetGiftPage();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result homePage(),
-    Result savingsPage(),
-    Result savingsInitPage(),
-    Result savingsDetailPage(Savings savings, int duration),
-    Result createNewSavingsPage(),
-    Result budgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result createNewBudgetPage(),
-    Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
-    Result trustedPayPage(String pin),
-    Result makeNewTrustedPaymentPage(),
-    Result trustedPayAuthCancel(),
-    Result quickPaymentOverView(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (sendBudgetGiftPage != null) {
-      return sendBudgetGiftPage();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result homePage(_HomePageE value),
-    @required Result savingsPage(_SavingsPageE value),
-    @required Result savingsInitPage(_SavingsInitPageE value),
-    @required Result savingsDetailPage(_SavingsDetailPageE value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPageE value),
-    @required Result budgetPage(_BudgetPageE value),
-    @required Result budgetInitPage(_BudgetInitPageE value),
-    @required Result budgetAddPage(_BudgetAddPageE value),
-    @required Result createNewBudgetPage(_CreateNewBudgetPage value),
-    @required Result budgetDetailPage(_BudgetDetailPageE value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
-    @required Result trustedPayPage(_TrustedPayPageE value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
-    @required Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
-    @required Result quickPaymentOverView(_QuickPaymentOverView value),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
-    assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(trustedPayAuthCancel != null);
-    assert(quickPaymentOverView != null);
-    return sendBudgetGiftPage(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result homePage(_HomePageE value),
-    Result savingsPage(_SavingsPageE value),
-    Result savingsInitPage(_SavingsInitPageE value),
-    Result savingsDetailPage(_SavingsDetailPageE value),
-    Result createNewSavingsPage(_CreateNewSavingsPageE value),
-    Result budgetPage(_BudgetPageE value),
-    Result budgetInitPage(_BudgetInitPageE value),
-    Result budgetAddPage(_BudgetAddPageE value),
-    Result createNewBudgetPage(_CreateNewBudgetPage value),
-    Result budgetDetailPage(_BudgetDetailPageE value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
-    Result trustedPayPage(_TrustedPayPageE value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
-    Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
-    Result quickPaymentOverView(_QuickPaymentOverView value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (sendBudgetGiftPage != null) {
-      return sendBudgetGiftPage(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SendBudgetGiftPageE implements MainViewsEvent {
-  const factory _SendBudgetGiftPageE() = _$_SendBudgetGiftPageE;
 }
 
 /// @nodoc
@@ -2318,33 +1006,21 @@ class _$_TrustedPayPageE
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result createNewSavingsPage(),
     @required Result budgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result createNewBudgetPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result trustedPayPage(String pin),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result trustedPayAuthCancel(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
     return trustedPayPage(pin);
@@ -2355,17 +1031,11 @@ class _$_TrustedPayPageE
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
     Result savingsDetailPage(Savings savings, int duration),
-    Result createNewSavingsPage(),
     Result budgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result createNewBudgetPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result trustedPayPage(String pin),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result trustedPayAuthCancel(),
     Result quickPaymentOverView(),
     @required Result orElse(),
@@ -2382,34 +1052,21 @@ class _$_TrustedPayPageE
   Result map<Result extends Object>({
     @required Result homePage(_HomePageE value),
     @required Result savingsPage(_SavingsPageE value),
-    @required Result savingsInitPage(_SavingsInitPageE value),
     @required Result savingsDetailPage(_SavingsDetailPageE value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPageE value),
     @required Result budgetPage(_BudgetPageE value),
-    @required Result budgetInitPage(_BudgetInitPageE value),
-    @required Result budgetAddPage(_BudgetAddPageE value),
-    @required Result createNewBudgetPage(_CreateNewBudgetPage value),
     @required Result budgetDetailPage(_BudgetDetailPageE value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     @required Result trustedPayPage(_TrustedPayPageE value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    @required Result trustedPayDetail(_TtrustedPayDetail value),
     @required Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     @required Result quickPaymentOverView(_QuickPaymentOverView value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
     return trustedPayPage(this);
@@ -2420,17 +1077,11 @@ class _$_TrustedPayPageE
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePageE value),
     Result savingsPage(_SavingsPageE value),
-    Result savingsInitPage(_SavingsInitPageE value),
     Result savingsDetailPage(_SavingsDetailPageE value),
-    Result createNewSavingsPage(_CreateNewSavingsPageE value),
     Result budgetPage(_BudgetPageE value),
-    Result budgetInitPage(_BudgetInitPageE value),
-    Result budgetAddPage(_BudgetAddPageE value),
-    Result createNewBudgetPage(_CreateNewBudgetPage value),
     Result budgetDetailPage(_BudgetDetailPageE value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     Result trustedPayPage(_TrustedPayPageE value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    Result trustedPayDetail(_TtrustedPayDetail value),
     Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     Result quickPaymentOverView(_QuickPaymentOverView value),
     @required Result orElse(),
@@ -2451,88 +1102,108 @@ abstract class _TrustedPayPageE implements MainViewsEvent {
 }
 
 /// @nodoc
-abstract class _$MakeNewTrustedPaymentPageECopyWith<$Res> {
-  factory _$MakeNewTrustedPaymentPageECopyWith(
-          _MakeNewTrustedPaymentPageE value,
-          $Res Function(_MakeNewTrustedPaymentPageE) then) =
-      __$MakeNewTrustedPaymentPageECopyWithImpl<$Res>;
+abstract class _$TtrustedPayDetailCopyWith<$Res> {
+  factory _$TtrustedPayDetailCopyWith(
+          _TtrustedPayDetail value, $Res Function(_TtrustedPayDetail) then) =
+      __$TtrustedPayDetailCopyWithImpl<$Res>;
+  $Res call({Payment payment});
+
+  $PaymentCopyWith<$Res> get payment;
 }
 
 /// @nodoc
-class __$MakeNewTrustedPaymentPageECopyWithImpl<$Res>
+class __$TtrustedPayDetailCopyWithImpl<$Res>
     extends _$MainViewsEventCopyWithImpl<$Res>
-    implements _$MakeNewTrustedPaymentPageECopyWith<$Res> {
-  __$MakeNewTrustedPaymentPageECopyWithImpl(_MakeNewTrustedPaymentPageE _value,
-      $Res Function(_MakeNewTrustedPaymentPageE) _then)
-      : super(_value, (v) => _then(v as _MakeNewTrustedPaymentPageE));
+    implements _$TtrustedPayDetailCopyWith<$Res> {
+  __$TtrustedPayDetailCopyWithImpl(
+      _TtrustedPayDetail _value, $Res Function(_TtrustedPayDetail) _then)
+      : super(_value, (v) => _then(v as _TtrustedPayDetail));
 
   @override
-  _MakeNewTrustedPaymentPageE get _value =>
-      super._value as _MakeNewTrustedPaymentPageE;
+  _TtrustedPayDetail get _value => super._value as _TtrustedPayDetail;
+
+  @override
+  $Res call({
+    Object payment = freezed,
+  }) {
+    return _then(_TtrustedPayDetail(
+      payment: payment == freezed ? _value.payment : payment as Payment,
+    ));
+  }
+
+  @override
+  $PaymentCopyWith<$Res> get payment {
+    if (_value.payment == null) {
+      return null;
+    }
+    return $PaymentCopyWith<$Res>(_value.payment, (value) {
+      return _then(_value.copyWith(payment: value));
+    });
+  }
 }
 
 /// @nodoc
-class _$_MakeNewTrustedPaymentPageE
+class _$_TtrustedPayDetail
     with DiagnosticableTreeMixin
-    implements _MakeNewTrustedPaymentPageE {
-  const _$_MakeNewTrustedPaymentPageE();
+    implements _TtrustedPayDetail {
+  const _$_TtrustedPayDetail({@required this.payment})
+      : assert(payment != null);
+
+  @override
+  final Payment payment;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MainViewsEvent.makeNewTrustedPaymentPage()';
+    return 'MainViewsEvent.trustedPayDetail(payment: $payment)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty(
-          'type', 'MainViewsEvent.makeNewTrustedPaymentPage'));
+      ..add(DiagnosticsProperty('type', 'MainViewsEvent.trustedPayDetail'))
+      ..add(DiagnosticsProperty('payment', payment));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _MakeNewTrustedPaymentPageE);
+    return identical(this, other) ||
+        (other is _TtrustedPayDetail &&
+            (identical(other.payment, payment) ||
+                const DeepCollectionEquality().equals(other.payment, payment)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(payment);
+
+  @override
+  _$TtrustedPayDetailCopyWith<_TtrustedPayDetail> get copyWith =>
+      __$TtrustedPayDetailCopyWithImpl<_TtrustedPayDetail>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result createNewSavingsPage(),
     @required Result budgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result createNewBudgetPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result trustedPayPage(String pin),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result trustedPayAuthCancel(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
-    return makeNewTrustedPaymentPage();
+    return trustedPayDetail(payment);
   }
 
   @override
@@ -2540,24 +1211,18 @@ class _$_MakeNewTrustedPaymentPageE
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
     Result savingsDetailPage(Savings savings, int duration),
-    Result createNewSavingsPage(),
     Result budgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result createNewBudgetPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result trustedPayPage(String pin),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result trustedPayAuthCancel(),
     Result quickPaymentOverView(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (makeNewTrustedPaymentPage != null) {
-      return makeNewTrustedPaymentPage();
+    if (trustedPayDetail != null) {
+      return trustedPayDetail(payment);
     }
     return orElse();
   }
@@ -2567,37 +1232,24 @@ class _$_MakeNewTrustedPaymentPageE
   Result map<Result extends Object>({
     @required Result homePage(_HomePageE value),
     @required Result savingsPage(_SavingsPageE value),
-    @required Result savingsInitPage(_SavingsInitPageE value),
     @required Result savingsDetailPage(_SavingsDetailPageE value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPageE value),
     @required Result budgetPage(_BudgetPageE value),
-    @required Result budgetInitPage(_BudgetInitPageE value),
-    @required Result budgetAddPage(_BudgetAddPageE value),
-    @required Result createNewBudgetPage(_CreateNewBudgetPage value),
     @required Result budgetDetailPage(_BudgetDetailPageE value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     @required Result trustedPayPage(_TrustedPayPageE value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    @required Result trustedPayDetail(_TtrustedPayDetail value),
     @required Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     @required Result quickPaymentOverView(_QuickPaymentOverView value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
-    return makeNewTrustedPaymentPage(this);
+    return trustedPayDetail(this);
   }
 
   @override
@@ -2605,31 +1257,29 @@ class _$_MakeNewTrustedPaymentPageE
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePageE value),
     Result savingsPage(_SavingsPageE value),
-    Result savingsInitPage(_SavingsInitPageE value),
     Result savingsDetailPage(_SavingsDetailPageE value),
-    Result createNewSavingsPage(_CreateNewSavingsPageE value),
     Result budgetPage(_BudgetPageE value),
-    Result budgetInitPage(_BudgetInitPageE value),
-    Result budgetAddPage(_BudgetAddPageE value),
-    Result createNewBudgetPage(_CreateNewBudgetPage value),
     Result budgetDetailPage(_BudgetDetailPageE value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     Result trustedPayPage(_TrustedPayPageE value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    Result trustedPayDetail(_TtrustedPayDetail value),
     Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     Result quickPaymentOverView(_QuickPaymentOverView value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (makeNewTrustedPaymentPage != null) {
-      return makeNewTrustedPaymentPage(this);
+    if (trustedPayDetail != null) {
+      return trustedPayDetail(this);
     }
     return orElse();
   }
 }
 
-abstract class _MakeNewTrustedPaymentPageE implements MainViewsEvent {
-  const factory _MakeNewTrustedPaymentPageE() = _$_MakeNewTrustedPaymentPageE;
+abstract class _TtrustedPayDetail implements MainViewsEvent {
+  const factory _TtrustedPayDetail({@required Payment payment}) =
+      _$_TtrustedPayDetail;
+
+  Payment get payment;
+  _$TtrustedPayDetailCopyWith<_TtrustedPayDetail> get copyWith;
 }
 
 /// @nodoc
@@ -2682,33 +1332,21 @@ class _$_TrustedPayAuthCancel
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result createNewSavingsPage(),
     @required Result budgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result createNewBudgetPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result trustedPayPage(String pin),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result trustedPayAuthCancel(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
     return trustedPayAuthCancel();
@@ -2719,17 +1357,11 @@ class _$_TrustedPayAuthCancel
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
     Result savingsDetailPage(Savings savings, int duration),
-    Result createNewSavingsPage(),
     Result budgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result createNewBudgetPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result trustedPayPage(String pin),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result trustedPayAuthCancel(),
     Result quickPaymentOverView(),
     @required Result orElse(),
@@ -2746,34 +1378,21 @@ class _$_TrustedPayAuthCancel
   Result map<Result extends Object>({
     @required Result homePage(_HomePageE value),
     @required Result savingsPage(_SavingsPageE value),
-    @required Result savingsInitPage(_SavingsInitPageE value),
     @required Result savingsDetailPage(_SavingsDetailPageE value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPageE value),
     @required Result budgetPage(_BudgetPageE value),
-    @required Result budgetInitPage(_BudgetInitPageE value),
-    @required Result budgetAddPage(_BudgetAddPageE value),
-    @required Result createNewBudgetPage(_CreateNewBudgetPage value),
     @required Result budgetDetailPage(_BudgetDetailPageE value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     @required Result trustedPayPage(_TrustedPayPageE value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    @required Result trustedPayDetail(_TtrustedPayDetail value),
     @required Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     @required Result quickPaymentOverView(_QuickPaymentOverView value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
     return trustedPayAuthCancel(this);
@@ -2784,17 +1403,11 @@ class _$_TrustedPayAuthCancel
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePageE value),
     Result savingsPage(_SavingsPageE value),
-    Result savingsInitPage(_SavingsInitPageE value),
     Result savingsDetailPage(_SavingsDetailPageE value),
-    Result createNewSavingsPage(_CreateNewSavingsPageE value),
     Result budgetPage(_BudgetPageE value),
-    Result budgetInitPage(_BudgetInitPageE value),
-    Result budgetAddPage(_BudgetAddPageE value),
-    Result createNewBudgetPage(_CreateNewBudgetPage value),
     Result budgetDetailPage(_BudgetDetailPageE value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     Result trustedPayPage(_TrustedPayPageE value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    Result trustedPayDetail(_TtrustedPayDetail value),
     Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     Result quickPaymentOverView(_QuickPaymentOverView value),
     @required Result orElse(),
@@ -2861,33 +1474,21 @@ class _$_QuickPaymentOverView
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result createNewSavingsPage(),
     @required Result budgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result createNewBudgetPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result trustedPayPage(String pin),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result trustedPayAuthCancel(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
     return quickPaymentOverView();
@@ -2898,17 +1499,11 @@ class _$_QuickPaymentOverView
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
     Result savingsDetailPage(Savings savings, int duration),
-    Result createNewSavingsPage(),
     Result budgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result createNewBudgetPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result trustedPayPage(String pin),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result trustedPayAuthCancel(),
     Result quickPaymentOverView(),
     @required Result orElse(),
@@ -2925,34 +1520,21 @@ class _$_QuickPaymentOverView
   Result map<Result extends Object>({
     @required Result homePage(_HomePageE value),
     @required Result savingsPage(_SavingsPageE value),
-    @required Result savingsInitPage(_SavingsInitPageE value),
     @required Result savingsDetailPage(_SavingsDetailPageE value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPageE value),
     @required Result budgetPage(_BudgetPageE value),
-    @required Result budgetInitPage(_BudgetInitPageE value),
-    @required Result budgetAddPage(_BudgetAddPageE value),
-    @required Result createNewBudgetPage(_CreateNewBudgetPage value),
     @required Result budgetDetailPage(_BudgetDetailPageE value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     @required Result trustedPayPage(_TrustedPayPageE value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    @required Result trustedPayDetail(_TtrustedPayDetail value),
     @required Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     @required Result quickPaymentOverView(_QuickPaymentOverView value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
     assert(savingsDetailPage != null);
-    assert(createNewSavingsPage != null);
     assert(budgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(createNewBudgetPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(trustedPayPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(trustedPayAuthCancel != null);
     assert(quickPaymentOverView != null);
     return quickPaymentOverView(this);
@@ -2963,17 +1545,11 @@ class _$_QuickPaymentOverView
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePageE value),
     Result savingsPage(_SavingsPageE value),
-    Result savingsInitPage(_SavingsInitPageE value),
     Result savingsDetailPage(_SavingsDetailPageE value),
-    Result createNewSavingsPage(_CreateNewSavingsPageE value),
     Result budgetPage(_BudgetPageE value),
-    Result budgetInitPage(_BudgetInitPageE value),
-    Result budgetAddPage(_BudgetAddPageE value),
-    Result createNewBudgetPage(_CreateNewBudgetPage value),
     Result budgetDetailPage(_BudgetDetailPageE value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPageE value),
     Result trustedPayPage(_TrustedPayPageE value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPageE value),
+    Result trustedPayDetail(_TtrustedPayDetail value),
     Result trustedPayAuthCancel(_TrustedPayAuthCancel value),
     Result quickPaymentOverView(_QuickPaymentOverView value),
     @required Result orElse(),
@@ -3005,16 +1581,6 @@ class _$MainViewsStateTearOff {
   }
 
 // ignore: unused_element
-  _SavingsInitPage savingsInitPage() {
-    return const _SavingsInitPage();
-  }
-
-// ignore: unused_element
-  _CreateNewSavingsPage createNewSavingsPage() {
-    return const _CreateNewSavingsPage();
-  }
-
-// ignore: unused_element
   _SavingsDetailPage savingsDetailPage(
       {@required Savings savings, @required int duration}) {
     return _SavingsDetailPage(
@@ -3034,8 +1600,10 @@ class _$MainViewsStateTearOff {
   }
 
 // ignore: unused_element
-  _MakeNewTrustedPaymentPage makeNewTrustedPaymentPage() {
-    return const _MakeNewTrustedPaymentPage();
+  _TrustedPayDetail trustedPayDetail({@required Payment payment}) {
+    return _TrustedPayDetail(
+      payment: payment,
+    );
   }
 
 // ignore: unused_element
@@ -3044,30 +1612,10 @@ class _$MainViewsStateTearOff {
   }
 
 // ignore: unused_element
-  _CreateNewBudget createNewBudgetPage() {
-    return const _CreateNewBudget();
-  }
-
-// ignore: unused_element
-  _BudgetInitPage budgetInitPage() {
-    return const _BudgetInitPage();
-  }
-
-// ignore: unused_element
-  _BudgetAddPage budgetAddPage() {
-    return const _BudgetAddPage();
-  }
-
-// ignore: unused_element
   _BudgetDetailPage budgetDetailPage({@required Budget budget}) {
     return _BudgetDetailPage(
       budget: budget,
     );
-  }
-
-// ignore: unused_element
-  _SendBudgetGiftPage sendBudgetGiftPage() {
-    return const _SendBudgetGiftPage();
   }
 
 // ignore: unused_element
@@ -3086,36 +1634,24 @@ mixin _$MainViewsState {
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result createNewSavingsPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
     @required Result trustedPayUnlockPage(),
     @required Result trustedPayLockedPage(),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result budgetPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result quickPaymentOverView(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
-    Result createNewSavingsPage(),
     Result savingsDetailPage(Savings savings, int duration),
     Result trustedPayUnlockPage(),
     Result trustedPayLockedPage(),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result budgetPage(),
-    Result createNewBudgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result quickPaymentOverView(),
     @required Result orElse(),
   });
@@ -3123,37 +1659,24 @@ mixin _$MainViewsState {
   Result map<Result extends Object>({
     @required Result homePage(_HomePage value),
     @required Result savingsPage(_SavingsPage value),
-    @required Result savingsInitPage(_SavingsInitPage value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPage value),
     @required Result savingsDetailPage(_SavingsDetailPage value),
     @required Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     @required Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    @required Result trustedPayDetail(_TrustedPayDetail value),
     @required Result budgetPage(_BudgetPage value),
-    @required Result createNewBudgetPage(_CreateNewBudget value),
-    @required Result budgetInitPage(_BudgetInitPage value),
-    @required Result budgetAddPage(_BudgetAddPage value),
     @required Result budgetDetailPage(_BudgetDetailPage value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     @required Result quickPaymentOverView(_QuickPaymentOverViewS value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePage value),
     Result savingsPage(_SavingsPage value),
-    Result savingsInitPage(_SavingsInitPage value),
-    Result createNewSavingsPage(_CreateNewSavingsPage value),
     Result savingsDetailPage(_SavingsDetailPage value),
     Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    Result trustedPayDetail(_TrustedPayDetail value),
     Result budgetPage(_BudgetPage value),
-    Result createNewBudgetPage(_CreateNewBudget value),
-    Result budgetInitPage(_BudgetInitPage value),
-    Result budgetAddPage(_BudgetAddPage value),
     Result budgetDetailPage(_BudgetDetailPage value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     Result quickPaymentOverView(_QuickPaymentOverViewS value),
     @required Result orElse(),
   });
@@ -3220,34 +1743,22 @@ class _$_HomePage with DiagnosticableTreeMixin implements _HomePage {
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result createNewSavingsPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
     @required Result trustedPayUnlockPage(),
     @required Result trustedPayLockedPage(),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result budgetPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
     return homePage();
   }
@@ -3257,18 +1768,12 @@ class _$_HomePage with DiagnosticableTreeMixin implements _HomePage {
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
-    Result createNewSavingsPage(),
     Result savingsDetailPage(Savings savings, int duration),
     Result trustedPayUnlockPage(),
     Result trustedPayLockedPage(),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result budgetPage(),
-    Result createNewBudgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result quickPaymentOverView(),
     @required Result orElse(),
   }) {
@@ -3284,35 +1789,22 @@ class _$_HomePage with DiagnosticableTreeMixin implements _HomePage {
   Result map<Result extends Object>({
     @required Result homePage(_HomePage value),
     @required Result savingsPage(_SavingsPage value),
-    @required Result savingsInitPage(_SavingsInitPage value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPage value),
     @required Result savingsDetailPage(_SavingsDetailPage value),
     @required Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     @required Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    @required Result trustedPayDetail(_TrustedPayDetail value),
     @required Result budgetPage(_BudgetPage value),
-    @required Result createNewBudgetPage(_CreateNewBudget value),
-    @required Result budgetInitPage(_BudgetInitPage value),
-    @required Result budgetAddPage(_BudgetAddPage value),
     @required Result budgetDetailPage(_BudgetDetailPage value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     @required Result quickPaymentOverView(_QuickPaymentOverViewS value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
     return homePage(this);
   }
@@ -3322,18 +1814,12 @@ class _$_HomePage with DiagnosticableTreeMixin implements _HomePage {
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePage value),
     Result savingsPage(_SavingsPage value),
-    Result savingsInitPage(_SavingsInitPage value),
-    Result createNewSavingsPage(_CreateNewSavingsPage value),
     Result savingsDetailPage(_SavingsDetailPage value),
     Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    Result trustedPayDetail(_TrustedPayDetail value),
     Result budgetPage(_BudgetPage value),
-    Result createNewBudgetPage(_CreateNewBudget value),
-    Result budgetInitPage(_BudgetInitPage value),
-    Result budgetAddPage(_BudgetAddPage value),
     Result budgetDetailPage(_BudgetDetailPage value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     Result quickPaymentOverView(_QuickPaymentOverViewS value),
     @required Result orElse(),
   }) {
@@ -3396,34 +1882,22 @@ class _$_SavingsPage with DiagnosticableTreeMixin implements _SavingsPage {
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result createNewSavingsPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
     @required Result trustedPayUnlockPage(),
     @required Result trustedPayLockedPage(),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result budgetPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
     return savingsPage();
   }
@@ -3433,18 +1907,12 @@ class _$_SavingsPage with DiagnosticableTreeMixin implements _SavingsPage {
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
-    Result createNewSavingsPage(),
     Result savingsDetailPage(Savings savings, int duration),
     Result trustedPayUnlockPage(),
     Result trustedPayLockedPage(),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result budgetPage(),
-    Result createNewBudgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result quickPaymentOverView(),
     @required Result orElse(),
   }) {
@@ -3460,35 +1928,22 @@ class _$_SavingsPage with DiagnosticableTreeMixin implements _SavingsPage {
   Result map<Result extends Object>({
     @required Result homePage(_HomePage value),
     @required Result savingsPage(_SavingsPage value),
-    @required Result savingsInitPage(_SavingsInitPage value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPage value),
     @required Result savingsDetailPage(_SavingsDetailPage value),
     @required Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     @required Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    @required Result trustedPayDetail(_TrustedPayDetail value),
     @required Result budgetPage(_BudgetPage value),
-    @required Result createNewBudgetPage(_CreateNewBudget value),
-    @required Result budgetInitPage(_BudgetInitPage value),
-    @required Result budgetAddPage(_BudgetAddPage value),
     @required Result budgetDetailPage(_BudgetDetailPage value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     @required Result quickPaymentOverView(_QuickPaymentOverViewS value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
     return savingsPage(this);
   }
@@ -3498,18 +1953,12 @@ class _$_SavingsPage with DiagnosticableTreeMixin implements _SavingsPage {
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePage value),
     Result savingsPage(_SavingsPage value),
-    Result savingsInitPage(_SavingsInitPage value),
-    Result createNewSavingsPage(_CreateNewSavingsPage value),
     Result savingsDetailPage(_SavingsDetailPage value),
     Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    Result trustedPayDetail(_TrustedPayDetail value),
     Result budgetPage(_BudgetPage value),
-    Result createNewBudgetPage(_CreateNewBudget value),
-    Result budgetInitPage(_BudgetInitPage value),
-    Result budgetAddPage(_BudgetAddPage value),
     Result budgetDetailPage(_BudgetDetailPage value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     Result quickPaymentOverView(_QuickPaymentOverViewS value),
     @required Result orElse(),
   }) {
@@ -3523,364 +1972,6 @@ class _$_SavingsPage with DiagnosticableTreeMixin implements _SavingsPage {
 
 abstract class _SavingsPage implements MainViewsState {
   const factory _SavingsPage() = _$_SavingsPage;
-}
-
-/// @nodoc
-abstract class _$SavingsInitPageCopyWith<$Res> {
-  factory _$SavingsInitPageCopyWith(
-          _SavingsInitPage value, $Res Function(_SavingsInitPage) then) =
-      __$SavingsInitPageCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SavingsInitPageCopyWithImpl<$Res>
-    extends _$MainViewsStateCopyWithImpl<$Res>
-    implements _$SavingsInitPageCopyWith<$Res> {
-  __$SavingsInitPageCopyWithImpl(
-      _SavingsInitPage _value, $Res Function(_SavingsInitPage) _then)
-      : super(_value, (v) => _then(v as _SavingsInitPage));
-
-  @override
-  _SavingsInitPage get _value => super._value as _SavingsInitPage;
-}
-
-/// @nodoc
-class _$_SavingsInitPage
-    with DiagnosticableTreeMixin
-    implements _SavingsInitPage {
-  const _$_SavingsInitPage();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MainViewsState.savingsInitPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'MainViewsState.savingsInitPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SavingsInitPage);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result homePage(),
-    @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result createNewSavingsPage(),
-    @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result trustedPayUnlockPage(),
-    @required Result trustedPayLockedPage(),
-    @required Result makeNewTrustedPaymentPage(),
-    @required Result budgetPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
-    @required Result quickPaymentOverView(),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
-    assert(savingsDetailPage != null);
-    assert(trustedPayUnlockPage != null);
-    assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(quickPaymentOverView != null);
-    return savingsInitPage();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result homePage(),
-    Result savingsPage(),
-    Result savingsInitPage(),
-    Result createNewSavingsPage(),
-    Result savingsDetailPage(Savings savings, int duration),
-    Result trustedPayUnlockPage(),
-    Result trustedPayLockedPage(),
-    Result makeNewTrustedPaymentPage(),
-    Result budgetPage(),
-    Result createNewBudgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
-    Result quickPaymentOverView(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (savingsInitPage != null) {
-      return savingsInitPage();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result homePage(_HomePage value),
-    @required Result savingsPage(_SavingsPage value),
-    @required Result savingsInitPage(_SavingsInitPage value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPage value),
-    @required Result savingsDetailPage(_SavingsDetailPage value),
-    @required Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
-    @required Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
-    @required Result budgetPage(_BudgetPage value),
-    @required Result createNewBudgetPage(_CreateNewBudget value),
-    @required Result budgetInitPage(_BudgetInitPage value),
-    @required Result budgetAddPage(_BudgetAddPage value),
-    @required Result budgetDetailPage(_BudgetDetailPage value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPage value),
-    @required Result quickPaymentOverView(_QuickPaymentOverViewS value),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
-    assert(savingsDetailPage != null);
-    assert(trustedPayUnlockPage != null);
-    assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(quickPaymentOverView != null);
-    return savingsInitPage(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result homePage(_HomePage value),
-    Result savingsPage(_SavingsPage value),
-    Result savingsInitPage(_SavingsInitPage value),
-    Result createNewSavingsPage(_CreateNewSavingsPage value),
-    Result savingsDetailPage(_SavingsDetailPage value),
-    Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
-    Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
-    Result budgetPage(_BudgetPage value),
-    Result createNewBudgetPage(_CreateNewBudget value),
-    Result budgetInitPage(_BudgetInitPage value),
-    Result budgetAddPage(_BudgetAddPage value),
-    Result budgetDetailPage(_BudgetDetailPage value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPage value),
-    Result quickPaymentOverView(_QuickPaymentOverViewS value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (savingsInitPage != null) {
-      return savingsInitPage(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SavingsInitPage implements MainViewsState {
-  const factory _SavingsInitPage() = _$_SavingsInitPage;
-}
-
-/// @nodoc
-abstract class _$CreateNewSavingsPageCopyWith<$Res> {
-  factory _$CreateNewSavingsPageCopyWith(_CreateNewSavingsPage value,
-          $Res Function(_CreateNewSavingsPage) then) =
-      __$CreateNewSavingsPageCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$CreateNewSavingsPageCopyWithImpl<$Res>
-    extends _$MainViewsStateCopyWithImpl<$Res>
-    implements _$CreateNewSavingsPageCopyWith<$Res> {
-  __$CreateNewSavingsPageCopyWithImpl(
-      _CreateNewSavingsPage _value, $Res Function(_CreateNewSavingsPage) _then)
-      : super(_value, (v) => _then(v as _CreateNewSavingsPage));
-
-  @override
-  _CreateNewSavingsPage get _value => super._value as _CreateNewSavingsPage;
-}
-
-/// @nodoc
-class _$_CreateNewSavingsPage
-    with DiagnosticableTreeMixin
-    implements _CreateNewSavingsPage {
-  const _$_CreateNewSavingsPage();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MainViewsState.createNewSavingsPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'MainViewsState.createNewSavingsPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _CreateNewSavingsPage);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result homePage(),
-    @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result createNewSavingsPage(),
-    @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result trustedPayUnlockPage(),
-    @required Result trustedPayLockedPage(),
-    @required Result makeNewTrustedPaymentPage(),
-    @required Result budgetPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
-    @required Result quickPaymentOverView(),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
-    assert(savingsDetailPage != null);
-    assert(trustedPayUnlockPage != null);
-    assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(quickPaymentOverView != null);
-    return createNewSavingsPage();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result homePage(),
-    Result savingsPage(),
-    Result savingsInitPage(),
-    Result createNewSavingsPage(),
-    Result savingsDetailPage(Savings savings, int duration),
-    Result trustedPayUnlockPage(),
-    Result trustedPayLockedPage(),
-    Result makeNewTrustedPaymentPage(),
-    Result budgetPage(),
-    Result createNewBudgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
-    Result quickPaymentOverView(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (createNewSavingsPage != null) {
-      return createNewSavingsPage();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result homePage(_HomePage value),
-    @required Result savingsPage(_SavingsPage value),
-    @required Result savingsInitPage(_SavingsInitPage value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPage value),
-    @required Result savingsDetailPage(_SavingsDetailPage value),
-    @required Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
-    @required Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
-    @required Result budgetPage(_BudgetPage value),
-    @required Result createNewBudgetPage(_CreateNewBudget value),
-    @required Result budgetInitPage(_BudgetInitPage value),
-    @required Result budgetAddPage(_BudgetAddPage value),
-    @required Result budgetDetailPage(_BudgetDetailPage value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPage value),
-    @required Result quickPaymentOverView(_QuickPaymentOverViewS value),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
-    assert(savingsDetailPage != null);
-    assert(trustedPayUnlockPage != null);
-    assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(quickPaymentOverView != null);
-    return createNewSavingsPage(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result homePage(_HomePage value),
-    Result savingsPage(_SavingsPage value),
-    Result savingsInitPage(_SavingsInitPage value),
-    Result createNewSavingsPage(_CreateNewSavingsPage value),
-    Result savingsDetailPage(_SavingsDetailPage value),
-    Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
-    Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
-    Result budgetPage(_BudgetPage value),
-    Result createNewBudgetPage(_CreateNewBudget value),
-    Result budgetInitPage(_BudgetInitPage value),
-    Result budgetAddPage(_BudgetAddPage value),
-    Result budgetDetailPage(_BudgetDetailPage value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPage value),
-    Result quickPaymentOverView(_QuickPaymentOverViewS value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (createNewSavingsPage != null) {
-      return createNewSavingsPage(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CreateNewSavingsPage implements MainViewsState {
-  const factory _CreateNewSavingsPage() = _$_CreateNewSavingsPage;
 }
 
 /// @nodoc
@@ -3980,34 +2071,22 @@ class _$_SavingsDetailPage
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result createNewSavingsPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
     @required Result trustedPayUnlockPage(),
     @required Result trustedPayLockedPage(),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result budgetPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
     return savingsDetailPage(savings, duration);
   }
@@ -4017,18 +2096,12 @@ class _$_SavingsDetailPage
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
-    Result createNewSavingsPage(),
     Result savingsDetailPage(Savings savings, int duration),
     Result trustedPayUnlockPage(),
     Result trustedPayLockedPage(),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result budgetPage(),
-    Result createNewBudgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result quickPaymentOverView(),
     @required Result orElse(),
   }) {
@@ -4044,35 +2117,22 @@ class _$_SavingsDetailPage
   Result map<Result extends Object>({
     @required Result homePage(_HomePage value),
     @required Result savingsPage(_SavingsPage value),
-    @required Result savingsInitPage(_SavingsInitPage value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPage value),
     @required Result savingsDetailPage(_SavingsDetailPage value),
     @required Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     @required Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    @required Result trustedPayDetail(_TrustedPayDetail value),
     @required Result budgetPage(_BudgetPage value),
-    @required Result createNewBudgetPage(_CreateNewBudget value),
-    @required Result budgetInitPage(_BudgetInitPage value),
-    @required Result budgetAddPage(_BudgetAddPage value),
     @required Result budgetDetailPage(_BudgetDetailPage value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     @required Result quickPaymentOverView(_QuickPaymentOverViewS value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
     return savingsDetailPage(this);
   }
@@ -4082,18 +2142,12 @@ class _$_SavingsDetailPage
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePage value),
     Result savingsPage(_SavingsPage value),
-    Result savingsInitPage(_SavingsInitPage value),
-    Result createNewSavingsPage(_CreateNewSavingsPage value),
     Result savingsDetailPage(_SavingsDetailPage value),
     Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    Result trustedPayDetail(_TrustedPayDetail value),
     Result budgetPage(_BudgetPage value),
-    Result createNewBudgetPage(_CreateNewBudget value),
-    Result budgetInitPage(_BudgetInitPage value),
-    Result budgetAddPage(_BudgetAddPage value),
     Result budgetDetailPage(_BudgetDetailPage value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     Result quickPaymentOverView(_QuickPaymentOverViewS value),
     @required Result orElse(),
   }) {
@@ -4165,34 +2219,22 @@ class _$_TrustedPayUnlockPage
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result createNewSavingsPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
     @required Result trustedPayUnlockPage(),
     @required Result trustedPayLockedPage(),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result budgetPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
     return trustedPayUnlockPage();
   }
@@ -4202,18 +2244,12 @@ class _$_TrustedPayUnlockPage
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
-    Result createNewSavingsPage(),
     Result savingsDetailPage(Savings savings, int duration),
     Result trustedPayUnlockPage(),
     Result trustedPayLockedPage(),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result budgetPage(),
-    Result createNewBudgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result quickPaymentOverView(),
     @required Result orElse(),
   }) {
@@ -4229,35 +2265,22 @@ class _$_TrustedPayUnlockPage
   Result map<Result extends Object>({
     @required Result homePage(_HomePage value),
     @required Result savingsPage(_SavingsPage value),
-    @required Result savingsInitPage(_SavingsInitPage value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPage value),
     @required Result savingsDetailPage(_SavingsDetailPage value),
     @required Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     @required Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    @required Result trustedPayDetail(_TrustedPayDetail value),
     @required Result budgetPage(_BudgetPage value),
-    @required Result createNewBudgetPage(_CreateNewBudget value),
-    @required Result budgetInitPage(_BudgetInitPage value),
-    @required Result budgetAddPage(_BudgetAddPage value),
     @required Result budgetDetailPage(_BudgetDetailPage value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     @required Result quickPaymentOverView(_QuickPaymentOverViewS value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
     return trustedPayUnlockPage(this);
   }
@@ -4267,18 +2290,12 @@ class _$_TrustedPayUnlockPage
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePage value),
     Result savingsPage(_SavingsPage value),
-    Result savingsInitPage(_SavingsInitPage value),
-    Result createNewSavingsPage(_CreateNewSavingsPage value),
     Result savingsDetailPage(_SavingsDetailPage value),
     Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    Result trustedPayDetail(_TrustedPayDetail value),
     Result budgetPage(_BudgetPage value),
-    Result createNewBudgetPage(_CreateNewBudget value),
-    Result budgetInitPage(_BudgetInitPage value),
-    Result budgetAddPage(_BudgetAddPage value),
     Result budgetDetailPage(_BudgetDetailPage value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     Result quickPaymentOverView(_QuickPaymentOverViewS value),
     @required Result orElse(),
   }) {
@@ -4344,34 +2361,22 @@ class _$_TrustedPayLockedPage
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result createNewSavingsPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
     @required Result trustedPayUnlockPage(),
     @required Result trustedPayLockedPage(),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result budgetPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
     return trustedPayLockedPage();
   }
@@ -4381,18 +2386,12 @@ class _$_TrustedPayLockedPage
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
-    Result createNewSavingsPage(),
     Result savingsDetailPage(Savings savings, int duration),
     Result trustedPayUnlockPage(),
     Result trustedPayLockedPage(),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result budgetPage(),
-    Result createNewBudgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result quickPaymentOverView(),
     @required Result orElse(),
   }) {
@@ -4408,35 +2407,22 @@ class _$_TrustedPayLockedPage
   Result map<Result extends Object>({
     @required Result homePage(_HomePage value),
     @required Result savingsPage(_SavingsPage value),
-    @required Result savingsInitPage(_SavingsInitPage value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPage value),
     @required Result savingsDetailPage(_SavingsDetailPage value),
     @required Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     @required Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    @required Result trustedPayDetail(_TrustedPayDetail value),
     @required Result budgetPage(_BudgetPage value),
-    @required Result createNewBudgetPage(_CreateNewBudget value),
-    @required Result budgetInitPage(_BudgetInitPage value),
-    @required Result budgetAddPage(_BudgetAddPage value),
     @required Result budgetDetailPage(_BudgetDetailPage value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     @required Result quickPaymentOverView(_QuickPaymentOverViewS value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
     return trustedPayLockedPage(this);
   }
@@ -4446,18 +2432,12 @@ class _$_TrustedPayLockedPage
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePage value),
     Result savingsPage(_SavingsPage value),
-    Result savingsInitPage(_SavingsInitPage value),
-    Result createNewSavingsPage(_CreateNewSavingsPage value),
     Result savingsDetailPage(_SavingsDetailPage value),
     Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    Result trustedPayDetail(_TrustedPayDetail value),
     Result budgetPage(_BudgetPage value),
-    Result createNewBudgetPage(_CreateNewBudget value),
-    Result budgetInitPage(_BudgetInitPage value),
-    Result budgetAddPage(_BudgetAddPage value),
     Result budgetDetailPage(_BudgetDetailPage value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     Result quickPaymentOverView(_QuickPaymentOverViewS value),
     @required Result orElse(),
   }) {
@@ -4474,87 +2454,107 @@ abstract class _TrustedPayLockedPage implements MainViewsState {
 }
 
 /// @nodoc
-abstract class _$MakeNewTrustedPaymentPageCopyWith<$Res> {
-  factory _$MakeNewTrustedPaymentPageCopyWith(_MakeNewTrustedPaymentPage value,
-          $Res Function(_MakeNewTrustedPaymentPage) then) =
-      __$MakeNewTrustedPaymentPageCopyWithImpl<$Res>;
+abstract class _$TrustedPayDetailCopyWith<$Res> {
+  factory _$TrustedPayDetailCopyWith(
+          _TrustedPayDetail value, $Res Function(_TrustedPayDetail) then) =
+      __$TrustedPayDetailCopyWithImpl<$Res>;
+  $Res call({Payment payment});
+
+  $PaymentCopyWith<$Res> get payment;
 }
 
 /// @nodoc
-class __$MakeNewTrustedPaymentPageCopyWithImpl<$Res>
+class __$TrustedPayDetailCopyWithImpl<$Res>
     extends _$MainViewsStateCopyWithImpl<$Res>
-    implements _$MakeNewTrustedPaymentPageCopyWith<$Res> {
-  __$MakeNewTrustedPaymentPageCopyWithImpl(_MakeNewTrustedPaymentPage _value,
-      $Res Function(_MakeNewTrustedPaymentPage) _then)
-      : super(_value, (v) => _then(v as _MakeNewTrustedPaymentPage));
+    implements _$TrustedPayDetailCopyWith<$Res> {
+  __$TrustedPayDetailCopyWithImpl(
+      _TrustedPayDetail _value, $Res Function(_TrustedPayDetail) _then)
+      : super(_value, (v) => _then(v as _TrustedPayDetail));
 
   @override
-  _MakeNewTrustedPaymentPage get _value =>
-      super._value as _MakeNewTrustedPaymentPage;
+  _TrustedPayDetail get _value => super._value as _TrustedPayDetail;
+
+  @override
+  $Res call({
+    Object payment = freezed,
+  }) {
+    return _then(_TrustedPayDetail(
+      payment: payment == freezed ? _value.payment : payment as Payment,
+    ));
+  }
+
+  @override
+  $PaymentCopyWith<$Res> get payment {
+    if (_value.payment == null) {
+      return null;
+    }
+    return $PaymentCopyWith<$Res>(_value.payment, (value) {
+      return _then(_value.copyWith(payment: value));
+    });
+  }
 }
 
 /// @nodoc
-class _$_MakeNewTrustedPaymentPage
+class _$_TrustedPayDetail
     with DiagnosticableTreeMixin
-    implements _MakeNewTrustedPaymentPage {
-  const _$_MakeNewTrustedPaymentPage();
+    implements _TrustedPayDetail {
+  const _$_TrustedPayDetail({@required this.payment}) : assert(payment != null);
+
+  @override
+  final Payment payment;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MainViewsState.makeNewTrustedPaymentPage()';
+    return 'MainViewsState.trustedPayDetail(payment: $payment)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty(
-          'type', 'MainViewsState.makeNewTrustedPaymentPage'));
+      ..add(DiagnosticsProperty('type', 'MainViewsState.trustedPayDetail'))
+      ..add(DiagnosticsProperty('payment', payment));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _MakeNewTrustedPaymentPage);
+    return identical(this, other) ||
+        (other is _TrustedPayDetail &&
+            (identical(other.payment, payment) ||
+                const DeepCollectionEquality().equals(other.payment, payment)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(payment);
+
+  @override
+  _$TrustedPayDetailCopyWith<_TrustedPayDetail> get copyWith =>
+      __$TrustedPayDetailCopyWithImpl<_TrustedPayDetail>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result createNewSavingsPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
     @required Result trustedPayUnlockPage(),
     @required Result trustedPayLockedPage(),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result budgetPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
-    return makeNewTrustedPaymentPage();
+    return trustedPayDetail(payment);
   }
 
   @override
@@ -4562,24 +2562,18 @@ class _$_MakeNewTrustedPaymentPage
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
-    Result createNewSavingsPage(),
     Result savingsDetailPage(Savings savings, int duration),
     Result trustedPayUnlockPage(),
     Result trustedPayLockedPage(),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result budgetPage(),
-    Result createNewBudgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result quickPaymentOverView(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (makeNewTrustedPaymentPage != null) {
-      return makeNewTrustedPaymentPage();
+    if (trustedPayDetail != null) {
+      return trustedPayDetail(payment);
     }
     return orElse();
   }
@@ -4589,37 +2583,24 @@ class _$_MakeNewTrustedPaymentPage
   Result map<Result extends Object>({
     @required Result homePage(_HomePage value),
     @required Result savingsPage(_SavingsPage value),
-    @required Result savingsInitPage(_SavingsInitPage value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPage value),
     @required Result savingsDetailPage(_SavingsDetailPage value),
     @required Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     @required Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    @required Result trustedPayDetail(_TrustedPayDetail value),
     @required Result budgetPage(_BudgetPage value),
-    @required Result createNewBudgetPage(_CreateNewBudget value),
-    @required Result budgetInitPage(_BudgetInitPage value),
-    @required Result budgetAddPage(_BudgetAddPage value),
     @required Result budgetDetailPage(_BudgetDetailPage value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     @required Result quickPaymentOverView(_QuickPaymentOverViewS value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
-    return makeNewTrustedPaymentPage(this);
+    return trustedPayDetail(this);
   }
 
   @override
@@ -4627,31 +2608,29 @@ class _$_MakeNewTrustedPaymentPage
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePage value),
     Result savingsPage(_SavingsPage value),
-    Result savingsInitPage(_SavingsInitPage value),
-    Result createNewSavingsPage(_CreateNewSavingsPage value),
     Result savingsDetailPage(_SavingsDetailPage value),
     Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    Result trustedPayDetail(_TrustedPayDetail value),
     Result budgetPage(_BudgetPage value),
-    Result createNewBudgetPage(_CreateNewBudget value),
-    Result budgetInitPage(_BudgetInitPage value),
-    Result budgetAddPage(_BudgetAddPage value),
     Result budgetDetailPage(_BudgetDetailPage value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     Result quickPaymentOverView(_QuickPaymentOverViewS value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (makeNewTrustedPaymentPage != null) {
-      return makeNewTrustedPaymentPage(this);
+    if (trustedPayDetail != null) {
+      return trustedPayDetail(this);
     }
     return orElse();
   }
 }
 
-abstract class _MakeNewTrustedPaymentPage implements MainViewsState {
-  const factory _MakeNewTrustedPaymentPage() = _$_MakeNewTrustedPaymentPage;
+abstract class _TrustedPayDetail implements MainViewsState {
+  const factory _TrustedPayDetail({@required Payment payment}) =
+      _$_TrustedPayDetail;
+
+  Payment get payment;
+  _$TrustedPayDetailCopyWith<_TrustedPayDetail> get copyWith;
 }
 
 /// @nodoc
@@ -4700,34 +2679,22 @@ class _$_BudgetPage with DiagnosticableTreeMixin implements _BudgetPage {
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result createNewSavingsPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
     @required Result trustedPayUnlockPage(),
     @required Result trustedPayLockedPage(),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result budgetPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
     return budgetPage();
   }
@@ -4737,18 +2704,12 @@ class _$_BudgetPage with DiagnosticableTreeMixin implements _BudgetPage {
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
-    Result createNewSavingsPage(),
     Result savingsDetailPage(Savings savings, int duration),
     Result trustedPayUnlockPage(),
     Result trustedPayLockedPage(),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result budgetPage(),
-    Result createNewBudgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result quickPaymentOverView(),
     @required Result orElse(),
   }) {
@@ -4764,35 +2725,22 @@ class _$_BudgetPage with DiagnosticableTreeMixin implements _BudgetPage {
   Result map<Result extends Object>({
     @required Result homePage(_HomePage value),
     @required Result savingsPage(_SavingsPage value),
-    @required Result savingsInitPage(_SavingsInitPage value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPage value),
     @required Result savingsDetailPage(_SavingsDetailPage value),
     @required Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     @required Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    @required Result trustedPayDetail(_TrustedPayDetail value),
     @required Result budgetPage(_BudgetPage value),
-    @required Result createNewBudgetPage(_CreateNewBudget value),
-    @required Result budgetInitPage(_BudgetInitPage value),
-    @required Result budgetAddPage(_BudgetAddPage value),
     @required Result budgetDetailPage(_BudgetDetailPage value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     @required Result quickPaymentOverView(_QuickPaymentOverViewS value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
     return budgetPage(this);
   }
@@ -4802,18 +2750,12 @@ class _$_BudgetPage with DiagnosticableTreeMixin implements _BudgetPage {
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePage value),
     Result savingsPage(_SavingsPage value),
-    Result savingsInitPage(_SavingsInitPage value),
-    Result createNewSavingsPage(_CreateNewSavingsPage value),
     Result savingsDetailPage(_SavingsDetailPage value),
     Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    Result trustedPayDetail(_TrustedPayDetail value),
     Result budgetPage(_BudgetPage value),
-    Result createNewBudgetPage(_CreateNewBudget value),
-    Result budgetInitPage(_BudgetInitPage value),
-    Result budgetAddPage(_BudgetAddPage value),
     Result budgetDetailPage(_BudgetDetailPage value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     Result quickPaymentOverView(_QuickPaymentOverViewS value),
     @required Result orElse(),
   }) {
@@ -4827,541 +2769,6 @@ class _$_BudgetPage with DiagnosticableTreeMixin implements _BudgetPage {
 
 abstract class _BudgetPage implements MainViewsState {
   const factory _BudgetPage() = _$_BudgetPage;
-}
-
-/// @nodoc
-abstract class _$CreateNewBudgetCopyWith<$Res> {
-  factory _$CreateNewBudgetCopyWith(
-          _CreateNewBudget value, $Res Function(_CreateNewBudget) then) =
-      __$CreateNewBudgetCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$CreateNewBudgetCopyWithImpl<$Res>
-    extends _$MainViewsStateCopyWithImpl<$Res>
-    implements _$CreateNewBudgetCopyWith<$Res> {
-  __$CreateNewBudgetCopyWithImpl(
-      _CreateNewBudget _value, $Res Function(_CreateNewBudget) _then)
-      : super(_value, (v) => _then(v as _CreateNewBudget));
-
-  @override
-  _CreateNewBudget get _value => super._value as _CreateNewBudget;
-}
-
-/// @nodoc
-class _$_CreateNewBudget
-    with DiagnosticableTreeMixin
-    implements _CreateNewBudget {
-  const _$_CreateNewBudget();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MainViewsState.createNewBudgetPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'MainViewsState.createNewBudgetPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _CreateNewBudget);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result homePage(),
-    @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result createNewSavingsPage(),
-    @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result trustedPayUnlockPage(),
-    @required Result trustedPayLockedPage(),
-    @required Result makeNewTrustedPaymentPage(),
-    @required Result budgetPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
-    @required Result quickPaymentOverView(),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
-    assert(savingsDetailPage != null);
-    assert(trustedPayUnlockPage != null);
-    assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(quickPaymentOverView != null);
-    return createNewBudgetPage();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result homePage(),
-    Result savingsPage(),
-    Result savingsInitPage(),
-    Result createNewSavingsPage(),
-    Result savingsDetailPage(Savings savings, int duration),
-    Result trustedPayUnlockPage(),
-    Result trustedPayLockedPage(),
-    Result makeNewTrustedPaymentPage(),
-    Result budgetPage(),
-    Result createNewBudgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
-    Result quickPaymentOverView(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (createNewBudgetPage != null) {
-      return createNewBudgetPage();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result homePage(_HomePage value),
-    @required Result savingsPage(_SavingsPage value),
-    @required Result savingsInitPage(_SavingsInitPage value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPage value),
-    @required Result savingsDetailPage(_SavingsDetailPage value),
-    @required Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
-    @required Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
-    @required Result budgetPage(_BudgetPage value),
-    @required Result createNewBudgetPage(_CreateNewBudget value),
-    @required Result budgetInitPage(_BudgetInitPage value),
-    @required Result budgetAddPage(_BudgetAddPage value),
-    @required Result budgetDetailPage(_BudgetDetailPage value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPage value),
-    @required Result quickPaymentOverView(_QuickPaymentOverViewS value),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
-    assert(savingsDetailPage != null);
-    assert(trustedPayUnlockPage != null);
-    assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(quickPaymentOverView != null);
-    return createNewBudgetPage(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result homePage(_HomePage value),
-    Result savingsPage(_SavingsPage value),
-    Result savingsInitPage(_SavingsInitPage value),
-    Result createNewSavingsPage(_CreateNewSavingsPage value),
-    Result savingsDetailPage(_SavingsDetailPage value),
-    Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
-    Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
-    Result budgetPage(_BudgetPage value),
-    Result createNewBudgetPage(_CreateNewBudget value),
-    Result budgetInitPage(_BudgetInitPage value),
-    Result budgetAddPage(_BudgetAddPage value),
-    Result budgetDetailPage(_BudgetDetailPage value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPage value),
-    Result quickPaymentOverView(_QuickPaymentOverViewS value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (createNewBudgetPage != null) {
-      return createNewBudgetPage(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CreateNewBudget implements MainViewsState {
-  const factory _CreateNewBudget() = _$_CreateNewBudget;
-}
-
-/// @nodoc
-abstract class _$BudgetInitPageCopyWith<$Res> {
-  factory _$BudgetInitPageCopyWith(
-          _BudgetInitPage value, $Res Function(_BudgetInitPage) then) =
-      __$BudgetInitPageCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$BudgetInitPageCopyWithImpl<$Res>
-    extends _$MainViewsStateCopyWithImpl<$Res>
-    implements _$BudgetInitPageCopyWith<$Res> {
-  __$BudgetInitPageCopyWithImpl(
-      _BudgetInitPage _value, $Res Function(_BudgetInitPage) _then)
-      : super(_value, (v) => _then(v as _BudgetInitPage));
-
-  @override
-  _BudgetInitPage get _value => super._value as _BudgetInitPage;
-}
-
-/// @nodoc
-class _$_BudgetInitPage
-    with DiagnosticableTreeMixin
-    implements _BudgetInitPage {
-  const _$_BudgetInitPage();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MainViewsState.budgetInitPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'MainViewsState.budgetInitPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _BudgetInitPage);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result homePage(),
-    @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result createNewSavingsPage(),
-    @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result trustedPayUnlockPage(),
-    @required Result trustedPayLockedPage(),
-    @required Result makeNewTrustedPaymentPage(),
-    @required Result budgetPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
-    @required Result quickPaymentOverView(),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
-    assert(savingsDetailPage != null);
-    assert(trustedPayUnlockPage != null);
-    assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(quickPaymentOverView != null);
-    return budgetInitPage();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result homePage(),
-    Result savingsPage(),
-    Result savingsInitPage(),
-    Result createNewSavingsPage(),
-    Result savingsDetailPage(Savings savings, int duration),
-    Result trustedPayUnlockPage(),
-    Result trustedPayLockedPage(),
-    Result makeNewTrustedPaymentPage(),
-    Result budgetPage(),
-    Result createNewBudgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
-    Result quickPaymentOverView(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (budgetInitPage != null) {
-      return budgetInitPage();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result homePage(_HomePage value),
-    @required Result savingsPage(_SavingsPage value),
-    @required Result savingsInitPage(_SavingsInitPage value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPage value),
-    @required Result savingsDetailPage(_SavingsDetailPage value),
-    @required Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
-    @required Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
-    @required Result budgetPage(_BudgetPage value),
-    @required Result createNewBudgetPage(_CreateNewBudget value),
-    @required Result budgetInitPage(_BudgetInitPage value),
-    @required Result budgetAddPage(_BudgetAddPage value),
-    @required Result budgetDetailPage(_BudgetDetailPage value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPage value),
-    @required Result quickPaymentOverView(_QuickPaymentOverViewS value),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
-    assert(savingsDetailPage != null);
-    assert(trustedPayUnlockPage != null);
-    assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(quickPaymentOverView != null);
-    return budgetInitPage(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result homePage(_HomePage value),
-    Result savingsPage(_SavingsPage value),
-    Result savingsInitPage(_SavingsInitPage value),
-    Result createNewSavingsPage(_CreateNewSavingsPage value),
-    Result savingsDetailPage(_SavingsDetailPage value),
-    Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
-    Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
-    Result budgetPage(_BudgetPage value),
-    Result createNewBudgetPage(_CreateNewBudget value),
-    Result budgetInitPage(_BudgetInitPage value),
-    Result budgetAddPage(_BudgetAddPage value),
-    Result budgetDetailPage(_BudgetDetailPage value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPage value),
-    Result quickPaymentOverView(_QuickPaymentOverViewS value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (budgetInitPage != null) {
-      return budgetInitPage(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _BudgetInitPage implements MainViewsState {
-  const factory _BudgetInitPage() = _$_BudgetInitPage;
-}
-
-/// @nodoc
-abstract class _$BudgetAddPageCopyWith<$Res> {
-  factory _$BudgetAddPageCopyWith(
-          _BudgetAddPage value, $Res Function(_BudgetAddPage) then) =
-      __$BudgetAddPageCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$BudgetAddPageCopyWithImpl<$Res>
-    extends _$MainViewsStateCopyWithImpl<$Res>
-    implements _$BudgetAddPageCopyWith<$Res> {
-  __$BudgetAddPageCopyWithImpl(
-      _BudgetAddPage _value, $Res Function(_BudgetAddPage) _then)
-      : super(_value, (v) => _then(v as _BudgetAddPage));
-
-  @override
-  _BudgetAddPage get _value => super._value as _BudgetAddPage;
-}
-
-/// @nodoc
-class _$_BudgetAddPage with DiagnosticableTreeMixin implements _BudgetAddPage {
-  const _$_BudgetAddPage();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MainViewsState.budgetAddPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'MainViewsState.budgetAddPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _BudgetAddPage);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result homePage(),
-    @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result createNewSavingsPage(),
-    @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result trustedPayUnlockPage(),
-    @required Result trustedPayLockedPage(),
-    @required Result makeNewTrustedPaymentPage(),
-    @required Result budgetPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
-    @required Result quickPaymentOverView(),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
-    assert(savingsDetailPage != null);
-    assert(trustedPayUnlockPage != null);
-    assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(quickPaymentOverView != null);
-    return budgetAddPage();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result homePage(),
-    Result savingsPage(),
-    Result savingsInitPage(),
-    Result createNewSavingsPage(),
-    Result savingsDetailPage(Savings savings, int duration),
-    Result trustedPayUnlockPage(),
-    Result trustedPayLockedPage(),
-    Result makeNewTrustedPaymentPage(),
-    Result budgetPage(),
-    Result createNewBudgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
-    Result quickPaymentOverView(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (budgetAddPage != null) {
-      return budgetAddPage();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result homePage(_HomePage value),
-    @required Result savingsPage(_SavingsPage value),
-    @required Result savingsInitPage(_SavingsInitPage value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPage value),
-    @required Result savingsDetailPage(_SavingsDetailPage value),
-    @required Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
-    @required Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
-    @required Result budgetPage(_BudgetPage value),
-    @required Result createNewBudgetPage(_CreateNewBudget value),
-    @required Result budgetInitPage(_BudgetInitPage value),
-    @required Result budgetAddPage(_BudgetAddPage value),
-    @required Result budgetDetailPage(_BudgetDetailPage value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPage value),
-    @required Result quickPaymentOverView(_QuickPaymentOverViewS value),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
-    assert(savingsDetailPage != null);
-    assert(trustedPayUnlockPage != null);
-    assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(quickPaymentOverView != null);
-    return budgetAddPage(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result homePage(_HomePage value),
-    Result savingsPage(_SavingsPage value),
-    Result savingsInitPage(_SavingsInitPage value),
-    Result createNewSavingsPage(_CreateNewSavingsPage value),
-    Result savingsDetailPage(_SavingsDetailPage value),
-    Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
-    Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
-    Result budgetPage(_BudgetPage value),
-    Result createNewBudgetPage(_CreateNewBudget value),
-    Result budgetInitPage(_BudgetInitPage value),
-    Result budgetAddPage(_BudgetAddPage value),
-    Result budgetDetailPage(_BudgetDetailPage value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPage value),
-    Result quickPaymentOverView(_QuickPaymentOverViewS value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (budgetAddPage != null) {
-      return budgetAddPage(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _BudgetAddPage implements MainViewsState {
-  const factory _BudgetAddPage() = _$_BudgetAddPage;
 }
 
 /// @nodoc
@@ -5448,34 +2855,22 @@ class _$_BudgetDetailPage
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result createNewSavingsPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
     @required Result trustedPayUnlockPage(),
     @required Result trustedPayLockedPage(),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result budgetPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
     return budgetDetailPage(budget);
   }
@@ -5485,18 +2880,12 @@ class _$_BudgetDetailPage
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
-    Result createNewSavingsPage(),
     Result savingsDetailPage(Savings savings, int duration),
     Result trustedPayUnlockPage(),
     Result trustedPayLockedPage(),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result budgetPage(),
-    Result createNewBudgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result quickPaymentOverView(),
     @required Result orElse(),
   }) {
@@ -5512,35 +2901,22 @@ class _$_BudgetDetailPage
   Result map<Result extends Object>({
     @required Result homePage(_HomePage value),
     @required Result savingsPage(_SavingsPage value),
-    @required Result savingsInitPage(_SavingsInitPage value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPage value),
     @required Result savingsDetailPage(_SavingsDetailPage value),
     @required Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     @required Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    @required Result trustedPayDetail(_TrustedPayDetail value),
     @required Result budgetPage(_BudgetPage value),
-    @required Result createNewBudgetPage(_CreateNewBudget value),
-    @required Result budgetInitPage(_BudgetInitPage value),
-    @required Result budgetAddPage(_BudgetAddPage value),
     @required Result budgetDetailPage(_BudgetDetailPage value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     @required Result quickPaymentOverView(_QuickPaymentOverViewS value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
     return budgetDetailPage(this);
   }
@@ -5550,18 +2926,12 @@ class _$_BudgetDetailPage
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePage value),
     Result savingsPage(_SavingsPage value),
-    Result savingsInitPage(_SavingsInitPage value),
-    Result createNewSavingsPage(_CreateNewSavingsPage value),
     Result savingsDetailPage(_SavingsDetailPage value),
     Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    Result trustedPayDetail(_TrustedPayDetail value),
     Result budgetPage(_BudgetPage value),
-    Result createNewBudgetPage(_CreateNewBudget value),
-    Result budgetInitPage(_BudgetInitPage value),
-    Result budgetAddPage(_BudgetAddPage value),
     Result budgetDetailPage(_BudgetDetailPage value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     Result quickPaymentOverView(_QuickPaymentOverViewS value),
     @required Result orElse(),
   }) {
@@ -5579,185 +2949,6 @@ abstract class _BudgetDetailPage implements MainViewsState {
 
   Budget get budget;
   _$BudgetDetailPageCopyWith<_BudgetDetailPage> get copyWith;
-}
-
-/// @nodoc
-abstract class _$SendBudgetGiftPageCopyWith<$Res> {
-  factory _$SendBudgetGiftPageCopyWith(
-          _SendBudgetGiftPage value, $Res Function(_SendBudgetGiftPage) then) =
-      __$SendBudgetGiftPageCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$SendBudgetGiftPageCopyWithImpl<$Res>
-    extends _$MainViewsStateCopyWithImpl<$Res>
-    implements _$SendBudgetGiftPageCopyWith<$Res> {
-  __$SendBudgetGiftPageCopyWithImpl(
-      _SendBudgetGiftPage _value, $Res Function(_SendBudgetGiftPage) _then)
-      : super(_value, (v) => _then(v as _SendBudgetGiftPage));
-
-  @override
-  _SendBudgetGiftPage get _value => super._value as _SendBudgetGiftPage;
-}
-
-/// @nodoc
-class _$_SendBudgetGiftPage
-    with DiagnosticableTreeMixin
-    implements _SendBudgetGiftPage {
-  const _$_SendBudgetGiftPage();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MainViewsState.sendBudgetGiftPage()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'MainViewsState.sendBudgetGiftPage'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SendBudgetGiftPage);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result homePage(),
-    @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result createNewSavingsPage(),
-    @required Result savingsDetailPage(Savings savings, int duration),
-    @required Result trustedPayUnlockPage(),
-    @required Result trustedPayLockedPage(),
-    @required Result makeNewTrustedPaymentPage(),
-    @required Result budgetPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
-    @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
-    @required Result quickPaymentOverView(),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
-    assert(savingsDetailPage != null);
-    assert(trustedPayUnlockPage != null);
-    assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(quickPaymentOverView != null);
-    return sendBudgetGiftPage();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result homePage(),
-    Result savingsPage(),
-    Result savingsInitPage(),
-    Result createNewSavingsPage(),
-    Result savingsDetailPage(Savings savings, int duration),
-    Result trustedPayUnlockPage(),
-    Result trustedPayLockedPage(),
-    Result makeNewTrustedPaymentPage(),
-    Result budgetPage(),
-    Result createNewBudgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
-    Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
-    Result quickPaymentOverView(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (sendBudgetGiftPage != null) {
-      return sendBudgetGiftPage();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result homePage(_HomePage value),
-    @required Result savingsPage(_SavingsPage value),
-    @required Result savingsInitPage(_SavingsInitPage value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPage value),
-    @required Result savingsDetailPage(_SavingsDetailPage value),
-    @required Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
-    @required Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
-    @required Result budgetPage(_BudgetPage value),
-    @required Result createNewBudgetPage(_CreateNewBudget value),
-    @required Result budgetInitPage(_BudgetInitPage value),
-    @required Result budgetAddPage(_BudgetAddPage value),
-    @required Result budgetDetailPage(_BudgetDetailPage value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPage value),
-    @required Result quickPaymentOverView(_QuickPaymentOverViewS value),
-  }) {
-    assert(homePage != null);
-    assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
-    assert(savingsDetailPage != null);
-    assert(trustedPayUnlockPage != null);
-    assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
-    assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
-    assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
-    assert(quickPaymentOverView != null);
-    return sendBudgetGiftPage(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result homePage(_HomePage value),
-    Result savingsPage(_SavingsPage value),
-    Result savingsInitPage(_SavingsInitPage value),
-    Result createNewSavingsPage(_CreateNewSavingsPage value),
-    Result savingsDetailPage(_SavingsDetailPage value),
-    Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
-    Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
-    Result budgetPage(_BudgetPage value),
-    Result createNewBudgetPage(_CreateNewBudget value),
-    Result budgetInitPage(_BudgetInitPage value),
-    Result budgetAddPage(_BudgetAddPage value),
-    Result budgetDetailPage(_BudgetDetailPage value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPage value),
-    Result quickPaymentOverView(_QuickPaymentOverViewS value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (sendBudgetGiftPage != null) {
-      return sendBudgetGiftPage(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SendBudgetGiftPage implements MainViewsState {
-  const factory _SendBudgetGiftPage() = _$_SendBudgetGiftPage;
 }
 
 /// @nodoc
@@ -5810,34 +3001,22 @@ class _$_QuickPaymentOverViewS
   Result when<Result extends Object>({
     @required Result homePage(),
     @required Result savingsPage(),
-    @required Result savingsInitPage(),
-    @required Result createNewSavingsPage(),
     @required Result savingsDetailPage(Savings savings, int duration),
     @required Result trustedPayUnlockPage(),
     @required Result trustedPayLockedPage(),
-    @required Result makeNewTrustedPaymentPage(),
+    @required Result trustedPayDetail(Payment payment),
     @required Result budgetPage(),
-    @required Result createNewBudgetPage(),
-    @required Result budgetInitPage(),
-    @required Result budgetAddPage(),
     @required Result budgetDetailPage(Budget budget),
-    @required Result sendBudgetGiftPage(),
     @required Result quickPaymentOverView(),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
     return quickPaymentOverView();
   }
@@ -5847,18 +3026,12 @@ class _$_QuickPaymentOverViewS
   Result maybeWhen<Result extends Object>({
     Result homePage(),
     Result savingsPage(),
-    Result savingsInitPage(),
-    Result createNewSavingsPage(),
     Result savingsDetailPage(Savings savings, int duration),
     Result trustedPayUnlockPage(),
     Result trustedPayLockedPage(),
-    Result makeNewTrustedPaymentPage(),
+    Result trustedPayDetail(Payment payment),
     Result budgetPage(),
-    Result createNewBudgetPage(),
-    Result budgetInitPage(),
-    Result budgetAddPage(),
     Result budgetDetailPage(Budget budget),
-    Result sendBudgetGiftPage(),
     Result quickPaymentOverView(),
     @required Result orElse(),
   }) {
@@ -5874,35 +3047,22 @@ class _$_QuickPaymentOverViewS
   Result map<Result extends Object>({
     @required Result homePage(_HomePage value),
     @required Result savingsPage(_SavingsPage value),
-    @required Result savingsInitPage(_SavingsInitPage value),
-    @required Result createNewSavingsPage(_CreateNewSavingsPage value),
     @required Result savingsDetailPage(_SavingsDetailPage value),
     @required Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     @required Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    @required
-        Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    @required Result trustedPayDetail(_TrustedPayDetail value),
     @required Result budgetPage(_BudgetPage value),
-    @required Result createNewBudgetPage(_CreateNewBudget value),
-    @required Result budgetInitPage(_BudgetInitPage value),
-    @required Result budgetAddPage(_BudgetAddPage value),
     @required Result budgetDetailPage(_BudgetDetailPage value),
-    @required Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     @required Result quickPaymentOverView(_QuickPaymentOverViewS value),
   }) {
     assert(homePage != null);
     assert(savingsPage != null);
-    assert(savingsInitPage != null);
-    assert(createNewSavingsPage != null);
     assert(savingsDetailPage != null);
     assert(trustedPayUnlockPage != null);
     assert(trustedPayLockedPage != null);
-    assert(makeNewTrustedPaymentPage != null);
+    assert(trustedPayDetail != null);
     assert(budgetPage != null);
-    assert(createNewBudgetPage != null);
-    assert(budgetInitPage != null);
-    assert(budgetAddPage != null);
     assert(budgetDetailPage != null);
-    assert(sendBudgetGiftPage != null);
     assert(quickPaymentOverView != null);
     return quickPaymentOverView(this);
   }
@@ -5912,18 +3072,12 @@ class _$_QuickPaymentOverViewS
   Result maybeMap<Result extends Object>({
     Result homePage(_HomePage value),
     Result savingsPage(_SavingsPage value),
-    Result savingsInitPage(_SavingsInitPage value),
-    Result createNewSavingsPage(_CreateNewSavingsPage value),
     Result savingsDetailPage(_SavingsDetailPage value),
     Result trustedPayUnlockPage(_TrustedPayUnlockPage value),
     Result trustedPayLockedPage(_TrustedPayLockedPage value),
-    Result makeNewTrustedPaymentPage(_MakeNewTrustedPaymentPage value),
+    Result trustedPayDetail(_TrustedPayDetail value),
     Result budgetPage(_BudgetPage value),
-    Result createNewBudgetPage(_CreateNewBudget value),
-    Result budgetInitPage(_BudgetInitPage value),
-    Result budgetAddPage(_BudgetAddPage value),
     Result budgetDetailPage(_BudgetDetailPage value),
-    Result sendBudgetGiftPage(_SendBudgetGiftPage value),
     Result quickPaymentOverView(_QuickPaymentOverViewS value),
     @required Result orElse(),
   }) {
