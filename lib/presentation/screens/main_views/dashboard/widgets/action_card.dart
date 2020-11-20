@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:tenflrpay/presentation/core/assets/colors.dart';
 import 'package:tenflrpay/presentation/core/styles/decorations.dart';
 import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
 import '../../../../core/translations/translations.i18n.dart';
 
 class MyCard extends StatelessWidget {
-  final String imagePath;
+  final String svgPath;
   final String description;
   final VoidCallback onPressed;
+  final bool rotate;
 
   const MyCard(
       {Key key,
-      @required this.imagePath,
+      @required this.svgPath,
+      this.rotate = true,
       @required this.description,
       @required this.onPressed})
       : super(key: key);
@@ -21,19 +24,19 @@ class MyCard extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: RotatedBox(
-        quarterTurns: 1,
+        quarterTurns: rotate? 1 :0,
         child: Container(
           decoration: DefaultDecoration.all,
-          margin: const EdgeInsets.symmetric(horizontal: 5),
+          margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-          // width: size.width * 0.2,
-          height: size.height * 0.21,
+          width: size.width * 0.41,
+          height: size.width * 0.41,
           // color: TfColors.secondary,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Image.asset(imagePath, scale: 1.3,),
+              SvgPicture.asset(svgPath, ),
               Text(
                 description.i18n,
                 textAlign: TextAlign.center,
