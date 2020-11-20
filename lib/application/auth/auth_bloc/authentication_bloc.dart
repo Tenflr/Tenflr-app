@@ -68,11 +68,11 @@ class AuthenticationBloc
                */
             if (_user != null) {
               _settings.setAutomaticSavingsUnlock(unlockAuto: true);
-              // _settings.setSmartFundsUse(useSmartFunds: true);
+              _settings.setSmartFundsUse(useSmartFunds: true);
               _settings.setMomoOrTrustedFunds(withdrawalWithMomo: true);
               _settings.setTrustedPayPin('2580');
-              // await _settings.setUserNumber(_user.phoneNumber);
-              // await _settings.setUserId(_user.id);
+              await _settings.setUserNumber(_user.phoneNumber);
+              await _settings.setUserId(_user.id);
             }
             yield userOptionFromDatabase
                 .fold((l) => const AuthenticationState.unauthenticated(),
@@ -113,11 +113,11 @@ class AuthenticationBloc
                */
             if (_user != null) {
               _settings.setAutomaticSavingsUnlock(unlockAuto: true);
-              // _settings.setSmartFundsUse(useSmartFunds: true);
+              _settings.setSmartFundsUse(useSmartFunds: true);
               _settings.setMomoOrTrustedFunds(withdrawalWithMomo: true);
               _settings.setTrustedPayPin('2580');
-              // await _settings.setUserNumber(_user.phoneNumber);
-              // await _settings.setUserId(_user.id);
+              await _settings.setUserNumber(_user.phoneNumber);
+              await _settings.setUserId(_user.id);
             }
 
             yield userOptionFromGoogle.fold(
