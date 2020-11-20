@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:provider/provider.dart';
+import 'package:tenflrpay/presentation/core/assets/colors.dart';
+import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
+import 'package:tenflrpay/presentation/screens/main_views/trustedpay/trustedpay_detail_screen.dart';
+import 'package:tenflrpay/presentation/widgets/show_notification.dart';
+import 'package:tenflrpay/presentation/widgets/title_builder.dart';
 
 import '../../../application/main_views_bloc/main_views_bloc.dart';
 import '../../../injection.dart';
@@ -23,6 +28,7 @@ import 'savings/savings_screen.dart';
 import 'trustedpay/VaultDoorScreen.dart';
 import 'trustedpay/send_trusted_payment_screen.dart';
 import 'trustedpay/trusted_payment_screen.dart';
+import '../../core/translations/translations.i18n.dart';
 
 class HomeScreenBody extends HookWidget {
   const HomeScreenBody();
@@ -77,10 +83,10 @@ class HomeScreenBody extends HookWidget {
                         },
                       ),
               ),
-              description: const Icon(TfIcons.tenfl_logo),
-              trailing: const IconButton(
-                icon: Icon(TfIcons.notif),
-                onPressed: null,
+              description: const TitleBuilder(), 
+              trailing: IconButton(
+                icon: const Icon(TfIcons.notif),
+                onPressed: ()=>  showNotif(context),
               ),
             ),
             BlocBuilder<MainViewsBloc, MainViewsState>(
@@ -89,23 +95,25 @@ class HomeScreenBody extends HookWidget {
                 return state.map(
                   homePage: (_) => const DashBoard(),
                   savingsPage: (_) => const SavingsScreen(),
-                  savingsInitPage: (_) => const SavingsInitialScreen(),
-                  createNewSavingsPage: (_) => const CreateSavingsScreen(),
+                  // savingsInitPage: (_) => const SavingsInitialScreen(),
+                  // createNewSavingsPage: (_) => const CreateSavingsScreen(),
                   savingsDetailPage: (state) => SavingsDetailScreen(
                     saving: state.savings,
                   ),
                   trustedPayUnlockPage: (_) => const TrustedPaymentScreen(),
                   trustedPayLockedPage: (_) => const VaultDoorScreen(),
-                  makeNewTrustedPaymentPage: (_) =>
-                      const SendTrustedPaymentScreen(),
+                  // makeNewTrustedPaymentPage: (_) =>
+                  //     const SendTrustedPaymentScreen(),
                   budgetPage: (_) => const BudgetManagerScreen(),
-                  createNewBudgetPage: (_) => const BudgetCreateScreen(),
-                  budgetInitPage: (_) => const BudgetManagerInitialScreen(),
-                  budgetAddPage: (_) => const BudgetManagerDetailScreen(),
-                  budgetDetailPage: (state) =>
-                      const BudgetManagerDetailScreen(),
-                  sendBudgetGiftPage: (_) => const BudgetCreateScreen(),
+                  // createNewBudgetPage: (_) => const BudgetCreateScreen(),
+                  // budgetInitPage: (_) => const BudgetManagerInitialScreen(),
+                  // budgetAddPage: (_) => const BudgetManagerDetailScreen(),
+                  budgetDetailPage: (state) => BudgetManagerDetailScreen(
+                    budget: state.budget,
+                  ),
+                  // sendBudgetGiftPage: (_) => const BudgetCreateScreen(),
                   quickPaymentOverView: (_) => const QuickPaymentScreen(),
+                  trustedPayDetail: (state) => TrustedPayDetailScreen(payment: state.payment),
                 );
               },
             ),
@@ -115,4 +123,50 @@ class HomeScreenBody extends HookWidget {
       ),
     );
   }
+}
+
+_showMenu(BuildContext context) {
+  final Size size = MediaQuery.of(context).size;
+  showModalBottomSheet(
+      backgroundColor: Colors.transparent,
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          // height: size.height ,
+          decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(16.0),
+                topRight: Radius.circular(16.0),
+              ),
+              color: TfColors.background),
+          child: Stack(
+            alignment: Alignment(0, 0),
+            overflow: Overflow.visible,
+            children: <Widget>[
+              Align(
+                alignment: Alignment.topCenter,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Notifications',
+                    style: SettingsTextStlyles.tileHeader(size),
+                  ),
+                ),
+              ),
+              Align(
+                alignment: Alignment.center,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.notifications_off_outlined,
+                        size: size.width * 0.3),
+                    Text('You have no notification at the moment.'.i18n,
+                        style: SettingsTextStlyles.value(size))
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      });
 }
