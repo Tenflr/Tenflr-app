@@ -5,6 +5,7 @@ import 'package:tenflrpay/domain/payment/payment_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:kt_dart/kt.dart';
+import 'package:tenflrpay/domain/user/user.dart';
 
 abstract class IPaymentRepository {
   // watch payments
@@ -24,6 +25,9 @@ abstract class IPaymentRepository {
 
   //Check for enough funds in TrustedPay account
   Future<bool> hasEnoughTrustedFunds(MoneyAmount requiredAmount);
+
+  // Search user
+  Future<Either<PaymentFailure, User>> searchUser(String userQuery);
 
   //Use to deduct funds from current user Trusted pay account
   // to be sent to someone or for a purchase.
