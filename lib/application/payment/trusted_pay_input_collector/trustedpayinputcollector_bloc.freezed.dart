@@ -65,6 +65,13 @@ class _$TrustedPayInputCollectorEventTearOff {
   _CreditTrustedPay creditTrustedPay() {
     return const _CreditTrustedPay();
   }
+
+// ignore: unused_element
+  _UserSearch searchUser(String userQuery) {
+    return _UserSearch(
+      userQuery,
+    );
+  }
 }
 
 /// @nodoc
@@ -83,6 +90,7 @@ mixin _$TrustedPayInputCollectorEvent {
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
     @required Result creditTrustedPay(),
+    @required Result searchUser(String userQuery),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -94,6 +102,7 @@ mixin _$TrustedPayInputCollectorEvent {
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
     Result creditTrustedPay(),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -106,6 +115,7 @@ mixin _$TrustedPayInputCollectorEvent {
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
     @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result searchUser(_UserSearch value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -117,6 +127,7 @@ mixin _$TrustedPayInputCollectorEvent {
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
     Result creditTrustedPay(_CreditTrustedPay value),
+    Result searchUser(_UserSearch value),
     @required Result orElse(),
   });
 }
@@ -216,6 +227,7 @@ class _$_AmountChanged with DiagnosticableTreeMixin implements _AmountChanged {
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
     @required Result creditTrustedPay(),
+    @required Result searchUser(String userQuery),
   }) {
     assert(amountChanged != null);
     assert(receiverChanged != null);
@@ -225,6 +237,7 @@ class _$_AmountChanged with DiagnosticableTreeMixin implements _AmountChanged {
     assert(initialized != null);
     assert(amountToCreditChanged != null);
     assert(creditTrustedPay != null);
+    assert(searchUser != null);
     return amountChanged(amount);
   }
 
@@ -239,6 +252,7 @@ class _$_AmountChanged with DiagnosticableTreeMixin implements _AmountChanged {
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
     Result creditTrustedPay(),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -259,6 +273,7 @@ class _$_AmountChanged with DiagnosticableTreeMixin implements _AmountChanged {
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
     @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result searchUser(_UserSearch value),
   }) {
     assert(amountChanged != null);
     assert(receiverChanged != null);
@@ -268,6 +283,7 @@ class _$_AmountChanged with DiagnosticableTreeMixin implements _AmountChanged {
     assert(initialized != null);
     assert(amountToCreditChanged != null);
     assert(creditTrustedPay != null);
+    assert(searchUser != null);
     return amountChanged(this);
   }
 
@@ -282,6 +298,7 @@ class _$_AmountChanged with DiagnosticableTreeMixin implements _AmountChanged {
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
     Result creditTrustedPay(_CreditTrustedPay value),
+    Result searchUser(_UserSearch value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -393,6 +410,7 @@ class _$_ReceiverChanged
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
     @required Result creditTrustedPay(),
+    @required Result searchUser(String userQuery),
   }) {
     assert(amountChanged != null);
     assert(receiverChanged != null);
@@ -402,6 +420,7 @@ class _$_ReceiverChanged
     assert(initialized != null);
     assert(amountToCreditChanged != null);
     assert(creditTrustedPay != null);
+    assert(searchUser != null);
     return receiverChanged(reciever);
   }
 
@@ -416,6 +435,7 @@ class _$_ReceiverChanged
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
     Result creditTrustedPay(),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -436,6 +456,7 @@ class _$_ReceiverChanged
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
     @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result searchUser(_UserSearch value),
   }) {
     assert(amountChanged != null);
     assert(receiverChanged != null);
@@ -445,6 +466,7 @@ class _$_ReceiverChanged
     assert(initialized != null);
     assert(amountToCreditChanged != null);
     assert(creditTrustedPay != null);
+    assert(searchUser != null);
     return receiverChanged(this);
   }
 
@@ -459,6 +481,7 @@ class _$_ReceiverChanged
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
     Result creditTrustedPay(_CreditTrustedPay value),
+    Result searchUser(_UserSearch value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -559,6 +582,7 @@ class _$_UnlockDateChanged
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
     @required Result creditTrustedPay(),
+    @required Result searchUser(String userQuery),
   }) {
     assert(amountChanged != null);
     assert(receiverChanged != null);
@@ -568,6 +592,7 @@ class _$_UnlockDateChanged
     assert(initialized != null);
     assert(amountToCreditChanged != null);
     assert(creditTrustedPay != null);
+    assert(searchUser != null);
     return unlockDateChanged(unlockDate);
   }
 
@@ -582,6 +607,7 @@ class _$_UnlockDateChanged
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
     Result creditTrustedPay(),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -602,6 +628,7 @@ class _$_UnlockDateChanged
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
     @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result searchUser(_UserSearch value),
   }) {
     assert(amountChanged != null);
     assert(receiverChanged != null);
@@ -611,6 +638,7 @@ class _$_UnlockDateChanged
     assert(initialized != null);
     assert(amountToCreditChanged != null);
     assert(creditTrustedPay != null);
+    assert(searchUser != null);
     return unlockDateChanged(this);
   }
 
@@ -625,6 +653,7 @@ class _$_UnlockDateChanged
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
     Result creditTrustedPay(_CreditTrustedPay value),
+    Result searchUser(_UserSearch value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -728,6 +757,7 @@ class _$_ReceiverSearchTermChanged
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
     @required Result creditTrustedPay(),
+    @required Result searchUser(String userQuery),
   }) {
     assert(amountChanged != null);
     assert(receiverChanged != null);
@@ -737,6 +767,7 @@ class _$_ReceiverSearchTermChanged
     assert(initialized != null);
     assert(amountToCreditChanged != null);
     assert(creditTrustedPay != null);
+    assert(searchUser != null);
     return receiverSerchTermChanged(searchTerm);
   }
 
@@ -751,6 +782,7 @@ class _$_ReceiverSearchTermChanged
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
     Result creditTrustedPay(),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -771,6 +803,7 @@ class _$_ReceiverSearchTermChanged
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
     @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result searchUser(_UserSearch value),
   }) {
     assert(amountChanged != null);
     assert(receiverChanged != null);
@@ -780,6 +813,7 @@ class _$_ReceiverSearchTermChanged
     assert(initialized != null);
     assert(amountToCreditChanged != null);
     assert(creditTrustedPay != null);
+    assert(searchUser != null);
     return receiverSerchTermChanged(this);
   }
 
@@ -794,6 +828,7 @@ class _$_ReceiverSearchTermChanged
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
     Result creditTrustedPay(_CreditTrustedPay value),
+    Result searchUser(_UserSearch value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -867,6 +902,7 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
     @required Result creditTrustedPay(),
+    @required Result searchUser(String userQuery),
   }) {
     assert(amountChanged != null);
     assert(receiverChanged != null);
@@ -876,6 +912,7 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     assert(initialized != null);
     assert(amountToCreditChanged != null);
     assert(creditTrustedPay != null);
+    assert(searchUser != null);
     return submitted();
   }
 
@@ -890,6 +927,7 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
     Result creditTrustedPay(),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -910,6 +948,7 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
     @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result searchUser(_UserSearch value),
   }) {
     assert(amountChanged != null);
     assert(receiverChanged != null);
@@ -919,6 +958,7 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     assert(initialized != null);
     assert(amountToCreditChanged != null);
     assert(creditTrustedPay != null);
+    assert(searchUser != null);
     return submitted(this);
   }
 
@@ -933,6 +973,7 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
     Result creditTrustedPay(_CreditTrustedPay value),
+    Result searchUser(_UserSearch value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1036,6 +1077,7 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
     @required Result creditTrustedPay(),
+    @required Result searchUser(String userQuery),
   }) {
     assert(amountChanged != null);
     assert(receiverChanged != null);
@@ -1045,6 +1087,7 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     assert(initialized != null);
     assert(amountToCreditChanged != null);
     assert(creditTrustedPay != null);
+    assert(searchUser != null);
     return initialized(payer);
   }
 
@@ -1059,6 +1102,7 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
     Result creditTrustedPay(),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1079,6 +1123,7 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
     @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result searchUser(_UserSearch value),
   }) {
     assert(amountChanged != null);
     assert(receiverChanged != null);
@@ -1088,6 +1133,7 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     assert(initialized != null);
     assert(amountToCreditChanged != null);
     assert(creditTrustedPay != null);
+    assert(searchUser != null);
     return initialized(this);
   }
 
@@ -1102,6 +1148,7 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
     Result creditTrustedPay(_CreditTrustedPay value),
+    Result searchUser(_UserSearch value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1200,6 +1247,7 @@ class _$_AmountToCreditChanged
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
     @required Result creditTrustedPay(),
+    @required Result searchUser(String userQuery),
   }) {
     assert(amountChanged != null);
     assert(receiverChanged != null);
@@ -1209,6 +1257,7 @@ class _$_AmountToCreditChanged
     assert(initialized != null);
     assert(amountToCreditChanged != null);
     assert(creditTrustedPay != null);
+    assert(searchUser != null);
     return amountToCreditChanged(amount);
   }
 
@@ -1223,6 +1272,7 @@ class _$_AmountToCreditChanged
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
     Result creditTrustedPay(),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1243,6 +1293,7 @@ class _$_AmountToCreditChanged
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
     @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result searchUser(_UserSearch value),
   }) {
     assert(amountChanged != null);
     assert(receiverChanged != null);
@@ -1252,6 +1303,7 @@ class _$_AmountToCreditChanged
     assert(initialized != null);
     assert(amountToCreditChanged != null);
     assert(creditTrustedPay != null);
+    assert(searchUser != null);
     return amountToCreditChanged(this);
   }
 
@@ -1266,6 +1318,7 @@ class _$_AmountToCreditChanged
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
     Result creditTrustedPay(_CreditTrustedPay value),
+    Result searchUser(_UserSearch value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1341,6 +1394,7 @@ class _$_CreditTrustedPay
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
     @required Result creditTrustedPay(),
+    @required Result searchUser(String userQuery),
   }) {
     assert(amountChanged != null);
     assert(receiverChanged != null);
@@ -1350,6 +1404,7 @@ class _$_CreditTrustedPay
     assert(initialized != null);
     assert(amountToCreditChanged != null);
     assert(creditTrustedPay != null);
+    assert(searchUser != null);
     return creditTrustedPay();
   }
 
@@ -1364,6 +1419,7 @@ class _$_CreditTrustedPay
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
     Result creditTrustedPay(),
+    Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1384,6 +1440,7 @@ class _$_CreditTrustedPay
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
     @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result searchUser(_UserSearch value),
   }) {
     assert(amountChanged != null);
     assert(receiverChanged != null);
@@ -1393,6 +1450,7 @@ class _$_CreditTrustedPay
     assert(initialized != null);
     assert(amountToCreditChanged != null);
     assert(creditTrustedPay != null);
+    assert(searchUser != null);
     return creditTrustedPay(this);
   }
 
@@ -1407,6 +1465,7 @@ class _$_CreditTrustedPay
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
     Result creditTrustedPay(_CreditTrustedPay value),
+    Result searchUser(_UserSearch value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1422,6 +1481,173 @@ abstract class _CreditTrustedPay implements TrustedPayInputCollectorEvent {
 }
 
 /// @nodoc
+abstract class _$UserSearchCopyWith<$Res> {
+  factory _$UserSearchCopyWith(
+          _UserSearch value, $Res Function(_UserSearch) then) =
+      __$UserSearchCopyWithImpl<$Res>;
+  $Res call({String userQuery});
+}
+
+/// @nodoc
+class __$UserSearchCopyWithImpl<$Res>
+    extends _$TrustedPayInputCollectorEventCopyWithImpl<$Res>
+    implements _$UserSearchCopyWith<$Res> {
+  __$UserSearchCopyWithImpl(
+      _UserSearch _value, $Res Function(_UserSearch) _then)
+      : super(_value, (v) => _then(v as _UserSearch));
+
+  @override
+  _UserSearch get _value => super._value as _UserSearch;
+
+  @override
+  $Res call({
+    Object userQuery = freezed,
+  }) {
+    return _then(_UserSearch(
+      userQuery == freezed ? _value.userQuery : userQuery as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_UserSearch with DiagnosticableTreeMixin implements _UserSearch {
+  const _$_UserSearch(this.userQuery) : assert(userQuery != null);
+
+  @override
+  final String userQuery;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'TrustedPayInputCollectorEvent.searchUser(userQuery: $userQuery)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'TrustedPayInputCollectorEvent.searchUser'))
+      ..add(DiagnosticsProperty('userQuery', userQuery));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _UserSearch &&
+            (identical(other.userQuery, userQuery) ||
+                const DeepCollectionEquality()
+                    .equals(other.userQuery, userQuery)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(userQuery);
+
+  @override
+  _$UserSearchCopyWith<_UserSearch> get copyWith =>
+      __$UserSearchCopyWithImpl<_UserSearch>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result amountChanged(MoneyAmount amount),
+    @required Result receiverChanged(User reciever),
+    @required Result unlockDateChanged(ValidDate unlockDate),
+    @required Result receiverSerchTermChanged(String searchTerm),
+    @required Result submitted(),
+    @required Result initialized(User payer),
+    @required Result amountToCreditChanged(MoneyAmount amount),
+    @required Result creditTrustedPay(),
+    @required Result searchUser(String userQuery),
+  }) {
+    assert(amountChanged != null);
+    assert(receiverChanged != null);
+    assert(unlockDateChanged != null);
+    assert(receiverSerchTermChanged != null);
+    assert(submitted != null);
+    assert(initialized != null);
+    assert(amountToCreditChanged != null);
+    assert(creditTrustedPay != null);
+    assert(searchUser != null);
+    return searchUser(userQuery);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result amountChanged(MoneyAmount amount),
+    Result receiverChanged(User reciever),
+    Result unlockDateChanged(ValidDate unlockDate),
+    Result receiverSerchTermChanged(String searchTerm),
+    Result submitted(),
+    Result initialized(User payer),
+    Result amountToCreditChanged(MoneyAmount amount),
+    Result creditTrustedPay(),
+    Result searchUser(String userQuery),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (searchUser != null) {
+      return searchUser(userQuery);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result amountChanged(_AmountChanged value),
+    @required Result receiverChanged(_ReceiverChanged value),
+    @required Result unlockDateChanged(_UnlockDateChanged value),
+    @required Result receiverSerchTermChanged(_ReceiverSearchTermChanged value),
+    @required Result submitted(_Submitted value),
+    @required Result initialized(_Initialized value),
+    @required Result amountToCreditChanged(_AmountToCreditChanged value),
+    @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result searchUser(_UserSearch value),
+  }) {
+    assert(amountChanged != null);
+    assert(receiverChanged != null);
+    assert(unlockDateChanged != null);
+    assert(receiverSerchTermChanged != null);
+    assert(submitted != null);
+    assert(initialized != null);
+    assert(amountToCreditChanged != null);
+    assert(creditTrustedPay != null);
+    assert(searchUser != null);
+    return searchUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result amountChanged(_AmountChanged value),
+    Result receiverChanged(_ReceiverChanged value),
+    Result unlockDateChanged(_UnlockDateChanged value),
+    Result receiverSerchTermChanged(_ReceiverSearchTermChanged value),
+    Result submitted(_Submitted value),
+    Result initialized(_Initialized value),
+    Result amountToCreditChanged(_AmountToCreditChanged value),
+    Result creditTrustedPay(_CreditTrustedPay value),
+    Result searchUser(_UserSearch value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (searchUser != null) {
+      return searchUser(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UserSearch implements TrustedPayInputCollectorEvent {
+  const factory _UserSearch(String userQuery) = _$_UserSearch;
+
+  String get userQuery;
+  _$UserSearchCopyWith<_UserSearch> get copyWith;
+}
+
+/// @nodoc
 class _$TrustedPayInputCollectorStateTearOff {
   const _$TrustedPayInputCollectorStateTearOff();
 
@@ -1434,6 +1660,8 @@ class _$TrustedPayInputCollectorStateTearOff {
       @required
           bool isEditing,
       @required
+          bool userFound,
+      @required
           Payment payment,
       @required
           Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption}) {
@@ -1441,6 +1669,7 @@ class _$TrustedPayInputCollectorStateTearOff {
       showErrorMessage: showErrorMessage,
       isSaving: isSaving,
       isEditing: isEditing,
+      userFound: userFound,
       payment: payment,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption,
     );
@@ -1456,6 +1685,7 @@ mixin _$TrustedPayInputCollectorState {
   bool get showErrorMessage;
   bool get isSaving;
   bool get isEditing;
+  bool get userFound;
   Payment get payment;
   Option<Either<PaymentFailure, Unit>> get saveFailureOrSuccessOption;
 
@@ -1473,6 +1703,7 @@ abstract class $TrustedPayInputCollectorStateCopyWith<$Res> {
       {bool showErrorMessage,
       bool isSaving,
       bool isEditing,
+      bool userFound,
       Payment payment,
       Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption});
 
@@ -1493,6 +1724,7 @@ class _$TrustedPayInputCollectorStateCopyWithImpl<$Res>
     Object showErrorMessage = freezed,
     Object isSaving = freezed,
     Object isEditing = freezed,
+    Object userFound = freezed,
     Object payment = freezed,
     Object saveFailureOrSuccessOption = freezed,
   }) {
@@ -1502,6 +1734,7 @@ class _$TrustedPayInputCollectorStateCopyWithImpl<$Res>
           : showErrorMessage as bool,
       isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
       isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
+      userFound: userFound == freezed ? _value.userFound : userFound as bool,
       payment: payment == freezed ? _value.payment : payment as Payment,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
@@ -1532,6 +1765,7 @@ abstract class _$TrustedPayInputCollectorStateCopyWith<$Res>
       {bool showErrorMessage,
       bool isSaving,
       bool isEditing,
+      bool userFound,
       Payment payment,
       Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption});
 
@@ -1557,6 +1791,7 @@ class __$TrustedPayInputCollectorStateCopyWithImpl<$Res>
     Object showErrorMessage = freezed,
     Object isSaving = freezed,
     Object isEditing = freezed,
+    Object userFound = freezed,
     Object payment = freezed,
     Object saveFailureOrSuccessOption = freezed,
   }) {
@@ -1566,6 +1801,7 @@ class __$TrustedPayInputCollectorStateCopyWithImpl<$Res>
           : showErrorMessage as bool,
       isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
       isEditing: isEditing == freezed ? _value.isEditing : isEditing as bool,
+      userFound: userFound == freezed ? _value.userFound : userFound as bool,
       payment: payment == freezed ? _value.payment : payment as Payment,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
@@ -1582,11 +1818,13 @@ class _$_TrustedPayInputCollectorState
       {@required this.showErrorMessage,
       @required this.isSaving,
       @required this.isEditing,
+      @required this.userFound,
       @required this.payment,
       @required this.saveFailureOrSuccessOption})
       : assert(showErrorMessage != null),
         assert(isSaving != null),
         assert(isEditing != null),
+        assert(userFound != null),
         assert(payment != null),
         assert(saveFailureOrSuccessOption != null);
 
@@ -1597,13 +1835,15 @@ class _$_TrustedPayInputCollectorState
   @override
   final bool isEditing;
   @override
+  final bool userFound;
+  @override
   final Payment payment;
   @override
   final Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TrustedPayInputCollectorState(showErrorMessage: $showErrorMessage, isSaving: $isSaving, isEditing: $isEditing, payment: $payment, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+    return 'TrustedPayInputCollectorState(showErrorMessage: $showErrorMessage, isSaving: $isSaving, isEditing: $isEditing, userFound: $userFound, payment: $payment, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
   }
 
   @override
@@ -1614,6 +1854,7 @@ class _$_TrustedPayInputCollectorState
       ..add(DiagnosticsProperty('showErrorMessage', showErrorMessage))
       ..add(DiagnosticsProperty('isSaving', isSaving))
       ..add(DiagnosticsProperty('isEditing', isEditing))
+      ..add(DiagnosticsProperty('userFound', userFound))
       ..add(DiagnosticsProperty('payment', payment))
       ..add(DiagnosticsProperty(
           'saveFailureOrSuccessOption', saveFailureOrSuccessOption));
@@ -1632,6 +1873,9 @@ class _$_TrustedPayInputCollectorState
             (identical(other.isEditing, isEditing) ||
                 const DeepCollectionEquality()
                     .equals(other.isEditing, isEditing)) &&
+            (identical(other.userFound, userFound) ||
+                const DeepCollectionEquality()
+                    .equals(other.userFound, userFound)) &&
             (identical(other.payment, payment) ||
                 const DeepCollectionEquality()
                     .equals(other.payment, payment)) &&
@@ -1648,6 +1892,7 @@ class _$_TrustedPayInputCollectorState
       const DeepCollectionEquality().hash(showErrorMessage) ^
       const DeepCollectionEquality().hash(isSaving) ^
       const DeepCollectionEquality().hash(isEditing) ^
+      const DeepCollectionEquality().hash(userFound) ^
       const DeepCollectionEquality().hash(payment) ^
       const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
 
@@ -1667,6 +1912,8 @@ abstract class _TrustedPayInputCollectorState
       @required
           bool isEditing,
       @required
+          bool userFound,
+      @required
           Payment payment,
       @required
           Option<Either<PaymentFailure, Unit>>
@@ -1678,6 +1925,8 @@ abstract class _TrustedPayInputCollectorState
   bool get isSaving;
   @override
   bool get isEditing;
+  @override
+  bool get userFound;
   @override
   Payment get payment;
   @override
