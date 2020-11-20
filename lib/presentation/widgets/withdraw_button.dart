@@ -1,8 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../core/assets/colors.dart';
 import '../core/icons/TfIcons_icons.dart';
 import '../core/translations/translations.i18n.dart';
+import '../../routes/router.gr.dart';
 
 class WithDrawButton extends StatelessWidget {
   // final String description;
@@ -11,7 +13,9 @@ class WithDrawButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-        onPressed: () {},
+        onPressed: () {
+          ExtendedNavigator.of(context).pushWithdrawScren();
+        },
         color: TfColors.secondary,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
