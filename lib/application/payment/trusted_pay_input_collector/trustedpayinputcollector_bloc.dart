@@ -43,6 +43,34 @@ class TrustedPayInputCollectorBloc
           saveFailureOrSuccessOption: none(),
         );
       },
+      searchUser: (e) async* {
+        final Either<PaymentFailure, User> failureOrUserfound =
+            await _paymentRepo.searchUser(e.userQuery);
+
+        yield failureOrUserfound.fold(
+            (failure) => state.copyWith(
+                  saveFailureOrSuccessOption: none(),
+                  showErrorMessage: true,
+                  userFound: false,
+                  payment: state.payment.copyWith(
+                    receiverId: UniqueId(),
+                    rPhotoUrl: '',
+                    rDisplayName: ValidNames(''),
+                    rPhoneNumber: ValidPhoneNumber(''),
+                  ),
+                ),
+            (receiver) => state.copyWith(
+                  saveFailureOrSuccessOption: none(),
+                  showErrorMessage: false,
+                  payment: state.payment.copyWith(
+                    receiverId: receiver.id,
+                    rPhotoUrl: receiver.photoUrl,
+                    rDisplayName: receiver.displayName,
+                    rPhoneNumber: receiver.phoneNumber,
+                  ),
+                  userFound: true,
+                ));
+      },
       receiverChanged: (e) async* {
         yield state.copyWith(
           payment: state.payment.copyWith(
@@ -105,7 +133,7 @@ class TrustedPayInputCollectorBloc
         );
       },
       creditTrustedPay: (e) async* {
-          final Logs log = _generateLogs(state.payment);
+        final Logs log = _generateLogs(state.payment);
         yield state.copyWith(
           isSaving: true,
         );
