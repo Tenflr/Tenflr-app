@@ -11,6 +11,7 @@ import 'package:tenflrpay/presentation/core/icons/TfIcons_icons.dart';
 import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
 import '../core/translations/translations.i18n.dart';
 import '../../routes/router.gr.dart';
+import 'show_notification.dart';
 
 class TfDrawer extends HookWidget {
   const TfDrawer();
@@ -69,9 +70,7 @@ class TfDrawer extends HookWidget {
               DrawerTile(
                 description: "Notifications".i18n,
                 icon: TfIcons.notif,
-                onPressed: () {
-                  // todo:
-                },
+                onPressed: ()=>  showNotif(context),
               ),
               DrawerTile(
                 description: "Light mode".i18n,
@@ -187,3 +186,5 @@ class DrawerTile extends StatelessWidget {
     );
   }
 }
+
+
