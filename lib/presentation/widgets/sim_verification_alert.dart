@@ -1,6 +1,7 @@
-import 'package:tenflrpay/application/auth/login_bloc/login_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:pin_entry_text_field/pin_entry_text_field.dart';
+
+import '../../application/auth/login_bloc/login_bloc.dart';
 import '../core/translations/translations.i18n.dart';
 
 Future<void> smsCodeDialog(BuildContext context, {LoginBloc bloc}) {
