@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
+
+import '../assets/colors.dart';
 
 class TfShadow {
   static List<BoxShadow> shadow = [
