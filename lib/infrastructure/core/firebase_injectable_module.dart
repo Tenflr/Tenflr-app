@@ -1,18 +1,17 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:tenflrpay/infrastructure/repositories/momo_api_service.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
 import 'package:device_info/device_info.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:package_info/package_info.dart';
-
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../repositories/momo_api_service.dart';
 
 @module
 abstract class FirebaseInjectableModule {
