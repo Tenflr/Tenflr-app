@@ -7,20 +7,18 @@ import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
 
 import '../../../domain/auth/i_auth_facade.dart';
 import '../../../domain/core/auth_failure.dart';
 import '../../../domain/core/database_failure.dart';
 import '../../../domain/core/settings.dart';
+import '../../../domain/core/valid_objects.dart';
 import '../../../domain/database/i_database_repository_facade.dart';
 import '../../../domain/device_id/device_id.dart';
 import '../../../domain/device_id/i_device_id_facade.dart';
 import '../../../domain/user/user.dart';
-import '../../../domain/user_address/user_address.dart';
 import '../../../domain/user_settings/i_settings_facade.dart';
 import '../../../domain/user_settings/user_settings.dart';
-import '../../../domain/user_settings/user_settings_failure.dart';
 
 part 'login_bloc.freezed.dart';
 part 'login_event.dart';
