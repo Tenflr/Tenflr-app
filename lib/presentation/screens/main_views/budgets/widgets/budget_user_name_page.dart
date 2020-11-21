@@ -3,13 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:tenflrpay/application/budget/budget_input_collector/budgetinputcollector_bloc.dart';
-import 'package:tenflrpay/presentation/widgets/default_primary_input_field.dart';
 
+import '../../../../../application/budget/budget_input_collector/budgetinputcollector_bloc.dart';
 import '../../../../core/styles/text_styles.dart';
 import '../../../../core/translations/translations.i18n.dart';
 import '../../../../widgets/button.dart';
-import '../../../../widgets/default_primary_money_input.dart';
+import '../../../../widgets/default_primary_input_field.dart';
 
 class BudgetUserNamePage extends HookWidget {
   final PageController controller;
