@@ -13,9 +13,7 @@
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
 		97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FD1CF9000F007C117D /* Assets.xcassets */; };
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
-		EB6D96DA256704C1002B0BF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB6D96D9256704C1002B0BF7 /* GoogleService-Info.plist */; };
-		EB6D9715256704D4002B0BF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB6D9714256704D4002B0BF7 /* GoogleService-Info.plist */; };
-		EB6D9717256704E7002B0BF7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB6D9716256704E7002B0BF7 /* GoogleService-Info.plist */; };
+		EB2696C82568364800C9C7B7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB6D9716256704E7002B0BF7 /* GoogleService-Info.plist */; };
 		FD862AE12C00CD8716686758 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9796862D8BDF6ED370BC0620 /* Pods_Runner.framework */; };
 /* End PBXBuildFile section */
 
@@ -243,12 +241,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */,
-				EB6D9717256704E7002B0BF7 /* GoogleService-Info.plist in Resources */,
+				EB2696C82568364800C9C7B7 /* GoogleService-Info.plist in Resources */,
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
-				EB6D96DA256704C1002B0BF7 /* GoogleService-Info.plist in Resources */,
-				EB6D9715256704D4002B0BF7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,7 +1072,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7AFA3C8E1D35360C0083082E /* Release.xcconfig */;
 			buildSettings = {
-				APP_DISPLAY_NAME = "Tenflr dev";
+				APP_DISPLAY_NAME = Tenflr;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
