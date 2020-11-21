@@ -1,12 +1,11 @@
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:tenflrpay/application/main_views_bloc/main_views_bloc.dart';
-import 'package:tenflrpay/presentation/core/assets/images.dart';
 
+import '../../application/main_views_bloc/main_views_bloc.dart';
+import '../core/assets/images.dart';
 import '../core/icons/TfIcons_icons.dart';
 
 class NavBar extends HookWidget {
@@ -87,7 +86,7 @@ class NavBar extends HookWidget {
               ),
             ],
           ),
-          if (size.height > 910)
+          if (size.height >= 812)
             const SizedBox(
               height: 40,
             ),
@@ -100,19 +99,12 @@ class NavBar extends HookWidget {
           state.map(
             homePage: (_) => _currentIndex.value = 0,
             savingsPage: (_) => _currentIndex.value = 1,
-            // savingsInitPage: (_) => _currentIndex.value = 1,
-            // createNewSavingsPage: (_) => _currentIndex.value = 1,
             savingsDetailPage: (_) => _currentIndex.value = 1,
             trustedPayUnlockPage: (_) => _currentIndex.value = 4,
             trustedPayDetail: (_) => _currentIndex.value = 4,
             trustedPayLockedPage: (_) => _currentIndex.value = 4,
-            // makeNewTrustedPaymentPage: (_) => _currentIndex.value = 4,
             budgetPage: (_) => _currentIndex.value = 3,
-            // createNewBudgetPage: (_) => _currentIndex.value = 3,
-            // budgetInitPage: (_) => _currentIndex.value = 3,
-            // budgetAddPage: (_) => _currentIndex.value = 3,
             budgetDetailPage: (_) => _currentIndex.value = 3,
-            // sendBudgetGiftPage: (_) => _currentIndex.value = 3,
             quickPaymentOverView: (_) => _currentIndex.value = 2,
           );
         },
