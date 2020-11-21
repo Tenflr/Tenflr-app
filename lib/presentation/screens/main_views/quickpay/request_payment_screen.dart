@@ -1,8 +1,3 @@
-import 'package:tenflrpay/application/quick_payment/quick_payment_bloc/quick_payment_bloc.dart';
-import 'package:tenflrpay/application/quick_payment/quick_payment_watcher_bloc/quick_payment_watcher_bloc.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/user/user.dart';
-import 'package:tenflrpay/injection.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,13 +5,19 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
-import 'package:tenflrpay/presentation/core/assets/images.dart';
-import 'package:tenflrpay/presentation/core/icons/TfIcons_icons.dart';
-import 'package:tenflrpay/presentation/core/styles/decorations.dart';
-import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
-import 'package:tenflrpay/presentation/widgets/app_bar.dart';
+
+import '../../../../application/quick_payment/quick_payment_bloc/quick_payment_bloc.dart';
+import '../../../../application/quick_payment/quick_payment_watcher_bloc/quick_payment_watcher_bloc.dart';
+import '../../../../domain/core/valid_objects.dart';
+import '../../../../domain/user/user.dart';
+import '../../../../injection.dart';
+import '../../../core/assets/colors.dart';
+import '../../../core/assets/images.dart';
+import '../../../core/icons/TfIcons_icons.dart';
+import '../../../core/styles/decorations.dart';
+import '../../../core/styles/text_styles.dart';
 import '../../../core/translations/translations.i18n.dart';
+import '../../../widgets/app_bar.dart';
 import 'cash_logic.dart';
 import 'neu_cash_button.dart';
 import 'neumorphic_theme.dart';
@@ -59,24 +60,9 @@ class RequestPaymentForm extends HookWidget {
     final calculator = Provider.of<Calculator>(context);
     final User user = Provider.of<User>(context, listen: false);
     final ValueNotifier<int> oldSize = useState(0);
-    final ValueNotifier<int> newSize = useState(0);
+    // final ValueNotifier<int> newSize = useState(0);
 
-    return BlocConsumer<QuickPaymentWatcherBloc, QuickPaymentWatcherState>(
-     
-      listener: (context, state) {
-        if (oldSize.value < newSize.value) {
-          // Navigator.of(context).pop();
-          // Navigator.of(context).pop();
-
-          FlushbarHelper.createSuccess(
-                  message:
-                      "You have successfully received a new Payment 😎".i18n)
-              .show(context);
-          oldSize.value = newSize.value;
-          Navigator.of(context, rootNavigator: true).pop();
-          Navigator.of(context, rootNavigator: true).pop();
-        }
-      },
+    return BlocBuilder<QuickPaymentWatcherBloc, QuickPaymentWatcherState>(
       builder: (context, state) {
         final Widget _child = SingleChildScrollView(
           child: Container(
@@ -84,6 +70,7 @@ class RequestPaymentForm extends HookWidget {
             color: TfColors.secondary,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
+              // mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 // const Spacer(),
                 TfAppBar(
@@ -128,7 +115,10 @@ class RequestPaymentForm extends HookWidget {
                     ],
                   ),
                 ),
-                SizedBox(height: size.height * 0.01),
+                SizedBox(
+                    height: size.height > 812
+                        ? size.height * 0.1
+                        : size.height * 0.01),
                 ButtonRow(children: [
                   NeuCalculatorButton(
                     text: 'AC',
@@ -266,7 +256,10 @@ class RequestPaymentForm extends HookWidget {
           initial: (e) => _child,
           loadInProgress: (e) => _child,
           loadSuccess: (e) {
-            newSize.value = e.quickPayment.size;
+            if(e.quickPayment.size > oldSize.value){
+              Navigator.of(context).pop();
+            }
+            oldSize.value = e.quickPayment.size;
             return _child;
           },
           loadFailure: (e) => _child,
