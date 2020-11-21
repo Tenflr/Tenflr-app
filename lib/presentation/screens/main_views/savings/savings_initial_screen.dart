@@ -1,10 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tenflrpay/presentation/core/assets/svg.dart';
 
 import '../../../../routes/router.gr.dart';
-import '../../../core/assets/images.dart';
+import '../../../core/assets/svg.dart';
 import '../../../core/translations/translations.i18n.dart';
 import '../../../widgets/button.dart';
 
