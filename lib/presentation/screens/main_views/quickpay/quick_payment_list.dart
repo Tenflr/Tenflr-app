@@ -1,8 +1,9 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:kt_dart/kt.dart';
-import 'package:tenflrpay/domain/quick_payment/quick_payment.dart';
-import 'package:tenflrpay/presentation/screens/main_views/quickpay/quick_payment_tile.dart';
+
+import '../../../../domain/quick_payment/quick_payment.dart';
+import 'quick_payment_tile.dart';
 
 class QuickPaymentList extends StatelessWidget {
   final ScrollController controller;
