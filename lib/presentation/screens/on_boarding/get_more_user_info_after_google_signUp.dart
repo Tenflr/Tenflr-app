@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import 'package:tenflrpay/presentation/widgets/progess_overlay_screen.dart';
+import '../../widgets/progess_overlay_screen.dart';
 
 import '../../../application/auth/auth_bloc/authentication_bloc.dart';
 import '../../../application/auth/user_detail_bloc/user_detail_bloc.dart';
