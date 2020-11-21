@@ -6,9 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../../../../application/main_views_bloc/main_views_bloc.dart';
 import '../../../../application/payment/trusted_pay_input_collector/trustedpayinputcollector_bloc.dart';
-import '../../../../domain/core/settings.dart';
 import '../../../../domain/user/user.dart';
 import '../../../../injection.dart';
 import '../../../core/assets/colors.dart';
@@ -44,7 +42,7 @@ class SendTrustedPaymentForm extends HookWidget {
     final controller = PageController(viewportFraction: 0.88);
 
     return Directionality(
-        textDirection: TextDirection.ltr,
+      textDirection: TextDirection.ltr,
       child: BlocListener<TrustedPayInputCollectorBloc,
           TrustedPayInputCollectorState>(
         listener: (context, state) {
@@ -79,23 +77,18 @@ class SendTrustedPaymentForm extends HookWidget {
                                       .i18n,
                             ),
                           )..show(context), (r) {
-                    FlushbarHelper.createInformation(
-                        title: "Payment successful".i18n,
-                        duration: const Duration(seconds: 4),
-                        message: "A payment of %s was successfully sent to %s"
-                            .i18n
-                            .fill([
-                          state.payment.amount.getOrCrash(),
-                          state.payment.rDisplayName.getOrCrash()
-                        ])).show(context);
+                    Navigator.of(context).pop();
 
-                    Future.delayed(const Duration(seconds: 1), () {
-                      Navigator.of(context).pop();
-                      // Navigator.of(context).pop();
-                      Navigator.of(context).pop();
-                      // context.bloc<MainViewsBloc>().add(
-                      //     MainViewsEvent.trustedPayPage(
-                      //         pin: getIt<MySettings>().getTrustedPayPin));
+                    Future.delayed(const Duration(seconds: 3), () {
+                      FlushbarHelper.createInformation(
+                          title: "Payment successful".i18n,
+                          // duration: const Duration(seconds: 4),
+                          message: "A payment of %s was successfully sent to %s"
+                              .i18n
+                              .fill([
+                            state.payment.amount.getOrCrash(),
+                            state.payment.rDisplayName.getOrCrash()
+                          ])).show(context);
                     });
                   }));
           if (!state.payment.unlockDate.isValid() && state.showErrorMessage) {
@@ -111,7 +104,7 @@ class SendTrustedPaymentForm extends HookWidget {
           }
           if (state.isSaving) {
             FlushbarHelper.createLoading(
-                    duration: const Duration(seconds: 10),
+                    // duration: const Duration(seconds: 10),
                     message: 'Sending payment...'.i18n,
                     linearProgressIndicator: const LinearProgressIndicator())
                 .show(context);
