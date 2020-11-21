@@ -1,34 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:provider/provider.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
-import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
-import 'package:tenflrpay/presentation/screens/main_views/trustedpay/trustedpay_detail_screen.dart';
-import 'package:tenflrpay/presentation/widgets/show_notification.dart';
-import 'package:tenflrpay/presentation/widgets/title_builder.dart';
 
 import '../../../application/main_views_bloc/main_views_bloc.dart';
-import '../../../injection.dart';
+import '../../core/assets/colors.dart';
 import '../../core/icons/TfIcons_icons.dart';
 import '../../core/styles/decorations.dart';
+import '../../core/styles/text_styles.dart';
+import '../../core/translations/translations.i18n.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/nav_bar.dart';
+import '../../widgets/show_notification.dart';
+import '../../widgets/title_builder.dart';
 import 'budgets/budget_detail_screen.dart';
-import 'budgets/budget_manager_create_screen.dart';
-import 'budgets/budget_manager_initial_screen.dart';
 import 'budgets/budget_screen.dart';
 import 'dashboard/dashboard.dart';
-import 'quickpay/cash_logic.dart';
 import 'quickpay/quick_payment_view.dart';
-import 'savings/create_savings_screen.dart';
 import 'savings/savings_details_screen.dart';
-import 'savings/savings_initial_screen.dart';
 import 'savings/savings_screen.dart';
 import 'trustedpay/VaultDoorScreen.dart';
-import 'trustedpay/send_trusted_payment_screen.dart';
 import 'trustedpay/trusted_payment_screen.dart';
-import '../../core/translations/translations.i18n.dart';
+import 'trustedpay/trustedpay_detail_screen.dart';
 
 class HomeScreenBody extends HookWidget {
   const HomeScreenBody();
@@ -83,37 +75,29 @@ class HomeScreenBody extends HookWidget {
                         },
                       ),
               ),
-              description: const TitleBuilder(), 
+              description: const TitleBuilder(),
               trailing: IconButton(
                 icon: const Icon(TfIcons.notif),
-                onPressed: ()=>  showNotif(context),
+                onPressed: () => showNotif(context),
               ),
             ),
             BlocBuilder<MainViewsBloc, MainViewsState>(
-              // buildWhen: (p, c) => p.,
               builder: (context, state) {
                 return state.map(
                   homePage: (_) => const DashBoard(),
                   savingsPage: (_) => const SavingsScreen(),
-                  // savingsInitPage: (_) => const SavingsInitialScreen(),
-                  // createNewSavingsPage: (_) => const CreateSavingsScreen(),
                   savingsDetailPage: (state) => SavingsDetailScreen(
                     saving: state.savings,
                   ),
                   trustedPayUnlockPage: (_) => const TrustedPaymentScreen(),
                   trustedPayLockedPage: (_) => const VaultDoorScreen(),
-                  // makeNewTrustedPaymentPage: (_) =>
-                  //     const SendTrustedPaymentScreen(),
                   budgetPage: (_) => const BudgetManagerScreen(),
-                  // createNewBudgetPage: (_) => const BudgetCreateScreen(),
-                  // budgetInitPage: (_) => const BudgetManagerInitialScreen(),
-                  // budgetAddPage: (_) => const BudgetManagerDetailScreen(),
                   budgetDetailPage: (state) => BudgetManagerDetailScreen(
                     budget: state.budget,
                   ),
-                  // sendBudgetGiftPage: (_) => const BudgetCreateScreen(),
                   quickPaymentOverView: (_) => const QuickPaymentScreen(),
-                  trustedPayDetail: (state) => TrustedPayDetailScreen(payment: state.payment),
+                  trustedPayDetail: (state) =>
+                      TrustedPayDetailScreen(payment: state.payment),
                 );
               },
             ),
