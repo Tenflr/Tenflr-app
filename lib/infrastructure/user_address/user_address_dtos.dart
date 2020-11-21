@@ -1,8 +1,9 @@
-import 'package:tenflrpay/domain/core/value_object.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/user_address/user_address.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../domain/core/valid_objects.dart';
+import '../../domain/core/value_object.dart';
+import '../../domain/user_address/user_address.dart';
 
 part 'user_address_dtos.freezed.dart';
 part 'user_address_dtos.g.dart';
