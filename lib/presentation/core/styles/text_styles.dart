@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
-import 'package:tenflrpay/presentation/core/translations/translations.i18n.dart';
+
+import '../assets/colors.dart';
+import '../translations/translations.i18n.dart';
 
 class MoreInfoTextStyle {
   static TextStyle  title(Size size) => const TextStyle(
