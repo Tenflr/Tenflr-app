@@ -10,6 +10,456 @@ part of 'trusted_funds_bloc.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
+class _$TrustedFundsEventTearOff {
+  const _$TrustedFundsEventTearOff();
+
+// ignore: unused_element
+  _WatchFunds watchFunds() {
+    return const _WatchFunds();
+  }
+
+// ignore: unused_element
+  _LoadComplete loadComplete({@required MoneyAmount amount}) {
+    return _LoadComplete(
+      amount: amount,
+    );
+  }
+
+// ignore: unused_element
+  _LoadFailureE loadFailure({@required PaymentFailure failure}) {
+    return _LoadFailureE(
+      failure: failure,
+    );
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $TrustedFundsEvent = _$TrustedFundsEventTearOff();
+
+/// @nodoc
+mixin _$TrustedFundsEvent {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result watchFunds(),
+    @required Result loadComplete(MoneyAmount amount),
+    @required Result loadFailure(PaymentFailure failure),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result watchFunds(),
+    Result loadComplete(MoneyAmount amount),
+    Result loadFailure(PaymentFailure failure),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result watchFunds(_WatchFunds value),
+    @required Result loadComplete(_LoadComplete value),
+    @required Result loadFailure(_LoadFailureE value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result watchFunds(_WatchFunds value),
+    Result loadComplete(_LoadComplete value),
+    Result loadFailure(_LoadFailureE value),
+    @required Result orElse(),
+  });
+}
+
+/// @nodoc
+abstract class $TrustedFundsEventCopyWith<$Res> {
+  factory $TrustedFundsEventCopyWith(
+          TrustedFundsEvent value, $Res Function(TrustedFundsEvent) then) =
+      _$TrustedFundsEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$TrustedFundsEventCopyWithImpl<$Res>
+    implements $TrustedFundsEventCopyWith<$Res> {
+  _$TrustedFundsEventCopyWithImpl(this._value, this._then);
+
+  final TrustedFundsEvent _value;
+  // ignore: unused_field
+  final $Res Function(TrustedFundsEvent) _then;
+}
+
+/// @nodoc
+abstract class _$WatchFundsCopyWith<$Res> {
+  factory _$WatchFundsCopyWith(
+          _WatchFunds value, $Res Function(_WatchFunds) then) =
+      __$WatchFundsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$WatchFundsCopyWithImpl<$Res>
+    extends _$TrustedFundsEventCopyWithImpl<$Res>
+    implements _$WatchFundsCopyWith<$Res> {
+  __$WatchFundsCopyWithImpl(
+      _WatchFunds _value, $Res Function(_WatchFunds) _then)
+      : super(_value, (v) => _then(v as _WatchFunds));
+
+  @override
+  _WatchFunds get _value => super._value as _WatchFunds;
+}
+
+/// @nodoc
+class _$_WatchFunds with DiagnosticableTreeMixin implements _WatchFunds {
+  const _$_WatchFunds();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'TrustedFundsEvent.watchFunds()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'TrustedFundsEvent.watchFunds'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _WatchFunds);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result watchFunds(),
+    @required Result loadComplete(MoneyAmount amount),
+    @required Result loadFailure(PaymentFailure failure),
+  }) {
+    assert(watchFunds != null);
+    assert(loadComplete != null);
+    assert(loadFailure != null);
+    return watchFunds();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result watchFunds(),
+    Result loadComplete(MoneyAmount amount),
+    Result loadFailure(PaymentFailure failure),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (watchFunds != null) {
+      return watchFunds();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result watchFunds(_WatchFunds value),
+    @required Result loadComplete(_LoadComplete value),
+    @required Result loadFailure(_LoadFailureE value),
+  }) {
+    assert(watchFunds != null);
+    assert(loadComplete != null);
+    assert(loadFailure != null);
+    return watchFunds(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result watchFunds(_WatchFunds value),
+    Result loadComplete(_LoadComplete value),
+    Result loadFailure(_LoadFailureE value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (watchFunds != null) {
+      return watchFunds(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _WatchFunds implements TrustedFundsEvent {
+  const factory _WatchFunds() = _$_WatchFunds;
+}
+
+/// @nodoc
+abstract class _$LoadCompleteCopyWith<$Res> {
+  factory _$LoadCompleteCopyWith(
+          _LoadComplete value, $Res Function(_LoadComplete) then) =
+      __$LoadCompleteCopyWithImpl<$Res>;
+  $Res call({MoneyAmount amount});
+}
+
+/// @nodoc
+class __$LoadCompleteCopyWithImpl<$Res>
+    extends _$TrustedFundsEventCopyWithImpl<$Res>
+    implements _$LoadCompleteCopyWith<$Res> {
+  __$LoadCompleteCopyWithImpl(
+      _LoadComplete _value, $Res Function(_LoadComplete) _then)
+      : super(_value, (v) => _then(v as _LoadComplete));
+
+  @override
+  _LoadComplete get _value => super._value as _LoadComplete;
+
+  @override
+  $Res call({
+    Object amount = freezed,
+  }) {
+    return _then(_LoadComplete(
+      amount: amount == freezed ? _value.amount : amount as MoneyAmount,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_LoadComplete with DiagnosticableTreeMixin implements _LoadComplete {
+  const _$_LoadComplete({@required this.amount}) : assert(amount != null);
+
+  @override
+  final MoneyAmount amount;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'TrustedFundsEvent.loadComplete(amount: $amount)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'TrustedFundsEvent.loadComplete'))
+      ..add(DiagnosticsProperty('amount', amount));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _LoadComplete &&
+            (identical(other.amount, amount) ||
+                const DeepCollectionEquality().equals(other.amount, amount)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(amount);
+
+  @override
+  _$LoadCompleteCopyWith<_LoadComplete> get copyWith =>
+      __$LoadCompleteCopyWithImpl<_LoadComplete>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result watchFunds(),
+    @required Result loadComplete(MoneyAmount amount),
+    @required Result loadFailure(PaymentFailure failure),
+  }) {
+    assert(watchFunds != null);
+    assert(loadComplete != null);
+    assert(loadFailure != null);
+    return loadComplete(amount);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result watchFunds(),
+    Result loadComplete(MoneyAmount amount),
+    Result loadFailure(PaymentFailure failure),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadComplete != null) {
+      return loadComplete(amount);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result watchFunds(_WatchFunds value),
+    @required Result loadComplete(_LoadComplete value),
+    @required Result loadFailure(_LoadFailureE value),
+  }) {
+    assert(watchFunds != null);
+    assert(loadComplete != null);
+    assert(loadFailure != null);
+    return loadComplete(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result watchFunds(_WatchFunds value),
+    Result loadComplete(_LoadComplete value),
+    Result loadFailure(_LoadFailureE value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadComplete != null) {
+      return loadComplete(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadComplete implements TrustedFundsEvent {
+  const factory _LoadComplete({@required MoneyAmount amount}) = _$_LoadComplete;
+
+  MoneyAmount get amount;
+  _$LoadCompleteCopyWith<_LoadComplete> get copyWith;
+}
+
+/// @nodoc
+abstract class _$LoadFailureECopyWith<$Res> {
+  factory _$LoadFailureECopyWith(
+          _LoadFailureE value, $Res Function(_LoadFailureE) then) =
+      __$LoadFailureECopyWithImpl<$Res>;
+  $Res call({PaymentFailure failure});
+
+  $PaymentFailureCopyWith<$Res> get failure;
+}
+
+/// @nodoc
+class __$LoadFailureECopyWithImpl<$Res>
+    extends _$TrustedFundsEventCopyWithImpl<$Res>
+    implements _$LoadFailureECopyWith<$Res> {
+  __$LoadFailureECopyWithImpl(
+      _LoadFailureE _value, $Res Function(_LoadFailureE) _then)
+      : super(_value, (v) => _then(v as _LoadFailureE));
+
+  @override
+  _LoadFailureE get _value => super._value as _LoadFailureE;
+
+  @override
+  $Res call({
+    Object failure = freezed,
+  }) {
+    return _then(_LoadFailureE(
+      failure: failure == freezed ? _value.failure : failure as PaymentFailure,
+    ));
+  }
+
+  @override
+  $PaymentFailureCopyWith<$Res> get failure {
+    if (_value.failure == null) {
+      return null;
+    }
+    return $PaymentFailureCopyWith<$Res>(_value.failure, (value) {
+      return _then(_value.copyWith(failure: value));
+    });
+  }
+}
+
+/// @nodoc
+class _$_LoadFailureE with DiagnosticableTreeMixin implements _LoadFailureE {
+  const _$_LoadFailureE({@required this.failure}) : assert(failure != null);
+
+  @override
+  final PaymentFailure failure;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'TrustedFundsEvent.loadFailure(failure: $failure)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'TrustedFundsEvent.loadFailure'))
+      ..add(DiagnosticsProperty('failure', failure));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _LoadFailureE &&
+            (identical(other.failure, failure) ||
+                const DeepCollectionEquality().equals(other.failure, failure)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+
+  @override
+  _$LoadFailureECopyWith<_LoadFailureE> get copyWith =>
+      __$LoadFailureECopyWithImpl<_LoadFailureE>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result watchFunds(),
+    @required Result loadComplete(MoneyAmount amount),
+    @required Result loadFailure(PaymentFailure failure),
+  }) {
+    assert(watchFunds != null);
+    assert(loadComplete != null);
+    assert(loadFailure != null);
+    return loadFailure(failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result watchFunds(),
+    Result loadComplete(MoneyAmount amount),
+    Result loadFailure(PaymentFailure failure),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadFailure != null) {
+      return loadFailure(failure);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result watchFunds(_WatchFunds value),
+    @required Result loadComplete(_LoadComplete value),
+    @required Result loadFailure(_LoadFailureE value),
+  }) {
+    assert(watchFunds != null);
+    assert(loadComplete != null);
+    assert(loadFailure != null);
+    return loadFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result watchFunds(_WatchFunds value),
+    Result loadComplete(_LoadComplete value),
+    Result loadFailure(_LoadFailureE value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadFailure != null) {
+      return loadFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadFailureE implements TrustedFundsEvent {
+  const factory _LoadFailureE({@required PaymentFailure failure}) =
+      _$_LoadFailureE;
+
+  PaymentFailure get failure;
+  _$LoadFailureECopyWith<_LoadFailureE> get copyWith;
+}
+
+/// @nodoc
 class _$TrustedFundsStateTearOff {
   const _$TrustedFundsStateTearOff();
 
@@ -592,454 +1042,4 @@ abstract class _LoadFailure implements TrustedFundsState {
 
   PaymentFailure get failure;
   _$LoadFailureCopyWith<_LoadFailure> get copyWith;
-}
-
-/// @nodoc
-class _$TrustedFundsEventTearOff {
-  const _$TrustedFundsEventTearOff();
-
-// ignore: unused_element
-  _WatchFunds watchFunds() {
-    return const _WatchFunds();
-  }
-
-// ignore: unused_element
-  _LoadComplete loadComplete({@required MoneyAmount amount}) {
-    return _LoadComplete(
-      amount: amount,
-    );
-  }
-
-// ignore: unused_element
-  _LoadFailureE loadFailure({@required PaymentFailure failure}) {
-    return _LoadFailureE(
-      failure: failure,
-    );
-  }
-}
-
-/// @nodoc
-// ignore: unused_element
-const $TrustedFundsEvent = _$TrustedFundsEventTearOff();
-
-/// @nodoc
-mixin _$TrustedFundsEvent {
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchFunds(),
-    @required Result loadComplete(MoneyAmount amount),
-    @required Result loadFailure(PaymentFailure failure),
-  });
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchFunds(),
-    Result loadComplete(MoneyAmount amount),
-    Result loadFailure(PaymentFailure failure),
-    @required Result orElse(),
-  });
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result watchFunds(_WatchFunds value),
-    @required Result loadComplete(_LoadComplete value),
-    @required Result loadFailure(_LoadFailureE value),
-  });
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchFunds(_WatchFunds value),
-    Result loadComplete(_LoadComplete value),
-    Result loadFailure(_LoadFailureE value),
-    @required Result orElse(),
-  });
-}
-
-/// @nodoc
-abstract class $TrustedFundsEventCopyWith<$Res> {
-  factory $TrustedFundsEventCopyWith(
-          TrustedFundsEvent value, $Res Function(TrustedFundsEvent) then) =
-      _$TrustedFundsEventCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$TrustedFundsEventCopyWithImpl<$Res>
-    implements $TrustedFundsEventCopyWith<$Res> {
-  _$TrustedFundsEventCopyWithImpl(this._value, this._then);
-
-  final TrustedFundsEvent _value;
-  // ignore: unused_field
-  final $Res Function(TrustedFundsEvent) _then;
-}
-
-/// @nodoc
-abstract class _$WatchFundsCopyWith<$Res> {
-  factory _$WatchFundsCopyWith(
-          _WatchFunds value, $Res Function(_WatchFunds) then) =
-      __$WatchFundsCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$WatchFundsCopyWithImpl<$Res>
-    extends _$TrustedFundsEventCopyWithImpl<$Res>
-    implements _$WatchFundsCopyWith<$Res> {
-  __$WatchFundsCopyWithImpl(
-      _WatchFunds _value, $Res Function(_WatchFunds) _then)
-      : super(_value, (v) => _then(v as _WatchFunds));
-
-  @override
-  _WatchFunds get _value => super._value as _WatchFunds;
-}
-
-/// @nodoc
-class _$_WatchFunds with DiagnosticableTreeMixin implements _WatchFunds {
-  const _$_WatchFunds();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TrustedFundsEvent.watchFunds()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TrustedFundsEvent.watchFunds'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _WatchFunds);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchFunds(),
-    @required Result loadComplete(MoneyAmount amount),
-    @required Result loadFailure(PaymentFailure failure),
-  }) {
-    assert(watchFunds != null);
-    assert(loadComplete != null);
-    assert(loadFailure != null);
-    return watchFunds();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchFunds(),
-    Result loadComplete(MoneyAmount amount),
-    Result loadFailure(PaymentFailure failure),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (watchFunds != null) {
-      return watchFunds();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result watchFunds(_WatchFunds value),
-    @required Result loadComplete(_LoadComplete value),
-    @required Result loadFailure(_LoadFailureE value),
-  }) {
-    assert(watchFunds != null);
-    assert(loadComplete != null);
-    assert(loadFailure != null);
-    return watchFunds(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchFunds(_WatchFunds value),
-    Result loadComplete(_LoadComplete value),
-    Result loadFailure(_LoadFailureE value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (watchFunds != null) {
-      return watchFunds(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _WatchFunds implements TrustedFundsEvent {
-  const factory _WatchFunds() = _$_WatchFunds;
-}
-
-/// @nodoc
-abstract class _$LoadCompleteCopyWith<$Res> {
-  factory _$LoadCompleteCopyWith(
-          _LoadComplete value, $Res Function(_LoadComplete) then) =
-      __$LoadCompleteCopyWithImpl<$Res>;
-  $Res call({MoneyAmount amount});
-}
-
-/// @nodoc
-class __$LoadCompleteCopyWithImpl<$Res>
-    extends _$TrustedFundsEventCopyWithImpl<$Res>
-    implements _$LoadCompleteCopyWith<$Res> {
-  __$LoadCompleteCopyWithImpl(
-      _LoadComplete _value, $Res Function(_LoadComplete) _then)
-      : super(_value, (v) => _then(v as _LoadComplete));
-
-  @override
-  _LoadComplete get _value => super._value as _LoadComplete;
-
-  @override
-  $Res call({
-    Object amount = freezed,
-  }) {
-    return _then(_LoadComplete(
-      amount: amount == freezed ? _value.amount : amount as MoneyAmount,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_LoadComplete with DiagnosticableTreeMixin implements _LoadComplete {
-  const _$_LoadComplete({@required this.amount}) : assert(amount != null);
-
-  @override
-  final MoneyAmount amount;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TrustedFundsEvent.loadComplete(amount: $amount)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TrustedFundsEvent.loadComplete'))
-      ..add(DiagnosticsProperty('amount', amount));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _LoadComplete &&
-            (identical(other.amount, amount) ||
-                const DeepCollectionEquality().equals(other.amount, amount)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(amount);
-
-  @override
-  _$LoadCompleteCopyWith<_LoadComplete> get copyWith =>
-      __$LoadCompleteCopyWithImpl<_LoadComplete>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchFunds(),
-    @required Result loadComplete(MoneyAmount amount),
-    @required Result loadFailure(PaymentFailure failure),
-  }) {
-    assert(watchFunds != null);
-    assert(loadComplete != null);
-    assert(loadFailure != null);
-    return loadComplete(amount);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchFunds(),
-    Result loadComplete(MoneyAmount amount),
-    Result loadFailure(PaymentFailure failure),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (loadComplete != null) {
-      return loadComplete(amount);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result watchFunds(_WatchFunds value),
-    @required Result loadComplete(_LoadComplete value),
-    @required Result loadFailure(_LoadFailureE value),
-  }) {
-    assert(watchFunds != null);
-    assert(loadComplete != null);
-    assert(loadFailure != null);
-    return loadComplete(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchFunds(_WatchFunds value),
-    Result loadComplete(_LoadComplete value),
-    Result loadFailure(_LoadFailureE value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (loadComplete != null) {
-      return loadComplete(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _LoadComplete implements TrustedFundsEvent {
-  const factory _LoadComplete({@required MoneyAmount amount}) = _$_LoadComplete;
-
-  MoneyAmount get amount;
-  _$LoadCompleteCopyWith<_LoadComplete> get copyWith;
-}
-
-/// @nodoc
-abstract class _$LoadFailureECopyWith<$Res> {
-  factory _$LoadFailureECopyWith(
-          _LoadFailureE value, $Res Function(_LoadFailureE) then) =
-      __$LoadFailureECopyWithImpl<$Res>;
-  $Res call({PaymentFailure failure});
-
-  $PaymentFailureCopyWith<$Res> get failure;
-}
-
-/// @nodoc
-class __$LoadFailureECopyWithImpl<$Res>
-    extends _$TrustedFundsEventCopyWithImpl<$Res>
-    implements _$LoadFailureECopyWith<$Res> {
-  __$LoadFailureECopyWithImpl(
-      _LoadFailureE _value, $Res Function(_LoadFailureE) _then)
-      : super(_value, (v) => _then(v as _LoadFailureE));
-
-  @override
-  _LoadFailureE get _value => super._value as _LoadFailureE;
-
-  @override
-  $Res call({
-    Object failure = freezed,
-  }) {
-    return _then(_LoadFailureE(
-      failure: failure == freezed ? _value.failure : failure as PaymentFailure,
-    ));
-  }
-
-  @override
-  $PaymentFailureCopyWith<$Res> get failure {
-    if (_value.failure == null) {
-      return null;
-    }
-    return $PaymentFailureCopyWith<$Res>(_value.failure, (value) {
-      return _then(_value.copyWith(failure: value));
-    });
-  }
-}
-
-/// @nodoc
-class _$_LoadFailureE with DiagnosticableTreeMixin implements _LoadFailureE {
-  const _$_LoadFailureE({@required this.failure}) : assert(failure != null);
-
-  @override
-  final PaymentFailure failure;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TrustedFundsEvent.loadFailure(failure: $failure)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'TrustedFundsEvent.loadFailure'))
-      ..add(DiagnosticsProperty('failure', failure));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _LoadFailureE &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
-
-  @override
-  _$LoadFailureECopyWith<_LoadFailureE> get copyWith =>
-      __$LoadFailureECopyWithImpl<_LoadFailureE>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result watchFunds(),
-    @required Result loadComplete(MoneyAmount amount),
-    @required Result loadFailure(PaymentFailure failure),
-  }) {
-    assert(watchFunds != null);
-    assert(loadComplete != null);
-    assert(loadFailure != null);
-    return loadFailure(failure);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result watchFunds(),
-    Result loadComplete(MoneyAmount amount),
-    Result loadFailure(PaymentFailure failure),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (loadFailure != null) {
-      return loadFailure(failure);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result watchFunds(_WatchFunds value),
-    @required Result loadComplete(_LoadComplete value),
-    @required Result loadFailure(_LoadFailureE value),
-  }) {
-    assert(watchFunds != null);
-    assert(loadComplete != null);
-    assert(loadFailure != null);
-    return loadFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result watchFunds(_WatchFunds value),
-    Result loadComplete(_LoadComplete value),
-    Result loadFailure(_LoadFailureE value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (loadFailure != null) {
-      return loadFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _LoadFailureE implements TrustedFundsEvent {
-  const factory _LoadFailureE({@required PaymentFailure failure}) =
-      _$_LoadFailureE;
-
-  PaymentFailure get failure;
-  _$LoadFailureECopyWith<_LoadFailureE> get copyWith;
 }
