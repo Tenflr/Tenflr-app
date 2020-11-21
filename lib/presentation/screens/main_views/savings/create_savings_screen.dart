@@ -5,19 +5,18 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:tenflrpay/application/main_views_bloc/main_views_bloc.dart';
-import 'package:tenflrpay/application/saving/savings_input_collector/savingsinputcollector_bloc.dart';
-import 'package:tenflrpay/presentation/core/icons/TfIcons_icons.dart';
-import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
-import 'package:tenflrpay/presentation/widgets/app_bar.dart';
-import 'package:tenflrpay/presentation/widgets/progess_overlay_screen.dart';
 
+import '../../../../application/saving/savings_input_collector/savingsinputcollector_bloc.dart';
 import '../../../../injection.dart';
 import '../../../core/assets/colors.dart';
+import '../../../core/icons/TfIcons_icons.dart';
+import '../../../core/styles/text_styles.dart';
+import '../../../core/translations/translations.i18n.dart';
+import '../../../widgets/app_bar.dart';
+import '../../../widgets/progess_overlay_screen.dart';
 import 'widgets/savings_account_name_page.dart';
 import 'widgets/savings_date_picker_page.dart';
 import 'widgets/savings_initial_amount_page.dart';
-import '../../../core/translations/translations.i18n.dart';
 
 class CreateSavingsScreen extends HookWidget {
   const CreateSavingsScreen();
@@ -93,21 +92,22 @@ class CreateSavingsForm extends StatelessWidget {
                                   "The operation was cancelled because your local time is out-of-sync with the server time"
                                       .i18n,
                             )).show(context),
-                        (r) => {
-                          FlushbarHelper.createSuccess(
-                              duration: const Duration(seconds: 2),
-                              message:
-                                  "You have successfully created a Savings Account 😃"
-                                      .i18n)
-                            ..show(context),
-                          Future.delayed(const Duration(microseconds: 1)),
-                          Navigator.of(context).pop(),
+                        (r) {
+                          Navigator.of(context).pop();
+                          Future.delayed(const Duration(microseconds: 2), () {
+                            FlushbarHelper.createSuccess(
+                                duration: const Duration(seconds: 2),
+                                message:
+                                    "You have successfully created a Savings Account 😃"
+                                        .i18n)
+                              ..show(context);
+                          });
                         },
                       ),
                     );
                     if (state.isSaving) {
                       FlushbarHelper.createLoading(
-                              duration: const Duration(seconds: 10),
+                              // duration: const Duration(seconds: 5),
                               message: 'Creating a new savings account...'.i18n,
                               linearProgressIndicator:
                                   const LinearProgressIndicator())
