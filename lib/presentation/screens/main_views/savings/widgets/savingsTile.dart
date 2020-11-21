@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tenflrpay/application/main_views_bloc/main_views_bloc.dart';
-import 'package:tenflrpay/domain/saving/savings.dart';
-import 'package:tenflrpay/presentation/core/assets/images.dart';
-import 'package:tenflrpay/presentation/core/styles/decorations.dart';
-import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../../../../../application/main_views_bloc/main_views_bloc.dart';
+import '../../../../../domain/saving/savings.dart';
+import '../../../../core/assets/svg.dart';
+import '../../../../core/styles/decorations.dart';
+import '../../../../core/styles/text_styles.dart';
 import '../../../../core/translations/translations.i18n.dart';
 
 class SavingsTile extends StatelessWidget {
@@ -26,7 +28,7 @@ class SavingsTile extends StatelessWidget {
         .inSeconds;
     return Container(
       decoration: DefaultDecoration.all,
-      margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+      margin:  EdgeInsets.symmetric(horizontal: size.width * 0.04, vertical: 5),
       child: ListTile(
           onTap: () {
             context.bloc<MainViewsBloc>().add(MainViewsEvent.savingsDetailPage(
@@ -46,7 +48,12 @@ class SavingsTile extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Image.asset(TfImages.add_money),
+                SizedBox(
+                  height: 25,
+                  width: 25,
+                  child: SvgPicture.asset(TfSvg.add_hand),
+                ),
+                // Image.asset(TfImages.add_money),
                 const SizedBox(width: 5),
                 Text(
                   'Add'.i18n,
