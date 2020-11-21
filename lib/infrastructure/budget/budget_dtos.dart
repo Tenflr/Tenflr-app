@@ -1,9 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:tenflrpay/domain/budget/budgets.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/core/value_object.dart';
-import 'package:tenflrpay/infrastructure/core/server_time_stamp_converter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../domain/budget/budgets.dart';
+import '../../domain/core/valid_objects.dart';
+import '../../domain/core/value_object.dart';
+import '../core/server_time_stamp_converter.dart';
 
 part 'budget_dtos.freezed.dart';
 part 'budget_dtos.g.dart';
