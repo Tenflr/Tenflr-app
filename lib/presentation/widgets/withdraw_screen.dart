@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tenflrpay/presentation/core/icons/TfIcons_icons.dart';
-import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
-import 'package:tenflrpay/presentation/widgets/app_bar.dart';
 
 import '../core/assets/svg.dart';
+import '../core/icons/TfIcons_icons.dart';
 import '../core/styles/decorations.dart';
+import '../core/styles/text_styles.dart';
+import 'app_bar.dart';
 import 'withdraw_with_mtn_card.dart';
 import 'withdraw_with_orange_card.dart';
 
