@@ -1,8 +1,9 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:kt_dart/collection.dart';
-import 'package:tenflrpay/domain/user/user.dart';
-import 'package:tenflrpay/infrastructure/user/user_dtos.dart';
+
+import '../../domain/user/user.dart';
+import '../user/user_dtos.dart';
 
 class SearchResult {
   final KtList<User> users;
