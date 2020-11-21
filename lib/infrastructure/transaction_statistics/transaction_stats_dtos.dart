@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:tenflrpay/infrastructure/transaction_statistics/day_dtos.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+import 'day_dtos.dart';
 
 part 'transaction_stats_dtos.freezed.dart';
 part 'transaction_stats_dtos.g.dart';
