@@ -14,4 +14,6 @@ class TfSvg {
   static String get savings_icon => 'assets/svg/savings_icon.svg';
   static String get tp_logo => 'assets/svg/tp_logo.svg';
   static String get trustedpay_icon => 'assets/svg/trustedpay_icon.svg';
+  static String get vault => 'assets/svg/vault.svg';
+  static String get add_hand => 'assets/svg/add_hand.svg';
 }
