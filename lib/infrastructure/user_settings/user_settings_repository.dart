@@ -1,18 +1,19 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:tenflrpay/domain/user_reputation/user_reputation.dart';
-import 'package:tenflrpay/domain/user_address/user_address.dart';
-import 'package:tenflrpay/domain/security_question/security_question.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/user_settings/i_settings_facade.dart';
-import 'package:tenflrpay/domain/user_settings/user_settings.dart';
-import 'package:tenflrpay/infrastructure/core/error_code_message.dart';
-import 'package:tenflrpay/infrastructure/user_settings/user_settings_dtos.dart';
 import 'package:dartz/dartz.dart';
-import 'package:tenflrpay/domain/user_settings/user_settings_failure.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
-import 'package:tenflrpay/infrastructure/core/firestore_helpers.dart';
+
+import '../../domain/core/valid_objects.dart';
+import '../../domain/security_question/security_question.dart';
+import '../../domain/user_address/user_address.dart';
+import '../../domain/user_reputation/user_reputation.dart';
+import '../../domain/user_settings/i_settings_facade.dart';
+import '../../domain/user_settings/user_settings.dart';
+import '../../domain/user_settings/user_settings_failure.dart';
+import '../core/error_code_message.dart';
+import '../core/firestore_helpers.dart';
+import 'user_settings_dtos.dart';
 
 @LazySingleton(as: ISettingsFacade)
 class UserSettingsRepository implements ISettingsFacade {
