@@ -1,17 +1,16 @@
-import 'dart:io';
 
 import 'package:bot_toast/bot_toast.dart';
-import 'package:tenflrpay/application/lock_screen_bloc/lock_screen_bloc.dart';
-import 'package:tenflrpay/application/main_views_bloc/main_views_bloc.dart';
-import 'package:tenflrpay/domain/core/settings.dart';
-import 'package:tenflrpay/injection.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:pinput/pin_put/pin_put.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
-import 'package:tenflrpay/presentation/core/assets/images.dart';
+
+import '../../application/lock_screen_bloc/lock_screen_bloc.dart';
+import '../../domain/core/settings.dart';
+import '../../injection.dart';
+import '../core/assets/colors.dart';
+import '../core/assets/images.dart';
 import '../core/translations/translations.i18n.dart';
 
 class LockScreen extends HookWidget {
@@ -31,23 +30,26 @@ class LockScreen extends HookWidget {
     return Padding(
       padding: EdgeInsets.only(top: size.width * 0.2),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: <Widget>[
           SizedBox(
             height: size.height * 0.2,
             width: size.width * 0.4,
             // child: SvgPicture.asset("assets/images/VaultDoor@3x.svg")),
             child: Image.asset(TfImages.vault),
+            // child: SvgPicture.asset(TfSvg.vault, color: TfColors.primary,),
+
           ),
           SizedBox(
             height: size.height * 0.035,
           ),
-          Text('Enter you Pin'.i18n,
+          Text('Enter your Pin'.i18n,
               style: TextStyle(
                 fontSize: size.width * 0.054,
               )),
-          SizedBox(
-            height: size.height * 0.035,
-          ),
+          // SizedBox(
+          //   height: size.height * 0.035,
+          // ),
           Padding(
             padding: EdgeInsets.symmetric(
               horizontal: size.width * 0.14,
