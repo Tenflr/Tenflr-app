@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
-import 'package:tenflrpay/application/main_views_bloc/main_views_bloc.dart';
-import 'package:tenflrpay/application/saving/savings_input_collector/savingsinputcollector_bloc.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/saving/savings.dart';
-import 'package:tenflrpay/presentation/widgets/button.dart';
-import 'package:tenflrpay/presentation/widgets/default_primary_money_input.dart';
-import 'package:tenflrpay/presentation/widgets/progess_overlay_screen.dart';
 
+import '../../../../application/main_views_bloc/main_views_bloc.dart';
+import '../../../../application/saving/savings_input_collector/savingsinputcollector_bloc.dart';
+import '../../../../domain/core/valid_objects.dart';
+import '../../../../domain/saving/savings.dart';
 import '../../../../injection.dart';
 import '../../../core/styles/text_styles.dart';
 import '../../../core/translations/translations.i18n.dart';
+import '../../../widgets/button.dart';
+import '../../../widgets/default_primary_money_input.dart';
 import '../../../widgets/infoDisplayTile.dart';
+import '../../../widgets/progess_overlay_screen.dart';
 
 class SavingsDetailScreen extends StatelessWidget {
   final Savings saving;
