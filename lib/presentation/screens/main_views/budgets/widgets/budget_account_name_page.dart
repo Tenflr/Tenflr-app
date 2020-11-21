@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tenflrpay/application/budget/budget_input_collector/budgetinputcollector_bloc.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
-import 'package:tenflrpay/presentation/widgets/button.dart';
-import 'package:tenflrpay/presentation/widgets/default_primary_input_field.dart';
+
+import '../../../../../application/budget/budget_input_collector/budgetinputcollector_bloc.dart';
+import '../../../../../domain/core/valid_objects.dart';
+import '../../../../core/styles/text_styles.dart';
 import '../../../../core/translations/translations.i18n.dart';
+import '../../../../widgets/button.dart';
+import '../../../../widgets/default_primary_input_field.dart';
 
 class BudgetManagerAccountNamePage extends StatelessWidget {
   final PageController controller;
