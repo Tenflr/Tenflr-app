@@ -1,12 +1,12 @@
 import 'package:bloc/bloc.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/user_settings/user_settings.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-part 'user_settings_state.dart';
-part 'user_settings_event.dart';
+import '../../../domain/core/valid_objects.dart';
+
 part 'user_settings_bloc.freezed.dart';
+part 'user_settings_event.dart';
+part 'user_settings_state.dart';
 
 @injectable
 class UserSettingsBloc extends Bloc<UserSettingsEvent, UserSettingsState> {
