@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:provider/provider.dart';
-import 'package:tenflrpay/application/auth/auth_bloc/authentication_bloc.dart';
-import 'package:tenflrpay/domain/user/user.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
-import 'package:tenflrpay/presentation/core/assets/images.dart';
-import 'package:tenflrpay/presentation/core/icons/TfIcons_icons.dart';
-import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
-import '../core/translations/translations.i18n.dart';
+
+import '../../application/auth/auth_bloc/authentication_bloc.dart';
+import '../../domain/user/user.dart';
 import '../../routes/router.gr.dart';
+import '../core/assets/colors.dart';
+import '../core/assets/images.dart';
+import '../core/icons/TfIcons_icons.dart';
+import '../core/styles/text_styles.dart';
+import '../core/translations/translations.i18n.dart';
 import 'show_notification.dart';
 
 class TfDrawer extends HookWidget {
