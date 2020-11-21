@@ -4,22 +4,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:provider/provider.dart';
-import 'package:tenflrpay/application/payment/transaction_list_bloc/transaction_list_bloc.dart';
-import 'package:tenflrpay/domain/core/settings.dart';
-import 'package:tenflrpay/domain/payment/payment.dart';
-import 'package:tenflrpay/domain/user/user.dart';
-import 'package:tenflrpay/presentation/core/hooks/scrol_controller_for_animation.dart';
-import 'package:tenflrpay/presentation/screens/main_views/trustedpay/widgets/trusted_payment_tile.dart';
-import 'package:tenflrpay/presentation/widgets/button.dart';
-import '../../../../../injection.dart';
-import '../../../../core/translations/translations.i18n.dart';
-import '../../../../../routes/router.gr.dart';
 
+import '../../../../../application/payment/transaction_list_bloc/transaction_list_bloc.dart';
+import '../../../../../domain/core/settings.dart';
+import '../../../../../domain/payment/payment.dart';
+import '../../../../../domain/user/user.dart';
+import '../../../../../injection.dart';
+import '../../../../../routes/router.gr.dart';
+import '../../../../core/hooks/scrol_controller_for_animation.dart';
+import '../../../../core/translations/translations.i18n.dart';
+import '../../../../widgets/button.dart';
 import '../trusted_payment_initial_screen.dart';
+import 'trusted_payment_tile.dart';
 
 class TrustedPaymentList extends HookWidget {
   final ScrollController controller;
