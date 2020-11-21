@@ -1,13 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
-import 'package:tenflrpay/presentation/core/icons/TfIcons_icons.dart';
-import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
-import 'package:tenflrpay/presentation/widgets/stars_rating.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../../core/assets/colors.dart';
+import '../../../core/icons/TfIcons_icons.dart';
+import '../../../core/styles/text_styles.dart';
 import '../../../core/translations/translations.i18n.dart';
+import '../../../widgets/stars_rating.dart';
 
 class MiscTile extends HookWidget {
   const MiscTile({Key key}) : super(key: key);
