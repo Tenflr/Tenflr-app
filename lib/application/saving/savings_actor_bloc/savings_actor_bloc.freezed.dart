@@ -10,165 +10,6 @@ part of 'savings_actor_bloc.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$SavingsActorStateTearOff {
-  const _$SavingsActorStateTearOff();
-
-// ignore: unused_element
-  _SavingsActorState call(
-      {@required
-          bool isSaving,
-      @required
-          Option<Either<SavingsFailure, Unit>> saveFailureOrSuccessOption}) {
-    return _SavingsActorState(
-      isSaving: isSaving,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption,
-    );
-  }
-}
-
-/// @nodoc
-// ignore: unused_element
-const $SavingsActorState = _$SavingsActorStateTearOff();
-
-/// @nodoc
-mixin _$SavingsActorState {
-  bool get isSaving;
-  Option<Either<SavingsFailure, Unit>> get saveFailureOrSuccessOption;
-
-  $SavingsActorStateCopyWith<SavingsActorState> get copyWith;
-}
-
-/// @nodoc
-abstract class $SavingsActorStateCopyWith<$Res> {
-  factory $SavingsActorStateCopyWith(
-          SavingsActorState value, $Res Function(SavingsActorState) then) =
-      _$SavingsActorStateCopyWithImpl<$Res>;
-  $Res call(
-      {bool isSaving,
-      Option<Either<SavingsFailure, Unit>> saveFailureOrSuccessOption});
-}
-
-/// @nodoc
-class _$SavingsActorStateCopyWithImpl<$Res>
-    implements $SavingsActorStateCopyWith<$Res> {
-  _$SavingsActorStateCopyWithImpl(this._value, this._then);
-
-  final SavingsActorState _value;
-  // ignore: unused_field
-  final $Res Function(SavingsActorState) _then;
-
-  @override
-  $Res call({
-    Object isSaving = freezed,
-    Object saveFailureOrSuccessOption = freezed,
-  }) {
-    return _then(_value.copyWith(
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
-          ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption as Option<Either<SavingsFailure, Unit>>,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$SavingsActorStateCopyWith<$Res>
-    implements $SavingsActorStateCopyWith<$Res> {
-  factory _$SavingsActorStateCopyWith(
-          _SavingsActorState value, $Res Function(_SavingsActorState) then) =
-      __$SavingsActorStateCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {bool isSaving,
-      Option<Either<SavingsFailure, Unit>> saveFailureOrSuccessOption});
-}
-
-/// @nodoc
-class __$SavingsActorStateCopyWithImpl<$Res>
-    extends _$SavingsActorStateCopyWithImpl<$Res>
-    implements _$SavingsActorStateCopyWith<$Res> {
-  __$SavingsActorStateCopyWithImpl(
-      _SavingsActorState _value, $Res Function(_SavingsActorState) _then)
-      : super(_value, (v) => _then(v as _SavingsActorState));
-
-  @override
-  _SavingsActorState get _value => super._value as _SavingsActorState;
-
-  @override
-  $Res call({
-    Object isSaving = freezed,
-    Object saveFailureOrSuccessOption = freezed,
-  }) {
-    return _then(_SavingsActorState(
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
-          ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption as Option<Either<SavingsFailure, Unit>>,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_SavingsActorState extends _SavingsActorState {
-  _$_SavingsActorState(
-      {@required this.isSaving, @required this.saveFailureOrSuccessOption})
-      : assert(isSaving != null),
-        assert(saveFailureOrSuccessOption != null),
-        super._();
-
-  @override
-  final bool isSaving;
-  @override
-  final Option<Either<SavingsFailure, Unit>> saveFailureOrSuccessOption;
-
-  @override
-  String toString() {
-    return 'SavingsActorState(isSaving: $isSaving, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SavingsActorState &&
-            (identical(other.isSaving, isSaving) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSaving, isSaving)) &&
-            (identical(other.saveFailureOrSuccessOption,
-                    saveFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.saveFailureOrSuccessOption,
-                    saveFailureOrSuccessOption)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(isSaving) ^
-      const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
-
-  @override
-  _$SavingsActorStateCopyWith<_SavingsActorState> get copyWith =>
-      __$SavingsActorStateCopyWithImpl<_SavingsActorState>(this, _$identity);
-}
-
-abstract class _SavingsActorState extends SavingsActorState {
-  _SavingsActorState._() : super._();
-  factory _SavingsActorState(
-      {@required
-          bool isSaving,
-      @required
-          Option<Either<SavingsFailure, Unit>>
-              saveFailureOrSuccessOption}) = _$_SavingsActorState;
-
-  @override
-  bool get isSaving;
-  @override
-  Option<Either<SavingsFailure, Unit>> get saveFailureOrSuccessOption;
-  @override
-  _$SavingsActorStateCopyWith<_SavingsActorState> get copyWith;
-}
-
-/// @nodoc
 class _$SavingsActorEventTearOff {
   const _$SavingsActorEventTearOff();
 
@@ -985,4 +826,163 @@ abstract class _Freezed implements SavingsActorEvent {
   Savings get saving;
   @override
   _$FreezedCopyWith<_Freezed> get copyWith;
+}
+
+/// @nodoc
+class _$SavingsActorStateTearOff {
+  const _$SavingsActorStateTearOff();
+
+// ignore: unused_element
+  _SavingsActorState call(
+      {@required
+          bool isSaving,
+      @required
+          Option<Either<SavingsFailure, Unit>> saveFailureOrSuccessOption}) {
+    return _SavingsActorState(
+      isSaving: isSaving,
+      saveFailureOrSuccessOption: saveFailureOrSuccessOption,
+    );
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $SavingsActorState = _$SavingsActorStateTearOff();
+
+/// @nodoc
+mixin _$SavingsActorState {
+  bool get isSaving;
+  Option<Either<SavingsFailure, Unit>> get saveFailureOrSuccessOption;
+
+  $SavingsActorStateCopyWith<SavingsActorState> get copyWith;
+}
+
+/// @nodoc
+abstract class $SavingsActorStateCopyWith<$Res> {
+  factory $SavingsActorStateCopyWith(
+          SavingsActorState value, $Res Function(SavingsActorState) then) =
+      _$SavingsActorStateCopyWithImpl<$Res>;
+  $Res call(
+      {bool isSaving,
+      Option<Either<SavingsFailure, Unit>> saveFailureOrSuccessOption});
+}
+
+/// @nodoc
+class _$SavingsActorStateCopyWithImpl<$Res>
+    implements $SavingsActorStateCopyWith<$Res> {
+  _$SavingsActorStateCopyWithImpl(this._value, this._then);
+
+  final SavingsActorState _value;
+  // ignore: unused_field
+  final $Res Function(SavingsActorState) _then;
+
+  @override
+  $Res call({
+    Object isSaving = freezed,
+    Object saveFailureOrSuccessOption = freezed,
+  }) {
+    return _then(_value.copyWith(
+      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
+          ? _value.saveFailureOrSuccessOption
+          : saveFailureOrSuccessOption as Option<Either<SavingsFailure, Unit>>,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$SavingsActorStateCopyWith<$Res>
+    implements $SavingsActorStateCopyWith<$Res> {
+  factory _$SavingsActorStateCopyWith(
+          _SavingsActorState value, $Res Function(_SavingsActorState) then) =
+      __$SavingsActorStateCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {bool isSaving,
+      Option<Either<SavingsFailure, Unit>> saveFailureOrSuccessOption});
+}
+
+/// @nodoc
+class __$SavingsActorStateCopyWithImpl<$Res>
+    extends _$SavingsActorStateCopyWithImpl<$Res>
+    implements _$SavingsActorStateCopyWith<$Res> {
+  __$SavingsActorStateCopyWithImpl(
+      _SavingsActorState _value, $Res Function(_SavingsActorState) _then)
+      : super(_value, (v) => _then(v as _SavingsActorState));
+
+  @override
+  _SavingsActorState get _value => super._value as _SavingsActorState;
+
+  @override
+  $Res call({
+    Object isSaving = freezed,
+    Object saveFailureOrSuccessOption = freezed,
+  }) {
+    return _then(_SavingsActorState(
+      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
+          ? _value.saveFailureOrSuccessOption
+          : saveFailureOrSuccessOption as Option<Either<SavingsFailure, Unit>>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_SavingsActorState extends _SavingsActorState {
+  _$_SavingsActorState(
+      {@required this.isSaving, @required this.saveFailureOrSuccessOption})
+      : assert(isSaving != null),
+        assert(saveFailureOrSuccessOption != null),
+        super._();
+
+  @override
+  final bool isSaving;
+  @override
+  final Option<Either<SavingsFailure, Unit>> saveFailureOrSuccessOption;
+
+  @override
+  String toString() {
+    return 'SavingsActorState(isSaving: $isSaving, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SavingsActorState &&
+            (identical(other.isSaving, isSaving) ||
+                const DeepCollectionEquality()
+                    .equals(other.isSaving, isSaving)) &&
+            (identical(other.saveFailureOrSuccessOption,
+                    saveFailureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.saveFailureOrSuccessOption,
+                    saveFailureOrSuccessOption)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(isSaving) ^
+      const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
+
+  @override
+  _$SavingsActorStateCopyWith<_SavingsActorState> get copyWith =>
+      __$SavingsActorStateCopyWithImpl<_SavingsActorState>(this, _$identity);
+}
+
+abstract class _SavingsActorState extends SavingsActorState {
+  _SavingsActorState._() : super._();
+  factory _SavingsActorState(
+      {@required
+          bool isSaving,
+      @required
+          Option<Either<SavingsFailure, Unit>>
+              saveFailureOrSuccessOption}) = _$_SavingsActorState;
+
+  @override
+  bool get isSaving;
+  @override
+  Option<Either<SavingsFailure, Unit>> get saveFailureOrSuccessOption;
+  @override
+  _$SavingsActorStateCopyWith<_SavingsActorState> get copyWith;
 }
