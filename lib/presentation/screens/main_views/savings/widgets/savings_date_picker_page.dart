@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:tenflrpay/application/saving/savings_input_collector/savingsinputcollector_bloc.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
 
+import '../../../../../application/saving/savings_input_collector/savingsinputcollector_bloc.dart';
+import '../../../../../domain/core/valid_objects.dart';
 import '../../../../core/assets/colors.dart';
 import '../../../../core/styles/decorations.dart';
 import '../../../../core/styles/text_styles.dart';
@@ -17,7 +17,10 @@ class SavingsDatePickerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    final DateTime date =  DateTime(DateTime.now().year + 3);
+    final DateTime date = DateTime(DateTime.now().year + 3);
+    context.bloc<SavingsInputCollectorBloc>().add(
+        SavingsInputCollectorEvent.withdrawalDataChanged(
+            date: ValidDate(date)));
     return Container(
       // height: 100,
       margin: const EdgeInsets.symmetric(horizontal: 16),
@@ -63,10 +66,9 @@ class SavingsDatePickerPage extends StatelessWidget {
             children: [
               Button(
                 onPressed: () => _confirmSaving(
-                      context,
-                     context.bloc<SavingsInputCollectorBloc>(),
-                    )
-                ,
+                  context,
+                  context.bloc<SavingsInputCollectorBloc>(),
+                ),
                 description: 'Create Savings'.i18n,
                 // toRight: true,
                 width: size.width * 0.5,
@@ -79,14 +81,12 @@ class SavingsDatePickerPage extends StatelessWidget {
   }
 }
 
-
-
 _confirmSaving(BuildContext context, SavingsInputCollectorBloc bloc) {
   if (bloc.state.saving.failureOption.isSome()) {
     bloc.add(const SavingsInputCollectorEvent.submitted());
   } else {
     String years = bloc.state.saving.timeLeft.getOrCrash().inDays > 365
-        ? '%a years'.i18n.fill([
+        ? '%s years'.i18n.fill([
             (bloc.state.saving.timeLeft.getOrCrash().inDays ~/ 356).toString()
           ])
         : "%s days".i18n.fill([bloc.state.saving.timeLeft.getOrCrash().inDays]);
