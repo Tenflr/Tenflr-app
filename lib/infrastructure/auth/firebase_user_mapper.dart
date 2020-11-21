@@ -1,6 +1,7 @@
-import 'package:tenflrpay/domain/core/value_object.dart';
-import 'package:tenflrpay/infrastructure/user/user_dtos.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
+import '../../domain/core/value_object.dart';
+import '../user/user_dtos.dart';
 
 extension FirebaseUserDomainX on FirebaseUser {
   UserDto toDomain(FirebaseUser user) {
