@@ -4,9 +4,13 @@
     <item android:drawable="@color/sky" />
 
     <!-- You can insert your own image assets here -->
-    <item>
+    <!-- <item>
         <bitmap
             android:gravity="center"
             android:src="@drawable/ic_launcher" />
-    </item> 
+    </item>  -->
+    <item
+        android:drawable="@drawable/tf_logo"
+        android:gravity="center"/>
+
 </layer-list>
