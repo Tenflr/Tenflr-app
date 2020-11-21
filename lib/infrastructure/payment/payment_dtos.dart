@@ -1,12 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/core/value_object.dart';
-import 'package:tenflrpay/domain/payment/payment.dart';
-import 'package:tenflrpay/infrastructure/core/server_time_stamp_converter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'payment_dtos.g.dart';
+import '../../domain/core/valid_objects.dart';
+import '../../domain/core/value_object.dart';
+import '../../domain/payment/payment.dart';
+import '../core/server_time_stamp_converter.dart';
+
 part 'payment_dtos.freezed.dart';
+part 'payment_dtos.g.dart';
 
 @freezed
 abstract class PaymentDto implements _$PaymentDto {
