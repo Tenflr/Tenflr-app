@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/core/value_object.dart';
-import 'package:tenflrpay/domain/device_id/device_id.dart';
-import 'package:tenflrpay/domain/device_id/i_device_id_facade.dart';
-import 'package:tenflrpay/domain/user/user.dart';
-import 'package:tenflrpay/domain/user_settings/user_settings.dart';
-import 'package:tenflrpay/injection.dart';
+import 'valid_objects.dart';
+import 'value_object.dart';
+import '../device_id/device_id.dart';
+import '../device_id/i_device_id_facade.dart';
+import '../user/user.dart';
+import '../user_settings/user_settings.dart';
+import '../../injection.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:shared_preferences/shared_preferences.dart';
