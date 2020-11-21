@@ -1,6 +1,6 @@
-import 'package:auto_route/auto_route_annotations.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../core/valid_objects.dart';
 
 part 'security_question.freezed.dart';
 
