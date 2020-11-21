@@ -1,8 +1,9 @@
-import 'package:tenflrpay/domain/core/failures.dart';
-import 'package:tenflrpay/domain/core/value_object.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../core/failures.dart';
+import '../core/valid_objects.dart';
+import '../core/value_object.dart';
 
 part 'user.freezed.dart';
 
