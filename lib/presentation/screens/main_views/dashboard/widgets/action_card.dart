@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
-import 'package:tenflrpay/presentation/core/styles/decorations.dart';
-import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
+
+import '../../../../core/styles/decorations.dart';
+import '../../../../core/styles/text_styles.dart';
 import '../../../../core/translations/translations.i18n.dart';
 
 class MyCard extends StatelessWidget {
