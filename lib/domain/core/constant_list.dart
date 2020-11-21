@@ -23,7 +23,8 @@ const List<String> KCountries = [
   "SY",
   "UG",
   "YE",
-  "ZM"
+  "ZM",
+  "EG"
 ];
 
 const List<String> savingStatusList = [
