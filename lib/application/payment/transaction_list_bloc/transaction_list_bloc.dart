@@ -1,10 +1,6 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:tenflrpay/domain/payment/i_payment_repository.dart';
-import 'package:tenflrpay/domain/payment/payment.dart';
-import 'package:tenflrpay/domain/payment/payment_failure.dart';
-import 'package:tenflrpay/infrastructure/payment/payment_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -12,10 +8,13 @@ import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:rxdart/rxdart.dart';
 
-part 'transaction_list_event.dart';
-part 'transaction_list_state.dart';
+import '../../../domain/payment/i_payment_repository.dart';
+import '../../../domain/payment/payment.dart';
+import '../../../domain/payment/payment_failure.dart';
 
 part 'transaction_list_bloc.freezed.dart';
+part 'transaction_list_event.dart';
+part 'transaction_list_state.dart';
 
 @injectable
 class TransactionListBloc
