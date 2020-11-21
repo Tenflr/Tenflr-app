@@ -1,18 +1,19 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:tenflrpay/domain/saving/i_saving_repository.dart';
-import 'package:tenflrpay/domain/saving/savings.dart';
-import 'package:tenflrpay/domain/saving/savings_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:meta/meta.dart';
 
+import '../../../domain/saving/i_saving_repository.dart';
+import '../../../domain/saving/savings.dart';
+import '../../../domain/saving/savings_failure.dart';
+
+part 'savingslist_bloc.freezed.dart';
 part 'savingslist_event.dart';
 part 'savingslist_state.dart';
-part 'savingslist_bloc.freezed.dart';
 
 @injectable
 class SavingsListBloc extends Bloc<SavingsListEvent, SavingsListState> {
