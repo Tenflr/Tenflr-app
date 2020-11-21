@@ -2,9 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
-import 'package:tenflrpay/domain/user/user.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
-import 'package:tenflrpay/presentation/core/assets/svg.dart';
+import '../../../../domain/user/user.dart';
+import '../../../core/assets/colors.dart';
+import '../../../core/assets/svg.dart';
 
 import '../../../core/assets/images.dart';
 import '../../../core/translations/translations.i18n.dart';
