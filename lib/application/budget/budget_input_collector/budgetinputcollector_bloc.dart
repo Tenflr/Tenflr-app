@@ -1,27 +1,26 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:tenflrpay/domain/budget/budget_failure.dart';
-import 'package:tenflrpay/domain/budget/budgets.dart';
-import 'package:tenflrpay/domain/budget/i_budget_repository.dart';
-import 'package:tenflrpay/domain/core/constant_list.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/core/value_object.dart';
-import 'package:tenflrpay/domain/logs/logs.dart';
-import 'package:tenflrpay/domain/user/user.dart';
 import 'package:dartz/dartz.dart';
-
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:flutter/foundation.dart';
 import 'package:rxdart/rxdart.dart';
 
-part 'budgetinputcollector_event.dart';
-part 'budgetinputcollector_state.dart';
+import '../../../domain/budget/budget_failure.dart';
+import '../../../domain/budget/budgets.dart';
+import '../../../domain/budget/i_budget_repository.dart';
+import '../../../domain/core/constant_list.dart';
+import '../../../domain/core/valid_objects.dart';
+import '../../../domain/core/value_object.dart';
+import '../../../domain/logs/logs.dart';
+import '../../../domain/user/user.dart';
 
 part 'budgetinputcollector_bloc.freezed.dart';
+part 'budgetinputcollector_event.dart';
+part 'budgetinputcollector_state.dart';
 
 @injectable
 class BudgetInputCollectorBloc
