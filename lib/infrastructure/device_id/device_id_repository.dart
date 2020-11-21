@@ -1,23 +1,23 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:tenflrpay/domain/core/auth_failure.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/core/value_object.dart';
-import 'package:tenflrpay/domain/device_id/device_id.dart';
-import 'package:tenflrpay/domain/device_id/i_device_id_facade.dart';
-import 'package:tenflrpay/domain/user/user.dart';
-import 'package:tenflrpay/domain/user_address/user_address.dart';
-import 'package:tenflrpay/infrastructure/device_id/device_id_dtos.dart';
-import 'package:tenflrpay/infrastructure/repositories/api_path.dart';
 import 'package:dartz/dartz.dart';
 import 'package:device_info/device_info.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
-import 'package:tenflrpay/infrastructure/core/firestore_helpers.dart';
 import 'package:rxdart/rxdart.dart';
+
+import '../../domain/core/auth_failure.dart';
+import '../../domain/core/valid_objects.dart';
+import '../../domain/core/value_object.dart';
+import '../../domain/device_id/device_id.dart';
+import '../../domain/device_id/i_device_id_facade.dart';
+import '../../domain/user/user.dart';
+import '../core/firestore_helpers.dart';
+import '../repositories/api_path.dart';
+import 'device_id_dtos.dart';
 
 @LazySingleton(as: IDeviceIDFacade)
 class DeviceIdRepository implements IDeviceIDFacade {
