@@ -3,17 +3,16 @@ import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:tenflrpay/application/payment/trusted_pay_input_collector/trustedpayinputcollector_bloc.dart';
-import 'package:tenflrpay/domain/user/user.dart';
-import 'package:tenflrpay/injection.dart';
-import 'package:tenflrpay/presentation/core/assets/svg.dart';
-import 'package:tenflrpay/presentation/core/icons/TfIcons_icons.dart';
-import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
-import 'package:tenflrpay/presentation/widgets/app_bar.dart';
-import '../core/translations/translations.i18n.dart';
-import '../core/assets/images.dart';
+
+import '../../application/payment/trusted_pay_input_collector/trustedpayinputcollector_bloc.dart';
+import '../../domain/user/user.dart';
+import '../../injection.dart';
+import '../core/assets/svg.dart';
+import '../core/icons/TfIcons_icons.dart';
 import '../core/styles/decorations.dart';
+import '../core/styles/text_styles.dart';
+import '../core/translations/translations.i18n.dart';
+import 'app_bar.dart';
 import 'deposit_with_mtn_card.dart';
 import 'deposit_with_orange_card.dart';
 
