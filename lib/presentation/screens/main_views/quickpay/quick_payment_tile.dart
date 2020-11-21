@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:tenflrpay/application/quick_payment/quick_payment_bloc/quick_payment_bloc.dart';
-import 'package:tenflrpay/domain/quick_payment/quick_payment.dart';
-import 'package:tenflrpay/domain/user/user.dart';
-import 'package:tenflrpay/presentation/core/styles/decorations.dart';
+
+import '../../../../application/quick_payment/quick_payment_bloc/quick_payment_bloc.dart';
+import '../../../../domain/quick_payment/quick_payment.dart';
+import '../../../../domain/user/user.dart';
+import '../../../core/styles/decorations.dart';
 
 class QuickPaymentTile extends StatelessWidget {
   final int index;
@@ -25,7 +26,7 @@ class QuickPaymentTile extends StatelessWidget {
     }
     return Container(
       decoration: DefaultDecoration.all,
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+      margin: EdgeInsets.symmetric(horizontal: size.width * 0.04, vertical: 1),
       child: ListTile(
           subtitle: Text(
             received ? payment.pTel.getOrCrash() : payment.rTel.getOrCrash(),
@@ -42,7 +43,7 @@ class QuickPaymentTile extends StatelessWidget {
                       color: received ? Colors.green[300] : Colors.red[300]),
                 ),
                 TextSpan(
-                  text: ' XFA',
+                  text: ' XAF',
                   style: GoogleFonts.montserrat(
                       fontSize: size.width * 0.033,
                       fontWeight: FontWeight.w400,
