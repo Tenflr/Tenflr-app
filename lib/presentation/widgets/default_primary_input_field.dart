@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
-import 'package:tenflrpay/presentation/core/icons/TfIcons_icons.dart';
-import 'package:tenflrpay/presentation/core/styles/decorations.dart';
+
+import '../core/assets/colors.dart';
+import '../core/icons/TfIcons_icons.dart';
+import '../core/styles/decorations.dart';
 import '../core/translations/translations.i18n.dart';
 
 class DefaultPrimaryTextInputField extends HookWidget {
