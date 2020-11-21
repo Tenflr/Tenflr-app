@@ -1,18 +1,18 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:tenflrpay/application/auth/auth_bloc/authentication_bloc.dart';
-import 'package:tenflrpay/application/connectivity_and_time_bloc/connectivity_and_time_bloc.dart';
+import '../../../application/auth/auth_bloc/authentication_bloc.dart';
+import '../../../application/connectivity_and_time_bloc/connectivity_and_time_bloc.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
-import 'package:tenflrpay/presentation/core/assets/images.dart';
-import 'package:tenflrpay/presentation/core/icons/TfIcons_icons.dart';
+import '../../core/assets/colors.dart';
+import '../../core/assets/images.dart';
+import '../../core/icons/TfIcons_icons.dart';
 import '../../core/translations/translations.i18n.dart';
 import 'package:auto_route/auto_route.dart';
-import 'package:tenflrpay/routes/router.gr.dart';
+import '../../../routes/router.gr.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
