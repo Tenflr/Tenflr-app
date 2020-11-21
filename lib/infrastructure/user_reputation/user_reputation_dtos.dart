@@ -1,7 +1,8 @@
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/user_reputation/user_reputation.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../domain/core/valid_objects.dart';
+import '../../domain/user_reputation/user_reputation.dart';
 
 part 'user_reputation_dtos.freezed.dart';
 part 'user_reputation_dtos.g.dart';
