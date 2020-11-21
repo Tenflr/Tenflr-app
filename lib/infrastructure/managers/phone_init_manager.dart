@@ -1,12 +1,11 @@
-import 'dart:io';
+
 import 'package:devicelocale/devicelocale.dart';
 import 'package:flt_telephony_info/flt_telephony_info.dart';
 import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:tenflrpay/domain/core/constant_list.dart';
-
 import 'package:trust_fall/trust_fall.dart';
+
+import '../../domain/core/constant_list.dart';
 
 @injectable
 class PhoneInitManager {
