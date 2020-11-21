@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tenflrpay/application/main_views_bloc/main_views_bloc.dart';
-import 'package:tenflrpay/domain/budget/budgets.dart';
-import 'package:tenflrpay/presentation/core/styles/decorations.dart';
-import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
-import '../../../../core/translations/translations.i18n.dart';
+
+import '../../../../../application/main_views_bloc/main_views_bloc.dart';
+import '../../../../../domain/budget/budgets.dart';
+import '../../../../core/styles/decorations.dart';
+import '../../../../core/styles/text_styles.dart';
 
 class BudgetTile extends StatelessWidget {
   final Budget budget;
@@ -16,7 +16,7 @@ class BudgetTile extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
     return Container(
       decoration: DefaultDecoration.all,
-      margin: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+      margin:  EdgeInsets.symmetric(horizontal: size.width * 0.04, vertical: 2),
       child: Stack(
         children: [
           if (budget.isGift)
