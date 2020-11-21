@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/core/value_object.dart';
-import 'package:tenflrpay/domain/quick_payment/quick_payment.dart';
-import 'package:tenflrpay/domain/user/user.dart';
-import 'package:tenflrpay/infrastructure/core/server_time_stamp_converter.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../domain/core/valid_objects.dart';
+import '../../domain/core/value_object.dart';
+import '../../domain/quick_payment/quick_payment.dart';
+import '../core/server_time_stamp_converter.dart';
 
 part 'quick_payment_dtos.freezed.dart';
 part 'quick_payment_dtos.g.dart';
