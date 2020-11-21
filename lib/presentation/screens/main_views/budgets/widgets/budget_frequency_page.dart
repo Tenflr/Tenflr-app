@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:tenflrpay/application/budget/budget_input_collector/budgetinputcollector_bloc.dart';
-import 'package:tenflrpay/presentation/widgets/cupertino_frequency_picker.dart';
 
+import '../../../../../application/budget/budget_input_collector/budgetinputcollector_bloc.dart';
 import '../../../../core/styles/text_styles.dart';
 import '../../../../core/translations/translations.i18n.dart';
 import '../../../../widgets/button.dart';
-import '../../../../widgets/cupertino_duration_picker.dart';
+import '../../../../widgets/cupertino_frequency_picker.dart';
 
 class BudgetFrequencyPage extends StatelessWidget {
   final PageController controller;
