@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/core/value_object.dart';
-import 'package:tenflrpay/domain/transaction_statistics/day.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../domain/core/valid_objects.dart';
+import '../../domain/transaction_statistics/day.dart';
 
 part 'day_dtos.freezed.dart';
 part 'day_dtos.g.dart';
