@@ -1,10 +1,5 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:barcode_scan/barcode_scan.dart';
-import 'package:tenflrpay/application/lock_screen_bloc/lock_screen_bloc.dart';
-import 'package:tenflrpay/application/quick_payment/quick_payment_bloc/quick_payment_bloc.dart';
-import 'package:tenflrpay/application/quick_payment/quick_payment_watcher_bloc/quick_payment_watcher_bloc.dart';
-import 'package:tenflrpay/domain/user/user.dart';
-import 'package:tenflrpay/injection.dart';
-import 'package:tenflrpay/presentation/core/hooks/scrol_controller_for_animation.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,14 +7,18 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:provider/provider.dart';
-import 'package:tenflrpay/presentation/screens/main_views/quickpay/quick_payment_overview.dart';
-import 'package:tenflrpay/presentation/screens/main_views/quickpay/request_payment_screen.dart';
-import 'package:tenflrpay/presentation/widgets/button.dart';
-import '../../../core/translations/translations.i18n.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:auto_route/auto_route.dart';
 
+import '../../../../application/lock_screen_bloc/lock_screen_bloc.dart';
+import '../../../../application/quick_payment/quick_payment_bloc/quick_payment_bloc.dart';
+import '../../../../application/quick_payment/quick_payment_watcher_bloc/quick_payment_watcher_bloc.dart';
+import '../../../../domain/user/user.dart';
+import '../../../../injection.dart';
 import '../../../../routes/router.gr.dart';
+import '../../../core/hooks/scrol_controller_for_animation.dart';
+import '../../../core/translations/translations.i18n.dart';
+import '../../../widgets/button.dart';
+import 'quick_payment_overview.dart';
 
 class QuickPaymentScreen extends StatelessWidget {
   const QuickPaymentScreen({
@@ -66,42 +65,55 @@ class QuickPaymentBody extends HookWidget {
         state.saveFailureOrSuccessOption.fold(
             () {},
             (either) => either.fold(
-                (failure) => FlushbarHelper.createError(
-                        message: failure.map(
-                      tokenExpired: (_) =>
-                          "The QR code you have scanned has expired. Please restart the payment."
-                              .i18n,
-                      errorGeneratingQRCode: (_) =>
-                          "An error occurred while generating a QR code. Please try again!"
-                              .i18n,
-                      errorScanningQRCode: (_) =>
-                          "An error occurred while scanning the QR code. Please try again!"
-                              .i18n,
-                      insufficientFunds: (_) =>
-                          "Insufficient Funds in TrustedPay wallet!".i18n,
-                      insufficientPermissions: (_) =>
-                          "Insufficient permission to perform action!".i18n,
-                      paymentWithMomoFailed: (_) =>
-                          "Payment with MOMO account failed! Please try again!"
-                              .i18n,
-                      quickPaymentFailed: (_) =>
-                          "Payment could not be sent!".i18n,
-                      timeOutOfSync: (_) =>
-                          "The operation was cancelled because your local time is out-of-sync with the server time"
-                              .i18n,
-                      unexpected: (_) => "An unexpected error occurred!".i18n,
-                      failedToCashQuickPayment: (_) =>
-                          "Failed to cash quick Payment Received 🤔".i18n,
-                      youCantPayYourSelf: (_) =>
-                          "Sorry you can't pay youself🙄".i18n,
-                    )).show(context),
-                (_) => FlushbarHelper.createSuccess(
-                        message: "The Payment was successful 😁".i18n)
-                    .show(context)));
+                    (failure) => FlushbarHelper.createError(
+                            message: failure.map(
+                          tokenExpired: (_) =>
+                              "The QR code you have scanned has expired. Please restart the payment."
+                                  .i18n,
+                          errorGeneratingQRCode: (_) =>
+                              "An error occurred while generating a QR code. Please try again!"
+                                  .i18n,
+                          errorScanningQRCode: (_) =>
+                              "An error occurred while scanning the QR code. Please try again!"
+                                  .i18n,
+                          insufficientFunds: (_) =>
+                              "Insufficient Funds in TrustedPay wallet!".i18n,
+                          insufficientPermissions: (_) =>
+                              "Insufficient permission to perform action!".i18n,
+                          paymentWithMomoFailed: (_) =>
+                              "Payment with MOMO account failed! Please try again!"
+                                  .i18n,
+                          quickPaymentFailed: (_) =>
+                              "Payment could not be sent!".i18n,
+                          timeOutOfSync: (_) =>
+                              "The operation was cancelled because your local time is out-of-sync with the server time"
+                                  .i18n,
+                          unexpected: (_) =>
+                              "An unexpected error occurred!".i18n,
+                          failedToCashQuickPayment: (_) =>
+                              "Failed to cash quick Payment Received 🤔".i18n,
+                          youCantPayYourSelf: (_) =>
+                              "Sorry you can't pay youself🙄".i18n,
+                        )).show(context), (_) {
+                  // if (ExtendedNavigator.of(context).routerName ==
+                  //     'Router') {
+                  //   // Navigator.of(context).pop();
+                  //   Navigator.of(context).pop();
+                  // }
+
+                  FlushbarHelper.createSuccess(
+                          message: "The Payment was successful 😁".i18n)
+                      .show(context);
+                }));
 
         if (context.bloc<QuickPaymentBloc>().state.shouldValidatePayment) {
           _confirmPayment(context, user);
-         
+
+          Future.delayed(const Duration(seconds: 5), () {
+            context
+                .bloc<LockScreenBloc>()
+                .add(const LockScreenEvent.shouldPaused(false));
+          });
         }
       },
       child: Container(
@@ -129,7 +141,7 @@ class QuickPaymentBody extends HookWidget {
                         onPressed: () {
                           ExtendedNavigator.of(context)
                               .pushRequestPaymentScreen(user: user);
-                          requestPay.value = true;
+                          // requestPay.value = true;
                         },
                       ),
                       SizedBox(width: size.width * 0.5, child: const Divider()),
@@ -137,14 +149,11 @@ class QuickPaymentBody extends HookWidget {
                         description: 'Scan to Pay'.i18n,
                         width: size.width * 0.8,
                         onPressed: () {
-                          requestPay.value = false;
+                          // requestPay.value = false;
                           context
                               .bloc<LockScreenBloc>()
                               .add(const LockScreenEvent.shouldPaused(true));
                           scan(context);
-                          context
-                              .bloc<LockScreenBloc>()
-                              .add(const LockScreenEvent.shouldPaused(false));
                         },
                       ),
                     ],
@@ -207,7 +216,7 @@ _confirmPayment(BuildContext context, User user) {
     //     photoUrl:
     //         context.bloc<QuickPaymentBloc>().state.token.requesterPhotoUrl),
     desc:
-        "Confirm you want to make a payment of XFA %s to %s with phone number %s !"
+        "Confirm you want to make a payment of XAF %s to %s with phone number %s !"
             .i18n
             .fill([
       context.bloc<QuickPaymentBloc>().state.payment.amount.getOrCrash(),
@@ -220,11 +229,8 @@ _confirmPayment(BuildContext context, User user) {
           context
               .bloc<QuickPaymentBloc>()
               .add(QuickPaymentEvent.initialize(user));
+
           Navigator.of(context, rootNavigator: true).pop();
-           FlushbarHelper.createLoading(
-                  message: "Processing Payment".i18n,
-                  linearProgressIndicator: const LinearProgressIndicator())
-              .show(context);
         },
         color: Colors.red[400],
         child: FittedBox(
@@ -243,8 +249,15 @@ _confirmPayment(BuildContext context, User user) {
           context
               .bloc<QuickPaymentBloc>()
               .add(QuickPaymentEvent.validatePayment(user));
-
           Navigator.of(context, rootNavigator: true).pop();
+
+          Future.delayed(const Duration(seconds: 1), () {
+            FlushbarHelper.createLoading(
+                    duration: const Duration(seconds: 5),
+                    message: "Processing Payment".i18n,
+                    linearProgressIndicator: const LinearProgressIndicator())
+                .show(context);
+          });
         },
         gradient: const LinearGradient(colors: [
           Color.fromRGBO(116, 116, 191, 1.0),
