@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:provider/provider.dart';
 
 import '../../../application/lock_screen_bloc/lock_screen_bloc.dart';
@@ -46,7 +45,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     if (state == AppLifecycleState.inactive ||
         state == AppLifecycleState.paused ||
         state == AppLifecycleState.detached) {
-      context.bloc<LockScreenBloc>().add(const LockScreenEvent.lock());
+      if (context.bloc<LockScreenBloc>().state.pausedLock == false) {
+        context.bloc<LockScreenBloc>().add(const LockScreenEvent.lock());
+      }
     }
   }
 
@@ -72,8 +73,13 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
               buildWhen: (p, c) =>
                   p.isLocked != c.isLocked && _settings.isLockEnabled,
               builder: (context, state) {
-            return !state.isLocked
-                ? Provider.value(
+                if (!state.isLocked) {
+                  Future.delayed(const Duration(seconds: 4), () {
+                    context
+                        .bloc<LockScreenBloc>()
+                        .add(const LockScreenEvent.shouldPaused(false));
+                  });
+                  return Provider.value(
                     value: widget.user,
                     child: Stack(
                       children: const [
@@ -81,9 +87,11 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                         HomeScreenBody(),
                       ],
                     ),
-                  )
-                : const LockScreen();
-          }),
+                  );
+                } else {
+                  return const LockScreen();
+                }
+              }),
         ),
       ),
     );
