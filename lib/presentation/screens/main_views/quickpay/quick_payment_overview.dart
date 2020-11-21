@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:tenflrpay/presentation/screens/main_views/quickpay/quick_payment_list.dart';
+import 'quick_payment_list.dart';
 
 import '../../../../application/quick_payment/quick_payment_watcher_bloc/quick_payment_watcher_bloc.dart';
 import '../../../core/translations/translations.i18n.dart';
