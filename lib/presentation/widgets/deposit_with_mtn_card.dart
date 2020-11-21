@@ -4,12 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:tenflrpay/application/payment/trusted_pay_input_collector/trustedpayinputcollector_bloc.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/presentation/core/assets/images.dart';
-import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
 
+import '../../application/payment/trusted_pay_input_collector/trustedpayinputcollector_bloc.dart';
+import '../../domain/core/valid_objects.dart';
+import '../core/assets/images.dart';
 import '../core/styles/decorations.dart';
+import '../core/styles/text_styles.dart';
 import '../core/translations/translations.i18n.dart';
 import 'default_primary_money_input.dart';
 
