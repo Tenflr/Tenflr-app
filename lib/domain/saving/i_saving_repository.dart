@@ -1,9 +1,10 @@
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/logs/logs.dart';
-import 'package:tenflrpay/domain/saving/savings.dart';
-import 'package:tenflrpay/domain/saving/savings_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:kt_dart/kt.dart';
+
+import '../core/valid_objects.dart';
+import '../logs/logs.dart';
+import 'savings.dart';
+import 'savings_failure.dart';
 
 abstract class ISavingsRepository {
   // watch savings
