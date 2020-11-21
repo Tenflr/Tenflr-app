@@ -1,12 +1,14 @@
 import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/user_settings/user_settings.dart';
-import 'package:tenflrpay/infrastructure/security_question/security_question_dtos.dart';
-import 'package:tenflrpay/infrastructure/user_address/user_address_dtos.dart';
-import 'package:tenflrpay/infrastructure/user_reputation/user_reputation_dtos.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../domain/core/valid_objects.dart';
+import '../../domain/user_settings/user_settings.dart';
+import '../security_question/security_question_dtos.dart';
+import '../user_address/user_address_dtos.dart';
+import '../user_reputation/user_reputation_dtos.dart';
+
 part 'user_settings_dtos.freezed.dart';
 part 'user_settings_dtos.g.dart';
 
