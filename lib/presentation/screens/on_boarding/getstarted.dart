@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:intro_slider/dot_animation_enum.dart';
 import 'package:intro_slider/intro_slider.dart';
 import 'package:intro_slider/slide_object.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
-import 'package:tenflrpay/presentation/core/assets/images.dart';
-import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
-import 'package:tenflrpay/presentation/core/translations/translations.i18n.dart';
-import 'package:tenflrpay/routes/router.gr.dart';
+import '../../core/assets/colors.dart';
+import '../../core/assets/images.dart';
+import '../../core/styles/text_styles.dart';
+import '../../core/translations/translations.i18n.dart';
+import '../../../routes/router.gr.dart';
 
 class GetStarted extends StatefulWidget {
   static const String id = "GetStarted";
@@ -62,7 +62,7 @@ class _GetStartedState extends State<GetStarted> {
         title: "BUDGET MANAGER".i18n,
         // styleTitle: kGetStartedTitleStyle,
         description:
-            "Create or send Budget Mangers to efficiently manage your money."
+            "Create or send Budget Managers to efficiently manage your money."
                 .i18n,
         // styleDescription: kGetStartedSubTitleStyle,
         // pathImage: "assets/components/getStartedIcons/secure-payment.png",
