@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tenflrpay/application/main_views_bloc/main_views_bloc.dart';
-import 'package:tenflrpay/domain/core/settings.dart';
-import 'package:tenflrpay/domain/payment/payment.dart';
+import 'package:provider/provider.dart';
 
-import '../../../../../injection.dart';
+import '../../../../../application/main_views_bloc/main_views_bloc.dart';
+import '../../../../../domain/payment/payment.dart';
+import '../../../../../domain/user/user.dart';
 import '../../../../core/assets/colors.dart';
 import '../../../../core/icons/TfIcons_icons.dart';
 import '../../../../core/styles/decorations.dart';
 import '../../../../core/styles/text_styles.dart';
-import '../../../../core/translations/translations.i18n.dart';
 
 class TrustedPaymentTile extends StatelessWidget {
   final Payment payment;
@@ -19,14 +18,15 @@ class TrustedPaymentTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+    final User user = Provider.of<User>(context, listen: false);
     final bool isSent =
-        payment.payerId.getOrCrash() == getIt<MySettings>().getUserId
+        payment.payerId.getOrCrash() == user.id.getOrCrash() 
             ? true
             : false;
 
     return Container(
       decoration: DefaultDecoration.all,
-      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+      margin:  EdgeInsets.symmetric(horizontal: size.width * 0.04, vertical: 2),
       child: ListTile(
           onTap: () {
             context
@@ -38,15 +38,15 @@ class TrustedPaymentTile extends StatelessWidget {
             style: BudgetScreensStyle.tileTitle(size),
           ),
           subtitle: Text(
-            !isSent
-                ? '${payment.rPhoneNumber.getOrCrash()}'
-                : '${payment.pPhoneNumber.getOrCrash()}',
+            isSent
+                ? '${payment.rDisplayName.getOrCrash()}'
+                : '${payment.pDisplayNames.getOrCrash()}',
             style: BudgetScreensStyle.tileSubTitle(size),
           ),
           trailing: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              !isSent
+              isSent
                   ? const Icon(
                       TfIcons.red_arrow_up,
                       color: TfColors.red,
