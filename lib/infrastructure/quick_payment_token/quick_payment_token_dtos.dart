@@ -1,8 +1,9 @@
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/core/value_object.dart';
-import 'package:tenflrpay/domain/quick_payment_token/quick_payment_token.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../domain/core/valid_objects.dart';
+import '../../domain/core/value_object.dart';
+import '../../domain/quick_payment_token/quick_payment_token.dart';
 
 part 'quick_payment_token_dtos.freezed.dart';
 part 'quick_payment_token_dtos.g.dart';
