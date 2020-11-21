@@ -4,15 +4,13 @@ import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:device_info/device_info.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:local_auth/error_codes.dart' as auth_error;
 import 'package:local_auth/local_auth.dart';
-import 'package:tenflrpay/domain/payment/payment.dart';
 
 import '../../domain/budget/budgets.dart';
 import '../../domain/core/settings.dart';
+import '../../domain/payment/payment.dart';
 import '../../domain/saving/savings.dart';
 import '../../infrastructure/managers/trusted_pay_door_manager.dart';
 
