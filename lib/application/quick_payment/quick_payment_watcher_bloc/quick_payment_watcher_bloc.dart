@@ -1,9 +1,9 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:tenflrpay/domain/quick_payment/i_quick_payment.dart';
-import 'package:tenflrpay/domain/quick_payment/quick_payment.dart';
-import 'package:tenflrpay/domain/quick_payment/quick_payment_failure.dart';
+import '../../../domain/quick_payment/i_quick_payment.dart';
+import '../../../domain/quick_payment/quick_payment.dart';
+import '../../../domain/quick_payment/quick_payment_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
