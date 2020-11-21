@@ -1,14 +1,13 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:flt_telephony_info/flt_telephony_info.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-import 'package:tenflrpay/infrastructure/managers/phone_init_manager.dart';
-import 'package:tenflrpay/injection.dart';
+import '../../../infrastructure/managers/phone_init_manager.dart';
+import '../../../injection.dart';
 
 part 'phone_init_bloc.freezed.dart';
 part 'phone_init_event.dart';
