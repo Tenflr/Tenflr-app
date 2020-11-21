@@ -10,165 +10,6 @@ part of 'budget_actor_bloc.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$BudgetActorStateTearOff {
-  const _$BudgetActorStateTearOff();
-
-// ignore: unused_element
-  _BudgetActorState call(
-      {@required
-          bool isSaving,
-      @required
-          Option<Either<BudgetFailure, Unit>> saveFailureOrSuccessOption}) {
-    return _BudgetActorState(
-      isSaving: isSaving,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption,
-    );
-  }
-}
-
-/// @nodoc
-// ignore: unused_element
-const $BudgetActorState = _$BudgetActorStateTearOff();
-
-/// @nodoc
-mixin _$BudgetActorState {
-  bool get isSaving;
-  Option<Either<BudgetFailure, Unit>> get saveFailureOrSuccessOption;
-
-  $BudgetActorStateCopyWith<BudgetActorState> get copyWith;
-}
-
-/// @nodoc
-abstract class $BudgetActorStateCopyWith<$Res> {
-  factory $BudgetActorStateCopyWith(
-          BudgetActorState value, $Res Function(BudgetActorState) then) =
-      _$BudgetActorStateCopyWithImpl<$Res>;
-  $Res call(
-      {bool isSaving,
-      Option<Either<BudgetFailure, Unit>> saveFailureOrSuccessOption});
-}
-
-/// @nodoc
-class _$BudgetActorStateCopyWithImpl<$Res>
-    implements $BudgetActorStateCopyWith<$Res> {
-  _$BudgetActorStateCopyWithImpl(this._value, this._then);
-
-  final BudgetActorState _value;
-  // ignore: unused_field
-  final $Res Function(BudgetActorState) _then;
-
-  @override
-  $Res call({
-    Object isSaving = freezed,
-    Object saveFailureOrSuccessOption = freezed,
-  }) {
-    return _then(_value.copyWith(
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
-          ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption as Option<Either<BudgetFailure, Unit>>,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$BudgetActorStateCopyWith<$Res>
-    implements $BudgetActorStateCopyWith<$Res> {
-  factory _$BudgetActorStateCopyWith(
-          _BudgetActorState value, $Res Function(_BudgetActorState) then) =
-      __$BudgetActorStateCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {bool isSaving,
-      Option<Either<BudgetFailure, Unit>> saveFailureOrSuccessOption});
-}
-
-/// @nodoc
-class __$BudgetActorStateCopyWithImpl<$Res>
-    extends _$BudgetActorStateCopyWithImpl<$Res>
-    implements _$BudgetActorStateCopyWith<$Res> {
-  __$BudgetActorStateCopyWithImpl(
-      _BudgetActorState _value, $Res Function(_BudgetActorState) _then)
-      : super(_value, (v) => _then(v as _BudgetActorState));
-
-  @override
-  _BudgetActorState get _value => super._value as _BudgetActorState;
-
-  @override
-  $Res call({
-    Object isSaving = freezed,
-    Object saveFailureOrSuccessOption = freezed,
-  }) {
-    return _then(_BudgetActorState(
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
-          ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption as Option<Either<BudgetFailure, Unit>>,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_BudgetActorState extends _BudgetActorState {
-  _$_BudgetActorState(
-      {@required this.isSaving, @required this.saveFailureOrSuccessOption})
-      : assert(isSaving != null),
-        assert(saveFailureOrSuccessOption != null),
-        super._();
-
-  @override
-  final bool isSaving;
-  @override
-  final Option<Either<BudgetFailure, Unit>> saveFailureOrSuccessOption;
-
-  @override
-  String toString() {
-    return 'BudgetActorState(isSaving: $isSaving, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _BudgetActorState &&
-            (identical(other.isSaving, isSaving) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSaving, isSaving)) &&
-            (identical(other.saveFailureOrSuccessOption,
-                    saveFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.saveFailureOrSuccessOption,
-                    saveFailureOrSuccessOption)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(isSaving) ^
-      const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
-
-  @override
-  _$BudgetActorStateCopyWith<_BudgetActorState> get copyWith =>
-      __$BudgetActorStateCopyWithImpl<_BudgetActorState>(this, _$identity);
-}
-
-abstract class _BudgetActorState extends BudgetActorState {
-  _BudgetActorState._() : super._();
-  factory _BudgetActorState(
-          {@required
-              bool isSaving,
-          @required
-              Option<Either<BudgetFailure, Unit>> saveFailureOrSuccessOption}) =
-      _$_BudgetActorState;
-
-  @override
-  bool get isSaving;
-  @override
-  Option<Either<BudgetFailure, Unit>> get saveFailureOrSuccessOption;
-  @override
-  _$BudgetActorStateCopyWith<_BudgetActorState> get copyWith;
-}
-
-/// @nodoc
 class _$BudgetActorEventTearOff {
   const _$BudgetActorEventTearOff();
 
@@ -1058,4 +899,163 @@ abstract class _autoUnlockPersonal implements BudgetActorEvent {
   String get type;
   @override
   _$autoUnlockPersonalCopyWith<_autoUnlockPersonal> get copyWith;
+}
+
+/// @nodoc
+class _$BudgetActorStateTearOff {
+  const _$BudgetActorStateTearOff();
+
+// ignore: unused_element
+  _BudgetActorState call(
+      {@required
+          bool isSaving,
+      @required
+          Option<Either<BudgetFailure, Unit>> saveFailureOrSuccessOption}) {
+    return _BudgetActorState(
+      isSaving: isSaving,
+      saveFailureOrSuccessOption: saveFailureOrSuccessOption,
+    );
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $BudgetActorState = _$BudgetActorStateTearOff();
+
+/// @nodoc
+mixin _$BudgetActorState {
+  bool get isSaving;
+  Option<Either<BudgetFailure, Unit>> get saveFailureOrSuccessOption;
+
+  $BudgetActorStateCopyWith<BudgetActorState> get copyWith;
+}
+
+/// @nodoc
+abstract class $BudgetActorStateCopyWith<$Res> {
+  factory $BudgetActorStateCopyWith(
+          BudgetActorState value, $Res Function(BudgetActorState) then) =
+      _$BudgetActorStateCopyWithImpl<$Res>;
+  $Res call(
+      {bool isSaving,
+      Option<Either<BudgetFailure, Unit>> saveFailureOrSuccessOption});
+}
+
+/// @nodoc
+class _$BudgetActorStateCopyWithImpl<$Res>
+    implements $BudgetActorStateCopyWith<$Res> {
+  _$BudgetActorStateCopyWithImpl(this._value, this._then);
+
+  final BudgetActorState _value;
+  // ignore: unused_field
+  final $Res Function(BudgetActorState) _then;
+
+  @override
+  $Res call({
+    Object isSaving = freezed,
+    Object saveFailureOrSuccessOption = freezed,
+  }) {
+    return _then(_value.copyWith(
+      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
+          ? _value.saveFailureOrSuccessOption
+          : saveFailureOrSuccessOption as Option<Either<BudgetFailure, Unit>>,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$BudgetActorStateCopyWith<$Res>
+    implements $BudgetActorStateCopyWith<$Res> {
+  factory _$BudgetActorStateCopyWith(
+          _BudgetActorState value, $Res Function(_BudgetActorState) then) =
+      __$BudgetActorStateCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {bool isSaving,
+      Option<Either<BudgetFailure, Unit>> saveFailureOrSuccessOption});
+}
+
+/// @nodoc
+class __$BudgetActorStateCopyWithImpl<$Res>
+    extends _$BudgetActorStateCopyWithImpl<$Res>
+    implements _$BudgetActorStateCopyWith<$Res> {
+  __$BudgetActorStateCopyWithImpl(
+      _BudgetActorState _value, $Res Function(_BudgetActorState) _then)
+      : super(_value, (v) => _then(v as _BudgetActorState));
+
+  @override
+  _BudgetActorState get _value => super._value as _BudgetActorState;
+
+  @override
+  $Res call({
+    Object isSaving = freezed,
+    Object saveFailureOrSuccessOption = freezed,
+  }) {
+    return _then(_BudgetActorState(
+      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
+          ? _value.saveFailureOrSuccessOption
+          : saveFailureOrSuccessOption as Option<Either<BudgetFailure, Unit>>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_BudgetActorState extends _BudgetActorState {
+  _$_BudgetActorState(
+      {@required this.isSaving, @required this.saveFailureOrSuccessOption})
+      : assert(isSaving != null),
+        assert(saveFailureOrSuccessOption != null),
+        super._();
+
+  @override
+  final bool isSaving;
+  @override
+  final Option<Either<BudgetFailure, Unit>> saveFailureOrSuccessOption;
+
+  @override
+  String toString() {
+    return 'BudgetActorState(isSaving: $isSaving, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _BudgetActorState &&
+            (identical(other.isSaving, isSaving) ||
+                const DeepCollectionEquality()
+                    .equals(other.isSaving, isSaving)) &&
+            (identical(other.saveFailureOrSuccessOption,
+                    saveFailureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.saveFailureOrSuccessOption,
+                    saveFailureOrSuccessOption)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(isSaving) ^
+      const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
+
+  @override
+  _$BudgetActorStateCopyWith<_BudgetActorState> get copyWith =>
+      __$BudgetActorStateCopyWithImpl<_BudgetActorState>(this, _$identity);
+}
+
+abstract class _BudgetActorState extends BudgetActorState {
+  _BudgetActorState._() : super._();
+  factory _BudgetActorState(
+          {@required
+              bool isSaving,
+          @required
+              Option<Either<BudgetFailure, Unit>> saveFailureOrSuccessOption}) =
+      _$_BudgetActorState;
+
+  @override
+  bool get isSaving;
+  @override
+  Option<Either<BudgetFailure, Unit>> get saveFailureOrSuccessOption;
+  @override
+  _$BudgetActorStateCopyWith<_BudgetActorState> get copyWith;
 }
