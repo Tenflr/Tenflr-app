@@ -1,10 +1,10 @@
-import 'package:tenflrpay/domain/budget/budget_failure.dart';
-import 'package:tenflrpay/domain/budget/budgets.dart';
-import 'package:tenflrpay/domain/logs/logs.dart';
 import 'package:dartz/dartz.dart';
 import 'package:kt_dart/kt.dart';
-import 'package:meta/meta.dart';
-import 'package:tenflrpay/domain/user/user.dart';
+
+import '../logs/logs.dart';
+import '../user/user.dart';
+import 'budget_failure.dart';
+import 'budgets.dart';
 
 abstract class IBudgetRepository {
   // watch Personal Manager
