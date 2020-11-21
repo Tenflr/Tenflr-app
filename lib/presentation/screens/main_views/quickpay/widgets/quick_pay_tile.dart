@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
-import 'package:tenflrpay/presentation/core/assets/images.dart';
-import 'package:tenflrpay/presentation/core/icons/TfIcons_icons.dart';
-import 'package:tenflrpay/presentation/core/styles/decorations.dart';
-import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
+
+import '../../../../core/assets/colors.dart';
+import '../../../../core/icons/TfIcons_icons.dart';
+import '../../../../core/styles/decorations.dart';
+import '../../../../core/styles/text_styles.dart';
 import '../../../../core/translations/translations.i18n.dart';
 
 class QuickPayTile extends StatelessWidget {
