@@ -1,9 +1,9 @@
-import 'package:tenflrpay/domain/core/auth_failure.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/core/value_object.dart';
-import 'package:tenflrpay/domain/device_id/device_id.dart';
-import 'package:tenflrpay/domain/user/user.dart';
-import 'package:tenflrpay/domain/user_address/user_address.dart';
+import '../core/auth_failure.dart';
+import '../core/valid_objects.dart';
+import '../core/value_object.dart';
+import 'device_id.dart';
+import '../user/user.dart';
+import '../user_address/user_address.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 
