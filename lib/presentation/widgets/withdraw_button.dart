@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
+import '../../routes/router.gr.dart';
 import '../core/assets/colors.dart';
 import '../core/icons/TfIcons_icons.dart';
 import '../core/translations/translations.i18n.dart';
-import '../../routes/router.gr.dart';
 
 class WithDrawButton extends StatelessWidget {
   // final String description;
