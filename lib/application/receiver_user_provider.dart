@@ -1,6 +1,7 @@
-import 'package:tenflrpay/domain/user/user.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rxdart/rxdart.dart';
+
+import '../domain/user/user.dart';
 
 @injectable
 class ReceiverUserProvider {
