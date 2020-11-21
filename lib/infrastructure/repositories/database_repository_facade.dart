@@ -1,26 +1,23 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:tenflrpay/domain/core/auth_failure.dart';
-import 'package:tenflrpay/domain/core/constant_list.dart';
-import 'package:tenflrpay/domain/core/database_failure.dart';
-import 'package:tenflrpay/domain/core/settings.dart';
-import 'package:tenflrpay/domain/core/user_search_failure.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/database/i_database_repository_facade.dart';
-import 'package:tenflrpay/domain/device_id/device_id.dart';
-import 'package:tenflrpay/domain/device_id/i_device_id_facade.dart';
-import 'package:tenflrpay/domain/user/user.dart';
-import 'package:tenflrpay/domain/user_address/user_address.dart';
-import 'package:tenflrpay/domain/user_settings/user_settings.dart';
-import 'package:tenflrpay/infrastructure/repositories/api_path.dart';
-import 'package:tenflrpay/infrastructure/repositories/search_result.dart';
-import 'package:tenflrpay/infrastructure/user/user_dtos.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
-import 'package:tenflrpay/infrastructure/core/firestore_helpers.dart';
-import 'package:tenflrpay/infrastructure/user_settings/user_settings_dtos.dart';
+
+import '../../domain/core/auth_failure.dart';
+import '../../domain/core/constant_list.dart';
+import '../../domain/core/database_failure.dart';
+import '../../domain/core/settings.dart';
+import '../../domain/core/user_search_failure.dart';
+import '../../domain/database/i_database_repository_facade.dart';
+import '../../domain/device_id/device_id.dart';
+import '../../domain/device_id/i_device_id_facade.dart';
+import '../../domain/user/user.dart';
+import '../core/firestore_helpers.dart';
+import '../user/user_dtos.dart';
+import 'api_path.dart';
+import 'search_result.dart';
 
 @LazySingleton(as: IDatabaseRepositoryFacade)
 class DatabaseRepositoryFacade implements IDatabaseRepositoryFacade {
