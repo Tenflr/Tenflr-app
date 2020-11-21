@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 import 'concave_decoration.dart';
-import 'neumorphic_theme.dart';
 
 class NeuCalculatorButton extends StatefulWidget {
   const NeuCalculatorButton({
