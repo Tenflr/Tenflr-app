@@ -1,21 +1,22 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:tenflrpay/domain/core/settings.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/security_question/security_question.dart';
-import 'package:tenflrpay/domain/user_address/user_address.dart';
-import 'package:tenflrpay/domain/user_reputation/user_reputation.dart';
-import 'package:tenflrpay/domain/user_settings/i_settings_facade.dart';
-import 'package:tenflrpay/domain/user_settings/user_settings.dart';
-import 'package:tenflrpay/domain/user_settings/user_settings_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../domain/core/settings.dart';
+import '../../domain/core/valid_objects.dart';
+import '../../domain/security_question/security_question.dart';
+import '../../domain/user_address/user_address.dart';
+import '../../domain/user_reputation/user_reputation.dart';
+import '../../domain/user_settings/i_settings_facade.dart';
+import '../../domain/user_settings/user_settings.dart';
+import '../../domain/user_settings/user_settings_failure.dart';
+
+part 'settings_bloc.freezed.dart';
 part 'settings_event.dart';
 part 'settings_state.dart';
-part 'settings_bloc.freezed.dart';
 
 @injectable
 class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
