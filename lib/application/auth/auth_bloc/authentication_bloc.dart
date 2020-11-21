@@ -6,19 +6,19 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
-import 'package:tenflrpay/domain/auth/i_auth_facade.dart';
-import 'package:tenflrpay/domain/core/settings.dart';
-import 'package:tenflrpay/domain/device_id/device_id.dart';
-import 'package:tenflrpay/domain/device_id/i_device_id_facade.dart';
-import 'package:tenflrpay/domain/user/user.dart';
-import 'package:tenflrpay/domain/user_settings/i_settings_facade.dart';
-import 'package:tenflrpay/domain/user_settings/user_settings.dart';
-import 'package:tenflrpay/domain/user_settings/user_settings_failure.dart';
 
-part 'authentication_event.dart';
-part 'authentication_state.dart';
+import '../../../domain/auth/i_auth_facade.dart';
+import '../../../domain/core/settings.dart';
+import '../../../domain/device_id/device_id.dart';
+import '../../../domain/device_id/i_device_id_facade.dart';
+import '../../../domain/user/user.dart';
+import '../../../domain/user_settings/i_settings_facade.dart';
+import '../../../domain/user_settings/user_settings.dart';
+import '../../../domain/user_settings/user_settings_failure.dart';
 
 part 'authentication_bloc.freezed.dart';
+part 'authentication_event.dart';
+part 'authentication_state.dart';
 
 /*
 uninitialized - waiting to see if the user is authenticated or not on app start.
