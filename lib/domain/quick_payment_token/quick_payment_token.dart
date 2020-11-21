@@ -1,5 +1,5 @@
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/core/value_object.dart';
+import '../core/valid_objects.dart';
+import '../core/value_object.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'quick_payment_token.freezed.dart';
