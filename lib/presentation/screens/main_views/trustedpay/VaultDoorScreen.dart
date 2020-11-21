@@ -1,16 +1,16 @@
-import 'dart:io';
 
 import 'package:bot_toast/bot_toast.dart';
-import 'package:tenflrpay/application/main_views_bloc/main_views_bloc.dart';
-import 'package:tenflrpay/domain/core/settings.dart';
-import 'package:tenflrpay/injection.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:pinput/pin_put/pin_put.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
-import 'package:tenflrpay/presentation/core/assets/images.dart';
+
+import '../../../../application/main_views_bloc/main_views_bloc.dart';
+import '../../../../domain/core/settings.dart';
+import '../../../../injection.dart';
+import '../../../core/assets/colors.dart';
+import '../../../core/assets/images.dart';
 import '../../../core/translations/translations.i18n.dart';
 
 class VaultDoorScreen extends HookWidget {
