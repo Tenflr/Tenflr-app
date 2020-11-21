@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
-import 'package:tenflrpay/presentation/core/styles/shadows.dart';
+
+import '../assets/colors.dart';
+import 'shadows.dart';
 
 class MainViewsDecoration {
   static Decoration homeBorderDec(Size size, ValueNotifier<bool> drawerOpen) =>
