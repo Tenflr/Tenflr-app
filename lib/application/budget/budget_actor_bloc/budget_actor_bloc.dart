@@ -1,14 +1,15 @@
 import 'package:bloc/bloc.dart';
-import 'package:tenflrpay/domain/budget/budget_failure.dart';
-import 'package:tenflrpay/domain/budget/budgets.dart';
-import 'package:tenflrpay/domain/budget/i_budget_repository.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-part 'budget_actor_state.dart';
-part 'budget_actor_event.dart';
+import '../../../domain/budget/budget_failure.dart';
+import '../../../domain/budget/budgets.dart';
+import '../../../domain/budget/i_budget_repository.dart';
+
 part 'budget_actor_bloc.freezed.dart';
+part 'budget_actor_event.dart';
+part 'budget_actor_state.dart';
 
 @injectable
 class BudgetActorBloc extends Bloc<BudgetActorEvent, BudgetActorState> {
