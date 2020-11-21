@@ -1,20 +1,20 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:tenflrpay/domain/core/transaction_stats_failure.dart';
-import 'package:tenflrpay/domain/transaction_statistics/day.dart';
-import 'package:tenflrpay/domain/transaction_statistics/i_transaction_stats_repository.dart';
-import 'package:tenflrpay/domain/transaction_statistics/transaction_stats.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
-import 'package:flutter/foundation.dart';
 
-part 'transaction_stats_event.dart';
-part 'transaction_stats_state.dart';
+import '../../domain/core/transaction_stats_failure.dart';
+import '../../domain/transaction_statistics/day.dart';
+import '../../domain/transaction_statistics/i_transaction_stats_repository.dart';
+import '../../domain/transaction_statistics/transaction_stats.dart';
 
 part 'transaction_stats_bloc.freezed.dart';
+part 'transaction_stats_event.dart';
+part 'transaction_stats_state.dart';
 
 @injectable
 class TransactionStatsBloc
