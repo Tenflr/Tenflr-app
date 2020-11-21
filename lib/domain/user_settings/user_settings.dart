@@ -1,8 +1,8 @@
-import 'package:tenflrpay/domain/core/failures.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/security_question/security_question.dart';
-import 'package:tenflrpay/domain/user_address/user_address.dart';
-import 'package:tenflrpay/domain/user_reputation/user_reputation.dart';
+import '../core/failures.dart';
+import '../core/valid_objects.dart';
+import '../security_question/security_question.dart';
+import '../user_address/user_address.dart';
+import '../user_reputation/user_reputation.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
