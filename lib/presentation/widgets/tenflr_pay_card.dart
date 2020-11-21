@@ -4,17 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
-import 'package:tenflrpay/application/trusted_funds_bloc/trusted_funds_bloc.dart';
-import 'package:tenflrpay/domain/user/user.dart';
-import 'package:tenflrpay/presentation/core/assets/images.dart';
-import 'package:tenflrpay/presentation/core/assets/svg.dart';
-import 'package:tenflrpay/presentation/core/styles/decorations.dart';
 
+import '../../application/trusted_funds_bloc/trusted_funds_bloc.dart';
+import '../../domain/user/user.dart';
+import '../../routes/router.gr.dart';
 import '../core/assets/colors.dart';
+import '../core/assets/svg.dart';
 import '../core/icons/TfIcons_icons.dart';
+import '../core/styles/decorations.dart';
 import '../core/styles/text_styles.dart';
 import '../core/translations/translations.i18n.dart';
-import '../../routes/router.gr.dart';
 
 class TenflrPayCard extends StatelessWidget {
   const TenflrPayCard();
@@ -93,7 +92,7 @@ class TenflrPayCard extends StatelessWidget {
                 style: TenflrPayCardTextStyle.amount(size),
               ),
               loadSuccess: (s) => Padding(
-                padding: const EdgeInsets.symmetric(vertical: 15),
+                padding: size.height > 812 ? const EdgeInsets.symmetric(vertical: 20) : const EdgeInsets.symmetric(vertical: 15),
                 child: FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
