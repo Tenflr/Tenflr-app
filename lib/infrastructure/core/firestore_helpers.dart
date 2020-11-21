@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:tenflrpay/domain/auth/i_auth_facade.dart';
-import 'package:tenflrpay/domain/core/errors.dart';
-import 'package:tenflrpay/domain/core/settings.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/device_id/i_device_id_facade.dart';
-import 'package:tenflrpay/infrastructure/repositories/api_path.dart';
-import 'package:tenflrpay/injection.dart';
+import '../../domain/auth/i_auth_facade.dart';
+import '../../domain/core/errors.dart';
+import '../../domain/core/settings.dart';
+import '../../domain/core/valid_objects.dart';
+import '../../domain/device_id/i_device_id_facade.dart';
+import '../repositories/api_path.dart';
+import '../../injection.dart';
 import 'package:flutter/foundation.dart';
 
 extension FirebaseFirestoreX on Firestore {
