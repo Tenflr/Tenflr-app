@@ -1,6 +1,4 @@
 import 'package:auto_route/auto_route_annotations.dart';
-import 'package:tenflrpay/presentation/widgets/deposit_screen.dart';
-import 'package:tenflrpay/presentation/widgets/withdraw_screen.dart';
 
 import '../presentation/screens/main_views/budgets/budget_manager_create_screen.dart';
 import '../presentation/screens/main_views/home_screen.dart';
@@ -14,6 +12,8 @@ import '../presentation/screens/on_boarding/splash_screen.dart';
 import '../presentation/screens/on_boarding/welcome_login_screen.dart';
 import '../presentation/screens/settings/settings.dart';
 import '../presentation/screens/settings/user_profile.dart';
+import '../presentation/widgets/deposit_screen.dart';
+import '../presentation/widgets/withdraw_screen.dart';
 
 @MaterialAutoRouter(
     generateNavigationHelperExtension: true,
