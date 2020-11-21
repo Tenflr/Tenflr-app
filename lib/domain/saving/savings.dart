@@ -1,9 +1,11 @@
-import 'package:tenflrpay/domain/core/constant_list.dart';
-import 'package:tenflrpay/domain/core/failures.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/core/value_object.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../core/constant_list.dart';
+import '../core/failures.dart';
+import '../core/valid_objects.dart';
+import '../core/value_object.dart';
+
 part 'savings.freezed.dart';
 
 @freezed
