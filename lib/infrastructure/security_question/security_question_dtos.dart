@@ -1,6 +1,7 @@
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/security_question/security_question.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+
+import '../../domain/core/valid_objects.dart';
+import '../../domain/security_question/security_question.dart';
 
 part 'security_question_dtos.freezed.dart';
 part 'security_question_dtos.g.dart';
