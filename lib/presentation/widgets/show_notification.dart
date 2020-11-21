@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
-import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
+
+import '../core/assets/colors.dart';
+import '../core/styles/text_styles.dart';
 import '../core/translations/translations.i18n.dart';
 
 Future<void> showNotif(BuildContext context) {
