@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:tenflrpay/domain/core/settings.dart';
-import 'package:tenflrpay/domain/payment/payment.dart';
-import 'package:tenflrpay/presentation/core/styles/decorations.dart';
-import 'package:tenflrpay/presentation/widgets/button.dart';
-import 'package:tenflrpay/presentation/widgets/stars_rating.dart';
 
+import '../../../../domain/core/settings.dart';
+import '../../../../domain/payment/payment.dart';
 import '../../../../injection.dart';
 import '../../../core/assets/colors.dart';
 import '../../../core/icons/TfIcons_icons.dart';
+import '../../../core/styles/decorations.dart';
 import '../../../core/styles/text_styles.dart';
 import '../../../core/translations/translations.i18n.dart';
+import '../../../widgets/button.dart';
 import '../../../widgets/infoDisplayTile.dart';
+import '../../../widgets/stars_rating.dart';
 
 class TrustedPayDetailScreen extends HookWidget {
   final Payment payment;
