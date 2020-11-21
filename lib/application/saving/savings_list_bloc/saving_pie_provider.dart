@@ -1,5 +1,6 @@
-import 'package:tenflrpay/domain/saving/savings.dart';
 import 'package:rxdart/subjects.dart';
+
+import '../../../domain/saving/savings.dart';
 
 class SavingsPieProvider {
   final BehaviorSubject _savingsSubject = BehaviorSubject<List<Savings>>();
