@@ -1,19 +1,20 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:tenflrpay/domain/core/user_search_failure.dart';
-import 'package:tenflrpay/domain/database/i_database_repository_facade.dart';
-import 'package:tenflrpay/domain/user/user.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:rxdart/rxdart.dart';
-import 'package:flutter/foundation.dart';
 
+import '../../domain/core/user_search_failure.dart';
+import '../../domain/database/i_database_repository_facade.dart';
+import '../../domain/user/user.dart';
+
+part 'firestore_search_bloc.freezed.dart';
 part 'firestore_search_event.dart';
 part 'firestore_search_state.dart';
-part 'firestore_search_bloc.freezed.dart';
 
 @injectable
 class FirestoreSearchBloc
