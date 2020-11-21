@@ -1,18 +1,19 @@
 import 'package:bloc/bloc.dart';
-import 'package:tenflrpay/domain/core/constant_list.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/core/value_object.dart';
-import 'package:tenflrpay/domain/logs/logs.dart';
-import 'package:tenflrpay/domain/saving/i_saving_repository.dart';
-import 'package:tenflrpay/domain/saving/savings.dart';
-import 'package:tenflrpay/domain/saving/savings_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-part 'savings_actor_state.dart';
-part 'savings_actor_event.dart';
+import '../../../domain/core/constant_list.dart';
+import '../../../domain/core/valid_objects.dart';
+import '../../../domain/core/value_object.dart';
+import '../../../domain/logs/logs.dart';
+import '../../../domain/saving/i_saving_repository.dart';
+import '../../../domain/saving/savings.dart';
+import '../../../domain/saving/savings_failure.dart';
+
 part 'savings_actor_bloc.freezed.dart';
+part 'savings_actor_event.dart';
+part 'savings_actor_state.dart';
 
 @injectable
 class SavingsActorBloc extends Bloc<SavingsActorEvent, SavingsActorState> {
