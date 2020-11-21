@@ -69,7 +69,7 @@ class SavingsForm extends StatelessWidget {
         },
         child: const SavingsList(
           // controller: scrollController,
-          isMini: false,
+         
         ),
       ),
     );
