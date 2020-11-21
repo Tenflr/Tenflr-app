@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_masked_text/flutter_masked_text.dart';
-import 'package:tenflrpay/application/budget/budget_input_collector/budgetinputcollector_bloc.dart';
-import 'package:tenflrpay/application/payment/trusted_pay_input_collector/trustedpayinputcollector_bloc.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
 
+import '../../../../../application/payment/trusted_pay_input_collector/trustedpayinputcollector_bloc.dart';
+import '../../../../../domain/core/valid_objects.dart';
 import '../../../../core/styles/text_styles.dart';
 import '../../../../core/translations/translations.i18n.dart';
 import '../../../../widgets/button.dart';
