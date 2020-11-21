@@ -1,25 +1,24 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:tenflrpay/domain/auth/i_auth_facade.dart';
-import 'package:tenflrpay/domain/core/database_failure.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/database/i_database_repository_facade.dart';
-import 'package:tenflrpay/domain/device_id/device_id.dart';
-import 'package:tenflrpay/domain/device_id/i_device_id_facade.dart';
-import 'package:tenflrpay/domain/user/user.dart';
-import 'package:tenflrpay/domain/user_settings/user_settings.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:flutter/foundation.dart';
 import 'package:meta/meta.dart';
 import 'package:rxdart/rxdart.dart';
 
-part 'user_detail_event.dart';
-part 'user_detail_state.dart';
+import '../../../domain/auth/i_auth_facade.dart';
+import '../../../domain/core/database_failure.dart';
+import '../../../domain/core/valid_objects.dart';
+import '../../../domain/database/i_database_repository_facade.dart';
+import '../../../domain/device_id/device_id.dart';
+import '../../../domain/device_id/i_device_id_facade.dart';
+import '../../../domain/user/user.dart';
 
 part 'user_detail_bloc.freezed.dart';
+part 'user_detail_event.dart';
+part 'user_detail_state.dart';
 
 @injectable
 class UserDetailBloc extends Bloc<UserDetailEvent, UserDetailState> {
@@ -113,6 +112,9 @@ class UserDetailBloc extends Bloc<UserDetailEvent, UserDetailState> {
             isSubmitting: false,
             showErrorMessage: true,
             newUserInfoUpdated: true,
+            user: state.user.copyWith(
+                displayName: ValidNames('${state.firstName.getOrCrash()} ' +
+                    '${state.lastName.getOrCrash()}')),
             saveFailureOrSuccessOption: optionOf(failureOrSuccess),
           );
         } else {
