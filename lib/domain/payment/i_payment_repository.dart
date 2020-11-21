@@ -1,11 +1,11 @@
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/logs/logs.dart';
-import 'package:tenflrpay/domain/payment/payment.dart';
-import 'package:tenflrpay/domain/payment/payment_failure.dart';
+import '../core/valid_objects.dart';
+import '../logs/logs.dart';
+import 'payment.dart';
+import 'payment_failure.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:kt_dart/kt.dart';
-import 'package:tenflrpay/domain/user/user.dart';
+import '../user/user.dart';
 
 abstract class IPaymentRepository {
   // watch payments
