@@ -10,6 +10,246 @@ part of 'curren_theme_mode_bloc.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
+class _$CurrentThemeModeEventTearOff {
+  const _$CurrentThemeModeEventTearOff();
+
+// ignore: unused_element
+  _DarkMode darkMode() {
+    return const _DarkMode();
+  }
+
+// ignore: unused_element
+  _LighMode lightMode() {
+    return const _LighMode();
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $CurrentThemeModeEvent = _$CurrentThemeModeEventTearOff();
+
+/// @nodoc
+mixin _$CurrentThemeModeEvent {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result darkMode(),
+    @required Result lightMode(),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result darkMode(),
+    Result lightMode(),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result darkMode(_DarkMode value),
+    @required Result lightMode(_LighMode value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result darkMode(_DarkMode value),
+    Result lightMode(_LighMode value),
+    @required Result orElse(),
+  });
+}
+
+/// @nodoc
+abstract class $CurrentThemeModeEventCopyWith<$Res> {
+  factory $CurrentThemeModeEventCopyWith(CurrentThemeModeEvent value,
+          $Res Function(CurrentThemeModeEvent) then) =
+      _$CurrentThemeModeEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$CurrentThemeModeEventCopyWithImpl<$Res>
+    implements $CurrentThemeModeEventCopyWith<$Res> {
+  _$CurrentThemeModeEventCopyWithImpl(this._value, this._then);
+
+  final CurrentThemeModeEvent _value;
+  // ignore: unused_field
+  final $Res Function(CurrentThemeModeEvent) _then;
+}
+
+/// @nodoc
+abstract class _$DarkModeCopyWith<$Res> {
+  factory _$DarkModeCopyWith(_DarkMode value, $Res Function(_DarkMode) then) =
+      __$DarkModeCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$DarkModeCopyWithImpl<$Res>
+    extends _$CurrentThemeModeEventCopyWithImpl<$Res>
+    implements _$DarkModeCopyWith<$Res> {
+  __$DarkModeCopyWithImpl(_DarkMode _value, $Res Function(_DarkMode) _then)
+      : super(_value, (v) => _then(v as _DarkMode));
+
+  @override
+  _DarkMode get _value => super._value as _DarkMode;
+}
+
+/// @nodoc
+class _$_DarkMode implements _DarkMode {
+  const _$_DarkMode();
+
+  @override
+  String toString() {
+    return 'CurrentThemeModeEvent.darkMode()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _DarkMode);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result darkMode(),
+    @required Result lightMode(),
+  }) {
+    assert(darkMode != null);
+    assert(lightMode != null);
+    return darkMode();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result darkMode(),
+    Result lightMode(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (darkMode != null) {
+      return darkMode();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result darkMode(_DarkMode value),
+    @required Result lightMode(_LighMode value),
+  }) {
+    assert(darkMode != null);
+    assert(lightMode != null);
+    return darkMode(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result darkMode(_DarkMode value),
+    Result lightMode(_LighMode value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (darkMode != null) {
+      return darkMode(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DarkMode implements CurrentThemeModeEvent {
+  const factory _DarkMode() = _$_DarkMode;
+}
+
+/// @nodoc
+abstract class _$LighModeCopyWith<$Res> {
+  factory _$LighModeCopyWith(_LighMode value, $Res Function(_LighMode) then) =
+      __$LighModeCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$LighModeCopyWithImpl<$Res>
+    extends _$CurrentThemeModeEventCopyWithImpl<$Res>
+    implements _$LighModeCopyWith<$Res> {
+  __$LighModeCopyWithImpl(_LighMode _value, $Res Function(_LighMode) _then)
+      : super(_value, (v) => _then(v as _LighMode));
+
+  @override
+  _LighMode get _value => super._value as _LighMode;
+}
+
+/// @nodoc
+class _$_LighMode implements _LighMode {
+  const _$_LighMode();
+
+  @override
+  String toString() {
+    return 'CurrentThemeModeEvent.lightMode()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _LighMode);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result darkMode(),
+    @required Result lightMode(),
+  }) {
+    assert(darkMode != null);
+    assert(lightMode != null);
+    return lightMode();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result darkMode(),
+    Result lightMode(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (lightMode != null) {
+      return lightMode();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result darkMode(_DarkMode value),
+    @required Result lightMode(_LighMode value),
+  }) {
+    assert(darkMode != null);
+    assert(lightMode != null);
+    return lightMode(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result darkMode(_DarkMode value),
+    Result lightMode(_LighMode value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (lightMode != null) {
+      return lightMode(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LighMode implements CurrentThemeModeEvent {
+  const factory _LighMode() = _$_LighMode;
+}
+
+/// @nodoc
 class _$CurrentThemeModeStateTearOff {
   const _$CurrentThemeModeStateTearOff();
 
@@ -366,244 +606,4 @@ class _$_DarkModeS implements _DarkModeS {
 
 abstract class _DarkModeS implements CurrentThemeModeState {
   const factory _DarkModeS() = _$_DarkModeS;
-}
-
-/// @nodoc
-class _$CurrentThemeModeEventTearOff {
-  const _$CurrentThemeModeEventTearOff();
-
-// ignore: unused_element
-  _DarkMode darkMode() {
-    return const _DarkMode();
-  }
-
-// ignore: unused_element
-  _LighMode lightMode() {
-    return const _LighMode();
-  }
-}
-
-/// @nodoc
-// ignore: unused_element
-const $CurrentThemeModeEvent = _$CurrentThemeModeEventTearOff();
-
-/// @nodoc
-mixin _$CurrentThemeModeEvent {
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result darkMode(),
-    @required Result lightMode(),
-  });
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result darkMode(),
-    Result lightMode(),
-    @required Result orElse(),
-  });
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result darkMode(_DarkMode value),
-    @required Result lightMode(_LighMode value),
-  });
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result darkMode(_DarkMode value),
-    Result lightMode(_LighMode value),
-    @required Result orElse(),
-  });
-}
-
-/// @nodoc
-abstract class $CurrentThemeModeEventCopyWith<$Res> {
-  factory $CurrentThemeModeEventCopyWith(CurrentThemeModeEvent value,
-          $Res Function(CurrentThemeModeEvent) then) =
-      _$CurrentThemeModeEventCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$CurrentThemeModeEventCopyWithImpl<$Res>
-    implements $CurrentThemeModeEventCopyWith<$Res> {
-  _$CurrentThemeModeEventCopyWithImpl(this._value, this._then);
-
-  final CurrentThemeModeEvent _value;
-  // ignore: unused_field
-  final $Res Function(CurrentThemeModeEvent) _then;
-}
-
-/// @nodoc
-abstract class _$DarkModeCopyWith<$Res> {
-  factory _$DarkModeCopyWith(_DarkMode value, $Res Function(_DarkMode) then) =
-      __$DarkModeCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$DarkModeCopyWithImpl<$Res>
-    extends _$CurrentThemeModeEventCopyWithImpl<$Res>
-    implements _$DarkModeCopyWith<$Res> {
-  __$DarkModeCopyWithImpl(_DarkMode _value, $Res Function(_DarkMode) _then)
-      : super(_value, (v) => _then(v as _DarkMode));
-
-  @override
-  _DarkMode get _value => super._value as _DarkMode;
-}
-
-/// @nodoc
-class _$_DarkMode implements _DarkMode {
-  const _$_DarkMode();
-
-  @override
-  String toString() {
-    return 'CurrentThemeModeEvent.darkMode()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _DarkMode);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result darkMode(),
-    @required Result lightMode(),
-  }) {
-    assert(darkMode != null);
-    assert(lightMode != null);
-    return darkMode();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result darkMode(),
-    Result lightMode(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (darkMode != null) {
-      return darkMode();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result darkMode(_DarkMode value),
-    @required Result lightMode(_LighMode value),
-  }) {
-    assert(darkMode != null);
-    assert(lightMode != null);
-    return darkMode(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result darkMode(_DarkMode value),
-    Result lightMode(_LighMode value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (darkMode != null) {
-      return darkMode(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _DarkMode implements CurrentThemeModeEvent {
-  const factory _DarkMode() = _$_DarkMode;
-}
-
-/// @nodoc
-abstract class _$LighModeCopyWith<$Res> {
-  factory _$LighModeCopyWith(_LighMode value, $Res Function(_LighMode) then) =
-      __$LighModeCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$LighModeCopyWithImpl<$Res>
-    extends _$CurrentThemeModeEventCopyWithImpl<$Res>
-    implements _$LighModeCopyWith<$Res> {
-  __$LighModeCopyWithImpl(_LighMode _value, $Res Function(_LighMode) _then)
-      : super(_value, (v) => _then(v as _LighMode));
-
-  @override
-  _LighMode get _value => super._value as _LighMode;
-}
-
-/// @nodoc
-class _$_LighMode implements _LighMode {
-  const _$_LighMode();
-
-  @override
-  String toString() {
-    return 'CurrentThemeModeEvent.lightMode()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LighMode);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result darkMode(),
-    @required Result lightMode(),
-  }) {
-    assert(darkMode != null);
-    assert(lightMode != null);
-    return lightMode();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result darkMode(),
-    Result lightMode(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (lightMode != null) {
-      return lightMode();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result darkMode(_DarkMode value),
-    @required Result lightMode(_LighMode value),
-  }) {
-    assert(darkMode != null);
-    assert(lightMode != null);
-    return lightMode(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result darkMode(_DarkMode value),
-    Result lightMode(_LighMode value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (lightMode != null) {
-      return lightMode(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _LighMode implements CurrentThemeModeEvent {
-  const factory _LighMode() = _$_LighMode;
 }
