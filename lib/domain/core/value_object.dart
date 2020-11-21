@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
-import 'package:tenflrpay/domain/core/errors.dart';
-import 'package:tenflrpay/domain/core/failures.dart';
+import 'errors.dart';
+import 'failures.dart';
 import 'package:uuid/uuid.dart';
 
 @immutable
