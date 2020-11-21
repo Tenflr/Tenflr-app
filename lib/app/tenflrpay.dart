@@ -19,7 +19,6 @@ import '../presentation/core/assets/colors.dart';
 import '../routes/router.gr.dart' as generatedRoute;
 import 'shared_state.dart';
 
-
 class TenflrPay extends HookWidget {
   final SharedState state;
   final String appName;
@@ -39,7 +38,6 @@ class TenflrPay extends HookWidget {
     print('debug: MaterialApp');
 
     final ValueNotifier<ThemeMode> currentThemeMode = useState(ThemeMode.dark);
-    const String _defaultFontFamily = 'Circular';
     return MultiBlocProvider(
       providers: [
         BlocProvider<AuthenticationBloc>(
@@ -67,37 +65,37 @@ class TenflrPay extends HookWidget {
               darkMode: (_) => currentThemeMode.value = ThemeMode.dark);
         },
         child: MaterialApp(
-      title: 'TenflrPay',
-      debugShowCheckedModeBanner: false,
-      localizationsDelegates: [
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-        GlobalCupertinoLocalizations.delegate,
-      ],
-      supportedLocales: [
-        const Locale('en', "US"),
-        const Locale('fr', "FR"),
-      ],
-      theme: ThemeData(
-        primaryColor: TfColors.primary,
-        secondaryHeaderColor: TfColors.secondary,
-        backgroundColor: TfColors.background,
-        indicatorColor: TfColors.grey,
-        cursorColor: TfColors.grey,
-        iconTheme: const IconThemeData(color: TfColors.primary),
-        accentColor: TfColors.grey,
-        buttonTheme: const ButtonThemeData(
-          buttonColor: TfColors.primary,
-          textTheme: ButtonTextTheme.primary,
-        ),
-        textTheme: Theme.of(context).textTheme.apply(
-              bodyColor: TfColors.primary,
-              displayColor: TfColors.grey,
+          title: 'Tenflr',
+          debugShowCheckedModeBanner: false,
+          localizationsDelegates: [
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: [
+            const Locale('en', "US"),
+            const Locale('fr', "FR"),
+          ],
+          theme: ThemeData(
+            primaryColor: TfColors.primary,
+            secondaryHeaderColor: TfColors.secondary,
+            backgroundColor: TfColors.background,
+            indicatorColor: TfColors.grey,
+            cursorColor: TfColors.grey,
+            iconTheme: const IconThemeData(color: TfColors.primary),
+            accentColor: TfColors.grey,
+            buttonTheme: const ButtonThemeData(
+              buttonColor: TfColors.primary,
+              textTheme: ButtonTextTheme.primary,
             ),
-        fontFamily: 'Helvitica',
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      builder: (context, child) {
+            textTheme: Theme.of(context).textTheme.apply(
+                  bodyColor: TfColors.primary,
+                  displayColor: TfColors.grey,
+                ),
+            fontFamily: 'Helvitica',
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+          ),
+          builder: (context, child) {
             child = autoRoute.ExtendedNavigator(
               navigatorKey: SharedState.navigatorKey,
               observers: [
@@ -115,57 +113,3 @@ class TenflrPay extends HookWidget {
     );
   }
 }
-
-
-
-// void main() {
-//   runApp(MyApp());
-// }
-
-// final globalKey = GlobalKey<NavigatorState>();
-
-// class MyApp extends StatelessWidget {
-//   // This widget is the root of your application.
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'TenflrPay',
-//       debugShowCheckedModeBanner: false,
-//       localizationsDelegates: [
-//         GlobalMaterialLocalizations.delegate,
-//         GlobalWidgetsLocalizations.delegate,
-//         GlobalCupertinoLocalizations.delegate,
-//       ],
-//       supportedLocales: [
-//         const Locale('en', "US"),
-//         const Locale('fr', "FR"),
-//       ],
-//       theme: ThemeData(
-//         primaryColor: TfColors.primary,
-//         secondaryHeaderColor: TfColors.secondary,
-//         backgroundColor: TfColors.background,
-//         indicatorColor: TfColors.grey,
-//         cursorColor: TfColors.grey,
-//         iconTheme: const IconThemeData(color: TfColors.primary),
-//         accentColor: TfColors.grey,
-//         buttonTheme: const ButtonThemeData(
-//           buttonColor: TfColors.primary,
-//           textTheme: ButtonTextTheme.primary,
-//         ),
-//         textTheme: Theme.of(context).textTheme.apply(
-//               bodyColor: TfColors.primary,
-//               displayColor: TfColors.grey,
-//             ),
-//         fontFamily: 'Helvitica',
-//         visualDensity: VisualDensity.adaptivePlatformDensity,
-//       ),
-//       builder: (context, child) {
-//         return I18n(
-//           child: autoRoute.ExtendedNavigator(
-//             router: generatedRoute.Router(),
-//           ),
-//         );
-//       },
-//     );
-//   }
-// }
