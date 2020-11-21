@@ -1,6 +1,6 @@
 
 
-import 'package:tenflrpay/domain/core/failures.dart';
+import 'failures.dart';
 
 class NotAuthenticatedError extends Error{}
 
