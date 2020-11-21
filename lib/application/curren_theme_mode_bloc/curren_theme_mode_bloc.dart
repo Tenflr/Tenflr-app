@@ -2,9 +2,9 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-part 'curren_theme_mode_state.dart';
-part 'curren_theme_mode_event.dart';
 part 'curren_theme_mode_bloc.freezed.dart';
+part 'curren_theme_mode_event.dart';
+part 'curren_theme_mode_state.dart';
 
 @injectable
 class CurrentThemeModeBloc
