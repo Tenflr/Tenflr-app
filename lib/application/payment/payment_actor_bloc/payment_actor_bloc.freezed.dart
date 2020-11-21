@@ -10,176 +10,6 @@ part of 'payment_actor_bloc.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$PaymentActorStateTearOff {
-  const _$PaymentActorStateTearOff();
-
-// ignore: unused_element
-  _PaymentActorState call(
-      {@required
-          bool isSaving,
-      @required
-          Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption}) {
-    return _PaymentActorState(
-      isSaving: isSaving,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption,
-    );
-  }
-}
-
-/// @nodoc
-// ignore: unused_element
-const $PaymentActorState = _$PaymentActorStateTearOff();
-
-/// @nodoc
-mixin _$PaymentActorState {
-  bool get isSaving;
-  Option<Either<PaymentFailure, Unit>> get saveFailureOrSuccessOption;
-
-  $PaymentActorStateCopyWith<PaymentActorState> get copyWith;
-}
-
-/// @nodoc
-abstract class $PaymentActorStateCopyWith<$Res> {
-  factory $PaymentActorStateCopyWith(
-          PaymentActorState value, $Res Function(PaymentActorState) then) =
-      _$PaymentActorStateCopyWithImpl<$Res>;
-  $Res call(
-      {bool isSaving,
-      Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption});
-}
-
-/// @nodoc
-class _$PaymentActorStateCopyWithImpl<$Res>
-    implements $PaymentActorStateCopyWith<$Res> {
-  _$PaymentActorStateCopyWithImpl(this._value, this._then);
-
-  final PaymentActorState _value;
-  // ignore: unused_field
-  final $Res Function(PaymentActorState) _then;
-
-  @override
-  $Res call({
-    Object isSaving = freezed,
-    Object saveFailureOrSuccessOption = freezed,
-  }) {
-    return _then(_value.copyWith(
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
-          ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption as Option<Either<PaymentFailure, Unit>>,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$PaymentActorStateCopyWith<$Res>
-    implements $PaymentActorStateCopyWith<$Res> {
-  factory _$PaymentActorStateCopyWith(
-          _PaymentActorState value, $Res Function(_PaymentActorState) then) =
-      __$PaymentActorStateCopyWithImpl<$Res>;
-  @override
-  $Res call(
-      {bool isSaving,
-      Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption});
-}
-
-/// @nodoc
-class __$PaymentActorStateCopyWithImpl<$Res>
-    extends _$PaymentActorStateCopyWithImpl<$Res>
-    implements _$PaymentActorStateCopyWith<$Res> {
-  __$PaymentActorStateCopyWithImpl(
-      _PaymentActorState _value, $Res Function(_PaymentActorState) _then)
-      : super(_value, (v) => _then(v as _PaymentActorState));
-
-  @override
-  _PaymentActorState get _value => super._value as _PaymentActorState;
-
-  @override
-  $Res call({
-    Object isSaving = freezed,
-    Object saveFailureOrSuccessOption = freezed,
-  }) {
-    return _then(_PaymentActorState(
-      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
-      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
-          ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption as Option<Either<PaymentFailure, Unit>>,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_PaymentActorState extends _PaymentActorState
-    with DiagnosticableTreeMixin {
-  _$_PaymentActorState(
-      {@required this.isSaving, @required this.saveFailureOrSuccessOption})
-      : assert(isSaving != null),
-        assert(saveFailureOrSuccessOption != null),
-        super._();
-
-  @override
-  final bool isSaving;
-  @override
-  final Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'PaymentActorState(isSaving: $isSaving, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'PaymentActorState'))
-      ..add(DiagnosticsProperty('isSaving', isSaving))
-      ..add(DiagnosticsProperty(
-          'saveFailureOrSuccessOption', saveFailureOrSuccessOption));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _PaymentActorState &&
-            (identical(other.isSaving, isSaving) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSaving, isSaving)) &&
-            (identical(other.saveFailureOrSuccessOption,
-                    saveFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.saveFailureOrSuccessOption,
-                    saveFailureOrSuccessOption)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(isSaving) ^
-      const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
-
-  @override
-  _$PaymentActorStateCopyWith<_PaymentActorState> get copyWith =>
-      __$PaymentActorStateCopyWithImpl<_PaymentActorState>(this, _$identity);
-}
-
-abstract class _PaymentActorState extends PaymentActorState {
-  _PaymentActorState._() : super._();
-  factory _PaymentActorState(
-      {@required
-          bool isSaving,
-      @required
-          Option<Either<PaymentFailure, Unit>>
-              saveFailureOrSuccessOption}) = _$_PaymentActorState;
-
-  @override
-  bool get isSaving;
-  @override
-  Option<Either<PaymentFailure, Unit>> get saveFailureOrSuccessOption;
-  @override
-  _$PaymentActorStateCopyWith<_PaymentActorState> get copyWith;
-}
-
-/// @nodoc
 class _$PaymentActorEventTearOff {
   const _$PaymentActorEventTearOff();
 
@@ -1914,4 +1744,174 @@ abstract class _DownVoteUser implements PaymentActorEvent {
   Payment get payment;
   @override
   _$DownVoteUserCopyWith<_DownVoteUser> get copyWith;
+}
+
+/// @nodoc
+class _$PaymentActorStateTearOff {
+  const _$PaymentActorStateTearOff();
+
+// ignore: unused_element
+  _PaymentActorState call(
+      {@required
+          bool isSaving,
+      @required
+          Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption}) {
+    return _PaymentActorState(
+      isSaving: isSaving,
+      saveFailureOrSuccessOption: saveFailureOrSuccessOption,
+    );
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $PaymentActorState = _$PaymentActorStateTearOff();
+
+/// @nodoc
+mixin _$PaymentActorState {
+  bool get isSaving;
+  Option<Either<PaymentFailure, Unit>> get saveFailureOrSuccessOption;
+
+  $PaymentActorStateCopyWith<PaymentActorState> get copyWith;
+}
+
+/// @nodoc
+abstract class $PaymentActorStateCopyWith<$Res> {
+  factory $PaymentActorStateCopyWith(
+          PaymentActorState value, $Res Function(PaymentActorState) then) =
+      _$PaymentActorStateCopyWithImpl<$Res>;
+  $Res call(
+      {bool isSaving,
+      Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption});
+}
+
+/// @nodoc
+class _$PaymentActorStateCopyWithImpl<$Res>
+    implements $PaymentActorStateCopyWith<$Res> {
+  _$PaymentActorStateCopyWithImpl(this._value, this._then);
+
+  final PaymentActorState _value;
+  // ignore: unused_field
+  final $Res Function(PaymentActorState) _then;
+
+  @override
+  $Res call({
+    Object isSaving = freezed,
+    Object saveFailureOrSuccessOption = freezed,
+  }) {
+    return _then(_value.copyWith(
+      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
+          ? _value.saveFailureOrSuccessOption
+          : saveFailureOrSuccessOption as Option<Either<PaymentFailure, Unit>>,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$PaymentActorStateCopyWith<$Res>
+    implements $PaymentActorStateCopyWith<$Res> {
+  factory _$PaymentActorStateCopyWith(
+          _PaymentActorState value, $Res Function(_PaymentActorState) then) =
+      __$PaymentActorStateCopyWithImpl<$Res>;
+  @override
+  $Res call(
+      {bool isSaving,
+      Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption});
+}
+
+/// @nodoc
+class __$PaymentActorStateCopyWithImpl<$Res>
+    extends _$PaymentActorStateCopyWithImpl<$Res>
+    implements _$PaymentActorStateCopyWith<$Res> {
+  __$PaymentActorStateCopyWithImpl(
+      _PaymentActorState _value, $Res Function(_PaymentActorState) _then)
+      : super(_value, (v) => _then(v as _PaymentActorState));
+
+  @override
+  _PaymentActorState get _value => super._value as _PaymentActorState;
+
+  @override
+  $Res call({
+    Object isSaving = freezed,
+    Object saveFailureOrSuccessOption = freezed,
+  }) {
+    return _then(_PaymentActorState(
+      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+      saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
+          ? _value.saveFailureOrSuccessOption
+          : saveFailureOrSuccessOption as Option<Either<PaymentFailure, Unit>>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_PaymentActorState extends _PaymentActorState
+    with DiagnosticableTreeMixin {
+  _$_PaymentActorState(
+      {@required this.isSaving, @required this.saveFailureOrSuccessOption})
+      : assert(isSaving != null),
+        assert(saveFailureOrSuccessOption != null),
+        super._();
+
+  @override
+  final bool isSaving;
+  @override
+  final Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'PaymentActorState(isSaving: $isSaving, saveFailureOrSuccessOption: $saveFailureOrSuccessOption)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'PaymentActorState'))
+      ..add(DiagnosticsProperty('isSaving', isSaving))
+      ..add(DiagnosticsProperty(
+          'saveFailureOrSuccessOption', saveFailureOrSuccessOption));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _PaymentActorState &&
+            (identical(other.isSaving, isSaving) ||
+                const DeepCollectionEquality()
+                    .equals(other.isSaving, isSaving)) &&
+            (identical(other.saveFailureOrSuccessOption,
+                    saveFailureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.saveFailureOrSuccessOption,
+                    saveFailureOrSuccessOption)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(isSaving) ^
+      const DeepCollectionEquality().hash(saveFailureOrSuccessOption);
+
+  @override
+  _$PaymentActorStateCopyWith<_PaymentActorState> get copyWith =>
+      __$PaymentActorStateCopyWithImpl<_PaymentActorState>(this, _$identity);
+}
+
+abstract class _PaymentActorState extends PaymentActorState {
+  _PaymentActorState._() : super._();
+  factory _PaymentActorState(
+      {@required
+          bool isSaving,
+      @required
+          Option<Either<PaymentFailure, Unit>>
+              saveFailureOrSuccessOption}) = _$_PaymentActorState;
+
+  @override
+  bool get isSaving;
+  @override
+  Option<Either<PaymentFailure, Unit>> get saveFailureOrSuccessOption;
+  @override
+  _$PaymentActorStateCopyWith<_PaymentActorState> get copyWith;
 }
