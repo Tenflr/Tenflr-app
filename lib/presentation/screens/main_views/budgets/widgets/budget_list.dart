@@ -7,20 +7,20 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:provider/provider.dart';
-import 'package:tenflrpay/application/budget/budget_actor_bloc/budget_actor_bloc.dart';
-import 'package:tenflrpay/application/budget/budget_list_bloc/budgetlist_bloc.dart';
-import 'package:tenflrpay/domain/budget/budgets.dart';
-import 'package:tenflrpay/domain/core/settings.dart';
-import 'package:tenflrpay/domain/user/user.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
-import 'package:tenflrpay/presentation/core/hooks/scrol_controller_for_animation.dart';
-import 'package:tenflrpay/presentation/core/styles/decorations.dart';
-import 'package:tenflrpay/presentation/widgets/button.dart';
+
+import '../../../../../application/budget/budget_actor_bloc/budget_actor_bloc.dart';
+import '../../../../../application/budget/budget_list_bloc/budgetlist_bloc.dart';
+import '../../../../../domain/budget/budgets.dart';
+import '../../../../../domain/core/settings.dart';
+import '../../../../../domain/user/user.dart';
 import '../../../../../injection.dart';
+import '../../../../../routes/router.gr.dart';
+import '../../../../core/assets/colors.dart';
+import '../../../../core/hooks/scrol_controller_for_animation.dart';
 import '../../../../core/translations/translations.i18n.dart';
+import '../../../../widgets/button.dart';
 import '../budget_manager_initial_screen.dart';
 import 'budget_tile.dart';
-import '../../../../../routes/router.gr.dart';
 
 class BudgetList extends HookWidget {
   final ScrollController controller;
