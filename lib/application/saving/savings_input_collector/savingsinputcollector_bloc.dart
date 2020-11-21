@@ -1,24 +1,25 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:tenflrpay/domain/core/constant_list.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/domain/core/value_object.dart';
-import 'package:tenflrpay/domain/logs/logs.dart';
-import 'package:tenflrpay/domain/saving/i_saving_repository.dart';
-import 'package:tenflrpay/domain/saving/savings.dart';
-import 'package:tenflrpay/domain/saving/savings_failure.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rxdart/rxdart.dart';
 
+import '../../../domain/core/constant_list.dart';
+import '../../../domain/core/valid_objects.dart';
+import '../../../domain/core/value_object.dart';
+import '../../../domain/logs/logs.dart';
+import '../../../domain/saving/i_saving_repository.dart';
+import '../../../domain/saving/savings.dart';
+import '../../../domain/saving/savings_failure.dart';
+
+part 'savingsinputcollector_bloc.freezed.dart';
 part 'savingsinputcollector_event.dart';
 part 'savingsinputcollector_state.dart';
-part 'savingsinputcollector_bloc.freezed.dart';
 
 @injectable
 class SavingsInputCollectorBloc
@@ -30,28 +31,28 @@ class SavingsInputCollectorBloc
   SavingsInputCollectorBloc(this.savingsRepository)
       : super(SavingsInputCollectorState.empty());
 
-  @override
-  Stream<Transition<SavingsInputCollectorEvent, SavingsInputCollectorState>>
-      transformEvents(
-    Stream<SavingsInputCollectorEvent> events,
-    TransitionFunction<SavingsInputCollectorEvent, SavingsInputCollectorState>
-        transitionFn,
-  ) {
-    final nonDebounceStream = events.where((event) {
-      return event is! _AmountChanged &&
-          event is! _WithDrawalDateChanged &&
-          event is! _AccountNameChanged;
-    });
-    final debounceStream = events.where((event) {
-      return event is _AmountChanged ||
-          event is _WithDrawalDateChanged ||
-          event is _AccountNameChanged;
-    }).debounceTime(const Duration(milliseconds: 300));
-    return super.transformEvents(
-      nonDebounceStream.mergeWith([debounceStream]),
-      transitionFn,
-    );
-  }
+  // @override
+  // Stream<Transition<SavingsInputCollectorEvent, SavingsInputCollectorState>>
+  //     transformEvents(
+  //   Stream<SavingsInputCollectorEvent> events,
+  //   TransitionFunction<SavingsInputCollectorEvent, SavingsInputCollectorState>
+  //       transitionFn,
+  // ) {
+  //   final nonDebounceStream = events.where((event) {
+  //     return event is! _AmountChanged &&
+  //         event is! _WithDrawalDateChanged &&
+  //         event is! _AccountNameChanged;
+  //   });
+  //   final debounceStream = events.where((event) {
+  //     return event is _AmountChanged ||
+  //         event is _WithDrawalDateChanged ||
+  //         event is _AccountNameChanged;
+  //   }).debounceTime(const Duration(milliseconds: 300));
+  //   return super.transformEvents(
+  //     nonDebounceStream.mergeWith([debounceStream]),
+  //     transitionFn,
+  //   );
+  // }
 
   @override
   Stream<SavingsInputCollectorState> mapEventToState(
