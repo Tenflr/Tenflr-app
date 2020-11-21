@@ -10,165 +10,6 @@ part of 'connectivity_and_time_bloc.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$ConnectivityAndTimeStateTearOff {
-  const _$ConnectivityAndTimeStateTearOff();
-
-// ignore: unused_element
-  _ConnectivityAndTimeState call(
-      {@required bool isConnected, @required bool isSyncedTime}) {
-    return _ConnectivityAndTimeState(
-      isConnected: isConnected,
-      isSyncedTime: isSyncedTime,
-    );
-  }
-}
-
-/// @nodoc
-// ignore: unused_element
-const $ConnectivityAndTimeState = _$ConnectivityAndTimeStateTearOff();
-
-/// @nodoc
-mixin _$ConnectivityAndTimeState {
-  bool get isConnected;
-  bool get isSyncedTime;
-
-  $ConnectivityAndTimeStateCopyWith<ConnectivityAndTimeState> get copyWith;
-}
-
-/// @nodoc
-abstract class $ConnectivityAndTimeStateCopyWith<$Res> {
-  factory $ConnectivityAndTimeStateCopyWith(ConnectivityAndTimeState value,
-          $Res Function(ConnectivityAndTimeState) then) =
-      _$ConnectivityAndTimeStateCopyWithImpl<$Res>;
-  $Res call({bool isConnected, bool isSyncedTime});
-}
-
-/// @nodoc
-class _$ConnectivityAndTimeStateCopyWithImpl<$Res>
-    implements $ConnectivityAndTimeStateCopyWith<$Res> {
-  _$ConnectivityAndTimeStateCopyWithImpl(this._value, this._then);
-
-  final ConnectivityAndTimeState _value;
-  // ignore: unused_field
-  final $Res Function(ConnectivityAndTimeState) _then;
-
-  @override
-  $Res call({
-    Object isConnected = freezed,
-    Object isSyncedTime = freezed,
-  }) {
-    return _then(_value.copyWith(
-      isConnected:
-          isConnected == freezed ? _value.isConnected : isConnected as bool,
-      isSyncedTime:
-          isSyncedTime == freezed ? _value.isSyncedTime : isSyncedTime as bool,
-    ));
-  }
-}
-
-/// @nodoc
-abstract class _$ConnectivityAndTimeStateCopyWith<$Res>
-    implements $ConnectivityAndTimeStateCopyWith<$Res> {
-  factory _$ConnectivityAndTimeStateCopyWith(_ConnectivityAndTimeState value,
-          $Res Function(_ConnectivityAndTimeState) then) =
-      __$ConnectivityAndTimeStateCopyWithImpl<$Res>;
-  @override
-  $Res call({bool isConnected, bool isSyncedTime});
-}
-
-/// @nodoc
-class __$ConnectivityAndTimeStateCopyWithImpl<$Res>
-    extends _$ConnectivityAndTimeStateCopyWithImpl<$Res>
-    implements _$ConnectivityAndTimeStateCopyWith<$Res> {
-  __$ConnectivityAndTimeStateCopyWithImpl(_ConnectivityAndTimeState _value,
-      $Res Function(_ConnectivityAndTimeState) _then)
-      : super(_value, (v) => _then(v as _ConnectivityAndTimeState));
-
-  @override
-  _ConnectivityAndTimeState get _value =>
-      super._value as _ConnectivityAndTimeState;
-
-  @override
-  $Res call({
-    Object isConnected = freezed,
-    Object isSyncedTime = freezed,
-  }) {
-    return _then(_ConnectivityAndTimeState(
-      isConnected:
-          isConnected == freezed ? _value.isConnected : isConnected as bool,
-      isSyncedTime:
-          isSyncedTime == freezed ? _value.isSyncedTime : isSyncedTime as bool,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_ConnectivityAndTimeState extends _ConnectivityAndTimeState
-    with DiagnosticableTreeMixin {
-  _$_ConnectivityAndTimeState(
-      {@required this.isConnected, @required this.isSyncedTime})
-      : assert(isConnected != null),
-        assert(isSyncedTime != null),
-        super._();
-
-  @override
-  final bool isConnected;
-  @override
-  final bool isSyncedTime;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ConnectivityAndTimeState(isConnected: $isConnected, isSyncedTime: $isSyncedTime)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'ConnectivityAndTimeState'))
-      ..add(DiagnosticsProperty('isConnected', isConnected))
-      ..add(DiagnosticsProperty('isSyncedTime', isSyncedTime));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _ConnectivityAndTimeState &&
-            (identical(other.isConnected, isConnected) ||
-                const DeepCollectionEquality()
-                    .equals(other.isConnected, isConnected)) &&
-            (identical(other.isSyncedTime, isSyncedTime) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSyncedTime, isSyncedTime)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(isConnected) ^
-      const DeepCollectionEquality().hash(isSyncedTime);
-
-  @override
-  _$ConnectivityAndTimeStateCopyWith<_ConnectivityAndTimeState> get copyWith =>
-      __$ConnectivityAndTimeStateCopyWithImpl<_ConnectivityAndTimeState>(
-          this, _$identity);
-}
-
-abstract class _ConnectivityAndTimeState extends ConnectivityAndTimeState {
-  _ConnectivityAndTimeState._() : super._();
-  factory _ConnectivityAndTimeState(
-      {@required bool isConnected,
-      @required bool isSyncedTime}) = _$_ConnectivityAndTimeState;
-
-  @override
-  bool get isConnected;
-  @override
-  bool get isSyncedTime;
-  @override
-  _$ConnectivityAndTimeStateCopyWith<_ConnectivityAndTimeState> get copyWith;
-}
-
-/// @nodoc
 class _$ConnectivityAndTimeEventTearOff {
   const _$ConnectivityAndTimeEventTearOff();
 
@@ -998,4 +839,163 @@ class _$_CheckSynchronizedTime
 
 abstract class _CheckSynchronizedTime implements ConnectivityAndTimeEvent {
   const factory _CheckSynchronizedTime() = _$_CheckSynchronizedTime;
+}
+
+/// @nodoc
+class _$ConnectivityAndTimeStateTearOff {
+  const _$ConnectivityAndTimeStateTearOff();
+
+// ignore: unused_element
+  _ConnectivityAndTimeState call(
+      {@required bool isConnected, @required bool isSyncedTime}) {
+    return _ConnectivityAndTimeState(
+      isConnected: isConnected,
+      isSyncedTime: isSyncedTime,
+    );
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $ConnectivityAndTimeState = _$ConnectivityAndTimeStateTearOff();
+
+/// @nodoc
+mixin _$ConnectivityAndTimeState {
+  bool get isConnected;
+  bool get isSyncedTime;
+
+  $ConnectivityAndTimeStateCopyWith<ConnectivityAndTimeState> get copyWith;
+}
+
+/// @nodoc
+abstract class $ConnectivityAndTimeStateCopyWith<$Res> {
+  factory $ConnectivityAndTimeStateCopyWith(ConnectivityAndTimeState value,
+          $Res Function(ConnectivityAndTimeState) then) =
+      _$ConnectivityAndTimeStateCopyWithImpl<$Res>;
+  $Res call({bool isConnected, bool isSyncedTime});
+}
+
+/// @nodoc
+class _$ConnectivityAndTimeStateCopyWithImpl<$Res>
+    implements $ConnectivityAndTimeStateCopyWith<$Res> {
+  _$ConnectivityAndTimeStateCopyWithImpl(this._value, this._then);
+
+  final ConnectivityAndTimeState _value;
+  // ignore: unused_field
+  final $Res Function(ConnectivityAndTimeState) _then;
+
+  @override
+  $Res call({
+    Object isConnected = freezed,
+    Object isSyncedTime = freezed,
+  }) {
+    return _then(_value.copyWith(
+      isConnected:
+          isConnected == freezed ? _value.isConnected : isConnected as bool,
+      isSyncedTime:
+          isSyncedTime == freezed ? _value.isSyncedTime : isSyncedTime as bool,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$ConnectivityAndTimeStateCopyWith<$Res>
+    implements $ConnectivityAndTimeStateCopyWith<$Res> {
+  factory _$ConnectivityAndTimeStateCopyWith(_ConnectivityAndTimeState value,
+          $Res Function(_ConnectivityAndTimeState) then) =
+      __$ConnectivityAndTimeStateCopyWithImpl<$Res>;
+  @override
+  $Res call({bool isConnected, bool isSyncedTime});
+}
+
+/// @nodoc
+class __$ConnectivityAndTimeStateCopyWithImpl<$Res>
+    extends _$ConnectivityAndTimeStateCopyWithImpl<$Res>
+    implements _$ConnectivityAndTimeStateCopyWith<$Res> {
+  __$ConnectivityAndTimeStateCopyWithImpl(_ConnectivityAndTimeState _value,
+      $Res Function(_ConnectivityAndTimeState) _then)
+      : super(_value, (v) => _then(v as _ConnectivityAndTimeState));
+
+  @override
+  _ConnectivityAndTimeState get _value =>
+      super._value as _ConnectivityAndTimeState;
+
+  @override
+  $Res call({
+    Object isConnected = freezed,
+    Object isSyncedTime = freezed,
+  }) {
+    return _then(_ConnectivityAndTimeState(
+      isConnected:
+          isConnected == freezed ? _value.isConnected : isConnected as bool,
+      isSyncedTime:
+          isSyncedTime == freezed ? _value.isSyncedTime : isSyncedTime as bool,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_ConnectivityAndTimeState extends _ConnectivityAndTimeState
+    with DiagnosticableTreeMixin {
+  _$_ConnectivityAndTimeState(
+      {@required this.isConnected, @required this.isSyncedTime})
+      : assert(isConnected != null),
+        assert(isSyncedTime != null),
+        super._();
+
+  @override
+  final bool isConnected;
+  @override
+  final bool isSyncedTime;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ConnectivityAndTimeState(isConnected: $isConnected, isSyncedTime: $isSyncedTime)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ConnectivityAndTimeState'))
+      ..add(DiagnosticsProperty('isConnected', isConnected))
+      ..add(DiagnosticsProperty('isSyncedTime', isSyncedTime));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ConnectivityAndTimeState &&
+            (identical(other.isConnected, isConnected) ||
+                const DeepCollectionEquality()
+                    .equals(other.isConnected, isConnected)) &&
+            (identical(other.isSyncedTime, isSyncedTime) ||
+                const DeepCollectionEquality()
+                    .equals(other.isSyncedTime, isSyncedTime)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(isConnected) ^
+      const DeepCollectionEquality().hash(isSyncedTime);
+
+  @override
+  _$ConnectivityAndTimeStateCopyWith<_ConnectivityAndTimeState> get copyWith =>
+      __$ConnectivityAndTimeStateCopyWithImpl<_ConnectivityAndTimeState>(
+          this, _$identity);
+}
+
+abstract class _ConnectivityAndTimeState extends ConnectivityAndTimeState {
+  _ConnectivityAndTimeState._() : super._();
+  factory _ConnectivityAndTimeState(
+      {@required bool isConnected,
+      @required bool isSyncedTime}) = _$_ConnectivityAndTimeState;
+
+  @override
+  bool get isConnected;
+  @override
+  bool get isSyncedTime;
+  @override
+  _$ConnectivityAndTimeStateCopyWith<_ConnectivityAndTimeState> get copyWith;
 }
