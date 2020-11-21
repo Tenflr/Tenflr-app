@@ -1,17 +1,17 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:tenflrpay/domain/core/constant_list.dart';
 import 'package:data_connection_checker/data_connection_checker.dart';
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:ntp/ntp.dart';
-import 'package:flutter/foundation.dart';
-import 'package:rxdart/rxdart.dart';
 
-part 'connectivity_and_time_state.dart';
-part 'connectivity_and_time_event.dart';
+import '../../domain/core/constant_list.dart';
+
 part 'connectivity_and_time_bloc.freezed.dart';
+part 'connectivity_and_time_event.dart';
+part 'connectivity_and_time_state.dart';
 
 @injectable
 class ConnectivityAndTimeBloc
