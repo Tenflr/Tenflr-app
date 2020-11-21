@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
 
+import '../core/assets/colors.dart';
 import '../core/styles/decorations.dart';
 import '../core/styles/text_styles.dart';
 
