@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:tenflrpay/application/budget/budget_input_collector/budgetinputcollector_bloc.dart';
-import 'package:tenflrpay/domain/core/valid_objects.dart';
-import 'package:tenflrpay/presentation/core/assets/colors.dart';
-import 'package:tenflrpay/presentation/core/styles/decorations.dart';
+
+import '../../application/budget/budget_input_collector/budgetinputcollector_bloc.dart';
+import '../../domain/core/valid_objects.dart';
+import '../core/assets/colors.dart';
+import '../core/styles/decorations.dart';
 import '../core/translations/translations.i18n.dart';
 
 class CupertinoDurationPicker extends HookWidget {
