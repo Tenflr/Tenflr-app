@@ -58,71 +58,74 @@ class CreateBudgetManagerForm extends StatelessWidget {
             state.saveFailureOrSuccessOption.fold(
                 () {},
                 (either) => either.fold(
-                    (failure) => FlushbarHelper.createError(
-                        title: "An Error occured".i18n,
-                        duration: const Duration(seconds: 5),
-                        message: failure.maybeMap(
-                          orElse: () => null,
-                          userNotFound: (_) => 'Receiver not found'.i18n,
-                          unexpected: (_) =>
-                              "An unexpected error occurred".i18n,
-                          insufficientPermissions: (_) =>
-                              "Insufficient Permission. Contact support!".i18n,
-                          unableToCashUnlock: (_) =>
-                              "Unable to cashed unlock amount!".i18n,
-                          unableToCreateBudget: (_) =>
-                              "Unable to create budget Manager".i18n,
-                          unableToSendBudget: (_) =>
-                              "Unable to send budget manager gift".i18n,
-                          insufficientFundsInTrustedFunds: (_) =>
-                              "Insufficient Funds in TrustedPay wallet!".i18n,
-                          paymentWithMomoFailed: (_) =>
-                              "Payment with MOMO account failed! Please try again!"
-                                  .i18n,
-                          invalidDailyPayRate: (_) =>
-                              "The daily Payout rate is very small. It should be at least XFA 200/day 🤑"
-                                  .i18n,
-                          invalidMonthlyPayRate: (_) =>
-                              "The daily Payout rate is very small. It should be at least XFA 1,000/day 🤑"
-                                  .i18n,
-                          invalidWeeklyPayRate: (_) =>
-                              "The daily Payout rate is very small.It should be at least XFA 5,000/day 🤑"
-                                  .i18n,
-                          invalidYearlyPayRate: (_) =>
-                              "The daily Payout rate is very small. It should be at least XFA 50,000/day 🤑"
-                                  .i18n,
-                          unexpectedFieldInBudget: (_) =>
-                              " 😨 There's in an invalid field in your Budget manager. Please contact support"
-                                  .i18n,
-                          invalidNoDaysForDailyPayRate: (_) =>
-                              "For a daily Payout, Budget Duration should be greater than 2 days"
-                                  .i18n,
-                          invalidNoDaysForMonthlyPayRate: (_) =>
-                              "For a month Payout, Budget Duration should be greater than a month"
-                                  .i18n,
-                          invalidNoDaysForWeeklyPayRate: (_) =>
-                              "For a weekly Payout, Budget Duration should be greater than a week"
-                                  .i18n,
-                          invalidNoDaysForYearlyPayRate: (_) =>
-                              "For a yearly Payout,Budget Duration should be greater than a year"
-                                  .i18n,
-                          timeOutOfSync: (_) =>
-                              "The operation was cancelled because your local time is out-of-sync with the server time"
-                                  .i18n,
-                        )).show(context),
-                    (r) => {
-                          FlushbarHelper.createSuccess(
-                                  duration: const Duration(seconds: 2),
-                                  message:
-                                      "You have successfully created a new budget Manager Account 😃"
-                                          .i18n)
-                              .show(context),
-                          Future.delayed(const Duration(microseconds: 1)),
-                          context
-                              .bloc<MainViewsBloc>()
-                              .add(const MainViewsEvent.budgetPage()),
-                          Navigator.of(context).pop(),
-                        }));
+                        (failure) => FlushbarHelper.createError(
+                            title: "An Error occured".i18n,
+                            duration: const Duration(seconds: 5),
+                            message: failure.maybeMap(
+                              orElse: () => null,
+                              userNotFound: (_) => 'Receiver not found'.i18n,
+                              unexpected: (_) =>
+                                  "An unexpected error occurred".i18n,
+                              insufficientPermissions: (_) =>
+                                  "Insufficient Permission. Contact support!"
+                                      .i18n,
+                              unableToCashUnlock: (_) =>
+                                  "Unable to cashed unlock amount!".i18n,
+                              unableToCreateBudget: (_) =>
+                                  "Unable to create budget Manager".i18n,
+                              unableToSendBudget: (_) =>
+                                  "Unable to send budget manager gift".i18n,
+                              insufficientFundsInTrustedFunds: (_) =>
+                                  "Insufficient Funds in TrustedPay wallet!"
+                                      .i18n,
+                              paymentWithMomoFailed: (_) =>
+                                  "Payment with MOMO account failed! Please try again!"
+                                      .i18n,
+                              invalidDailyPayRate: (_) =>
+                                  "The daily Payout rate is very small. It should be at least XFA 200/day 🤑"
+                                      .i18n,
+                              invalidMonthlyPayRate: (_) =>
+                                  "The daily Payout rate is very small. It should be at least XFA 1,000/day 🤑"
+                                      .i18n,
+                              invalidWeeklyPayRate: (_) =>
+                                  "The daily Payout rate is very small.It should be at least XFA 5,000/day 🤑"
+                                      .i18n,
+                              invalidYearlyPayRate: (_) =>
+                                  "The daily Payout rate is very small. It should be at least XFA 50,000/day 🤑"
+                                      .i18n,
+                              unexpectedFieldInBudget: (_) =>
+                                  " 😨 There's in an invalid field in your Budget manager. Please contact support"
+                                      .i18n,
+                              invalidNoDaysForDailyPayRate: (_) =>
+                                  "For a daily Payout, Budget Duration should be greater than 2 days"
+                                      .i18n,
+                              invalidNoDaysForMonthlyPayRate: (_) =>
+                                  "For a month Payout, Budget Duration should be greater than a month"
+                                      .i18n,
+                              invalidNoDaysForWeeklyPayRate: (_) =>
+                                  "For a weekly Payout, Budget Duration should be greater than a week"
+                                      .i18n,
+                              invalidNoDaysForYearlyPayRate: (_) =>
+                                  "For a yearly Payout,Budget Duration should be greater than a year"
+                                      .i18n,
+                              timeOutOfSync: (_) =>
+                                  "The operation was cancelled because your local time is out-of-sync with the server time"
+                                      .i18n,
+                            )).show(context), (r) {
+                      Navigator.of(context).pop();
+                      Future.delayed(const Duration(microseconds: 2), () {
+                        FlushbarHelper.createSuccess(
+                                duration: const Duration(seconds: 2),
+                                message:
+                                    "You have successfully created a new budget Manager Account 😃"
+                                        .i18n)
+                            .show(context);
+                      });
+
+                      // context
+                      // .bloc<MainViewsBloc>()
+                      // .add(const MainViewsEvent.budgetPage()),
+                    }));
             if (state.isSaving) {
               FlushbarHelper.createLoading(
                       duration: const Duration(seconds: 4),
