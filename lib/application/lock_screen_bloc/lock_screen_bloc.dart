@@ -2,19 +2,20 @@ import 'dart:async';
 import 'dart:io';
 
 import 'package:bloc/bloc.dart';
-import 'package:tenflrpay/domain/core/settings.dart';
-import 'package:tenflrpay/infrastructure/managers/trusted_pay_door_manager.dart';
 import 'package:device_info/device_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:local_auth/local_auth.dart';
 import 'package:local_auth/error_codes.dart' as auth_error;
+import 'package:local_auth/local_auth.dart';
 
+import '../../domain/core/settings.dart';
+import '../../infrastructure/managers/trusted_pay_door_manager.dart';
+
+part 'lock_screen_bloc.freezed.dart';
 part 'lock_screen_event.dart';
 part 'lock_screen_state.dart';
-part 'lock_screen_bloc.freezed.dart';
 
 @injectable
 class LockScreenBloc extends Bloc<LockScreenEvent, LockScreenState> {
@@ -45,9 +46,7 @@ class LockScreenBloc extends Bloc<LockScreenEvent, LockScreenState> {
       if (uptoDateSdkInt) {
         canCheckBiometrics ??= await pagesScreenService.checkBiometrics();
       }
-    }
-
-    if (Platform.isIOS) {
+    } else if (Platform.isIOS) {
       canCheckBiometrics ??= await pagesScreenService.checkBiometrics();
     }
     if (canCheckBiometrics) {
@@ -55,12 +54,12 @@ class LockScreenBloc extends Bloc<LockScreenEvent, LockScreenState> {
     }
     yield* event.map(
       lock: (e) async* {
-        if (!state.pausedLock) {
+        if (state.pausedLock == false) {
           yield state.copyWith(isLocked: true);
         }
       },
       shouldPaused: (e) async* {
-        yield state.copyWith(isLocked: e.paused);
+        yield state.copyWith(pausedLock: e.paused);
       },
       unlock: (e) async* {
         if (e.pin == _settings.getTrustedPayPin) {
@@ -76,7 +75,7 @@ class LockScreenBloc extends Bloc<LockScreenEvent, LockScreenState> {
               isAuthenticating = false;
             }
             if (isVaultOpen || e.pin == _settings.getTrustedPayPin) {
-              yield state.copyWith(isLocked: false);
+              yield state.copyWith(isLocked: false, pausedLock: true);
             } else {
               if (!state.pausedLock) {
                 yield state.copyWith(isLocked: true);
