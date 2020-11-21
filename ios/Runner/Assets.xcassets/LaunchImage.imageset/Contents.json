@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "87.png",
+      "filename" : "tf_logo.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "120.png",
+      "filename" : "tf_logo-1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "1024-2.png",
+      "filename" : "tf_logo-2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }
