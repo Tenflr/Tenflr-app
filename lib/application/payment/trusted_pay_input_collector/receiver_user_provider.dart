@@ -1,5 +1,6 @@
-import 'package:tenflrpay/domain/user/user.dart';
 import 'package:rxdart/rxdart.dart';
+
+import '../../../domain/user/user.dart';
 
 class ReveiverUserProvider {
   final BehaviorSubject _receiverSubject = BehaviorSubject<User>();
