@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:tenflrpay/domain/core/constant_list.dart';
-import 'package:tenflrpay/domain/core/failures.dart';
+import 'constant_list.dart';
+import 'failures.dart';
 
 Either<ValueFailure<String>, String> validateMaxStringLength(
     String input, int maxLength) {
