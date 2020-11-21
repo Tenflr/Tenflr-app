@@ -27,7 +27,8 @@ class ListWheelScrollViewX extends StatelessWidget {
       child: ListWheelScrollView(
         children: children,
         //  useMagnifier: true,
-        // magnification: 1.04,
+        // magnification: 1.1,
+        overAndUnderCenterOpacity: 0.6,
         onSelectedItemChanged: onSelectedItemChanged,
         controller: controller,
         offAxisFraction: 0.2,
