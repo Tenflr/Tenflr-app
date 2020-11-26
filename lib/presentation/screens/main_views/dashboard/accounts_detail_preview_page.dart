@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:provider/provider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../application/budget/budget_list_bloc/budgetlist_bloc.dart';
@@ -12,13 +11,14 @@ import '../../../../application/quick_payment/quick_payment_watcher_bloc/quick_p
 import '../../../../application/saving/savings_list_bloc/savingslist_bloc.dart';
 import '../../../../injection.dart';
 import '../../../core/assets/colors.dart';
+import '../../../core/translations/translations.i18n.dart';
 import '../../../widgets/transaction_list.dart';
 import 'widgets/mini_budget_list.dart';
 import 'widgets/mini_payment_list.dart';
 import 'widgets/mini_quickpay_list.dart';
 import 'widgets/mini_savings_list.dart';
 
-class AccountDetailPreviewScreen extends HookWidget {
+class AccountDetailPreviewScreen extends StatelessWidget{
   final ValueNotifier<bool> hasAccounts;
   const AccountDetailPreviewScreen(this.hasAccounts);
   @override
@@ -50,7 +50,6 @@ class AccountDetailPreviewForm extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    // final bool _hasAcc = Provider.of<bool>(context, listen: true);
     final controller = PageController(viewportFraction: 0.99);
 
     final hasSavings = useState(false);
@@ -114,93 +113,93 @@ class AccountDetailPreviewForm extends HookWidget {
                   children: [
                     Expanded(
                       child: PageView(controller: controller, children: [
-                        // if (hasBudget.value)
-                        BlocBuilder<BudgetListBloc, BudgetListState>(
-                            builder: (context, state) {
-                          return state.maybeMap(
-                            orElse: () => null,
-                            initial: (e) => const Center(
-                                child: CircularProgressIndicator()),
-                            loading: (e) => const Center(
-                                child: CircularProgressIndicator()),
-                            listLoaded: (e) {
-                              if (e.budgets.size > 0) {
-                                return TransactionsList(
-                                    title: 'Budget Managers',
-                                    transactionList: MiniBudgetList(
-                                      budgets: e.budgets,
-                                    ));
-                              } else {
-                                return const SizedBox();
-                              }
-                            },
-                          );
-                        }),
-                        // if (hasSavings.value)
-                        BlocBuilder<SavingsListBloc, SavingsListState>(
-                            builder: (context, state) {
-                          return state.maybeMap(
-                            orElse: () => null,
-                            initial: (e) => const Center(
-                                child: CircularProgressIndicator()),
-                            loading: (e) => const Center(
-                                child: CircularProgressIndicator()),
-                            loadComplete: (e) {
-                              if (e.savings.size > 0) {
-                                return TransactionsList(
-                                    title: 'Savings',
-                                    transactionList: MiniSavingsList(
-                                      savings: e.savings,
-                                    ));
-                              } else {
-                                return const SizedBox();
-                              }
-                            },
-                          );
-                        }),
-                        // if (hasPayment.value)
-                        BlocBuilder<TransactionListBloc, TransactionListState>(
-                            builder: (context, state) {
-                          return state.maybeMap(
+                        if (hasBudget.value)
+                          BlocBuilder<BudgetListBloc, BudgetListState>(
+                              builder: (context, state) {
+                            return state.maybeMap(
+                              orElse: () => null,
+                              initial: (e) => const Center(
+                                  child: CircularProgressIndicator()),
+                              loading: (e) => const Center(
+                                  child: CircularProgressIndicator()),
+                              listLoaded: (e) {
+                                if (e.budgets.size > 0) {
+                                  return TransactionsList(
+                                      title: 'Budget Managers'.i18n,
+                                      transactionList: MiniBudgetList(
+                                        budgets: e.budgets,
+                                      ));
+                                } else {
+                                  return const SizedBox();
+                                }
+                              },
+                            );
+                          }),
+                        if (hasSavings.value)
+                          BlocBuilder<SavingsListBloc, SavingsListState>(
+                              builder: (context, state) {
+                            return state.maybeMap(
                               orElse: () => null,
                               initial: (e) => const Center(
                                   child: CircularProgressIndicator()),
                               loading: (e) => const Center(
                                   child: CircularProgressIndicator()),
                               loadComplete: (e) {
-                                if (e.payments.size > 0) {
+                                if (e.savings.size > 0) {
                                   return TransactionsList(
-                                      title: 'Trusted Payments',
-                                      transactionList: MiniPaymentsList(
-                                        payments: e.payments,
+                                      title: 'Savings'.i18n,
+                                      transactionList: MiniSavingsList(
+                                        savings: e.savings,
                                       ));
                                 } else {
                                   return const SizedBox();
                                 }
-                              });
-                        }),
-                        // if (hasQuickPay.value)
-                        BlocBuilder<QuickPaymentWatcherBloc,
-                                QuickPaymentWatcherState>(
-                            builder: (context, state) {
-                          return state.maybeMap(
-                              orElse: () => null,
-                              initial: (e) => const Center(
-                                  child: CircularProgressIndicator()),
-                              loadInProgress: (e) => const Center(
-                                  child: CircularProgressIndicator()),
-                              loadSuccess: (e) {
-                                if (e.quickPayment.size > 0) {
-                                  return TransactionsList(
-                                      title: 'Quick Payments',
-                                      transactionList: MiniQuickpayList(
-                                        quickpays: e.quickPayment,
-                                      ));
-                                } else {
-                                  return const SizedBox();
-                                }
-                              });
-                        }),
+                              },
+                            );
+                          }),
+                        if (hasPayment.value)
+                          BlocBuilder<TransactionListBloc,
+                              TransactionListState>(builder: (context, state) {
+                            return state.maybeMap(
+                                orElse: () => null,
+                                initial: (e) => const Center(
+                                    child: CircularProgressIndicator()),
+                                loading: (e) => const Center(
+                                    child: CircularProgressIndicator()),
+                                loadComplete: (e) {
+                                  if (e.payments.size > 0) {
+                                    return TransactionsList(
+                                        title: 'Trusted Payments'.i18n,
+                                        transactionList: MiniPaymentsList(
+                                          payments: e.payments,
+                                        ));
+                                  } else {
+                                    return const SizedBox();
+                                  }
+                                });
+                          }),
+                        if (hasQuickPay.value)
+                          BlocBuilder<QuickPaymentWatcherBloc,
+                                  QuickPaymentWatcherState>(
+                              builder: (context, state) {
+                            return state.maybeMap(
+                                orElse: () => null,
+                                initial: (e) => const Center(
+                                    child: CircularProgressIndicator()),
+                                loadInProgress: (e) => const Center(
+                                    child: CircularProgressIndicator()),
+                                loadSuccess: (e) {
+                                  if (e.quickPayment.size > 0) {
+                                    return TransactionsList(
+                                        title: 'Quick Payments'.i18n,
+                                        transactionList: MiniQuickpayList(
+                                          quickpays: e.quickPayment,
+                                        ));
+                                  } else {
+                                    return const SizedBox();
+                                  }
+                                });
+                          }),
                       ]),
                     ),
                     Container(
