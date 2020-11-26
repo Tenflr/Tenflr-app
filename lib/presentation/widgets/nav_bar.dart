@@ -1,4 +1,6 @@
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -86,7 +88,7 @@ class NavBar extends HookWidget {
               ),
             ],
           ),
-          if (size.height >= 812)
+          if  ( Platform.isIOS && size.height >= 812)
             const SizedBox(
               height: 40,
             ),
