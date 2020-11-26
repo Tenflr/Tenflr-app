@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -6,12 +7,13 @@ import '../../../core/assets/colors.dart';
 import '../../../core/icons/TfIcons_icons.dart';
 import '../../../core/styles/text_styles.dart';
 import '../../../core/translations/translations.i18n.dart';
+import '../../../../routes/router.gr.dart';
 
 class SecurityTile extends HookWidget {
   const SecurityTile({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final defaultLang = useState("French");
+    final defaultLang = useState("French".i18n);
     final ValueNotifier<bool> smartFundIsOn = useState(false);
     final ValueNotifier<bool> bgAppLockIsOn = useState(false);
     final ValueNotifier<bool> twoFAIsOn = useState(false);
@@ -69,15 +71,12 @@ class PasswordTile extends StatelessWidget {
 
     return InkWell(
       onTap: () {
-        // TODO:
+        ExtendedNavigator.of(context).pushChangePinScreen();
       },
       child: Row(
         // crossAxisAlignment: CrossAxisAlignment.baseline,
         children: [
-          const Icon(
-            TfIcons.lock
-           
-          ),
+          const Icon(TfIcons.lock),
           SizedBox(width: size.width * 0.03),
           Text("Change Password".i18n,
               style: SettingsTextStlyles.description(size)),
@@ -115,9 +114,7 @@ class SettingTile extends StatelessWidget {
                 ),
               )
             else
-              Icon(
-                icon
-              ),
+              Icon(icon),
             SizedBox(width: size.width * 0.03),
             Text(description.i18n,
                 style: SettingsTextStlyles.description(size)),
