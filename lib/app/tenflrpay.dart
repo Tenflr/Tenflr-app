@@ -68,6 +68,7 @@ class TenflrPay extends HookWidget {
           title: 'Tenflr',
           debugShowCheckedModeBanner: false,
           localizationsDelegates: [
+            // AppLocalizations.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
