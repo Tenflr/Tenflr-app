@@ -57,7 +57,7 @@ class DefaultPrimaryTextInputField extends HookWidget {
               buildCounter: (context, {currentLength, isFocused, maxLength}) {
                 if (maxLength != null && currentLength > maxLength) {
                   controller?.text = controller?.text?.substring(0, 20);
-                  return const Text("Max lenght reached",
+                  return  Text("Max lenght reached".i18n,
                       style: TextStyle(
                         color: TfColors.red,
                       ));
