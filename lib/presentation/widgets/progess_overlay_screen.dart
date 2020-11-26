@@ -1,14 +1,13 @@
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
+import '../core/translations/translations.i18n.dart';
 
 class ProgressOverlayIndicator extends StatelessWidget {
-  final String overLayText;
   final bool isSaving;
   final double height;
   const ProgressOverlayIndicator({
     Key key,
     @required this.isSaving,
-    this.overLayText = 'Saving',
     this.height,
   }) : super(key: key);
 
