@@ -132,7 +132,7 @@ _showMenu(BuildContext context) {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    'Notifications',
+                    'Notifications'.i18n,
                     style: SettingsTextStlyles.tileHeader(size),
                   ),
                 ),
