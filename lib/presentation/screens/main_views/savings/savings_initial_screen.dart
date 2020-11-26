@@ -26,7 +26,7 @@ class SavingsInitialScreen extends StatelessWidget {
             ExtendedNavigator.of(context).pushCreateSavingsScreen();
           },
           description: "New Savings Account".i18n,
-          width: size.width * 0.7,
+          width: size.width * 0.8,
         ),
       ],
     );
