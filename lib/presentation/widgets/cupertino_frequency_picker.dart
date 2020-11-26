@@ -23,7 +23,7 @@ class CupertinoFrequencyPicker extends HookWidget {
           const SizedBox(height: 10),
           Container(
             decoration: DefaultDecoration.all,
-            width: size.width * 0.4,
+            width: size.width * 0.5,
             height: size.height * 0.1,
             child: CupertinoPicker(
               // scrollController:  scrollController,
