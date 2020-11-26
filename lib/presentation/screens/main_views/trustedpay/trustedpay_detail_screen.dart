@@ -19,7 +19,7 @@ class TrustedPayDetailScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    // final isSent = useState(false);
+    final int daysLeft = payment.unlockDate.getOrCrash().difference(DateTime.now()).inDays;
     final bool isSent =
         payment.payerId.getOrCrash() == getIt<MySettings>().getUserId
             ? false
@@ -66,7 +66,7 @@ class TrustedPayDetailScreen extends HookWidget {
               InfoDisplayTile(
                 leading: Text('Status'.i18n,
                     style: TrustedPayScreenTextStyles.key(size)),
-                trailing: Text(isSent ? 'Locked' : "Cashed",
+                trailing: Text(isSent ? 'Locked'.i18n : "Cashed".i18n,
                     style: TrustedPayScreenTextStyles.status(size, isSent)),
               ),
               InfoDisplayTile(
@@ -83,7 +83,7 @@ class TrustedPayDetailScreen extends HookWidget {
                             .substring(0, 11),
                         style: TrustedPayScreenTextStyles.value(size)),
                     const SizedBox(height: 5),
-                    Text('2 days',
+                 if(daysLeft  > 0)   Text('${'$daysLeft '}${'days'.i18n}',
                         style: TrustedPayScreenTextStyles.value(size)),
                   ],
                 ),
