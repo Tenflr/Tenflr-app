@@ -104,7 +104,6 @@ class SendTrustedPaymentForm extends HookWidget {
           }
           if (state.isSaving) {
             FlushbarHelper.createLoading(
-                    // duration: const Duration(seconds: 10),
                     message: 'Sending payment...'.i18n,
                     linearProgressIndicator: const LinearProgressIndicator())
                 .show(context);
@@ -119,7 +118,8 @@ class SendTrustedPaymentForm extends HookWidget {
                     Navigator.of(context).pop();
                   },
                 ),
-                description: Text("Send Trusted Payment",
+                description: Text("Send Trusted Payment".i18n,
+
                     style: SavingsScreenTextStyle.addSavingsDescription(size)),
                 trailing: const Opacity(
                     opacity: 0,
