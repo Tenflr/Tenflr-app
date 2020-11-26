@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
@@ -40,17 +38,16 @@ class AuthenticationBloc
     this._iSettingsFacade,
   ) : super(const AuthenticationState.initial());
 
-
   @override
   Stream<AuthenticationState> mapEventToState(
     AuthenticationEvent event,
   ) async* {
     yield* event.map(
       authCheckRequested: (e) async* {
-        final bool _isNewUser = _settings.sharedPreferences.getBool("newUser");
+        final bool _isNewUser = _settings.isNewUser;
         debugPrint("Is user a firstTime User: $_isNewUser");
         if (_isNewUser == null || _isNewUser == true) {
-          _settings.sharedPreferences.setBool("newUser", false);
+          _settings.setOldUser(false);
           yield const AuthenticationState.firstTimeUser();
         } else {
           // let check if the user has registered before d
@@ -62,6 +59,19 @@ class AuthenticationBloc
             final userOptionFromDatabase = await _authFacade.getSignedInUser();
             final _user = userOptionFromDatabase.getOrElse(() => null);
 
+            UserSettings userSettings;
+            if (_user.isNewUser) {
+              _settings.setTrustedPayPin('2580');
+            } else {
+              final Either<UserSettingsFailure, UserSettings>
+                  failureOrUserSettings =
+                  await _iSettingsFacade.getUserSettings();
+              if (failureOrUserSettings.isRight()) {
+                userSettings = failureOrUserSettings.getOrElse(() => null);
+                await _settings.setAll(userSettings, _user);
+              }
+            }
+
             /*
                 Let set some settings in sharePreferences which can be access globally
                 all over the app using the settings class.
@@ -70,7 +80,7 @@ class AuthenticationBloc
               _settings.setAutomaticSavingsUnlock(unlockAuto: true);
               _settings.setSmartFundsUse(useSmartFunds: true);
               _settings.setMomoOrTrustedFunds(withdrawalWithMomo: true);
-              _settings.setTrustedPayPin('2580');
+              // _settings.setTrustedPayPin('2580');
               await _settings.setUserNumber(_user.phoneNumber);
               await _settings.setUserId(_user.id);
             }
@@ -103,8 +113,9 @@ class AuthenticationBloc
             // Get local device Id
             if (failureOrUserSettings.isRight()) {
               userSettings = failureOrUserSettings.getOrElse(() => null);
-              final DeviceId localDeviceId = await _idFacade.getDeviceDetails(
-                  _user);
+              await _settings.setAll(userSettings, _user);
+              final DeviceId localDeviceId =
+                  await _idFacade.getDeviceDetails(_user);
               deviceId = await _idFacade.getDeviceIdFromFirebase(localDeviceId);
             }
             /*
@@ -115,7 +126,7 @@ class AuthenticationBloc
               _settings.setAutomaticSavingsUnlock(unlockAuto: true);
               _settings.setSmartFundsUse(useSmartFunds: true);
               _settings.setMomoOrTrustedFunds(withdrawalWithMomo: true);
-              _settings.setTrustedPayPin('2580');
+              // _settings.setTrustedPayPin('2580');
               await _settings.setUserNumber(_user.phoneNumber);
               await _settings.setUserId(_user.id);
             }
