@@ -191,14 +191,14 @@ Raw token  is :: ${barcode.rawContent}
         // barcodeState.value = 'Unknown error: $e';
       }
     } on FormatException {
-      FlushbarHelper.createError(
-              message:
-                  'null (User returned using the "back"-button before scanning anything. Result)')
-          .show(context);
+      // FlushbarHelper.createError(
+      //         message:
+      //             'null (User returned using the "back"-button before scanning anything. Result)')
+      //     .show(context);
       // barcodeState.value =
       //     'null (User returned using the "back"-button before scanning anything. Result)';
     } catch (e) {
-      FlushbarHelper.createError(message: 'Unknown error: $e').show(context);
+      FlushbarHelper.createError(message: 'Unknown error: $e'.i18n).show(context);
     }
   }
 }
