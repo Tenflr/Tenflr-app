@@ -2,14 +2,13 @@ import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+
 import '../../../../application/budget/budget_actor_bloc/budget_actor_bloc.dart';
 import '../../../../application/budget/budget_list_bloc/budgetlist_bloc.dart';
-import '../../../../application/main_views_bloc/main_views_bloc.dart';
-import '../../../core/hooks/scrol_controller_for_animation.dart';
-import 'widgets/budget_list.dart';
-import '../../../widgets/button.dart';
-import '../../../core/translations/translations.i18n.dart';
 import '../../../../injection.dart';
+import '../../../core/hooks/scrol_controller_for_animation.dart';
+import '../../../core/translations/translations.i18n.dart';
+import 'widgets/budget_list.dart';
 
 class BudgetManagerScreen extends StatelessWidget {
   const BudgetManagerScreen();
