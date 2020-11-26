@@ -5,6 +5,7 @@ import '../core/assets/svg.dart';
 import '../core/icons/TfIcons_icons.dart';
 import '../core/styles/decorations.dart';
 import '../core/styles/text_styles.dart';
+import '../core/translations/translations.i18n.dart';
 import 'app_bar.dart';
 import 'withdraw_with_mtn_card.dart';
 import 'withdraw_with_orange_card.dart';
@@ -17,9 +18,9 @@ class WithdrawScren extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          height: size.height * 1.2,
+          height: size.height * 1.13,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               TfAppBar(
                   leading: IconButton(
@@ -28,7 +29,7 @@ class WithdrawScren extends StatelessWidget {
                       Navigator.of(context).pop();
                     },
                   ),
-                  description: Text('Withdraw',
+                  description: Text('Withdraw'.i18n,
                       style:
                           SavingsScreenTextStyle.addSavingsDescription(size)),
                   trailing: const Opacity(
@@ -37,11 +38,8 @@ class WithdrawScren extends StatelessWidget {
                         icon: Icon(TfIcons.arrow_back),
                         onPressed: null,
                       ))),
-
               const WithdrawWithMTNCard(),
-              // const SizedBox(height: 10),
               const WithdrawWithOrangeCard(),
-              // const SizedBox(height: 10),
               Container(
                   width: size.width * 0.9,
                   decoration: DefaultDecoration.all,
