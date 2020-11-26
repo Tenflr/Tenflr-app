@@ -80,7 +80,7 @@ class DepositForm extends StatelessWidget {
                         Navigator.of(context).pop();
                       },
                     ),
-                    description: Text('Deposit',
+                    description: Text('Deposit'.i18n,
                         style:
                             SavingsScreenTextStyle.addSavingsDescription(size)),
                     trailing: const Opacity(
