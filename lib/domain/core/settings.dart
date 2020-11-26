@@ -1,15 +1,13 @@
-import 'dart:convert';
-
-import 'valid_objects.dart';
-import 'value_object.dart';
-import '../device_id/device_id.dart';
-import '../device_id/i_device_id_facade.dart';
-import '../user/user.dart';
-import '../user_settings/user_settings.dart';
-import '../../injection.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import '../../injection.dart';
+import '../device_id/i_device_id_facade.dart';
+import '../user/user.dart';
+import '../user_settings/user_settings.dart';
+import 'valid_objects.dart';
+import 'value_object.dart';
 
 const USER_NUMBER = 'USER_NUMBER';
 const USER_ID = 'USER_ID';
@@ -25,6 +23,7 @@ const REPUTATION_POINTS = "REPUTATION_POINTS";
 const DEFAULT_LANG = "DEFAULT_LANG";
 const USER_EMAIL = "USER_EMAIL";
 const DEVICE_ID = "DEVICE_ID";
+const NEW_USER = "NEW_USER";
 
 @lazySingleton
 class MySettings {
@@ -51,6 +50,13 @@ class MySettings {
       setSubScriptionMode(userSettings.subscriptionMode.getOrCrash()),
     ]);
   }
+
+  // set new or old user
+  Future<void> setOldUser(bool isNewUser) async {
+    await _preferences.setBool(NEW_USER, isNewUser);
+  }
+
+  bool get isNewUser => _preferences.getBool(NEW_USER);
 
   // Device Id
   Future<void> setDeviceId() async {
@@ -91,7 +97,7 @@ class MySettings {
   String get getTrustedPayPin => _preferences.getString(TRUSTEDPAYPIN);
 
   Future<void> setTrustedPayPin(String pin) async {
-    await _preferences.setString(TRUSTEDPAYPIN, '2580');
+    await _preferences.setString(TRUSTEDPAYPIN, pin ?? "2580");
   }
 
   // User email
