@@ -139,7 +139,6 @@ class _WelcomeLoginFormState extends State<WelcomeLoginForm> {
                         children: [
                           PhoneInputTextField(
                             // focusNode: ,
-                            
                             width: size.width * 0.75,
                             controller: phoneController,
                             textInputAction:  TextInputAction.done,
