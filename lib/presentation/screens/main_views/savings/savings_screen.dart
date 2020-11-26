@@ -32,13 +32,7 @@ class SavingsForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    // final hideFabAnimController = useAnimationController(
-    //     duration: kThemeAnimationDuration, initialValue: 1);
-    // final scrollController =
-    //     useScrollControllerForAnimation(hideFabAnimController);
     return Container(
-      // padding: const EdgeInsets.only(right: 16, left: 16),
-      // color: AppColors.primaryBackground,
       height: size.height * 0.78,
       child: BlocListener<SavingsActorBloc, SavingsActorState>(
         listenWhen: (p, c) => p.isSaving != c.isSaving,
@@ -68,7 +62,6 @@ class SavingsForm extends StatelessWidget {
                   (_) {}));
         },
         child: const SavingsList(
-          // controller: scrollController,
          
         ),
       ),
