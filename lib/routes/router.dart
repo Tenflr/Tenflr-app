@@ -10,6 +10,7 @@ import '../presentation/screens/on_boarding/get_more_user_info_after_phone_signU
 import '../presentation/screens/on_boarding/getstarted.dart';
 import '../presentation/screens/on_boarding/splash_screen.dart';
 import '../presentation/screens/on_boarding/welcome_login_screen.dart';
+import '../presentation/screens/settings/change_pin_screen.dart';
 import '../presentation/screens/settings/settings.dart';
 import '../presentation/screens/settings/user_profile.dart';
 import '../presentation/widgets/deposit_screen.dart';
@@ -32,5 +33,6 @@ import '../presentation/widgets/withdraw_screen.dart';
       MaterialRoute(page: RequestPaymentScreen),
       MaterialRoute(page: DepositScreen),
       MaterialRoute(page: WithdrawScren),
+      MaterialRoute(page: ChangePinScreen),
     ])
 class $Router {}
