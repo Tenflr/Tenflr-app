@@ -31,7 +31,10 @@ class BudgetFrequencyPage extends StatelessWidget {
               SizedBox(
                 width: size.width * 0.7,
                 child: Text(
-                  'How do you want to be paid? Daily, weekly, etc'.i18n,
+                  isGift
+                      ? "How do you want the recipient to be paid? Daily, Weekly, etc"
+                          .i18n
+                      : 'How do you want to be paid? Daily, weekly, etc'.i18n,
                   textAlign: TextAlign.center,
                   style: SavingsScreenTextStyle.createDescription(size),
                 ),
@@ -83,8 +86,7 @@ class BudgetFrequencyPage extends StatelessWidget {
                           onPressed: () => _confirmBudgetCreation(context,
                               context.bloc<BudgetInputCollectorBloc>()),
                           description: 'Create Budget manger'.i18n,
-                          // toRight: false,
-                          width: size.width * 0.7,
+                          width: size.width * 0.75,
                         )),
                   ],
                 ),
