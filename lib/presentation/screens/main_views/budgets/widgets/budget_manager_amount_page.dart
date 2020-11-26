@@ -34,7 +34,7 @@ class BudgetManagerAmountPage extends StatelessWidget {
               SizedBox(
                 width: size.width * 0.7,
                 child: Text(
-                  'How much do you want to budget manage?'.i18n.i18n,
+                  'How much do you want to budget manage?'.i18n,
                   textAlign: TextAlign.center,
                   style: SavingsScreenTextStyle.createDescription(size),
                 ),
