@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -77,7 +78,7 @@ class TfDrawer extends HookWidget {
                 description: "Light mode".i18n,
                 icon: TfIcons.sun,
                 onPressed: () {
-                  // todo:
+                BotToast.showText(text: "Coming soon".i18n);
                 },
               ),
               DrawerTile(
@@ -87,6 +88,10 @@ class TfDrawer extends HookWidget {
                  ExtendedNavigator.of(context).pushSettingsScreen();
                 },
               ),
+          //  const   SizedBox(height: 50,),
+            ],
+          ),
+          const SpaceLine(),
               DrawerTile(
                 description: "Sign Out".i18n,
                 icon: TfIcons.exit,
@@ -96,36 +101,33 @@ class TfDrawer extends HookWidget {
                       .add(const AuthenticationEvent.signedOut());
                 },
               ),
-            ],
-          ),
-          const SpaceLine(),
-          Opacity(
-            opacity: 0,
-            child: Row(
-              // crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                CircleAvatar(
-                  backgroundColor: Colors.transparent,
-                  radius: size.width * 0.07,
-                  backgroundImage: AssetImage(TfImages.userimage),
-                ),
-                const VerticalDivider(),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "User Name",
-                      style: DrawerTextStyle.userName(size),
-                    ),
-                    Text(
-                      "primary identifier",
-                      style: DrawerTextStyle.identifier(size),
-                    )
-                  ],
-                )
-              ],
-            ),
-          ),
+          // Opacity(
+          //   opacity: 0,
+          //   child: Row(
+          //     // crossAxisAlignment: CrossAxisAlignment.end,
+          //     children: [
+          //       CircleAvatar(
+          //         backgroundColor: Colors.transparent,
+          //         radius: size.width * 0.07,
+          //         backgroundImage: AssetImage(TfImages.userimage),
+          //       ),
+          //       const VerticalDivider(),
+          //       Column(
+          //         crossAxisAlignment: CrossAxisAlignment.start,
+          //         children: [
+          //           Text(
+          //             "User Name",
+          //             style: DrawerTextStyle.userName(size),
+          //           ),
+          //           Text(
+          //             "primary identifier",
+          //             style: DrawerTextStyle.identifier(size),
+          //           )
+          //         ],
+          //       )
+          //     ],
+          //   ),
+          // ),
         ],
       ),
     );
