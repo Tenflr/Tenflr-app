@@ -18,11 +18,6 @@ class TransactionsList extends StatelessWidget {
       child: Stack(
         children: [
           transactionList,
-          // ListView(
-          //   physics: const BouncingScrollPhysics() ,
-          //   children: transactionList,
-          //   // : itemCount,
-          // ),
           Align(
             alignment: Alignment.topLeft,
             child: Container(
