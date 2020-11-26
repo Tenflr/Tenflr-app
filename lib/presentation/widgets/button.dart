@@ -18,25 +18,28 @@ class Button extends StatelessWidget {
       @required this.onPressed,
       @required this.description,
       this.toRight,
-      this.width, this.child})
+      this.width,
+      this.child})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-final  Widget _child = RaisedButton(
+    final Widget _child = RaisedButton(
         onPressed: onPressed,
-        color: isSecondaryButton? TfColors.background: null,
-        
+        color: isSecondaryButton ? TfColors.background : null,
+
         // padding: EdgeInsets.symmetric(vertical: 10, horizontal:20),
         shape: ButtonShapeBorder.shape(toRight),
-        child: child ?? Text(
-          description,
-          style: ButtonTextStyle.description(size, isSecondaryButton),
-        ));
-    if(width != null ) {
-      return Container(width: width,child: _child);
+        child: child ??
+            Text(
+              description,
+              textAlign: TextAlign.center,
+              style: ButtonTextStyle.description(size, isSecondaryButton),
+            ));
+    if (width != null) {
+      return Container(width: width, child: _child);
     } else {
-      return _child ;
+      return _child;
     }
   }
 }
