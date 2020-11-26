@@ -4,9 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:provider/provider.dart';
+import 'package:tenflrpay/application/budget/budget_list_bloc/budgetlist_bloc.dart';
+import 'package:tenflrpay/application/payment/transaction_list_bloc/transaction_list_bloc.dart';
+import 'package:tenflrpay/application/quick_payment/quick_payment_watcher_bloc/quick_payment_watcher_bloc.dart';
+import 'package:tenflrpay/application/saving/savings_list_bloc/savingslist_bloc.dart';
 
 import '../../../../application/main_views_bloc/main_views_bloc.dart';
 import '../../../../domain/user/user.dart';
+import '../../../../injection.dart';
 import '../../../../routes/router.gr.dart';
 import '../../../core/assets/images.dart';
 import '../../../core/assets/svg.dart';
@@ -90,24 +95,7 @@ class DashBoard extends HookWidget {
                         controller: controller,
                         diameterRatio: 2,
 
-                        onSelectedItemChanged: (index) {
-                          // switch (index) {
-                          //   case 0:
-
-                          //     ExtendedNavigator.of(context)
-                          //         .pushBudgetCreateScreen(user: user);
-                          //     break;
-                          //   case 1:
-                          //     context.bloc<MainViewsBloc>().add(
-                          //         const MainViewsEvent.quickPaymentOverView());
-                          //     break;
-                          //   case 2:
-                          //     ExtendedNavigator.of(context)
-                          //         .pushSendTrustedPaymentScreen(user: user);
-                          //     break;
-                          //   default:
-                          // }
-                        },
+                        onSelectedItemChanged: (index) {},
                         itemExtent: 150,
                         children: [
                           MyCard(
@@ -137,7 +125,8 @@ class DashBoard extends HookWidget {
                             description: "Make a Quick Payment".i18n,
                             onPressed: () {
                               context.bloc<MainViewsBloc>().add(
-                                  const MainViewsEvent.quickPaymentOverView());
+                                  const MainViewsEvent
+                                      .quickPaymentOverView());
                             }),
                         MyCard(
                             rotate: false,
