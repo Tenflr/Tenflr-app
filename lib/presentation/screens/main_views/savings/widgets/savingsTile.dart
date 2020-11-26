@@ -12,10 +12,8 @@ import '../../../../core/translations/translations.i18n.dart';
 class SavingsTile extends StatelessWidget {
   final Savings savings;
   final String title;
-  final String subTitle;
   const SavingsTile(
       {this.title = "Allowances",
-      this.subTitle = 'XAF 102,500.0',
       @required this.savings,
       Key key})
       : super(key: key);
