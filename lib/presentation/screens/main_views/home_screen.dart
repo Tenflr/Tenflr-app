@@ -1,7 +1,12 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
+import 'package:tenflrpay/application/budget/budget_list_bloc/budgetlist_bloc.dart';
+import 'package:tenflrpay/application/payment/transaction_list_bloc/transaction_list_bloc.dart';
+import 'package:tenflrpay/application/quick_payment/quick_payment_watcher_bloc/quick_payment_watcher_bloc.dart';
+import 'package:tenflrpay/application/saving/savings_list_bloc/savingslist_bloc.dart';
 
 import '../../../application/lock_screen_bloc/lock_screen_bloc.dart';
 import '../../../application/main_views_bloc/main_views_bloc.dart';
@@ -32,6 +37,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     super.initState();
     // context.bloc<DeviceIdWatcherBloc>()
     WidgetsBinding.instance.addObserver(this);
+    if (!_settings.isNewUser && kReleaseMode) {
+      context.bloc<LockScreenBloc>().add(const LockScreenEvent.lock());
+    }
   }
 
   @override
@@ -44,6 +52,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   void didChangeAppLifecycleState(AppLifecycleState state) {
     if (state == AppLifecycleState.inactive ||
         state == AppLifecycleState.paused ||
+        // state == AppLifecycleState.resumed ||
         state == AppLifecycleState.detached) {
       if (context.bloc<LockScreenBloc>().state.pausedLock == false) {
         context.bloc<LockScreenBloc>().add(const LockScreenEvent.lock());
@@ -55,10 +64,6 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        // BlocProvider(
-        //   create: (context) => getIt<TransactionStatsBloc>()
-        //     ..add(const TransactionStatsEvent.watchTransactionStatistics()),
-        // ),
         BlocProvider(create: (context) => getIt<TrustedFundsBloc>()),
         BlocProvider(create: (context) => getIt<MainViewsBloc>()),
       ],
