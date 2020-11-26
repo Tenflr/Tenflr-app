@@ -19,9 +19,6 @@ class Stars extends HookWidget {
   Widget _numberOfStar(ValueNotifier<int> number) {
     if (number.value == 1) {
       return Row(
-        // mainAxisAlignment: MainAxisAlignment.center,
-        // crossAxisAlignment: CrossAxisAlignment.center,
-        // mainAxisSize: MainAxisSize.min,
         children: [
           InkWell(
               onTap: () => number.value = 1,
@@ -29,137 +26,137 @@ class Stars extends HookWidget {
                 Icons.star,
               )),
           InkWell(
-              child: const Icon(Icons.star_border_outlined),
-              onTap: () => number.value = 2),
+              onTap: () => number.value = 2,
+              child: const Icon(Icons.star_border_outlined)),
           InkWell(
-              child: const Icon(Icons.star_border_outlined),
-              onTap: () => number.value = 3),
+              onTap: () => number.value = 3,
+              child: const Icon(Icons.star_border_outlined)),
           InkWell(
-              child: const Icon(Icons.star_border_outlined),
-              onTap: () => number.value = 4),
+              onTap: () => number.value = 4,
+              child: const Icon(Icons.star_border_outlined)),
           InkWell(
-              child: const Icon(Icons.star_border_outlined),
-              onTap: () => number.value = 5),
+              onTap: () => number.value = 5,
+              child: const Icon(Icons.star_border_outlined)),
         ],
       );
     } else if (number.value == 2) {
       return Row(
         children: [
-          InkWell(child: const Icon(Icons.star), onTap: () => number.value = 1),
-          InkWell(child: const Icon(Icons.star), onTap: () => number.value = 2),
+          InkWell( onTap: () => number.value = 1, child: const Icon(Icons.star)),
+          InkWell( onTap: () => number.value = 2,child: const Icon(Icons.star),),
           InkWell(
-              child: const Icon(Icons.star_border_outlined),
-              onTap: () => number.value = 3),
+              onTap: () => number.value = 3,
+              child: const Icon(Icons.star_border_outlined),),
           InkWell(
+              onTap: () => number.value = 4,
               child: const Icon(
                 Icons.star_border_outlined,
-              ),
-              onTap: () => number.value = 4),
+              ),),
           InkWell(
+              onTap: () => number.value = 5,
               child: const Icon(
                 Icons.star_border_outlined,
-              ),
-              onTap: () => number.value = 5),
+              ),),
         ],
       );
     } else if (number.value == 3) {
       return Row(
         children: [
           InkWell(
+              onTap: () => number.value = 1,
               child: const Icon(
                 Icons.star,
-              ),
-              onTap: () => number.value = 1),
+              ),),
           InkWell(
+              onTap: () => number.value = 2,
               child: const Icon(
                 Icons.star,
-              ),
-              onTap: () => number.value = 2),
+              ),),
           InkWell(
+              onTap: () => number.value = 3,
               child: const Icon(
                 Icons.star,
-              ),
-              onTap: () => number.value = 3),
+              ),),
           InkWell(
+              onTap: () => number.value = 4,
               child: const Icon(
                 Icons.star_border_outlined,
-              ),
-              onTap: () => number.value = 4),
+              ),),
           InkWell(
+              onTap: () => number.value = 5,
               child: const Icon(
                 Icons.star_border_outlined,
-              ),
-              onTap: () => number.value = 5),
+              ),),
         ],
       );
     } else if (number.value == 4) {
       return Row(
         children: [
           InkWell(
+              onTap: () => number.value = 1,
               child: const Icon(
                 Icons.star,
-              ),
-              onTap: () => number.value = 1),
+              ),),
           InkWell(
+              onTap: () => number.value = 2,
               child: const Icon(
                 Icons.star,
-              ),
-              onTap: () => number.value = 2),
+              ),),
           InkWell(
+              onTap: () => number.value = 3,
               child: const Icon(
                 Icons.star,
-              ),
-              onTap: () => number.value = 3),
+              ),),
           InkWell(
+              onTap: () => number.value = 4,
               child: const Icon(
                 Icons.star,
-              ),
-              onTap: () => number.value = 4),
+              ),),
           InkWell(
+              onTap: () => number.value = 5,
               child: const Icon(
                 Icons.star_border_outlined,
-              ),
-              onTap: () => number.value = 5),
+              ),),
         ],
       );
     } else if (number.value == 5) {
       return Row(
         children: [
           InkWell(
+              onTap: () => number.value = 1,
               child: const Icon(
                 Icons.star,
-              ),
-              onTap: () => number.value = 1),
+              ),),
           InkWell(
+              onTap: () => number.value = 2,
               child: const Icon(
                 Icons.star,
-              ),
-              onTap: () => number.value = 2),
+              ),),
           InkWell(
+              onTap: () => number.value = 3,
               child: const Icon(
                 Icons.star,
-              ),
-              onTap: () => number.value = 3),
+              ),),
           InkWell(
+              onTap: () => number.value = 4,
               child: const Icon(
                 Icons.star,
-              ),
-              onTap: () => number.value = 4),
+              ),),
           InkWell(
+              onTap: () => number.value = 5,
               child: const Icon(
                 Icons.star,
-              ),
-              onTap: () => number.value = 5),
+              ),),
         ],
       );
     } else {
       return Row(
         children: [
-          InkWell(child: const Icon(Icons.star), onTap: () => number.value = 1),
-          InkWell(child: const Icon(Icons.star), onTap: () => number.value = 2),
-          InkWell(child: const Icon(Icons.star), onTap: () => number.value = 3),
-          InkWell(child: const Icon(Icons.star), onTap: () => number.value = 4),
-          InkWell(child: const Icon(Icons.star), onTap: () => number.value = 5),
+          InkWell( onTap: () => number.value = 1,child: const Icon(Icons.star),),
+          InkWell( onTap: () => number.value = 2,child: const Icon(Icons.star),),
+          InkWell( onTap: () => number.value = 3,child: const Icon(Icons.star),),
+          InkWell( onTap: () => number.value = 4,child: const Icon(Icons.star),),
+          InkWell( onTap: () => number.value = 5,child: const Icon(Icons.star),),
         ],
       );
     }
