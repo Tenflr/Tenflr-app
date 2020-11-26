@@ -23,7 +23,7 @@ import 'application/budget/budget_actor_bloc/budget_actor_bloc.dart';
 import 'application/budget/budget_input_collector/budgetinputcollector_bloc.dart';
 import 'application/budget/budget_list_bloc/budgetlist_bloc.dart';
 import 'infrastructure/budget/budget_repository.dart';
-import 'presentation/screens/main_views/quickpay/cash_logic.dart';
+import 'presentation/screens/main_views/quickpay/widgets/cash_logic.dart';
 import 'application/connectivity_and_time_bloc/connectivity_and_time_bloc.dart';
 import 'application/curren_theme_mode_bloc/curren_theme_mode_bloc.dart';
 import 'infrastructure/repositories/database_repository_facade.dart';
@@ -31,7 +31,6 @@ import 'infrastructure/device_id/device_id_repository.dart';
 import 'application/device_id_watcher/device_id_watcher_bloc.dart';
 import 'infrastructure/auth/firebase_auth_facade.dart';
 import 'infrastructure/core/firebase_injectable_module.dart';
-import 'application/firestore_search_bloc/firestore_search_bloc.dart';
 import 'domain/auth/i_auth_facade.dart';
 import 'domain/budget/i_budget_repository.dart';
 import 'domain/database/i_database_repository_facade.dart';
@@ -199,8 +198,6 @@ Future<GetIt> $initGetIt(
         get<IDeviceIDFacade>(),
         get<ISettingsFacade>(),
       ));
-  gh.factory<FirestoreSearchBloc>(
-      () => FirestoreSearchBloc(get<IDatabaseRepositoryFacade>()));
   gh.lazySingleton<IBudgetRepository>(() => BudgetRepository(
         get<Firestore>(),
         get<MySettings>(),
