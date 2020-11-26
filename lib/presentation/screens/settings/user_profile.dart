@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/assets/colors.dart';
 import '../../core/assets/images.dart';
 import '../../core/icons/TfIcons_icons.dart';
+import '../../core/translations/translations.i18n.dart';
 import '../../widgets/default_primary_input_field.dart';
 
 class UserProfile extends StatelessWidget {
@@ -59,19 +60,18 @@ class UserProfile extends StatelessWidget {
                 ],
               ),
             ),
-            const DefaultPrimaryTextInputField(
-              description: "First Name",
-              
+            DefaultPrimaryTextInputField(
+              description: "First Name".i18n,
             ),
-            const DefaultPrimaryTextInputField(
-              description: "Last Name",
+            DefaultPrimaryTextInputField(
+              description: "Last Name".i18n,
             ),
-            const DefaultPrimaryTextInputField(
-              description: "Email",
+            DefaultPrimaryTextInputField(
+              description: "Email".i18n,
               canVerify: true,
             ),
-            const DefaultPrimaryTextInputField(
-              description: "Phone Number",
+            DefaultPrimaryTextInputField(
+              description: "Phone Number".i18n,
               canVerify: true,
             ),
             Transform.translate(
@@ -82,17 +82,17 @@ class UserProfile extends StatelessWidget {
                 child: const Divider(),
               ),
             ),
-            const DefaultPrimaryTextInputField(
-              description: "Address",
+            DefaultPrimaryTextInputField(
+              description: "Address".i18n,
             ),
-            const DefaultPrimaryTextInputField(
-              description: "City",
+            DefaultPrimaryTextInputField(
+              description: "City".i18n,
             ),
-            const DefaultPrimaryTextInputField(
-              description: "Zipcode/PoBox",
+            DefaultPrimaryTextInputField(
+              description: "Zipcode/P0-Box".i18n,
             ),
-            const DefaultPrimaryTextInputField(
-              description: "State",
+            DefaultPrimaryTextInputField(
+              description: "State".i18n,
             ),
           ],
         ),
