@@ -155,7 +155,7 @@ class BudgetList extends HookWidget {
                                               isGift: true, user: user);
                                     },
                                     description: "Gift Budget Manager".i18n,
-                                    width: size.width * 0.7,
+                                    width: size.width * 0.85,
                                     isSecondaryButton: true,
                                   ),
                                   SizedBox(
@@ -171,7 +171,7 @@ class BudgetList extends HookWidget {
                                               isGift: false, user: user);
                                     },
                                     description: "New Budget Manager".i18n,
-                                    width: size.width * 0.7,
+                                    width: size.width * 0.85,
                                   ),
                                 ],
                               ),
