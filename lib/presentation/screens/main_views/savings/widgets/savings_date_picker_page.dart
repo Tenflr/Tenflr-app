@@ -71,7 +71,7 @@ class SavingsDatePickerPage extends StatelessWidget {
                 ),
                 description: 'Create Savings'.i18n,
                 // toRight: true,
-                width: size.width * 0.5,
+                width: size.width * 0.8,
               ),
             ],
           ),
