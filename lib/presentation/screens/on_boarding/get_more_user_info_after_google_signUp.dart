@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import '../../widgets/progess_overlay_screen.dart';
 
 import '../../../application/auth/auth_bloc/authentication_bloc.dart';
 import '../../../application/auth/user_detail_bloc/user_detail_bloc.dart';
@@ -18,6 +17,7 @@ import '../../core/translations/translations.i18n.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/button.dart';
 import '../../widgets/default_primary_input_field.dart';
+import '../../widgets/progess_overlay_screen.dart';
 import 'widgets/phone_input_text_field.dart';
 
 class GetMoreUserInfoAfterGoogleSignUp extends StatelessWidget {
@@ -123,7 +123,7 @@ class GetMoreInfoForm extends HookWidget {
                       )),
                   const SizedBox(height: 10),
                   DefaultPrimaryTextInputField(
-                    description: "First name",
+                    description: "First name".i18n,
                     controller: fNcontroller,
                     validator: (_) => context
                         .bloc<UserDetailBloc>()
@@ -148,7 +148,7 @@ class GetMoreInfoForm extends HookWidget {
                     },
                   ),
                   DefaultPrimaryTextInputField(
-                    description: "Last name",
+                    description: "Last name".i18n,
                     controller: lNcontroller,
                     validator: (_) => context
                         .bloc<UserDetailBloc>()
