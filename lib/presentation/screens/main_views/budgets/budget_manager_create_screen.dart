@@ -7,7 +7,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../../application/budget/budget_input_collector/budgetinputcollector_bloc.dart';
-import '../../../../application/main_views_bloc/main_views_bloc.dart';
 import '../../../../domain/user/user.dart';
 import '../../../../injection.dart';
 import '../../../core/assets/colors.dart';
