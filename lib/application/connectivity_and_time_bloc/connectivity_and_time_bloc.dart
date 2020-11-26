@@ -21,26 +21,7 @@ class ConnectivityAndTimeBloc
   ConnectivityAndTimeBloc(this._connectionChecker)
       : super(ConnectivityAndTimeState.initial());
 
-  // @override
-  // Stream<Transition<ConnectivityAndTimeEvent, ConnectivityAndTimeState>>
-  //     transformEvents(
-  //   Stream<ConnectivityAndTimeEvent> events,
-  //   TransitionFunction<ConnectivityAndTimeEvent, ConnectivityAndTimeState>
-  //       transitionFn,
-  // ) {
-  //   final nonDebounceStream = events.where((event) {
-  //     return event is! _InternetUP &&
-  //         event is! _InternetDown &&
-  //         event is! _InSync;
-  //   });
-  //   final debounceStream = events.where((event) {
-  //     return event is _CheckInternet;
-  //   }).debounceTime(const Duration(milliseconds: 10));
-  //   return super.transformEvents(
-  //     nonDebounceStream.mergeWith([debounceStream]),
-  //     transitionFn,
-  //   );
-  // }
+  
 
   int ntpOfSet;
   bool isInit;
