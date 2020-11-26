@@ -2,14 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
+
 import '../../../../domain/user/user.dart';
+import '../../../../routes/router.gr.dart';
 import '../../../core/assets/colors.dart';
 import '../../../core/assets/svg.dart';
-
-import '../../../core/assets/images.dart';
 import '../../../core/translations/translations.i18n.dart';
 import '../../../widgets/button.dart';
-import '../../../../routes/router.gr.dart';
 
 class BudgetManagerInitialScreen extends StatelessWidget {
   const BudgetManagerInitialScreen();
