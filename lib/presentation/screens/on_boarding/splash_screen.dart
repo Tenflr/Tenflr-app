@@ -1,18 +1,17 @@
 import 'package:auto_route/auto_route.dart';
-import '../../../application/auth/auth_bloc/authentication_bloc.dart';
-import '../../../application/connectivity_and_time_bloc/connectivity_and_time_bloc.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
+
+import '../../../application/auth/auth_bloc/authentication_bloc.dart';
+import '../../../application/connectivity_and_time_bloc/connectivity_and_time_bloc.dart';
+import '../../../routes/router.gr.dart';
 import '../../core/assets/colors.dart';
 import '../../core/assets/images.dart';
 import '../../core/icons/TfIcons_icons.dart';
 import '../../core/translations/translations.i18n.dart';
-import 'package:auto_route/auto_route.dart';
-import '../../../routes/router.gr.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -158,7 +157,7 @@ _alertNoInternetDetected(BuildContext context) {
             Navigator.of(context, rootNavigator: true).pop();
           }
         },
-        // color: NeumorphicTheme.isUsingDark(context)
+        color: TfColors.primary,
         //     ? AppColors.kCardColor300
         //     : AppColors.lightPrimaryLightColor300,
         radius: BorderRadius.circular(10.0),
@@ -173,7 +172,7 @@ _alertNoInternetDetected(BuildContext context) {
             "RETRY".i18n,
             style: TextStyle(
                 // color: NeumorphicTheme.isUsingDark(context)
-                //     ? Colors.white
+                color: TfColors.secondary,
                 //     : AppColors.primaryElement,
                 fontSize: 20),
           ),
@@ -201,6 +200,8 @@ _alertTimeNotSyncedDetected(BuildContext context) {
             Navigator.of(context, rootNavigator: true).pop();
           }
         },
+        color: TfColors.primary,
+
         // color: NeumorphicTheme.isUsingDark(context)
         //     ? AppColors.primaryDarkColor500
         //     : AppColors.lightPrimaryColor,
@@ -214,9 +215,10 @@ _alertTimeNotSyncedDetected(BuildContext context) {
           },
           child: Text(
             "RE-CHECK TIME".i18n,
-            style: TextStyle(
+            style: const TextStyle(
                 // color: NeumorphicTheme.isUsingDark(context)
                 //     ? Colors.white
+                color: TfColors.secondary,
                 //     : AppColors.primaryElement,
                 fontSize: 20),
           ),
