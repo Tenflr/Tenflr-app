@@ -19,7 +19,7 @@ Future<void> showNotif(BuildContext context) {
               ),
               color: TfColors.background),
           child: Stack(
-            alignment: Alignment(0, 0),
+            alignment: const Alignment(0, 0),
             overflow: Overflow.visible,
             children: <Widget>[
               Align(
@@ -27,7 +27,7 @@ Future<void> showNotif(BuildContext context) {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    'Notifications',
+                    'Notifications'.i18n,
                     style: SettingsTextStlyles.tileHeader(size),
                   ),
                 ),
