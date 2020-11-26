@@ -125,6 +125,9 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         );
         final Either<UserSettingsFailure, UserPin> failureOrSuccess =
             await _iSettingsFacade.updateUserPin(e.userPin);
+        if (failureOrSuccess.isRight()) {
+          await _settings.setTrustedPayPin(e.userPin.getOrCrash());
+        }
         yield state.copyWith(
           isSaving: false,
           failureOrSuccessOption: some(failureOrSuccess),
