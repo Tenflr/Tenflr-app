@@ -53,7 +53,7 @@ class CreateSavingsForm extends StatelessWidget {
                       Navigator.of(context).pop();
                     },
                   ),
-                  description: Text('Create a Savings',
+                  description: Text('Create a Savings'.i18n,
                       style:
                           SavingsScreenTextStyle.addSavingsDescription(size)),
                   trailing: const Opacity(
