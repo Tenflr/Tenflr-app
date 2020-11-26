@@ -35,7 +35,7 @@ class BudgetUserNamePage extends HookWidget {
                   SizedBox(
                     width: size.width * 0.7,
                     child: Text(
-                      "Enter the recipient's phone number or email".i18n.i18n,
+                      "Enter the recipient's phone number or email".i18n,
                       textAlign: TextAlign.center,
                       style: SavingsScreenTextStyle.createDescription(size),
                     ),
@@ -77,9 +77,9 @@ class BudgetUserNamePage extends HookWidget {
                         if (state.showErrorMessage || state.userFound) {
                          final  userName = state.budget.rDisplayName.isValid()
                               ? state.budget.rDisplayName.getOrCrash()
-                              : "Recipient Not Found";
+                              : "Recipient Not Found".i18n;
                           return Text(
-                              state.userFound ? userName : "Recipient Not Found");
+                              state.userFound ? userName : "Recipient Not Found".i18n);
                         }
                         return const SizedBox();
                       }),
@@ -100,7 +100,7 @@ class BudgetUserNamePage extends HookWidget {
                             ),
                             description: 'Sent a Budget manger'.i18n,
                             // toRight: false,
-                            width: size.width * 0.7,
+                            width: size.width * 0.75,
                           )),
                     ],
                   ),
