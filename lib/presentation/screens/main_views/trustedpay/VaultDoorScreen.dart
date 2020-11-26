@@ -77,7 +77,7 @@ class VaultDoorScreen extends HookWidget {
                         .bloc<MainViewsBloc>()
                         .add(MainViewsEvent.trustedPayPage(pin: val));
                   } else {
-                    BotToast.showText(text: "Wrong Pin. Try again");
+                    BotToast.showText(text: "Wrong Pin. Try again".i18n);
                     pinController.clear();
                   }
                 },
