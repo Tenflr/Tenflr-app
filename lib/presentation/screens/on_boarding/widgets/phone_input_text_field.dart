@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import '../../../../application/auth/login_bloc/login_bloc.dart';
-import '../../../../application/auth/user_detail_bloc/user_detail_bloc.dart';
+import 'package:package_info/package_info.dart';
+
 import '../../../../domain/core/constant_list.dart';
-import '../../../../domain/core/valid_objects.dart';
 import '../../../core/assets/colors.dart';
 import '../../../core/styles/text_styles.dart';
 
@@ -30,15 +28,10 @@ class PhoneInputTextField extends HookWidget {
       : super(key: key);
   @override
   Widget build(BuildContext context) {
-    // final FocusNode focusNode = useFocusNode();
-    // final TextEditingController _phoneNumberController =
-    //     useTextEditingController();
-    // final ValueNotifier<PhoneNumber> _numb =
-    //     useState<PhoneNumber>(PhoneNumber(isoCode: 'CM'));
-
-    // debugPrint("Is number Valid: ${_numb.value.phoneNumber}");
-
     final Size size = MediaQuery.of(context).size;
+    String flavor = "com.tenflr.tenflrPay";
+
+    PackageInfo.fromPlatform().then((value) => flavor = value.packageName);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       width: width ?? size.width * 0.65,
@@ -50,9 +43,9 @@ class PhoneInputTextField extends HookWidget {
           autoValidateMode: autovalidateMode,
           ignoreBlank: true,
           textFieldController: controller,
-          countries: KCountries,
+          countries: flavor != "com.tenfr.tenflrPay"? null : KCountries,
           onInputChanged: onInputChanged,
-          
+
           // keyboardAction: textInputAction,
           selectorConfig: const SelectorConfig(
               selectorType: PhoneInputSelectorType.BOTTOM_SHEET),
