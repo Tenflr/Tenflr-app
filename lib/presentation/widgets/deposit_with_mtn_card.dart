@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:tenflrpay/presentation/core/assets/colors.dart';
 
 import '../../application/payment/trusted_pay_input_collector/trustedpayinputcollector_bloc.dart';
 import '../../domain/core/valid_objects.dart';
@@ -103,13 +104,18 @@ _confirmCreditTrustedPay(
         onPressed: () {
           BotToast.showCustomNotification(
               toastBuilder: (context) => Container(
-                    // color:  AppColors.kCardColor300 ,
+                    decoration: BoxDecoration(
+                      color: TfColors.primary,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     height: size.height * 0.06,
                     child: Text(
-                      'Please dial *126# to confirm the MOMO payment of XFA %s to credit your TrustedPay account!'
+                      'Please dial *126# to confirm the MOMO payment of XAF %s to credit your TrustedPay account!'
                           .i18n
                           .fill([bloc.state.payment.amount.getOrCrash()]),
-                      style: TextStyle(fontSize: size.width * 0.03),
+                      style: TextStyle(
+                          fontSize: size.width * 0.03,
+                          color: TfColors.secondary),
                     ),
                   ),
               duration: const Duration(seconds: 7));
