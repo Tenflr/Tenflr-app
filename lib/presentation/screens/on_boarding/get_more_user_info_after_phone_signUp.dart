@@ -3,19 +3,20 @@ import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+
 import '../../../application/auth/auth_bloc/authentication_bloc.dart';
 import '../../../application/auth/user_detail_bloc/user_detail_bloc.dart';
 import '../../../domain/core/valid_objects.dart';
 import '../../../domain/user/user.dart';
 import '../../../injection.dart';
+import '../../../routes/router.gr.dart';
 import '../../core/icons/TfIcons_icons.dart';
 import '../../core/styles/text_styles.dart';
+import '../../core/translations/translations.i18n.dart';
 import '../../widgets/app_bar.dart';
 import '../../widgets/button.dart';
 import '../../widgets/default_primary_input_field.dart';
 import '../../widgets/progess_overlay_screen.dart';
-import '../../core/translations/translations.i18n.dart';
-import '../../../routes/router.gr.dart';
 
 class GetMoreUserInfoAfterPhoneSignUp extends StatelessWidget {
   final User user;
@@ -47,14 +48,6 @@ class GetMoreInfoForm extends HookWidget {
 
     // final _number = useState(PhoneNumber(isoCode: 'CM'));
     final Size size = MediaQuery.of(context).size;
-    // fNcontroller.addListener(() {
-    //   context.bloc<UserDetailBloc>().add(UserDetailEvent.firstNameChanged(
-    //       firstName: ValidUserName(fNcontroller.text)));
-    // });
-    // lNcontroller.addListener(() {
-    //   context.bloc<UserDetailBloc>().add(UserDetailEvent.lastNameChanged(
-    //       lastName: ValidUserName(lNcontroller.text)));
-    // });
     return BlocConsumer<UserDetailBloc, UserDetailState>(
       listener: (context, state) {
         state.saveFailureOrSuccessOption.fold(
@@ -119,7 +112,7 @@ class GetMoreInfoForm extends HookWidget {
                       )),
                   const SizedBox(height: 10),
                   DefaultPrimaryTextInputField(
-                    description: "First name",
+                    description: "First name".i18n,
                     controller: fNcontroller,
                     validator: (_) => context
                         .bloc<UserDetailBloc>()
@@ -144,7 +137,7 @@ class GetMoreInfoForm extends HookWidget {
                     },
                   ),
                   DefaultPrimaryTextInputField(
-                    description: "Last name",
+                    description: "Last name".i18n,
                     controller: lNcontroller,
                     validator: (_) => context
                         .bloc<UserDetailBloc>()
@@ -169,7 +162,7 @@ class GetMoreInfoForm extends HookWidget {
                     },
                   ),
                   DefaultPrimaryTextInputField(
-                    description: "Email",
+                    description: "Email".i18n,
                     controller: emailController,
                     keyboardType: TextInputType.emailAddress,
                     validator: (_) => context
