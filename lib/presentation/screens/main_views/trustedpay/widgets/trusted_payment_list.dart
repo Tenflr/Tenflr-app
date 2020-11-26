@@ -127,10 +127,7 @@ class TrustedPaymentList extends HookWidget {
                           ),
                         );
                       },
-                      // separatorBuilder: (BuildContext context, int index) =>
-                      //     SizedBox(
-                      //   height: size.height * 0.005,
-                      // ),
+                     
                       itemCount: payments.size,
                     ),
                     Align(
@@ -145,7 +142,7 @@ class TrustedPaymentList extends HookWidget {
                                   .pushSendTrustedPaymentScreen(user: user);
                             },
                             description: "Make a Trusted Payment".i18n,
-                            width: size.width * 0.7,
+                            width: size.width * 0.8,
                           ),
                         ),
                       ),
