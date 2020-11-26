@@ -1,4 +1,3 @@
-import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -18,9 +17,9 @@ import '../../../core/styles/decorations.dart';
 import '../../../core/styles/text_styles.dart';
 import '../../../core/translations/translations.i18n.dart';
 import '../../../widgets/app_bar.dart';
-import 'cash_logic.dart';
-import 'neu_cash_button.dart';
-import 'neumorphic_theme.dart';
+import 'widgets/cash_logic.dart';
+import 'widgets/neu_cash_button.dart';
+import 'widgets/neumorphic_theme.dart';
 
 class RequestPaymentScreen extends StatelessWidget {
   final User user;
@@ -336,7 +335,7 @@ _qrAlert(BuildContext context, MoneyAmount amount, Size size) =>
                     FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text(
-                        'XFA ${amount.getOrCrash()}',
+                        'XAF ${amount.getOrCrash()}',
                         style: GoogleFonts.montserrat(
                           fontSize: size.width * 0.1,
                           fontWeight: FontWeight.w200,
