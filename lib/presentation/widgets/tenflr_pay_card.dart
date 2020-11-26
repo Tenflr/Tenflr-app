@@ -37,9 +37,9 @@ class TenflrPayCard extends StatelessWidget {
               Row(
                 children: [
                   SizedBox(
-                  height: 25,
-                  width: 25,
-                  child: SvgPicture.asset(TfSvg.tp_logo),
+                    height: 25,
+                    width: 25,
+                    child: SvgPicture.asset(TfSvg.tp_logo),
                   ),
                   // Image.asset(TfImages.tp_logo),
                   const SizedBox(width: 5),
@@ -60,40 +60,42 @@ class TenflrPayCard extends StatelessWidget {
               )
             ],
           ),
-          BlocConsumer<TrustedFundsBloc, TrustedFundsState>(
-            listenWhen: (p, c) {
-              final pAmount =
-                  p.maybeMap(orElse: () => null, loadSuccess: (e) => e.amount);
-              final cAmount =
-                  c.maybeMap(orElse: () => null, loadSuccess: (e) => e.amount);
-              return pAmount != cAmount;
-            },
-            listener: (context, state) {
-              state.maybeMap(
-                orElse: () => null,
-                loadFailure: (_) => FlushbarHelper.createError(
-                        message:
-                            'An Error occured getting your TrustedPay balance. Please contact support!!'
-                                .i18n)
-                    .show(context),
-              );
-            },
-            buildWhen: (p, c) {
-              final pAmount =
-                  p.maybeMap(orElse: () => null, loadSuccess: (e) => e.amount);
-              final cAmount =
-                  c.maybeMap(orElse: () => null, loadSuccess: (e) => e.amount);
-              return pAmount != cAmount;
-            },
-            builder: (context, state) => state.maybeMap(
-              initial: (s) => Text(
-                "$currency 0.0",
-                textAlign: TextAlign.center,
-                style: TenflrPayCardTextStyle.amount(size),
-              ),
-              loadSuccess: (s) => Padding(
-                padding: size.height > 812 ? const EdgeInsets.symmetric(vertical: 20) : const EdgeInsets.symmetric(vertical: 15),
-                child: FittedBox(
+          Padding(
+            padding: size.height > 812
+                ? const EdgeInsets.symmetric(vertical: 20)
+                : const EdgeInsets.symmetric(vertical: 5),
+            child: BlocConsumer<TrustedFundsBloc, TrustedFundsState>(
+              listenWhen: (p, c) {
+                final pAmount = p.maybeMap(
+                    orElse: () => null, loadSuccess: (e) => e.amount);
+                final cAmount = c.maybeMap(
+                    orElse: () => null, loadSuccess: (e) => e.amount);
+                return pAmount != cAmount;
+              },
+              listener: (context, state) {
+                state.maybeMap(
+                  orElse: () => null,
+                  loadFailure: (_) => FlushbarHelper.createError(
+                          message:
+                              'An Error occured getting your TrustedPay balance. Please contact support!!'
+                                  .i18n)
+                      .show(context),
+                );
+              },
+              buildWhen: (p, c) {
+                final pAmount = p.maybeMap(
+                    orElse: () => null, loadSuccess: (e) => e.amount);
+                final cAmount = c.maybeMap(
+                    orElse: () => null, loadSuccess: (e) => e.amount);
+                return pAmount != cAmount;
+              },
+              builder: (context, state) => state.maybeMap(
+                initial: (s) => Text(
+                  "$currency 0.0",
+                  textAlign: TextAlign.center,
+                  style: TenflrPayCardTextStyle.amount(size),
+                ),
+                loadSuccess: (s) => FittedBox(
                   fit: BoxFit.fitWidth,
                   child: Text(
                     "$currency ${s.amount.getOrCrash().toStringAsFixed(1)}",
@@ -101,53 +103,59 @@ class TenflrPayCard extends StatelessWidget {
                     style: TenflrPayCardTextStyle.amount(size),
                   ),
                 ),
+                loadFailure: (s) => Text(
+                  "$currency 0.0}",
+                  textAlign: TextAlign.center,
+                  style: TenflrPayCardTextStyle.amount(size),
+                ),
+                orElse: () => null,
               ),
-              loadFailure: (s) => Text(
-                "$currency 0.0}",
-                textAlign: TextAlign.center,
-                style: TenflrPayCardTextStyle.amount(size),
-              ),
-              orElse: () => null,
             ),
           ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.baseline,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Stack(
+            alignment: Alignment.bottomCenter,
             children: [
-              Text(
-                "View all transaction history".i18n,
-                style: TenflrPayCardTextStyle.history(size),
+              Align(
+                alignment: Alignment.bottomLeft,
+                child: Text(
+                  "View all transaction history".i18n,
+                  style: TenflrPayCardTextStyle.history(size),
+                ),
               ),
-              RaisedButton(
-                  onPressed: () {
-                    ExtendedNavigator.of(context).pushDepositScreen(user:user);
-                  },
-                  color: TfColors.secondary,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Transform.translate(
-                          offset: const Offset(-15, 0),
-                          child: const Icon(
-                            TfIcons.round_lock,
-                            size: 18,
-                            color: TfColors.primary,
-                          )),
-                      // const SizedBox(width: 5),
-                      Text(
-                        "Deposit".i18n,
-                        style: TenflrPayCardTextStyle.deposit(size),
-                      ),
-                      Transform.translate(
-                          offset: const Offset(15, 0),
-                          child: const Icon(
-                            TfIcons.green_arrow_down,
-                            size: 18,
-                            color: TfColors.green,
-                          )),
-                    ],
-                  )),
+              Align(
+                alignment: Alignment.bottomRight,
+                child: RaisedButton(
+                    onPressed: () {
+                      ExtendedNavigator.of(context)
+                          .pushDepositScreen(user: user);
+                    },
+                    color: TfColors.secondary,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Transform.translate(
+                            offset: const Offset(-15, 0),
+                            child: const Icon(
+                              TfIcons.round_lock,
+                              size: 18,
+                              color: TfColors.primary,
+                            )),
+                        // const SizedBox(width: 5),
+                        Text(
+                          "Deposit".i18n,
+                          style: TenflrPayCardTextStyle.deposit(size),
+                        ),
+                        Transform.translate(
+                            offset: const Offset(15, 0),
+                            child: const Icon(
+                              TfIcons.green_arrow_down,
+                              size: 18,
+                              color: TfColors.green,
+                            )),
+                      ],
+                    )),
+              ),
             ],
           )
         ],
