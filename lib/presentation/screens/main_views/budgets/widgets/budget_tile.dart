@@ -5,6 +5,7 @@ import '../../../../../application/main_views_bloc/main_views_bloc.dart';
 import '../../../../../domain/budget/budgets.dart';
 import '../../../../core/styles/decorations.dart';
 import '../../../../core/styles/text_styles.dart';
+import '../../../../core/translations/translations.i18n.dart';
 
 class BudgetTile extends StatelessWidget {
   final Budget budget;
@@ -20,9 +21,9 @@ class BudgetTile extends StatelessWidget {
       child: Stack(
         children: [
           if (budget.isGift)
-            const Padding(
-              padding: EdgeInsets.only(top: 20),
-              child: Align(child: Text('Gift')),
+             Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Align(child: Text('Gift'.i18n)),
             ),
           ListTile(
             onTap: () {
