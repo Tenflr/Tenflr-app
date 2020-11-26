@@ -21,6 +21,7 @@ import '../presentation/screens/on_boarding/get_more_user_info_after_phone_signU
 import '../presentation/screens/on_boarding/getstarted.dart';
 import '../presentation/screens/on_boarding/splash_screen.dart';
 import '../presentation/screens/on_boarding/welcome_login_screen.dart';
+import '../presentation/screens/settings/change_pin_screen.dart';
 import '../presentation/screens/settings/settings.dart';
 import '../presentation/screens/settings/user_profile.dart';
 import '../presentation/widgets/deposit_screen.dart';
@@ -43,6 +44,7 @@ class Routes {
   static const String requestPaymentScreen = '/request-payment-screen';
   static const String depositScreen = '/deposit-screen';
   static const String withdrawScren = '/withdraw-scren';
+  static const String changePinScreen = '/change-pin-screen';
   static const all = <String>{
     splashScreen,
     getStarted,
@@ -58,6 +60,7 @@ class Routes {
     requestPaymentScreen,
     depositScreen,
     withdrawScren,
+    changePinScreen,
   };
 }
 
@@ -81,6 +84,7 @@ class Router extends RouterBase {
     RouteDef(Routes.requestPaymentScreen, page: RequestPaymentScreen),
     RouteDef(Routes.depositScreen, page: DepositScreen),
     RouteDef(Routes.withdrawScren, page: WithdrawScren),
+    RouteDef(Routes.changePinScreen, page: ChangePinScreen),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -193,6 +197,12 @@ class Router extends RouterBase {
         settings: data,
       );
     },
+    ChangePinScreen: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => ChangePinScreen(),
+        settings: data,
+      );
+    },
   };
 }
 
@@ -278,6 +288,9 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
       );
 
   Future<dynamic> pushWithdrawScren() => push<dynamic>(Routes.withdrawScren);
+
+  Future<dynamic> pushChangePinScreen() =>
+      push<dynamic>(Routes.changePinScreen);
 }
 
 /// ************************************************************************
