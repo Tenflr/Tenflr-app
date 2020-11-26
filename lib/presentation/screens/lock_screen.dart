@@ -1,4 +1,3 @@
-
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +19,10 @@ class LockScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    BotToast.showText(text: 'Default pin is 2580');
+    final MySettings _settings = getIt<MySettings>();
+    if (_settings.isNewUser) {
+      BotToast.showText(text: 'Default pin is 2580'.i18n);
+    }
     final focusNode = useFocusNode();
     final pinController = useTextEditingController();
     final Size size = MediaQuery.of(context).size;
@@ -38,7 +40,6 @@ class LockScreen extends HookWidget {
             // child: SvgPicture.asset("assets/images/VaultDoor@3x.svg")),
             child: Image.asset(TfImages.vault),
             // child: SvgPicture.asset(TfSvg.vault, color: TfColors.primary,),
-
           ),
           SizedBox(
             height: size.height * 0.035,
@@ -59,6 +60,7 @@ class LockScreen extends HookWidget {
               child: PinPut(
                 controller: pinController,
                 focusNode: focusNode,
+                 obscureText: '⚈',
                 eachFieldWidth: size.width * 0.14,
                 eachFieldHeight: size.height * 0.08,
                 submittedFieldDecoration: pinPutDecoration,
