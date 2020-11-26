@@ -42,13 +42,13 @@ class TpUnlockDatePage extends StatelessWidget {
               Container(
                 height: size.height * 0.3,
                 child: CupertinoDatePicker(
-                  minimumDate: DateTime.now(),
-                  mode: CupertinoDatePickerMode.date,
-                  onDateTimeChanged: (DateTime date) {
-                  context.bloc<TrustedPayInputCollectorBloc>().add(
-                      TrustedPayInputCollectorEvent.unlockDateChanged(
-                          unlockDate: ValidDate(date)));
-                }),
+                    minimumDate: DateTime.now(),
+                    mode: CupertinoDatePickerMode.date,
+                    onDateTimeChanged: (DateTime date) {
+                      context.bloc<TrustedPayInputCollectorBloc>().add(
+                          TrustedPayInputCollectorEvent.unlockDateChanged(
+                              unlockDate: ValidDate(date)));
+                    }),
               ),
             ],
           ),
@@ -87,7 +87,7 @@ _confirmPayment(BuildContext context, TrustedPayInputCollectorBloc bloc) {
       type: AlertType.none,
       title: "Confirm Payment!!".i18n,
       desc:
-          "Confirm you want to make a payment of XFA %s to %s with phone number %s !"
+          "Confirm you want to make a payment of XAF %s to %s with phone number %s !"
               .i18n
               .fill([
         context
@@ -101,29 +101,22 @@ _confirmPayment(BuildContext context, TrustedPayInputCollectorBloc bloc) {
       ]),
       buttons: [
         DialogButton(
-            child: FittedBox(
-              fit: BoxFit.fitWidth,
-              child: Text(
-                "Cancel".i18n,
-                style: const TextStyle(color: Colors.white, fontSize: 20),
-              ),
-            ),
-            onPressed: () {
-              Navigator.of(context, rootNavigator: true).pop();
-            },
-            color: Colors.red[400]
+          onPressed: () {
+            Navigator.of(context, rootNavigator: true).pop();
+          },
+          color: Colors.red[400],
 
-            // Color.fromRGBO(0, 179, 134, 1.0),
-            ),
-        DialogButton(
-          width: 200,
           child: FittedBox(
             fit: BoxFit.fitWidth,
             child: Text(
-              "Confirm".i18n,
+              "Cancel".i18n,
               style: const TextStyle(color: Colors.white, fontSize: 20),
             ),
           ),
+          // Color.fromRGBO(0, 179, 134, 1.0),
+        ),
+        DialogButton(
+          width: 200,
           onPressed: () {
             bloc.add(const TrustedPayInputCollectorEvent.submitted());
             Navigator.of(context, rootNavigator: true).pop();
@@ -132,6 +125,13 @@ _confirmPayment(BuildContext context, TrustedPayInputCollectorBloc bloc) {
             Color.fromRGBO(116, 116, 191, 1.0),
             Color.fromRGBO(52, 138, 199, 1.0)
           ]),
+          child: FittedBox(
+            fit: BoxFit.fitWidth,
+            child: Text(
+              "Confirm".i18n,
+              style: const TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ),
         )
       ],
     ).show();
