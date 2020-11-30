@@ -21,6 +21,9 @@ part 'trustedpayinputcollector_bloc.freezed.dart';
 part 'trustedpayinputcollector_event.dart';
 part 'trustedpayinputcollector_state.dart';
 
+enum tranOperation { withdraw, credit }
+enum transferType { mtn, orange }
+
 @injectable
 class TrustedPayInputCollectorBloc
     extends Bloc<TrustedPayInputCollectorEvent, TrustedPayInputCollectorState> {
@@ -34,6 +37,51 @@ class TrustedPayInputCollectorBloc
     TrustedPayInputCollectorEvent event,
   ) async* {
     yield* event.map(
+      creditTenflrPayWithMTN: (e) async* {
+        final Logs log = _generateLogs(state.payment, tranOperation.credit);
+        yield state.copyWith(
+          isSaving: true,
+        );
+        final Either<PaymentFailure, bool> failureOrPayment =
+            await _paymentRepo.creditTenflrWithMTN(state.payment, log);
+        yield state.copyWith(
+          isSaving: false,
+          showErrorMessage: false,
+          saveFailureOrSuccessOption: optionOf(failureOrPayment),
+        );
+      },
+      creditTenflrPayWithOrange: (e) async* {
+        final Logs log = _generateLogs(state.payment, tranOperation.credit);
+        yield state.copyWith(
+          isSaving: true,
+        );
+        final Either<PaymentFailure, bool> failureOrPayment =
+            await _paymentRepo.creditTenflrWithOrange(state.payment, log);
+        yield state.copyWith(
+          isSaving: false,
+          showErrorMessage: false,
+          saveFailureOrSuccessOption: optionOf(failureOrPayment),
+        );
+      },
+      withdrawTenflrPayToOrange: (e) async* {},
+      withdrawTenflrPayToMTN: (e) async* {
+        yield state.copyWith(
+          isSaving: true,
+        );
+        final bool transfer = e.phoneNumber == null ? false : true;
+        final Logs log = transfer
+            ? _generateTransferLogs(
+                state.payment, transferType.mtn, e.phoneNumber)
+            : _generateLogs(state.payment, tranOperation.withdraw);
+
+        final Either<PaymentFailure, bool> failureOrPayment = await _paymentRepo
+            .withdrawTenflrToMTN(state.payment, log, transfer: transfer);
+        yield state.copyWith(
+          isSaving: false,
+          showErrorMessage: false,
+          saveFailureOrSuccessOption: optionOf(failureOrPayment),
+        );
+      },
       amountChanged: (e) async* {
         yield state.copyWith(
           payment: state.payment.copyWith(
@@ -91,7 +139,7 @@ class TrustedPayInputCollectorBloc
                         .difference(DateTime.now())
                         .inSeconds <=
                     0
-                ? PaymentStatus(paymentStatusList[5])
+                ? PaymentStatus(kPaymentStatus.cashed.val)
                 : state.payment.paymentStatus,
           ),
           saveFailureOrSuccessOption: none(),
@@ -126,32 +174,19 @@ class TrustedPayInputCollectorBloc
         yield state.copyWith(
           payment: state.payment.copyWith(
             amount: e.amount,
-            paymentStatus: PaymentStatus(paymentStatusList[4]),
+            paymentStatus: PaymentStatus(kPaymentStatus.credit.val),
           ),
           showErrorMessage: false,
           saveFailureOrSuccessOption: none(),
         );
       },
-      creditTrustedPay: (e) async* {
-        final Logs log = _generateLogs(state.payment);
-        yield state.copyWith(
-          isSaving: true,
-        );
-        final Either<PaymentFailure, Unit> failureOrPayment =
-            await _paymentRepo.creditTrustedPay(state.payment, log);
-        yield state.copyWith(
-          isSaving: false,
-          showErrorMessage: false,
-          saveFailureOrSuccessOption: optionOf(failureOrPayment),
-        );
-      },
       submitted: (e) async* {
-        final Logs log = _generateLogs(state.payment);
+        final Logs log = _generateLogs(state.payment, tranOperation.credit);
         yield state.copyWith(
           showErrorMessage: true,
           saveFailureOrSuccessOption: none(),
         );
-        Either<PaymentFailure, Unit> failureOrPayment;
+        Either<PaymentFailure, bool> failureOrPayment;
         if (state.payment.rPhoneNumber.isValid()) {
           yield state.copyWith(
             isSaving: true,
@@ -169,13 +204,25 @@ class TrustedPayInputCollectorBloc
   }
 }
 
-Logs _generateLogs(Payment payment) {
+Logs _generateLogs(Payment payment, tranOperation operation) {
   return Logs(
     amount: payment.amount,
     payer: payment.payerId,
     receiver: payment.receiverId,
-    type: TransactionType(transactionTypeList[1]),
-    operation: '-',
+    type: TransactionType(kTransactionType.tp.val),
+    operation: operation == tranOperation.credit ? '-' : '+',
+    createdAt: DateTime.now(),
+  );
+}
+
+Logs _generateTransferLogs(
+    Payment payment, transferType operation, ValidPhoneNumber receiver) {
+  return Logs(
+    amount: payment.amount,
+    payer: UniqueId.fromUniqueString(payment.pPhoneNumber.getOrCrash()),
+    receiver: UniqueId.fromUniqueString(receiver.getOrCrash()),
+    type: TransactionType(kTransactionType.mt.val),
+    operation: operation.toString(),
     createdAt: DateTime.now(),
   );
 }
