@@ -7,6 +7,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:tenflrpay/presentation/core/styles/decorations.dart';
 
 import '../../../../../application/saving/savings_actor_bloc/savings_actor_bloc.dart';
 import '../../../../../application/saving/savings_list_bloc/savingslist_bloc.dart';
@@ -63,88 +64,49 @@ class SavingsList extends HookWidget {
                       height: size.height * 0.8,
                       child: ListView.builder(
                         physics: const BouncingScrollPhysics(),
-
                         controller: scrollController,
                         itemBuilder: (BuildContext context, int index) {
-                          final saving = e.savings[index];
+                          final Savings saving = e.savings.get(index);
                           if (saving.failureOption.isNone()) {
+                            if (saving.savingStatus.getOrCrash() !=
+                                    kSavingStatus.cashed.val &&
+                                saving.withdrawalDate
+                                        .getOrCrash()
+                                        .difference(DateTime.now())
+                                        .inSeconds <=
+                                    0) {
+                              context
+                                  .bloc<SavingsActorBloc>()
+                                  .add(SavingsActorEvent.unlockSavings(saving));
+                            }
                             return Slidable(
                               actionPane: const SlidableDrawerActionPane(),
-                              actionExtentRatio: 0.25,
+                              actionExtentRatio: 0.4,
 
                               secondaryActions: <Widget>[
-                                IconSlideAction(
-                                  caption: 'Freeze'.i18n,
-                                  color: Colors.blue,
-                                  icon: Icons.archive,
-                                  onTap: () {
-                                    context
-                                        .bloc<SavingsActorBloc>()
-                                        .add(SavingsActorEvent.freeze(saving));
-                                    BotToast.showText(
-                                        text: "Your saving %s, has been frozen!"
-                                            .i18n
-                                            .fill([
-                                          saving.savingsName.getOrCrash()
-                                        ]),
-                                        duration: const Duration(seconds: 5));
-                                  },
-                                ),
-                                IconSlideAction(
-                                  caption: 'Hide'.i18n,
-                                  color: Colors.indigo,
-                                  icon: Icons.visibility_off,
-                                  onTap: () {
-                                    context
-                                        .bloc<SavingsActorBloc>()
-                                        .add(SavingsActorEvent.hide(saving));
-                                    BotToast.showText(
-                                        text: "Your saving %s, has been hidden!"
-                                            .i18n
-                                            .fill([
-                                          saving.savingsName.getOrCrash()
-                                        ]),
-                                        duration: const Duration(seconds: 5));
-                                  },
-                                ),
-                              ],
-                              actions: <Widget>[
-                                IconSlideAction(
-                                  caption: "Delete".i18n,
-                                  color: Colors.black45,
-                                  icon: Icons.delete_sweep,
-                                  onTap: saving.timeLeft
-                                              .getOrCrash()
-                                              .inSeconds >
-                                          0
-                                      ? null
-                                      : () {
-                                          context.bloc<SavingsActorBloc>().add(
-                                              SavingsActorEvent.deleteUnlocked(
-                                                  saving));
-                                          BotToast.showText(
-                                              text:
-                                                  "Your old saving %s, has been deleted!"
-                                                      .i18n
-                                                      .fill([
-                                                saving.savingsName.getOrCrash()
-                                              ]),
-                                              duration:
-                                                  const Duration(seconds: 5));
-                                        },
-                                ),
-                                IconSlideAction(
-                                    caption: 'Force Unlock'.i18n,
-                                    color: Colors.red[200],
-                                    iconWidget: const Icon(
-                                      FontAwesomeIcons.unlockAlt,
-                                      color: Colors.white,
-                                    ),
+                                Container(
+                                  decoration: DefaultDecoration.slidable,
+                                  margin:
+                                      const EdgeInsets.symmetric(vertical: 5),
+                                  child: InkWell(
                                     onTap: () => _confirmForceSavingsUnlock(
-                                          context,
-                                          context.bloc<SavingsActorBloc>(),
-                                          saving,
-                                        )),
+                                      context,
+                                      context.bloc<SavingsActorBloc>(),
+                                      saving,
+                                    ),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        const Icon(Icons.lock_open_outlined),
+                                        Text(
+                                          'Force Unlock'.i18n,
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
                               ],
 
                               child: SavingsTile(
@@ -159,10 +121,6 @@ class SavingsList extends HookWidget {
                             //Todo Return error card
                           }
                         },
-                        // separatorBuilder: (BuildContext context, int index) =>
-                        //     SizedBox(
-                        //   height: size.height * 0.011,
-                        // ),
                         itemCount: e.savings.size,
                       ),
                     ),
