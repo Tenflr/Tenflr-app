@@ -2,6 +2,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:tenflrpay/presentation/core/assets/colors.dart';
 
 class ConcaveDecoration extends Decoration {
   final ShapeBorder shape;
@@ -30,7 +31,7 @@ class _ConcaveDecorationPainter extends BoxPainter {
   List<Color> colors;
 
   _ConcaveDecorationPainter(this.shape, this.depression, this.colors) {
-    colors ??= [Colors.black87, Colors.white];
+    colors ??= [TfColors.background, Colors.white];
   }
 
   @override
