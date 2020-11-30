@@ -1,8 +1,11 @@
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_masked_text/flutter_masked_text.dart';
+// import 'package:flutter_masked_text/flutter_masked_text.dart';
+import 'package:tenflrpay/presentation/core/assets/svg.dart';
+import 'package:tenflrpay/presentation/core/money_controller/m_controller.dart';
 
+import '../../injection.dart';
 import '../core/assets/images.dart';
 import '../core/styles/decorations.dart';
 import '../core/styles/text_styles.dart';
@@ -13,8 +16,8 @@ class DepositWithOrangeCard extends HookWidget {
   const DepositWithOrangeCard();
   @override
   Widget build(BuildContext context) {
-    final MoneyMaskedTextController orangMoneyController =
-        MoneyMaskedTextController();
+    // final MoneyMaskedTextController orangMoneyController =
+    //    getIt<MoneyController>().controller;
 
     final textController = useTextEditingController();
     final Size size = MediaQuery.of(context).size;
@@ -37,7 +40,7 @@ class DepositWithOrangeCard extends HookWidget {
           ),
           Text("Enter the amount to deposit".i18n),
           DefaultPrimaryMoneyInput(
-            imagePath: TfImages.orangemomo,
+            svgPath: TfSvg.orangemomo,
             // moneyMaskEditingController: orangMoneyController,
           ),
           RaisedButton(
