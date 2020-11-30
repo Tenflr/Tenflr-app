@@ -23,7 +23,7 @@ class PaymentActorBloc extends Bloc<PaymentActorEvent, PaymentActorState> {
       cash: (e) async* {
         yield state.copyWith(
             isSaving: true, saveFailureOrSuccessOption: none());
-        final Either<PaymentFailure, Unit> failureOrSuccess =
+        final Either<PaymentFailure, bool> failureOrSuccess =
             await _paymentRepo.autoCashPayment(e.payment);
         yield state.copyWith(
             isSaving: false,
@@ -32,7 +32,7 @@ class PaymentActorBloc extends Bloc<PaymentActorEvent, PaymentActorState> {
       hide: (e) async* {
         yield state.copyWith(
             isSaving: true, saveFailureOrSuccessOption: none());
-        final Either<PaymentFailure, Unit> failureOrSuccess =
+        final Either<PaymentFailure, bool> failureOrSuccess =
             await _paymentRepo.hidePayment(e.payment);
         yield state.copyWith(
             isSaving: false,
@@ -41,7 +41,7 @@ class PaymentActorBloc extends Bloc<PaymentActorEvent, PaymentActorState> {
       unlockSent: (e) async* {
         yield state.copyWith(
             isSaving: true, saveFailureOrSuccessOption: none());
-        final Either<PaymentFailure, Unit> failureOrSuccess =
+        final Either<PaymentFailure, bool> failureOrSuccess =
             await _paymentRepo.unlockSentPayment(e.payment);
         yield state.copyWith(
             isSaving: false,
@@ -50,7 +50,7 @@ class PaymentActorBloc extends Bloc<PaymentActorEvent, PaymentActorState> {
       freezeSent: (e) async* {
         yield state.copyWith(
             isSaving: true, saveFailureOrSuccessOption: none());
-        final Either<PaymentFailure, Unit> failureOrSuccess =
+        final Either<PaymentFailure, bool> failureOrSuccess =
             await _paymentRepo.freezeSentPayment(e.payment);
         yield state.copyWith(
             isSaving: false,
@@ -59,7 +59,7 @@ class PaymentActorBloc extends Bloc<PaymentActorEvent, PaymentActorState> {
       deleteCashed: (e) async* {
         yield state.copyWith(
             isSaving: true, saveFailureOrSuccessOption: none());
-        final Either<PaymentFailure, Unit> failureOrSuccess =
+        final Either<PaymentFailure, bool> failureOrSuccess =
             await _paymentRepo.deleteCashedPayment(e.payment);
         yield state.copyWith(
             isSaving: false,
@@ -68,7 +68,7 @@ class PaymentActorBloc extends Bloc<PaymentActorEvent, PaymentActorState> {
       requestUnlockOfReceived: (e) async* {
         yield state.copyWith(
             isSaving: true, saveFailureOrSuccessOption: none());
-        final Either<PaymentFailure, Unit> failureOrSuccess =
+        final Either<PaymentFailure, bool> failureOrSuccess =
             await _paymentRepo.requestUnlockOfReceivedPayment(e.payment);
         yield state.copyWith(
             isSaving: false,
@@ -77,7 +77,7 @@ class PaymentActorBloc extends Bloc<PaymentActorEvent, PaymentActorState> {
       returnPayment: (e) async* {
         yield state.copyWith(
             isSaving: true, saveFailureOrSuccessOption: none());
-        final Either<PaymentFailure, Unit> failureOrSuccess =
+        final Either<PaymentFailure, bool> failureOrSuccess =
             await _paymentRepo.returnPayment(e.payment);
         yield state.copyWith(
             isSaving: false,
@@ -86,7 +86,7 @@ class PaymentActorBloc extends Bloc<PaymentActorEvent, PaymentActorState> {
       upVoteUser: (e) async* {
         yield state.copyWith(
             isSaving: true, saveFailureOrSuccessOption: none());
-        final Either<PaymentFailure, Unit> failureOrSuccess =
+        final Either<PaymentFailure, bool> failureOrSuccess =
             await _paymentRepo.rateUser(e.payment, true);
         yield state.copyWith(
             isSaving: false,
@@ -95,7 +95,7 @@ class PaymentActorBloc extends Bloc<PaymentActorEvent, PaymentActorState> {
       downVoteUser: (e) async* {
         yield state.copyWith(
             isSaving: true, saveFailureOrSuccessOption: none());
-        final Either<PaymentFailure, Unit> failureOrSuccess =
+        final Either<PaymentFailure, bool> failureOrSuccess =
             await _paymentRepo.rateUser(e.payment, false);
         yield state.copyWith(
             isSaving: false,
