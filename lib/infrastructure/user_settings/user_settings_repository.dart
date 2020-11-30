@@ -27,9 +27,22 @@ class UserSettingsRepository implements ISettingsFacade {
   }
 
   @override
-  Future<Either<UserSettingsFailure, bool>> enableAppLock(bool lockEntireApp) {
-    // TODO: [STUR-9] implement enableAppLock
-    throw UnimplementedError();
+  Future<Either<UserSettingsFailure, bool>> enableAppLock(
+      bool lockEntireApp) async {
+    try {
+      final DocumentReference userSettingDocRef =
+          await _firestore.userSettingsDocRef();
+
+      userSettingDocRef.updateData({"lApp": lockEntireApp});
+      return right(lockEntireApp);
+    } on PlatformException catch (e) {
+      if (e.code == PERMISSION_DENIED) {
+        return left(const UserSettingsFailure.insufficientPermissions());
+      }
+      debugPrint("Error occurred: code: ${e.code} , message: ${e.message}");
+      // return left(const BudgetFailure.unexpected());
+      return left(const UserSettingsFailure.unableToEnableAppLock());
+    }
   }
 
   @override
@@ -55,9 +68,21 @@ class UserSettingsRepository implements ISettingsFacade {
 
   @override
   Future<Either<UserSettingsFailure, bool>> updateSmartFunds(
-      bool smartFundsUsage) {
-    // TODO: [STUR-3] implement updateSmartFunds
-    throw UnimplementedError();
+      bool smartFundsUsage) async {
+    try {
+      final DocumentReference userSettingDocRef =
+          await _firestore.userSettingsDocRef();
+
+      userSettingDocRef.updateData({"sfu": smartFundsUsage});
+      return right(smartFundsUsage);
+    } on PlatformException catch (e) {
+      if (e.code == PERMISSION_DENIED) {
+        return left(const UserSettingsFailure.insufficientPermissions());
+      }
+      debugPrint("Error occurred: code: ${e.code} , message: ${e.message}");
+      // return left(const BudgetFailure.unexpected());
+      return left(const UserSettingsFailure.unableToUdateSmartFunds());
+    }
   }
 
   @override
@@ -75,13 +100,13 @@ class UserSettingsRepository implements ISettingsFacade {
   }
 
   @override
-  Future<Either<UserSettingsFailure, UserPin>> updateUserPin(UserPin userPin) async {
-     try {
+  Future<Either<UserSettingsFailure, UserPin>> updateUserPin(
+      UserPin userPin) async {
+    try {
       final DocumentReference userSettingDocRef =
           await _firestore.userSettingsDocRef();
 
-      userSettingDocRef
-          .updateData({"pin": userPin.getOrCrash()});
+      userSettingDocRef.updateData({"pin": userPin.getOrCrash()});
       return right(userPin);
     } on PlatformException catch (e) {
       if (e.code == PERMISSION_DENIED) {
