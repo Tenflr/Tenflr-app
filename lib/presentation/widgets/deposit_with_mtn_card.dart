@@ -1,13 +1,17 @@
 import 'package:bot_toast/bot_toast.dart';
+import 'package:currency_text_input_formatter/currency_text_input_formatter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_masked_text/flutter_masked_text.dart';
+// import 'package:flutter_masked_text/flutter_masked_text.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:tenflrpay/presentation/core/assets/colors.dart';
+import 'package:tenflrpay/presentation/core/assets/svg.dart';
+import 'package:tenflrpay/presentation/core/money_controller/m_controller.dart';
 
 import '../../application/payment/trusted_pay_input_collector/trustedpayinputcollector_bloc.dart';
 import '../../domain/core/valid_objects.dart';
+import '../../injection.dart';
 import '../core/assets/images.dart';
 import '../core/styles/decorations.dart';
 import '../core/styles/text_styles.dart';
@@ -19,10 +23,12 @@ class DepositWithMTNCard extends HookWidget {
   const DepositWithMTNCard({this.onPressed});
   @override
   Widget build(BuildContext context) {
-    final MoneyMaskedTextController mtnMoneyController =
-        MoneyMaskedTextController();
+    // final MoneyMaskedTextController mtnMoneyController =
+    //     getIt<MoneyController>().controller;
+    // final _currencyFormatter = CurrencyTextInputFormatter(decimalDigits: 1);
 
     final Size size = MediaQuery.of(context).size;
+    final controller = useTextEditingController(text:'10,000.0');
     return Container(
       decoration: DefaultDecoration.all,
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
@@ -42,11 +48,17 @@ class DepositWithMTNCard extends HookWidget {
           ),
           Text("Enter the amount to deposit".i18n),
           DefaultPrimaryMoneyInput(
-            imagePath: TfImages.mtnmomo,
+            controller: controller,
+            svgPath: TfSvg.mtnmomo,
+            // currencyFormatter: [_currencyFormatter],
             onChanged: (value) {
+             
+              double amount = double.parse(controller.text.replaceAll(',','')) > 0
+                  ? double.parse(controller.text.replaceAll(',',''))
+                  : 0.0;
               context.bloc<TrustedPayInputCollectorBloc>().add(
                   TrustedPayInputCollectorEvent.amountChanged(
-                      amount: MoneyAmount(double.parse(value))));
+                      amount: MoneyAmount(amount)));
             },
             onEditingComplete: () {
               FocusScope.of(context).unfocus();
@@ -54,8 +66,16 @@ class DepositWithMTNCard extends HookWidget {
             // moneyMaskEditingController: mtnMoneyController,
           ),
           RaisedButton(
-              onPressed: () => _confirmCreditTrustedPay(
-                  context, context.bloc<TrustedPayInputCollectorBloc>(), size),
+              onPressed: context
+                          .bloc<TrustedPayInputCollectorBloc>()
+                          .state
+                          .payment
+                          .amount
+                          .getOrCrash() >
+                      100
+                  ? () => _confirmCreditTrustedPay(context,
+                      context.bloc<TrustedPayInputCollectorBloc>(), size)
+                  : () => BotToast.showText(text: "Invalid amount!!".i18n),
               child: Text("Deposit".i18n))
         ],
       ),
@@ -70,7 +90,7 @@ _confirmCreditTrustedPay(
     // style: kConfirmAlertStyle(context),
     context: context,
     type: AlertType.none,
-    title: "MoMo Cash Out!!".i18n,
+    title: "Deposit".i18n,
     desc:
         "Confirm you want credit your TrustedPay account with a sum of XFA %s from your MOMO account with number %s! "
             .i18n
@@ -106,7 +126,7 @@ _confirmCreditTrustedPay(
               toastBuilder: (context) => Container(
                     decoration: BoxDecoration(
                       color: TfColors.primary,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(4),
                     ),
                     height: size.height * 0.06,
                     child: Text(
@@ -119,7 +139,8 @@ _confirmCreditTrustedPay(
                     ),
                   ),
               duration: const Duration(seconds: 7));
-          bloc.add(const TrustedPayInputCollectorEvent.creditTrustedPay());
+          bloc.add(
+              const TrustedPayInputCollectorEvent.creditTenflrPayWithMTN());
 
           Navigator.pop(context);
           Navigator.pop(context);
