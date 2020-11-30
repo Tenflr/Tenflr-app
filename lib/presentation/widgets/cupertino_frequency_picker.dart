@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:tenflrpay/presentation/core/styles/text_styles.dart';
 
 import '../../application/budget/budget_input_collector/budgetinputcollector_bloc.dart';
 import '../../domain/core/constant_list.dart';
@@ -34,10 +35,10 @@ class CupertinoFrequencyPicker extends HookWidget {
                 setPayoutMode(context, i);
               },
               children: [
-                Center(child: Text('daily'.i18n)),
-                Center(child: Text('weekly'.i18n)),
-                Center(child: Text('monthly'.i18n)),
-                Center(child: Text('yearly'.i18n)),
+                Center(child: Text('daily'.i18n, style: DefaultTextStyles.cupertinoScroll,)),
+                Center(child: Text('weekly'.i18n,  style: DefaultTextStyles.cupertinoScroll,)),
+                Center(child: Text('monthly'.i18n,  style: DefaultTextStyles.cupertinoScroll,)),
+                Center(child: Text('yearly'.i18n,  style: DefaultTextStyles.cupertinoScroll,)),
               ],
             ),
           ),
@@ -51,22 +52,26 @@ class CupertinoFrequencyPicker extends HookWidget {
       case 0:
         context.bloc<BudgetInputCollectorBloc>().add(
             BudgetInputCollectorEvent.payoutModeChanged(
-                payoutMode: PayoutModeObject(payoutModeList[i])));
+                payoutMode:
+                    PayoutModeObject(kPayoutMode.values[i].val)));
         break;
       case 1:
         context.bloc<BudgetInputCollectorBloc>().add(
             BudgetInputCollectorEvent.payoutModeChanged(
-                payoutMode: PayoutModeObject(payoutModeList[i])));
+                payoutMode:
+                    PayoutModeObject(kPayoutMode.values[i].val)));
         break;
       case 2:
         context.bloc<BudgetInputCollectorBloc>().add(
             BudgetInputCollectorEvent.payoutModeChanged(
-                payoutMode: PayoutModeObject(payoutModeList[i])));
+                payoutMode:
+                    PayoutModeObject(kPayoutMode.values[i].val)));
         break;
       case 3:
         context.bloc<BudgetInputCollectorBloc>().add(
             BudgetInputCollectorEvent.payoutModeChanged(
-                payoutMode: PayoutModeObject(payoutModeList[i])));
+                payoutMode:
+                    PayoutModeObject(kPayoutMode.values[i].val)));
         break;
       default:
     }
