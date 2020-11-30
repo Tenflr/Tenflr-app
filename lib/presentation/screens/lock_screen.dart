@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,7 @@ import '../../injection.dart';
 import '../core/assets/colors.dart';
 import '../core/assets/images.dart';
 import '../core/translations/translations.i18n.dart';
+import '../../routes/router.gr.dart';
 
 class LockScreen extends HookWidget {
   static const String id = "VaultDoorScreen";
@@ -20,7 +22,7 @@ class LockScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final MySettings _settings = getIt<MySettings>();
-    if (_settings.isNewUser) {
+    if (_settings.getTrustedPayPin == "2580") {
       BotToast.showText(text: 'Default pin is 2580'.i18n);
     }
     final focusNode = useFocusNode();
@@ -45,12 +47,8 @@ class LockScreen extends HookWidget {
             height: size.height * 0.035,
           ),
           Text('Enter your Pin'.i18n,
-              style: TextStyle(
-                fontSize: size.width * 0.054,
-              )),
-          // SizedBox(
-          //   height: size.height * 0.035,
-          // ),
+              style: TextStyle(fontSize: size.width * 0.054)),
+
           Padding(
             padding: EdgeInsets.symmetric(
               horizontal: size.width * 0.14,
@@ -60,7 +58,7 @@ class LockScreen extends HookWidget {
               child: PinPut(
                 controller: pinController,
                 focusNode: focusNode,
-                 obscureText: '⚈',
+                obscureText: '⚈',
                 eachFieldWidth: size.width * 0.14,
                 eachFieldHeight: size.height * 0.08,
                 submittedFieldDecoration: pinPutDecoration,
@@ -79,6 +77,9 @@ class LockScreen extends HookWidget {
                     context
                         .bloc<LockScreenBloc>()
                         .add(LockScreenEvent.unlock(val));
+                    if (_settings.getTrustedPayPin == "2580") {
+                      ExtendedNavigator.of(context).pushChangePinScreen();
+                    }
                   } else {
                     BotToast.showText(text: "Wrong Pin. Try again".i18n);
                     pinController.clear();
