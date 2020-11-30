@@ -112,7 +112,8 @@ class CreateBudgetManagerForm extends StatelessWidget {
                                       .i18n,
                             )).show(context), (r) {
                       Navigator.of(context).pop();
-                      Future.delayed(const Duration(microseconds: 2), () {
+                      Future.delayed(const Duration(microseconds: 1), () {
+                      Navigator.of(context).pop();
                         FlushbarHelper.createSuccess(
                                 duration: const Duration(seconds: 2),
                                 message:
@@ -127,7 +128,7 @@ class CreateBudgetManagerForm extends StatelessWidget {
                     }));
             if (state.isSaving) {
               FlushbarHelper.createLoading(
-                      duration: const Duration(seconds: 4),
+                      duration: const Duration(seconds: 9),
                       linearProgressIndicator: const LinearProgressIndicator(),
                       message: "Creating a new Budget Manager".i18n)
                   .show(context);
