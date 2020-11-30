@@ -169,7 +169,7 @@ class DrawerTile extends StatelessWidget {
     return Transform.translate(
       offset: const Offset(-20, 0),
       child: SizedBox(
-        width: size.width * 0.47,
+        width: size.width * 0.5,
         child: FlatButton(
             onPressed: onPressed,
             child: Row(
