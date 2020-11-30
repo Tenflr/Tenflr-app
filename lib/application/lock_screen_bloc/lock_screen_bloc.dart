@@ -50,7 +50,7 @@ class LockScreenBloc extends Bloc<LockScreenEvent, LockScreenState> {
       canCheckBiometrics ??= await pagesScreenService.checkBiometrics();
     }
     if (canCheckBiometrics) {
-      availableBiometrics = await pagesScreenService.getAvailableBiometrics();
+      availableBiometrics ??= await pagesScreenService.getAvailableBiometrics();
     }
     yield* event.map(
       lock: (e) async* {
