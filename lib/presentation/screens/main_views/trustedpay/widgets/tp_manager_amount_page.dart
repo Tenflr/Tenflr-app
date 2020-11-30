@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+// import 'package:flutter_masked_text/flutter_masked_text.dart';
+import 'package:tenflrpay/presentation/core/money_controller/m_controller.dart';
 
 import '../../../../../application/payment/trusted_pay_input_collector/trustedpayinputcollector_bloc.dart';
 import '../../../../../domain/core/valid_objects.dart';
+import '../../../../../injection.dart';
 import '../../../../core/styles/text_styles.dart';
 import '../../../../core/translations/translations.i18n.dart';
 import '../../../../widgets/button.dart';
@@ -13,8 +16,7 @@ class TpAmountPage extends StatelessWidget {
   const TpAmountPage({@required this.controller});
   @override
   Widget build(BuildContext context) {
-    // final MoneyMaskedTextController moneyController = MoneyMaskedTextController(
-    //     decimalSeparator: '.', precision: 1, thousandSeparator: ',');
+    // final MoneyMaskedTextController moneyController =getIt<MoneyController>().controller;
 
     final Size size = MediaQuery.of(context).size;
     return Container(
@@ -46,12 +48,13 @@ class TpAmountPage extends StatelessWidget {
                       children: [
                     Text('Enter the amount...'.i18n),
                     DefaultPrimaryMoneyInput(
-                      imagePath: null,
+                      svgPath: null,
                       onChanged: (value) {
                         context.bloc<TrustedPayInputCollectorBloc>().add(
                             TrustedPayInputCollectorEvent.amountChanged(
-                                amount: MoneyAmount(double.parse(value))));
+                                amount: MoneyAmount(double.parse(value.replaceAll(',','')))));
                       },
+                        // moneyMaskEditingController: moneyController,
                       onEditingComplete: () {
                         // node.nextFocus();
 
