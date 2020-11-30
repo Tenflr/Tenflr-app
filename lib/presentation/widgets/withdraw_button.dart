@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:tenflrpay/domain/user/user.dart';
 
 import '../../routes/router.gr.dart';
 import '../core/assets/colors.dart';
@@ -12,9 +14,10 @@ class WithDrawButton extends StatelessWidget {
   const WithDrawButton();
   @override
   Widget build(BuildContext context) {
+    final User user = Provider.of<User>(context, listen: false);
     return RaisedButton(
         onPressed: () {
-          ExtendedNavigator.of(context).pushWithdrawScren();
+          ExtendedNavigator.of(context).pushWithdrawScren(user: user);
         },
         color: TfColors.secondary,
         child: Row(
