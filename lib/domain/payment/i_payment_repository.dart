@@ -21,7 +21,7 @@ abstract class IPaymentRepository {
   Stream<Either<PaymentFailure, MoneyAmount>> watchTrustedPay();
 
   // make payment
-  Future<Either<PaymentFailure, Unit>> sendPayment(Payment payment, Logs log);
+  Future<Either<PaymentFailure, bool>> sendPayment(Payment payment, Logs log);
 
   //Check for enough funds in TrustedPay account
   Future<bool> hasEnoughTrustedFunds(MoneyAmount requiredAmount);
@@ -42,32 +42,43 @@ abstract class IPaymentRepository {
       {@required bool cashIn});
 
   //  unlock sent payment
-  Future<Either<PaymentFailure, Unit>> unlockSentPayment(Payment payment);
+  Future<Either<PaymentFailure, bool>> unlockSentPayment(Payment payment);
 
   // block sent payment
-  Future<Either<PaymentFailure, Unit>> freezeSentPayment(Payment payment);
+  Future<Either<PaymentFailure, bool>> freezeSentPayment(Payment payment);
 
   // auto cash payment after unlock date
-  Future<Either<PaymentFailure, Unit>> autoCashPayment(Payment payment);
+  Future<Either<PaymentFailure, bool>> autoCashPayment(Payment payment);
 
   // request sender to unlock payment
-  Future<Either<PaymentFailure, Unit>> requestUnlockOfReceivedPayment(
+  Future<Either<PaymentFailure, bool>> requestUnlockOfReceivedPayment(
       Payment payment);
 
   // return un-wanted payment
-  Future<Either<PaymentFailure, Unit>> returnPayment(Payment payment);
+  Future<Either<PaymentFailure, bool>> returnPayment(Payment payment);
 
   // Rate a user to influence h/er reputation
-  Future<Either<PaymentFailure, Unit>> rateUser(Payment payment, bool isUp);
+  Future<Either<PaymentFailure, bool>> rateUser(Payment payment, bool isUp);
 
   // delete payment
-  Future<Either<PaymentFailure, Unit>> deleteCashedPayment(Payment payment);
+  Future<Either<PaymentFailure, bool>> deleteCashedPayment(Payment payment);
 
   // hide payment
-  Future<Either<PaymentFailure, Unit>> hidePayment(Payment payment);
+  Future<Either<PaymentFailure, bool>> hidePayment(Payment payment);
 
   // get trusted trustedPayBalance
-  Future<Either<PaymentFailure, Unit>> creditTrustedPay(
+  Future<Either<PaymentFailure, bool>> creditTenflrWithMTN(
+      Payment payment, Logs log);
+  // get trusted trustedPayBalance
+  Future<Either<PaymentFailure, bool>> creditTenflrWithOrange(
+      Payment payment, Logs log);
+
+  // get trusted trustedPayBalance
+  Future<Either<PaymentFailure, bool>> withdrawTenflrToMTN(
+      Payment payment, Logs log,
+      {bool transfer = false});
+  // get trusted trustedPayBalance
+  Future<Either<PaymentFailure, bool>> withdrawTenflrToOrange(
       Payment payment, Logs log);
 
 // amount to be deducted before unlock
