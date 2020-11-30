@@ -17,7 +17,7 @@ class _$MomoApiService extends MomoApiService {
   final definitionType = MomoApiService;
 
   @override
-  Future<Response<dynamic>> transfer(
+  Future<Response<dynamic>> withdrawToMTN(
       {String amount,
       String currency,
       String externalId,
@@ -37,7 +37,7 @@ class _$MomoApiService extends MomoApiService {
   }
 
   @override
-  Future<Response<dynamic>> requestToPay(
+  Future<Response<dynamic>> creditTenflrWithMTN(
       {String amount,
       String currency,
       String externalId,
