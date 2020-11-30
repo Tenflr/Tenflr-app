@@ -24,7 +24,7 @@ extension Localization on String {
               "Withdraw using Orange mobile money",
           "Invalid Account name": "Invalid Account name",
           "The daily Payout rate is very small. It should be at least XFA 200/day 🤑":
-              "The daily Payout rate is very small. It should be at least XFA 200/day 🤑",
+              "The daily Payout rate is very small. It should be at least XAF 200/day 🤑",
           "month": "month",
           "Payment with MOMO account failed! Please try again!":
               "Payment with MOMO account failed! Please try again!",
@@ -37,7 +37,7 @@ extension Localization on String {
               "Unable to delete Savings! Please contact Support.",
           "Create a Saving account": "Create a Saving account",
           "How much do you want to budget manage?":
-              "How much do you want to budget manage?",
+              "How much do you want be managed?",
           "Current amount": "Current amount",
           "Light mode": "Light mode",
           "Please switch to automatic time update.":
@@ -61,7 +61,7 @@ extension Localization on String {
           "Error Card should be here!": "Error Card should be here!",
           "Zipcode/P0-Box": "Zipcode/P0-Box",
           "The daily Payout rate is very small. It should be at least XFA 1,000/day 🤑":
-              "The daily Payout rate is very small. It should be at least XFA 1,000/day 🤑",
+              "The daily Payout rate is very small. It should be at least XAF 1,000/day 🤑",
           "Phone auth failed, Please contact support":
               "Phone auth failed, Please contact support",
           "Make Quick Payment": "Make Quick Payment",
@@ -80,7 +80,7 @@ extension Localization on String {
           "Your saving %s, has been hidden!":
               "Your saving %s, has been hidden!",
           "The daily Payout rate is very small.It should be at least XFA 5,000/day 🤑":
-              "The daily Payout rate is very small.It should be at least XFA 5,000/day 🤑",
+              "The daily Payout rate is very small.It should be at least XAF 5,000/day 🤑",
           "Sent": "Sent",
           "Budgets Details": "Budgets Details",
           "Language": "Language",
@@ -121,14 +121,14 @@ extension Localization on String {
           "Confirm you want to make a payment of XAF %s to %s with phone number %s !":
               "Confirm you want to make a payment of XAF %s to %s with phone number %s !",
           "Withdraw using MTN mobile money": "Withdraw using MTN mobile money",
-          "Sent a Budget manger": "Sent a Budget manger",
+          "Sent a Budget manger": "Sent a Budget manager",
           "Payment successful": "Payment successful",
           "Address": "Address",
           "How do you want to be paid? Daily, weekly, etc":
               "How do you want to be paid? Daily, weekly, etc",
           "weekly": "weekly",
           "Gift": "Gift",
-          "Create Budget manger": "Create Budget manger",
+          "Create Budget manger": "Create Budget manager",
           "An Error occured": "An Error occured",
           "Amount unlocked": "Amount unlocked",
           "An Error occured getting your TrustedPay balance. Please contact support!!":
@@ -223,7 +223,7 @@ extension Localization on String {
           "An Error Occurred while loading Payment 🤔":
               "An Error Occurred while loading Payment 🤔",
           "The daily Payout rate is very small. It should be at least XFA 50,000/day 🤑":
-              "The daily Payout rate is very small. It should be at least XFA 50,000/day 🤑",
+              "The daily Payout rate is very small. It should be at least XAF 50,000/day 🤑",
           "Enter you Pin": "Enter you Pin",
           "months": "months",
           "%s years": "%s years",
@@ -236,7 +236,7 @@ extension Localization on String {
           "Creating a new savings account...":
               "Creating a new savings account...",
           "Confirm you want to send a budget Manager gift of XFA %s to %s!":
-              "Confirm you want to send a budget Manager gift of XFA %s to %s!",
+              "Confirm you want to send a budget Manager gift of XAF %s to %s!",
           "Request": "Request",
           "Make a Quick Payment": "Make a Quick Payment",
           "The Payment was successful 😁": "The Payment was successful 😁",
@@ -328,7 +328,9 @@ extension Localization on String {
           "The user did not grant the camera permission!":
               "The user did not grant the camera permission!",
           "Confirm you want credit your TrustedPay account with a sum of XFA %s from your MOMO account with number %s! ":
-              "Confirm you want credit your TrustedPay account with a sum of XFA %s from your MOMO account with number %s! ",
+              "Confirm you want credit your Tenflr account with a sum of XAF %s from your MOMO account with number %s! ",
+          "Confirm you want to withdraw a sum of XFA %s from your Tenflr account to your MOMO account with number %s!":
+              "Confirm you want to withdraw a sum of XFA %s from your Tenflr account to your MOMO account with number %s!",
           "A payment of %s was successfully sent to %s":
               "A payment of %s was successfully sent to %s",
           "recipient info incorrect": "recipient info incorrect",
@@ -377,7 +379,7 @@ extension Localization on String {
               "Unable to hide Budget. Please Contact support!",
           "Recipient not found": "Recipient not found",
           "For how long should this budget be manage?":
-              "For how long should this budget be manage?",
+              "For how long should this budget be managed?",
           "Freeze": "Freeze",
           "Make a Trusted Payment": "Make a Trusted Payment",
           "Unable to cash unlocked Budget. Please Contact support!":
@@ -406,8 +408,34 @@ extension Localization on String {
           "Enter a new PIN": "Enter a new PIN",
           "Enter the Pin again to validate": "Enter the Pin again to validate",
           "Enter Current PIN": "Enter Current PIN",
+          "Invalid amount!!": "Invalid amount!!",
+          "Withdrawal into MOMO failed": "Withdrawal into MOMO failed",
+          "Withdrawal in progress...": "Withdrawal in progress...",
+          "Withdrawal into your MOMO account failed. Please try again!":
+              "Withdrawal into your MOMO account failed. Please try again!",
+          "You have successfully credited your Tenflr Account 😃":
+              "You have successfully credited your Tenflr Account 😃",
+          "You have successfully withdrawn money into your MOMO account 😃":
+              "You have successfully transfered money into your MOMO account 😃",
+          "Invalid amount!!, Enter an amount between %s XAF to %s XAF":
+              "Invalid amount!!, Enter an amount between %s XAF to %s XAF",
+              "English": "English",
         },
         "fr_fr": {
+          "English": "Anglais",
+          "Invalid amount!!, Enter an amount between %s XAF to %s XAF":
+              "Montant invalide !!, Entrez un montant entre %s XAF et %s XAF",
+          "You have successfully withdrawn money into your MOMO account 😃":
+              "Vous avez réussi à transférer l'argent dans votre compte MOMO 😃 ",
+          "You have successfully credited your Tenflr Account 😃":
+              "Vous avez crédité votre compte Tenflr avec succès 😃",
+          "Withdrawal into your MOMO account failed. Please try again!":
+              "Le retrait de votre compte MOMO a échoué. Veuillez réessayer!",
+          "Withdrawal in progress...": "Retrait en cours ...",
+          "Withdrawal into MOMO failed": "Le retrait dans MOMO a échoué",
+          "Confirm you want to withdraw a sum of XFA %s from your Tenflr account to your MOMO account with number %s!":
+              "Confirmez que vous souhaitez retirer une somme de XFA %s de votre compte Tenflr vers votre compte MOMO avec le numéro %s!",
+          "Invalid amount!!": "Montant invalide !!",
           "Enter Current PIN": "Entrer le code PIN actuel",
           "Enter the Pin again to validate":
               "Entrez à nouveau le code PIN pour valider",
@@ -443,7 +471,7 @@ extension Localization on String {
               "Retirer avec Orange Mobile Money",
           "Invalid Account name": "Nom de compte non valide",
           "The daily Payout rate is very small. It should be at least XFA 200/day 🤑":
-              "Le taux de paiement quotidien est très faible. Il doit être d'au moins 200 XFA / jour 🤑",
+              "Le taux de paiement quotidien est très faible. Il doit être d'au moins 200 XAF / jour 🤑",
           "month": "mois",
           "Payment with MOMO account failed! Please try again!":
               "Le paiement avec le compte MOMO a échoué! Veuillez réessayer!",
@@ -457,7 +485,7 @@ extension Localization on String {
               "Impossible de supprimer les économies! Veuillez contacter l'assistance.",
           "Create a Saving account": "Créer un compte d'épargne",
           "How much do you want to budget manage?":
-              "Combien voulez-vous gérer votre budget?",
+              "Combien voulez-vous gérer?",
           "Current amount": "Montant actuel",
           "Light mode": "Mode lumière",
           "Please switch to automatic time update.":
@@ -481,7 +509,7 @@ extension Localization on String {
           "Error Card should be here!": "La carte d'erreur devrait être ici!",
           "Zipcode/P0-Box": "Code postal / P0-Box",
           "The daily Payout rate is very small. It should be at least XFA 1,000/day 🤑":
-              "Le taux de paiement quotidien est très faible. Il doit être d'au moins 1000 XFA / jour 🤑",
+              "Le taux de paiement quotidien est très faible. Il doit être d'au moins 1000 XAF / jour 🤑",
           "Phone auth failed, Please contact support":
               "L'authentification par téléphone a échoué, veuillez contacter l'assistance",
           "Make Quick Payment": "Effectuer un paiement rapide",
@@ -495,14 +523,14 @@ extension Localization on String {
           "Recipient info incorrect":
               "Informations sur le destinataire incorrectes",
           "Your transaction %s, has been sent to archive":
-              "Votre transaction% s a été envoyée en archive",
+              "Votre transaction %s a été envoyée en archive",
           "Savings name": "Nom de l'épargne",
-          "Default pin is 2580": "La broche par défaut est 2580",
+          "Default pin is 2580": "La épingle par défaut est 2580",
           "Verify": "Vérifier",
           "Your saving %s, has been hidden!":
-              "Votre économie% s a été masquée!",
+              "Votre économie %s a été masquée!",
           "The daily Payout rate is very small.It should be at least XFA 5,000/day 🤑":
-              "Le taux de paiement quotidien est très faible et devrait être d'au moins 5000 XFA / jour 🤑",
+              "Le taux de paiement quotidien est très faible et devrait être d'au moins 5000 XAF / jour 🤑",
           "Sent": "Envoyé",
           "Budgets Details": "Détails des budgets",
           "Language": "Langue",
@@ -534,7 +562,7 @@ extension Localization on String {
           "Delete": "Supprimer",
           "Savings": "Des économies",
           "You entered a wrong pin!": "Vous avez entré une mauvaise épingle!",
-          "Your saving %s, has been frozen!": "Votre économie% s a été gelée!",
+          "Your saving %s, has been frozen!": "Votre économie %s a été gelée!",
           "Unable to cashed unlock amount!":
               "Impossible d'encaisser le montant du déverrouillage!",
           "Your account could not be created. Please contact support":
@@ -542,7 +570,7 @@ extension Localization on String {
           "Unable to Delete Budget. Please Contact support!":
               "Impossible de supprimer le budget. Veuillez contacter le support!",
           "Confirm you want to make a payment of XAF %s to %s with phone number %s !":
-              "Confirmez que vous souhaitez effectuer un paiement de XAF% s à% s avec le numéro de téléphone% s!",
+              "Confirmez que vous souhaitez effectuer un paiement de XAF %s à %s avec le numéro de téléphone %s!",
           "Withdraw using MTN mobile money": "Retirer avec l'argent mobile MTN",
           "Sent a Budget manger": "Envoyé le budget",
           "Payment successful": "Paiement réussi",
@@ -571,7 +599,7 @@ extension Localization on String {
           "Gift Budget Manager": "Gestionnaire de budget cadeau",
           "Request Payment unlock": "Demander le déverrouillage du paiement",
           "Your old saving %s, has been deleted!":
-              "Votre ancienne sauvegarde% s a été supprimée!",
+              "Votre ancienne sauvegarde %s a été supprimée!",
           "Insufficient permission. Please contact support":
               "Permission insuffisante. Veuillez contacter l'assistance",
           "QUICK PAYMENTS": "PAIEMENTS RAPIDES",
@@ -586,7 +614,7 @@ extension Localization on String {
               "Vous avez entré un code de vérification non valide!",
           "Enter the receiver's phone number or email":
               "Entrez le numéro de téléphone ou l'adresse e-mail du destinataire",
-          "Wrong Pin. Try again": "Mauvaise broche. Réessayer",
+          "Wrong Pin. Try again": "Mauvaise épingle. Réessayer",
           "Unable to unlock Payment. Please contact support!":
               "Impossible de déverrouiller le paiement. Veuillez contacter l'assistance!",
           "Enter Request Amount": "Entrez le montant de la demande",
@@ -598,7 +626,7 @@ extension Localization on String {
           "Payment could not be unlocked":
               "Le paiement n'a pas pu être déverrouillé",
           "Recipient Not Found": "Destinataire introuvable",
-          "%s days": "% s jours",
+          "%s days": " %s jours",
           "Trusted Pay": "Paiement fiable",
           "In development": "En développement",
           "Force Unlock": "Forcer le déverrouillage",
@@ -620,7 +648,7 @@ extension Localization on String {
           "Coming Soon": "Bientôt disponible",
           "An unexpected error occurred": "une erreur inattendue est apparue",
           "Confirm you want to create a savings account that will be unlocked in %s!":
-              "Confirmez que vous souhaitez créer un compte d'épargne qui sera déverrouillé dans% s!",
+              "Confirmez que vous souhaitez créer un compte d'épargne qui sera déverrouillé dans %s!",
           "Unknown error:": "Erreur inconnue:",
           "Invalid unlock date. It shouldn't be in the pass.":
               "Date de déverrouillage non valide. Ça ne devrait pas être dans la passe.",
@@ -649,10 +677,10 @@ extension Localization on String {
           "An Error Occurred while loading Payment 🤔":
               "Une erreur s'est produite lors du chargement du paiement 🤔",
           "The daily Payout rate is very small. It should be at least XFA 50,000/day 🤑":
-              "Le taux de paiement quotidien est très faible. Il doit être d'au moins 50000 XFA / jour 🤑",
+              "Le taux de paiement quotidien est très faible. Il doit être d'au moins 50000 XAF / jour 🤑",
           "Enter you Pin": "Entrez votre épingle",
           "months": "mois",
-          "%s years": "% s années",
+          "%s years": " %s années",
           "Select the duration...": "Sélectionnez la durée ...",
           "First name": "Prénom",
           "Logging In...": "Se connecter...",
@@ -662,8 +690,8 @@ extension Localization on String {
           "Creating a new savings account...":
               "Créer un nouveau compte d'épargne ...",
           "Confirm you want to send a budget Manager gift of XFA %s to %s!":
-              "Confirmez que vous souhaitez envoyer un cadeau de gestionnaire de budget de XFA% s à% s!",
-          "Request": "Demande",
+              "Confirmez que vous souhaitez envoyer un cadeau de gestionnaire de budget de XAF %s à %s!",
+          "Request": "Demandez",
           "Make a Quick Payment": "Effectuer un paiement rapide",
           "The Payment was successful 😁": "Le paiement a réussi 😁",
           "Phone number": "Numéro de téléphone",
@@ -700,7 +728,7 @@ extension Localization on String {
           "Unable to send budget manager gift":
               "Impossible d'envoyer le cadeau du gestionnaire de budget",
           "Are you sure you want to force unlock this account?  This will result in a lost of %s% of the funds in the account!!!":
-              "Voulez-vous vraiment forcer le déverrouillage de ce compte? Cela entraînera une perte de% s% des fonds du compte !!!",
+              "Voulez-vous vraiment forcer le déverrouillage de ce compte? Cela entraînera une perte de %s% des fonds du compte !!!",
           "For a daily Payout, Budget Duration should be greater than 2 days":
               "Pour un paiement quotidien, la durée du budget doit être supérieure à 2 jours",
           "Create or send Budget Managers to efficiently manage your money.":
@@ -744,7 +772,7 @@ extension Localization on String {
           "GetStarted": "Commencer",
           "Operation not allowed": "Opération non autorisée",
           "Please dial *126# to confirm the MOMO payment of XAF %s to credit your TrustedPay account!":
-              "Veuillez composer le * 126 # pour confirmer le paiement MOMO de XAF% s afin de créditer votre compte TrustedPay!",
+              "Veuillez composer le * 126 # pour confirmer le paiement MOMO de XAF %s afin de créditer votre compte TrustedPay!",
           "Continue with google": "Continuer avec google",
           "Scan to Pay": "Numériser pour payer",
           "Account name": "Nom du compte",
@@ -754,9 +782,9 @@ extension Localization on String {
           "The user did not grant the camera permission!":
               "L'utilisateur n'a pas accordé l'autorisation de la caméra!",
           "Confirm you want credit your TrustedPay account with a sum of XFA %s from your MOMO account with number %s! ":
-              "Confirmez que vous voulez créditer votre compte TrustedPay d'une somme de XFA% s de votre compte MOMO avec le numéro% s! ",
+              "Confirmez que vous voulez créditer votre compte TrustedPay d'une somme de XAF %s de votre compte MOMO avec le numéro %s! ",
           "A payment of %s was successfully sent to %s":
-              "Un paiement de% s a été envoyé avec succès à% s",
+              "Un paiement de %s a été envoyé avec succès à %s",
           "recipient info incorrect":
               "informations sur le destinataire incorrectes",
           "Send Budget Manager": "Envoyer le gestionnaire de budget",
@@ -780,7 +808,7 @@ extension Localization on String {
           "year": "an",
           "Background app lock": "Verro en arrière-plan",
           "A verification code has been sent to %s,\\nEnter the code to verify...":
-              "Un code de vérification a été envoyé à% s, \\ nSaisissez le code pour vérifier ...",
+              "Un code de vérification a été envoyé à %s, \\ nSaisissez le code pour vérifier ...",
           "Enter the amount to deposit": "Entrez le montant à déposer",
           "Max lenght reached": "Longueur max atteinte",
           "RE-CHECK TIME": "TEMPS DE RÉVÉRIFICATION",
@@ -812,7 +840,7 @@ extension Localization on String {
               "Impossible d'encaisser le budget débloqué. Veuillez contacter le support!",
           "Rate User": "Évaluer l'utilisateur",
           "Your transactor %s, has been sent to archive":
-              "Votre opérateur% s a été envoyé en archive",
+              "Votre opérateur %s a été envoyé en archive",
           "Add Money to Account": "Ajouter de l'argent au compte",
           "Enter your Pin": "Entrez votre code PIN",
           "credit": "crédit",
