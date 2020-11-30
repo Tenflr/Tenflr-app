@@ -88,7 +88,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       // new user check
       if (failureOrSuccess.isRight() &&
           failureOrSuccess.all((r) => r == true)) {
-        result = await dataRepository.createNewUser('google',state.user);
+        result = await dataRepository.createNewUser('google', state.user);
         await _iSettingsFacade.setUserSettings(UserSettings.empty());
         _settings.setAll(UserSettings.empty(), state.user);
 
