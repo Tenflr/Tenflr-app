@@ -7,6 +7,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kt_dart/kt.dart';
 import 'package:provider/provider.dart';
+import 'package:tenflrpay/presentation/core/styles/decorations.dart';
 
 import '../../../../../application/budget/budget_actor_bloc/budget_actor_bloc.dart';
 import '../../../../../application/budget/budget_list_bloc/budgetlist_bloc.dart';
@@ -62,68 +63,32 @@ class BudgetList extends HookWidget {
 
                           return Slidable(
                               actionPane: const SlidableDrawerActionPane(),
-                              actionExtentRatio: 0.25,
-                              actions: <Widget>[
-                                IconSlideAction(
-                                  caption: 'Chat'.i18n,
-                                  color: Colors.blue,
-                                  icon: Icons.chat,
-                                  onTap: () {},
-                                ),
-                                IconSlideAction(
-                                  caption: 'Hide'.i18n,
-                                  color: Colors.indigo,
-                                  icon: Icons.archive,
-                                  onTap: () {
-                                    BotToast.showSimpleNotification(
-                                        title:
-                                            "Your transactor %s, has been sent to archive"
-                                                .i18n
-                                                .fill([
-                                          budget.accountName.getOrCrash()
-                                        ]),
-                                        duration: const Duration(seconds: 5));
-                                    budgets.minusElement(budget);
-                                  },
-                                ),
-                              ],
+                              actionExtentRatio: 0.4,
                               secondaryActions: <Widget>[
-                                IconSlideAction(
-                                  caption: 'More'.i18n,
-                                  color: Colors.black45,
-                                  icon: Icons.more_horiz,
-                                  onTap: () {},
-                                ),
-                                IconSlideAction(
-                                  caption: 'Unlock'.i18n,
-                                  color: Colors.redAccent,
-                                  iconWidget: Icon(
-                                    FontAwesomeIcons.unlock,
-                                    color: Colors.white,
+                                Container(
+                                  decoration: DefaultDecoration.slidable,
+                                  margin:
+                                      const EdgeInsets.symmetric(vertical: 5),
+                                  child: InkWell(
+                                    onTap: () {},
+                                    // =>
+                                    //  _confirmForceSavingsUnlock(
+                                    //   context,
+                                    //   context.bloc<SavingsActorBloc>(),
+                                    //   saving,
+                                    // ),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        const Icon(Icons.lock_open_outlined),
+                                        Text(
+                                          'Force Unlock'.i18n,
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                  onTap: () {
-                                    if (budget.nextUnlockDate
-                                                .getOrCrash()
-                                                .difference(DateTime.now())
-                                                .inSeconds <=
-                                            0 &&
-                                        _settings.getUserId !=
-                                            budget.senderId.getOrCrash() &&
-                                        budget.amountLocked.getOrCrash() > 0) {
-                                      context.bloc<BudgetActorBloc>().add(
-                                            BudgetActorEvent
-                                                .autoUnlockPeriodically(
-                                                    budget,
-                                                    budget.isGift
-                                                        ? "received"
-                                                        : "personal"),
-                                          );
-                                    } else {
-                                      BotToast.showText(
-                                          text: "Please wait for next unlock"
-                                              .i18n);
-                                    }
-                                  },
                                 ),
                               ],
                               child: BudgetTile(
