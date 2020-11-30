@@ -14,6 +14,7 @@ class BudgetManagerAccountNamePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+
     return Container(
       // height: 100,
       margin: const EdgeInsets.symmetric(horizontal: 16),
@@ -38,16 +39,32 @@ class BudgetManagerAccountNamePage extends StatelessWidget {
               const SizedBox(height: 30),
               Center(
                   child: DefaultPrimaryTextInputField(
-                    maxLength: 20,
+                maxLength: 20,
                 description: 'Budget manager name'.i18n,
                 // hintText: '',
+                initialValue: context
+                        .bloc<BudgetInputCollectorBloc>()
+                        .state
+                        .budget
+                        .accountName
+                        .isValid()
+                    ? context
+                        .bloc<BudgetInputCollectorBloc>()
+                        .state
+                        .budget
+                        .accountName
+                        .getOrCrash()
+                    : "",
+
                 hintText: 'Ex: Allowance'.i18n,
                 onChanged: (value) {
-                  context.bloc<BudgetInputCollectorBloc>().add(
-                      BudgetInputCollectorEvent.managerAccountNameChanged(
-                          accountName: AccountName(value)));
+                  if (value.isNotEmpty) {
+                    context.bloc<BudgetInputCollectorBloc>().add(
+                        BudgetInputCollectorEvent.managerAccountNameChanged(
+                            accountName: AccountName(value)));
+                  }
                 },
-                 onEditingComplete: () {
+                onEditingComplete: () {
                   // node.nextFocus();
                   FocusScope.of(context).unfocus();
 
