@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 
@@ -15,7 +17,7 @@ class TfAppBar extends HookWidget {
     final Size size = MediaQuery.of(context).size;
     return Container(
       padding: EdgeInsets.only(
-        top: size.height * 0.04,
+        top:  Platform.isIOS && size.height >= 812 ? size.height * 0.04: size.height * 0.025,
         right: size.width * 0.03,
         left: size.width * 0.03,
       ),
