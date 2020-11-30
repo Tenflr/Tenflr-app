@@ -17,98 +17,103 @@ class BudgetUserNamePage extends HookWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     final userQuery = useState('');
-    return SingleChildScrollView(
-      child: Center(
-        child: Container(
-          height: size.height,
-          margin: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            // alignment: Alignment.center,
+    return Container(
+      height: size.height,
+      margin: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        // alignment: Alignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          const SizedBox(
+              // height: 3,
+              ),
+          Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const SizedBox(
-                  // height: 3,
-                  ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    width: size.width * 0.7,
-                    child: Text(
-                      "Enter the recipient's phone number or email".i18n,
-                      textAlign: TextAlign.center,
-                      style: SavingsScreenTextStyle.createDescription(size),
-                    ),
-                  ),
-                  const SizedBox(height: 30),
-                  Center(
-                      child: Column(
-                          // height: 60,
-                          // crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                        const Text(''),
-                        Center(
-                            child: DefaultPrimaryTextInputField(
-                          description: 'recipient'.i18n,
-                          // hintText: '',
-
-                          hintText: 'Ex: user@gmail.com / +2367..',
-
-                          onChanged: (value) {
-                            userQuery.value = value;
-                          },
-                          onEditingComplete: () {
-                            FocusScope.of(context).unfocus();
-                            if (userQuery.value.length > 10) {
-                              context.bloc<BudgetInputCollectorBloc>().add(
-                                  BudgetInputCollectorEvent.searchUser(
-                                      userQuery: userQuery.value.trim()));
-                            } else {
-                              BotToast.showText(
-                                  text: 'recipient info incorrect'.i18n);
-                            }
-                          },
-                        )),
-                      ])),
-                  BlocBuilder<BudgetInputCollectorBloc,
-                          BudgetInputCollectorState>(
-                      buildWhen: (p, c) => p.userFound != c.userFound,
-                      builder: (context, state) {
-                        if (state.showErrorMessage || state.userFound) {
-                         final  userName = state.budget.rDisplayName.isValid()
-                              ? state.budget.rDisplayName.getOrCrash()
-                              : "Recipient Not Found".i18n;
-                          return Text(
-                              state.userFound ? userName : "Recipient Not Found".i18n);
-                        }
-                        return const SizedBox();
-                      }),
-                ],
+              SizedBox(
+                width: size.width * 0.7,
+                child: Text(
+                  "Enter the recipient's phone number or email".i18n,
+                  textAlign: TextAlign.center,
+                  style: SavingsScreenTextStyle.createDescription(size),
+                ),
               ),
-              Column(
-                // mainAxisAlignment: MainAxisAlignment.end,
+              const SizedBox(height: 30),
+              Center(
+                  child: Column(
+                      // height: 60,
+                      // crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                    const Text(''),
+                    Center(
+                        child: DefaultPrimaryTextInputField(
+                      description: 'recipient'.i18n,
+                      // hintText: '',
+
+                      hintText: 'Ex: user@gmail.com / +2367..',
+
+                      onChanged: (value) {
+                        userQuery.value = value;
+                      },
+                      onEditingComplete: () {
+                        FocusScope.of(context).unfocus();
+                        if (userQuery.value.length > 10) {
+                          context.bloc<BudgetInputCollectorBloc>().add(
+                              BudgetInputCollectorEvent.searchUser(
+                                  userQuery: userQuery.value.trim()));
+                        } else {
+                          BotToast.showText(
+                              text: 'recipient info incorrect'.i18n);
+                        }
+                      },
+                    )),
+                  ])),
+              BlocBuilder<BudgetInputCollectorBloc,
+                      BudgetInputCollectorState>(
+                  buildWhen: (p, c) => p.userFound != c.userFound,
+                  builder: (context, state) {
+                    if (state.showErrorMessage || state.userFound) {
+                     final  userName = state.budget.rDisplayName.isValid()
+                          ? state.budget.rDisplayName.getOrCrash()
+                          : "Recipient Not Found".i18n;
+                      return Text(
+                          state.userFound ? userName : "Recipient Not Found".i18n);
+                    }
+                    return const SizedBox();
+                  }),
+            ],
+          ),
+          const SizedBox(
+            // height: 3,
+            ),
+        const SizedBox(
+            // height: 3,
+            ),
+        const SizedBox(
+            // height: 3,
+            ),
+          Column(
+            // mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Align(
-                          alignment: Alignment.bottomRight,
-                          child: Button(
-                            onPressed: () => _confirmBudgetGift(
-                              context,
-                              context.bloc<BudgetInputCollectorBloc>(),
-                            ),
-                            description: 'Sent a Budget manger'.i18n,
-                            // toRight: false,
-                            width: size.width * 0.75,
-                          )),
-                    ],
-                  ),
+                  Align(
+                      alignment: Alignment.bottomRight,
+                      child: Button(
+                        onPressed: () => _confirmBudgetGift(
+                          context,
+                          context.bloc<BudgetInputCollectorBloc>(),
+                        ),
+                        description: 'Sent a Budget manger'.i18n,
+                        // toRight: false,
+                        width: size.width * 0.75,
+                      )),
                 ],
               ),
             ],
           ),
-        ),
+        ],
       ),
     );
   }
