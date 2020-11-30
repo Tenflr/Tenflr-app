@@ -5,7 +5,7 @@ abstract class PaymentActorState implements _$PaymentActorState {
   const PaymentActorState._();
   factory PaymentActorState({
     @required bool isSaving,
-    @required Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption,
+    @required Option<Either<PaymentFailure, bool>> saveFailureOrSuccessOption,
   }) = _PaymentActorState;
   factory PaymentActorState.initial() => PaymentActorState(
         isSaving: false,
