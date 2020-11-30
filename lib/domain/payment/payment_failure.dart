@@ -7,8 +7,9 @@ abstract class PaymentFailure with _$PaymentFailure {
   const factory PaymentFailure.unableToSendPayment() = _UnableToSendPayment;
   const factory PaymentFailure.insufficientFundsInTrustedFunds() = _InsufficientFundsInTrustedFunds;
   const factory PaymentFailure.userWithIdNotFound() = _UserWithIdNotFound;
-  const factory PaymentFailure.paymentWithMomoFailed() = _PaymentWithMomoFailed;
+  const factory PaymentFailure.creditingWithMomoFailed() = _PaymentWithMomoFailed;
   const factory PaymentFailure.userNotFound() = _UserNotFound;
+  const factory PaymentFailure.withdrawalIntoMOMOFailed() = _WithdrawalIntoMOMOFailed;
 
 
   // payment actor failure
