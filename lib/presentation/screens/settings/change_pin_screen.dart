@@ -130,7 +130,7 @@ class ChangePinBody extends HookWidget {
                                         displayMessage.value = PROCESS_TEXT;
                                         numOfRun += 1;
                                       } else if (pin !=
-                                          _settings.getTrustedPayPin) {
+                                          _settings.getTrustedPayPin &&  newPin.value !="0") {
                                         numOfRun = 0;
 
                                         FlushbarHelper.createError(
@@ -173,8 +173,9 @@ class ChangePinBody extends HookWidget {
                                                     "PIN match failed. Try again..."
                                                         .i18n)
                                             .show(context);
-                                        displayMessage.value = PROCESS_TEXT;
-                                        newPin.value = '';
+                                        displayMessage.value = START_TEXT;
+                                        // displayMessage.value = PROCESS_TEXT;
+                                        newPin.value = '0';
                                         numOfRun = 0;
                                       }
                                       pinController.clear();
