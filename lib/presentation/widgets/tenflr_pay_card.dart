@@ -1,12 +1,15 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
+import 'package:tenflrpay/domain/core/settings.dart';
 
 import '../../application/trusted_funds_bloc/trusted_funds_bloc.dart';
 import '../../domain/user/user.dart';
+import '../../injection.dart';
 import '../../routes/router.gr.dart';
 import '../core/assets/colors.dart';
 import '../core/assets/svg.dart';
@@ -22,6 +25,7 @@ class TenflrPayCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final User user = Provider.of<User>(context, listen: false);
+    final MySettings _settings = getIt<MySettings>();
     context.bloc<TrustedFundsBloc>().add(const TrustedFundsEvent.watchFunds());
     final Size size = MediaQuery.of(context).size;
     return Container(
@@ -95,14 +99,17 @@ class TenflrPayCard extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TenflrPayCardTextStyle.amount(size),
                 ),
-                loadSuccess: (s) => FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Text(
-                    "$currency ${s.amount.getOrCrash().toStringAsFixed(1)}",
-                    textAlign: TextAlign.center,
-                    style: TenflrPayCardTextStyle.amount(size),
-                  ),
-                ),
+                loadSuccess: (s) {
+                  _settings.setTenflrBalance(s.amount);
+                  return FittedBox(
+                    fit: BoxFit.fitWidth,
+                    child: Text(
+                      "$currency ${s.amount.getOrCrash().toStringAsFixed(1)}",
+                      textAlign: TextAlign.center,
+                      style: TenflrPayCardTextStyle.amount(size),
+                    ),
+                  );
+                },
                 loadFailure: (s) => Text(
                   "$currency 0.0}",
                   textAlign: TextAlign.center,
@@ -115,11 +122,16 @@ class TenflrPayCard extends StatelessWidget {
           Stack(
             alignment: Alignment.bottomCenter,
             children: [
-              Align(
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  "View all transaction history".i18n,
-                  style: TenflrPayCardTextStyle.history(size),
+              InkWell(
+                onTap: () {
+                  BotToast.showText(text: "Coming soon".i18n);
+                },
+                child: Align(
+                  alignment: Alignment.bottomLeft,
+                  child: Text(
+                    "View all transaction history".i18n,
+                    style: TenflrPayCardTextStyle.history(size),
+                  ),
                 ),
               ),
               Align(
