@@ -45,9 +45,10 @@ class SavingsDatePickerPage extends StatelessWidget {
               const SizedBox(height: 30),
               Container(
                 decoration: DefaultDecoration.all,
-                width: size.width * 0.8,
+                width: size.width * 0.9,
                 height: size.height * 0.15,
                 child: CupertinoDatePicker(
+                  
                   initialDateTime: date,
                   mode: CupertinoDatePickerMode.date,
                   minimumDate: DateTime.now(),
