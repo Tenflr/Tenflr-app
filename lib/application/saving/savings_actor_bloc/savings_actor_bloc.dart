@@ -80,7 +80,7 @@ Logs _generateLogs(Savings saving) {
     amount: saving.amount,
     payer: saving.id,
     receiver: UniqueId.fromUniqueString('me'),
-    type: TransactionType(transactionTypeList[2]),
+    type: TransactionType(kTransactionType.s.val),
     operation: 'unlocked',
     createdAt: DateTime.now(),
   );
