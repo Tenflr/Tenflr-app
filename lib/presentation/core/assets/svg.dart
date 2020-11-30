@@ -16,4 +16,6 @@ class TfSvg {
   static String get trustedpay_icon => 'assets/svg/trustedpay_icon.svg';
   static String get vault => 'assets/svg/vault.svg';
   static String get add_hand => 'assets/svg/add_hand.svg';
+  static String get mtnmomo => 'assets/svg/mtnmomo.svg';
+  static String get orangemomo => 'assets/svg/orangemomo.svg';
 }
