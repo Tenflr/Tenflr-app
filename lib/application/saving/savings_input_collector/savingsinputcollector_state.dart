@@ -19,12 +19,12 @@ abstract class SavingsInputCollectorState with _$SavingsInputCollectorState {
   factory SavingsInputCollectorState.empty() => SavingsInputCollectorState(
         showErrorMessage: false,
         saving: Savings.empty().copyWith(
-          amount: MoneyAmount(0.0),
+          amount: MoneyAmount(10000.0),
           withdrawalDate: ValidDate(DateTime(DateTime.now().year + 3)),
         ),
         isSaving: false,
         isEditing: false,
-        amount: MoneyAmount(0),
+        amount: MoneyAmount(10000),
         addedAmount: MoneyAmount(0.0),
         withDrawalDate: ValidDate(DateTime.now()),
         accountName: AccountName(''),
