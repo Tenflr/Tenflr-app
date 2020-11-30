@@ -99,7 +99,7 @@ class SavingsRepository implements ISavingsRepository {
         result = await _paymentRepo.deductOrCreditTrustedFunds(savings.amount,
             deduct: true);
         if (!result) {
-          response = await _momoClient.requestToPay(
+          response = await _momoClient.creditTenflrWithMTN(
               amount: savings.amount.getOrCrash().toString(),
               number: user.phoneNumber.getOrCrash(),
               externalId: savings.id.getOrCrash(),
@@ -109,7 +109,7 @@ class SavingsRepository implements ISavingsRepository {
 
       // withdrawal setData to momo account only
       else if (_mySettings.withdrawalWithMomo) {
-        response = await _momoClient.requestToPay(
+        response = await _momoClient.creditTenflrWithMTN(
             amount: savings.amount.getOrCrash().toString(),
             number: user.phoneNumber.getOrCrash(),
             externalId: savings.id.getOrCrash(),
@@ -191,7 +191,7 @@ class SavingsRepository implements ISavingsRepository {
       result = await _paymentRepo.deductOrCreditTrustedFunds(savings.amount,
           deduct: true);
       if (!result) {
-        response = await _momoClient.requestToPay(
+        response = await _momoClient.creditTenflrWithMTN(
             amount: savings.amount.getOrCrash().toString(),
             number: user.phoneNumber.getOrCrash(),
             externalId: savings.id.getOrCrash(),
@@ -201,7 +201,7 @@ class SavingsRepository implements ISavingsRepository {
 
     // withdrawal setData to momo account only
     else if (_mySettings.withdrawalWithMomo) {
-      response = await _momoClient.requestToPay(
+      response = await _momoClient.creditTenflrWithMTN(
           amount: savings.amount.getOrCrash().toString(),
           number: user.phoneNumber.getOrCrash(),
           externalId: savings.id.getOrCrash(),
@@ -273,7 +273,7 @@ class SavingsRepository implements ISavingsRepository {
           savingDoneRef,
           SavingsDto.fromDomain(savings.copyWith(
                   isDeleted: true,
-                  savingStatus: SavingStatus(savingStatusList[3])))
+                  savingStatus: SavingStatus(kSavingStatus.cashed.val)))
               .toJson());
       final MoneyAmount gainAmount = MoneyAmount(
           savings.amount.getOrCrash() * FORCE_UNLOCK_LOST_PERCENTAGE);
@@ -339,150 +339,6 @@ class SavingsRepository implements ISavingsRepository {
     return right(unit);
   }
 
-//   @override
-//   Future<void> writeSavingsCreatedLogs(Savings saving) async {
-//     // Server time stamp
-//     final FieldValue serverTime = FieldValue.serverTimestamp();
-//     // get day of the week
-//     final String day = DateFormat('EEEE').format(DateTime.now());
-//     final userOption = await _authFacade.getSignedInUser();
-//     final user = userOption.getOrElse(() => throw NotAuthenticatedError());
-
-// // weekly logs ref
-//     final DocumentReference userWeeklyLogsRef =
-//         await _firestore.transactionsWeeklyLogsDocument(day);
-
-//     // logs ref
-//     final DocumentReference personalLogsRef =
-//         await _firestore.savingsActiveLogsDocument(
-//       user.id.getOrCrash(),
-//     );
-
-//     final Map<String, dynamic> savingsLogData = {
-//       'createAt': serverTime,
-//       'amount': saving.amount.getOrCrash(),
-//       'type': 'Savings',
-//     };
-
-// // write to logs for payer and receiver
-//     personalLogsRef.setData(savingsLogData);
-
-//     //weekly logs
-
-// // today's date
-//     final String todayDate = DateFormat('yyyy-MM-dd').format(DateTime.now());
-
-//     // weekly log data
-//     final Map<String, dynamic> weeklyData = {
-//       'todayDate': todayDate,
-//       'expenditure': saving.amount.getOrCrash(),
-//       'income': 0.0,
-//       'createAt': serverTime,
-//       'index': DateTime.now().weekday
-//     };
-
-//     final senderResult = await _firestore.runTransaction((transaction) {
-//       return transaction.get(userWeeklyLogsRef).then((doc) {
-//         if (!doc.exists) {
-//           // transaction.setData(payerWeeklyLogsRef, weeklyData);
-//           transaction.set(userWeeklyLogsRef, weeklyData);
-//         } else {
-//           final double newExpenditure =
-//               (doc.data['expenditure'] as double) + saving.amount.getOrCrash();
-//           final String date = doc.data['todayDate'] as String;
-//           if (date != todayDate) {
-//             transaction.set(userWeeklyLogsRef, weeklyData);
-//           } else {
-//             transaction.update(
-//               userWeeklyLogsRef,
-//               {
-//                 'todayDate': todayDate,
-//                 'expenditure': newExpenditure,
-//                 // 'income': saving.amount.getOrCrash(),
-//                 'createAt': serverTime,
-//                 'index': DateTime.now().weekday
-//               },
-//             );
-//           }
-//         }
-//       });
-//     });
-//   }
-
-//   @override
-//   Future<void> writeTrustedPayFundsRechargeLogs(Savings saving,
-//       {bool cashOut}) async {
-//     // get day of the week
-//     final String day = DateFormat('EEEE').format(DateTime.now());
-
-//     // Server time stamp
-//     final FieldValue serverTime = FieldValue.serverTimestamp();
-
-//     // logs ref
-//     final CollectionReference senderLogsRef =
-//         await _firestore.transactionLogsCollection();
-
-// // weekly logs ref
-//     final DocumentReference senderWeeklyLogsRef =
-//         await _firestore.transactionsWeeklyLogsDocument(day);
-
-// // batch writer
-//     final WriteBatch batchOp = _firestore.batch();
-
-//     final Map<String, dynamic> payerLogData = {
-//       'createAt': serverTime,
-//       'amount': saving.amount.getOrCrash(),
-//       'type': 'Savings',
-//       'momoOperation': cashOut
-//           ? '+'
-//           : '-', // A plus means that the trusted pay was credited form MOMO account and negative overwise
-//     };
-
-// // today's date
-//     final String todayDate = DateFormat('yyyy-MM-dd').format(DateTime.now());
-
-//     // weekly log data
-//     final Map<String, dynamic> weeklyData = {
-//       'todayDate': todayDate,
-//       'income': saving.amount.getOrCrash(),
-//       'expenditure': 0.0,
-//       'createAt': serverTime,
-//       'index': DateTime.now().weekday
-//     };
-
-// // write to general logs first (for payer and receiver)
-//     batchOp.setData(
-//         senderLogsRef.document('momo-${saving.id.getOrCrash()}'), payerLogData);
-
-//     batchOp.commit();
-
-//     final senderResult = await _firestore.runTransaction((transaction) {
-//       return transaction.get(senderWeeklyLogsRef).then((doc) {
-//         if (!doc.exists) {
-//           // transaction.set(payerWeeklyLogsRef, weeklyData);
-//           transaction.set(senderWeeklyLogsRef, weeklyData);
-//         } else {
-//           final double newIncome =
-//               (doc.data['income'] as double) + saving.amount.getOrCrash();
-//           final String date = doc.data['todayDate'] as String;
-//           if (date != todayDate) {
-//             transaction.set(senderWeeklyLogsRef, weeklyData);
-//           } else {
-//             transaction.update(
-//               senderWeeklyLogsRef,
-//               {
-//                 'todayDate': todayDate,
-//                 'income': newIncome,
-//                 // 'income': saving.amount.getOrCrash(),
-//                 'createAt': serverTime,
-//                 'index': DateTime.now().weekday
-//               },
-//             );
-//           }
-//         }
-//       });
-//     });
-//   }
 
   @override
   Future<Either<SavingsFailure, Unit>> deleteUnlockedSaving(
@@ -514,7 +370,7 @@ class SavingsRepository implements ISavingsRepository {
           savingDoneRef,
           SavingsDto.fromDomain(savings.copyWith(
                   isDeleted: true,
-                  savingStatus: SavingStatus(savingStatusList[3])))
+                  savingStatus: SavingStatus(kSavingStatus.cashed.val)))
               .toJson());
       batchOpt.delete(savingRef);
       final isCredited = await _paymentRepo
@@ -559,7 +415,7 @@ class SavingsRepository implements ISavingsRepository {
           savingDoneRef,
           SavingsDto.fromDomain(savings.copyWith(
                   isDeleted: true,
-                  savingStatus: SavingStatus(savingStatusList[3])))
+                  savingStatus: SavingStatus(kSavingStatus.cashed.val)))
               .toJson());
       batchOpt.delete(savingRef);
       final isCredited = await _paymentRepo
