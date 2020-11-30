@@ -94,9 +94,10 @@ class CreateSavingsForm extends StatelessWidget {
                             )).show(context),
                         (r) {
                           Navigator.of(context).pop();
-                          Future.delayed(const Duration(microseconds: 2), () {
+                          Future.delayed(const Duration(microseconds: 1), () {
+                            Navigator.of(context).pop();
                             FlushbarHelper.createSuccess(
-                                duration: const Duration(seconds: 2),
+                                // duration: const Duration(seconds: 2),
                                 message:
                                     "You have successfully created a Savings Account 😃"
                                         .i18n)
@@ -107,7 +108,7 @@ class CreateSavingsForm extends StatelessWidget {
                     );
                     if (state.isSaving) {
                       FlushbarHelper.createLoading(
-                              // duration: const Duration(seconds: 5),
+                              duration: const Duration(seconds: 9),
                               message: 'Creating a new savings account...'.i18n,
                               linearProgressIndicator:
                                   const LinearProgressIndicator())
