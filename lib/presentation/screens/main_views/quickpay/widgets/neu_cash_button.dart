@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tenflrpay/presentation/core/assets/colors.dart';
 
 import 'concave_decoration.dart';
 
@@ -58,8 +59,11 @@ class _NeuCalculatorButtonState extends State<NeuCalculatorButton> {
         borderRadius: BorderRadius.circular(buttonSize.width),
       ),
       colors: [
-        kDarkBackgroundShadowColour,
-        kOutline,
+        // kDarkBackgroundShadowColour,
+        // TfColors.grey,
+        TfColors.background,
+        TfColors.background,
+        // kOutline,
       ],
       depression: 10,
     );
@@ -69,8 +73,9 @@ class _NeuCalculatorButtonState extends State<NeuCalculatorButton> {
         color: Colors.transparent,
       ),
       borderRadius: BorderRadius.circular(buttonSize.width),
-      color: kBackgroundColour,
-      boxShadow: kDarkBackgroundShadow,
+      color:TfColors.background ,
+      // color: kBackgroundColour,
+      // boxShadow: kDarkBackgroundShadow,
     );
 
     return SizedBox(
@@ -105,19 +110,20 @@ class _NeuCalculatorButtonState extends State<NeuCalculatorButton> {
   }
 }
 
-final kDarkBackgroundShadowColour = Color.fromRGBO(
-  30,
-  30,
-  30,
-  1,
-);
+// final kDarkBackgroundShadowColour = Color.fromRGBO(
+//   30,
+//   30,
+//   30,
+//   1,
+// );
 
-final kOutline = Color.fromRGBO(46, 46, 46, 1); // rgb(46,46,46)
-final kBackgroundColour = Color.fromRGBO(239, 238, 238, 1);
+// final kOutline = Color.fromRGBO(46, 46, 46, 1); // rgb(46,46,46)
+// final kBackgroundColour = Color.fromRGBO(239, 238, 238, 1);
 final kDarkBackgroundShadow = [
   BoxShadow(
-    blurRadius: 15,
-    offset: Offset(4.5, 4.5),
-    color: kDarkBackgroundShadowColour,
+    // blurRadius: 0.1,
+    // offset: const Offset(0.1, 0.1),
+    // color: kDarkBackgroundShadowColour,
+    color: TfColors.background,
   )
 ];
