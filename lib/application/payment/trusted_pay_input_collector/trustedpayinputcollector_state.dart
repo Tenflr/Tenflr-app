@@ -10,7 +10,7 @@ abstract class TrustedPayInputCollectorState
     @required bool isEditing,
     @required bool userFound,
     @required Payment payment,
-    @required Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption,
+    @required Option<Either<PaymentFailure, bool>> saveFailureOrSuccessOption,
   }) = _TrustedPayInputCollectorState;
   factory TrustedPayInputCollectorState.empty() =>
       TrustedPayInputCollectorState(
