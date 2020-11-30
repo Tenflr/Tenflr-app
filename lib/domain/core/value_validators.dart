@@ -13,7 +13,7 @@ Either<ValueFailure<String>, String> validateMaxStringLength(
 }
 
 Either<ValueFailure<String>, String> validateSavingStatus(String input) {
-  if (savingStatusList.contains(input)) {
+  if (kSavingStatus.values.map((e) => e.val).contains(input)) {
     return right(input);
   } else {
     return left(ValueFailure.invalidStatus(
@@ -23,7 +23,7 @@ Either<ValueFailure<String>, String> validateSavingStatus(String input) {
 }
 
 Either<ValueFailure<String>, String> validateBudgetStatus(String input) {
-  if (budgetStatusList.contains(input)) {
+  if (kBudgetStatus.values.map((e) => e.val).contains(input)) {
     return right(input);
   } else {
     return left(ValueFailure.invalidStatus(
@@ -33,7 +33,7 @@ Either<ValueFailure<String>, String> validateBudgetStatus(String input) {
 }
 
 Either<ValueFailure<String>, String> validatePaymentStatus(String input) {
-  if (paymentStatusList.contains(input)) {
+  if (kPaymentStatus.values.map((e) => e.val).contains(input)) {
     return right(input);
   } else {
     return left(ValueFailure.invalidStatus(
@@ -60,7 +60,7 @@ Either<ValueFailure<String>, String> validateSingleLine(String input) {
 
 Either<ValueFailure<String>, String> validateAccountName(String input) {
   const userNameRegex =
-       r"""^(?=[A-Za-zÀ-ÖØ-öø-ÿ0-9._]{2,20}$)(?!.*[_.]{2})|(?=[A-Za-zÀ-ÖØ-öø-ÿ0-9._]{2,20}$)(?!.*[_.]{2})[^_.].*[^_.]$""";
+      r"""^(?=[A-Za-zÀ-ÖØ-öø-ÿ0-9._]{2,20}$)(?!.*[_.]{2})|(?=[A-Za-zÀ-ÖØ-öø-ÿ0-9._]{2,20}$)(?!.*[_.]{2})[^_.].*[^_.]$""";
   if (RegExp(userNameRegex).hasMatch(input.trim())) {
     return right(input.trim());
   } else {
@@ -69,14 +69,12 @@ Either<ValueFailure<String>, String> validateAccountName(String input) {
 }
 
 Either<ValueFailure<String>, String> validateTransactionType(String input) {
-  
-  if (transactionTypeList.contains(input)) {
+  if (kTransactionType.values.map((e) => e.val).contains(input)) {
     return right(input.trim());
   } else {
     return left(ValueFailure.invalidTransactionType(failedValue: input));
   }
 }
-
 
 Either<ValueFailure<double>, double> validateMoneyAmount(double input) {
   if (input >= 0 && input < double.infinity) {
@@ -130,7 +128,7 @@ Either<ValueFailure<Duration>, Duration> validateDuration(Duration input) {
 }
 
 Either<ValueFailure<String>, String> validatePayoutMode(String input) {
-  if (!payoutModeList.contains(input)) {
+  if (!kPayoutMode.values.map((e) => e.val).contains(input)) {
     return left(ValueFailure.payoutModeNotSelected(failedValue: input));
   } else {
     return right(input);
@@ -159,8 +157,10 @@ Either<ValueFailure<String>, String> validatePhone(String input) {
 
 Either<ValueFailure<String>, String> validateSubscriptionMode(String input) {
   if (input == '') {
-    return right(subscriptionModeList[0]);
-  } else if (subscriptionModeList.contains(input)) {
+    return right(kSubscriptionMode.transaction.val);
+    // Todo: Fix hack: kSubscriptionModeList should be deleted eventually
+  } else if (kSubscriptionMode.values.map((e) => e.val).contains(input) ||
+      kSubscriptionModeList.contains(input)) {
     return right(input);
   } else {
     return left(ValueFailure.invalidSubscriptionMode(failedValue: input));
