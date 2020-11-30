@@ -222,7 +222,7 @@ Logs _generateLogs(Budget budget) {
     payer: budget.senderId,
     receiver:
         budget.isGift ? budget.receiverId : UniqueId.fromUniqueString('me'),
-    type: TransactionType(transactionTypeList[3]),
+    type: TransactionType(kTransactionType.b.val),
     operation: budget.isGift ? '-' : '+',
     createdAt: DateTime.now(),
   );
