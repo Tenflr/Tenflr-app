@@ -66,16 +66,17 @@ class QuickPaymentBody extends HookWidget {
             () {},
             (either) => either.fold(
                     (failure) => FlushbarHelper.createError(
-                            message: failure.map(
+                            message: failure.maybeMap(
+                              orElse: ()=> null,
                           tokenExpired: (_) =>
                               "The QR code you have scanned has expired. Please restart the payment."
                                   .i18n,
                           errorGeneratingQRCode: (_) =>
                               "An error occurred while generating a QR code. Please try again!"
                                   .i18n,
-                          errorScanningQRCode: (_) =>
-                              "An error occurred while scanning the QR code. Please try again!"
-                                  .i18n,
+                          // errorScanningQRCode: (_) => "",
+                              // "An error occurred while scanning the QR code. Please try again!"
+                              //     .i18n,
                           insufficientFunds: (_) =>
                               "Insufficient Funds in TrustedPay wallet!".i18n,
                           insufficientPermissions: (_) =>
@@ -198,7 +199,7 @@ Raw token  is :: ${barcode.rawContent}
       // barcodeState.value =
       //     'null (User returned using the "back"-button before scanning anything. Result)';
     } catch (e) {
-      FlushbarHelper.createError(message: 'Unknown error: $e'.i18n).show(context);
+      // FlushbarHelper.createError(message: 'Unknown error: $e'.i18n).show(context);
     }
   }
 }
