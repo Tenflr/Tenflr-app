@@ -14,7 +14,7 @@ class TransactionsList extends StatelessWidget {
     return Container(
       decoration: DefaultDecoration.all,
       margin: EdgeInsets.symmetric(horizontal: size.width * 0.04, vertical: 10),
-      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
       child: Stack(
         children: [
           transactionList,
