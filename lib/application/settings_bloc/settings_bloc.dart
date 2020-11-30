@@ -101,6 +101,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         );
         final Either<UserSettingsFailure, bool> failureOrSuccess =
             await _iSettingsFacade.enable2FA(e.enable2FA);
+
         yield state.copyWith(
           isSaving: false,
           failureOrSuccessOption: some(failureOrSuccess),
@@ -113,6 +114,10 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         );
         final Either<UserSettingsFailure, bool> failureOrSuccess =
             await _iSettingsFacade.updateSmartFunds(e.smartFundsUsage);
+        if (failureOrSuccess.isRight()) {
+          await _settings.setSmartFundsUse(
+              useSmartFunds: failureOrSuccess.getOrElse(() => null));
+        }
         yield state.copyWith(
           isSaving: false,
           failureOrSuccessOption: some(failureOrSuccess),
@@ -176,6 +181,9 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         );
         final Either<UserSettingsFailure, bool> failureOrSuccess =
             await _iSettingsFacade.enableAppLock(e.lockEntireApp);
+        if (failureOrSuccess.isRight()) {
+          await _settings.setAppLock(failureOrSuccess.getOrElse(() => null));
+        }
         yield state.copyWith(
           isSaving: false,
           failureOrSuccessOption: some(failureOrSuccess),
