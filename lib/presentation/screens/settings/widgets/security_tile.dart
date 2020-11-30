@@ -1,8 +1,13 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:tenflrpay/application/settings_bloc/settings_bloc.dart';
+import 'package:tenflrpay/domain/core/settings.dart';
 
+import '../../../../injection.dart';
 import '../../../core/assets/colors.dart';
 import '../../../core/icons/TfIcons_icons.dart';
 import '../../../core/styles/text_styles.dart';
@@ -13,9 +18,10 @@ class SecurityTile extends HookWidget {
   const SecurityTile({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final defaultLang = useState("French".i18n);
-    final ValueNotifier<bool> smartFundIsOn = useState(false);
-    final ValueNotifier<bool> bgAppLockIsOn = useState(false);
+    final defaultLang = useState("English".i18n);
+    final MySettings _settings = getIt<MySettings>();
+    final ValueNotifier<bool> smartFundIsOn = useState(_settings.isSmartFundsActive);
+    final ValueNotifier<bool> bgAppLockIsOn = useState(_settings.isLockEnabled);
     final ValueNotifier<bool> twoFAIsOn = useState(false);
 
     final Size size = MediaQuery.of(context).size;
@@ -37,18 +43,33 @@ class SecurityTile extends HookWidget {
                 icon: TfIcons.dollar,
                 description: "User smart funds".i18n,
                 value: smartFundIsOn,
+                onChanged: (value) {
+                  context
+                      .bloc<SettingsBloc>()
+                      .add(SettingsEvent.updateSmartFunds(value));
+                  smartFundIsOn.value = !smartFundIsOn.value;
+                },
               ),
               const SizedBox(height: 10),
               SettingTile(
                 icon: TfIcons.lock_app,
                 description: "Background app lock".i18n,
                 value: bgAppLockIsOn,
+                onChanged: (value) {
+                  context
+                      .bloc<SettingsBloc>()
+                      .add(SettingsEvent.enableAppLock(value));
+                  bgAppLockIsOn.value = !bgAppLockIsOn.value;
+                },
               ),
               const SizedBox(height: 10),
               SettingTile(
                 icon: TfIcons.two2FA,
                 description: "Enable 2FA".i18n,
                 value: twoFAIsOn,
+                onChanged: (value) {
+                  BotToast.showText(text: "Coming Soon".i18n);
+                },
               ),
             ],
           ),
@@ -89,9 +110,11 @@ class PasswordTile extends StatelessWidget {
 class SettingTile extends StatelessWidget {
   final IconData icon;
   final ValueNotifier<bool> value;
+  final void Function(bool) onChanged;
   final String description;
   const SettingTile({
     Key key,
+    @required this.onChanged,
     @required this.description,
     @required this.icon,
     @required this.value,
@@ -126,11 +149,7 @@ class SettingTile extends StatelessWidget {
             CupertinoSwitch(
               activeColor: TfColors.primary,
               value: value.value,
-              onChanged: (_value) {
-                // TODO:
-
-                value.value = _value;
-              },
+              onChanged: onChanged,
             ),
           ],
         ),
