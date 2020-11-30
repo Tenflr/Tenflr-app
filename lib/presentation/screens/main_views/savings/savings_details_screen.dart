@@ -2,7 +2,8 @@ import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_masked_text/flutter_masked_text.dart';
+// import 'package:flutter_masked_text/flutter_masked_text.dart';
+import 'package:tenflrpay/presentation/core/money_controller/m_controller.dart';
 
 import '../../../../application/main_views_bloc/main_views_bloc.dart';
 import '../../../../application/saving/savings_input_collector/savingsinputcollector_bloc.dart';
@@ -40,8 +41,7 @@ class SavingsDetailForm extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    final MoneyMaskedTextController moneyController = MoneyMaskedTextController(
-        decimalSeparator: '.', precision: 1, thousandSeparator: ',');
+    // final MoneyMaskedTextController moneyController = getIt<MoneyController>().controller;
     return BlocListener<SavingsInputCollectorBloc, SavingsInputCollectorState>(
       listener: (context, state) {
         state.saveFailureOrSuccessOption.fold(
@@ -107,14 +107,14 @@ class SavingsDetailForm extends HookWidget {
                       ),
                     ),
                     DefaultPrimaryMoneyInput(
-                      imagePath: null,
+                      svgPath: null,
                       width: size.width,
                       // moneyMaskEditingController: moneyController,
                       onChanged: (value) {
                         debugPrint(value);
                         context.bloc<SavingsInputCollectorBloc>().add(
                             SavingsInputCollectorEvent.addAmountChanged(
-                                addedAmount: MoneyAmount(double.parse(value))));
+                                addedAmount: MoneyAmount(double.parse(value.replaceAll(',','')))));
                       },
                       onEditingComplete: () {
                         FocusScope.of(context).unfocus();
