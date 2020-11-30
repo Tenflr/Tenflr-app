@@ -9,32 +9,11 @@ import '../../../application/auth/auth_bloc/authentication_bloc.dart';
 import '../../../application/connectivity_and_time_bloc/connectivity_and_time_bloc.dart';
 import '../../../routes/router.gr.dart';
 import '../../core/assets/colors.dart';
-import '../../core/assets/images.dart';
 import '../../core/icons/TfIcons_icons.dart';
 import '../../core/translations/translations.i18n.dart';
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
   @override
-  _SplashScreenState createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen>
-    with AutomaticKeepAliveClientMixin {
-  Image logo;
-  @override
-  void initState() {
-    super.initState();
-    logo = Image.asset(TfImages.tp_logo);
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    precacheImage(logo.image, context);
-  }
-
-  @override
-  @mustCallSuper
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
 
@@ -66,8 +45,6 @@ class _SplashScreenState extends State<SplashScreen>
                     .popUntil((route) => route.isFirst);
                 return ExtendedNavigator.of(context).pushHomeScreen(
                   user: state.user,
-                  // deviceId: state.deviceId,
-                  // userSettings: state.userSettings
                 );
               },
               unauthenticated: (_) {
@@ -95,7 +72,7 @@ class _SplashScreenState extends State<SplashScreen>
         body: Container(
           color: TfColors.primary,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Container(
                 margin: EdgeInsets.only(
@@ -107,20 +84,12 @@ class _SplashScreenState extends State<SplashScreen>
                 child: Icon(TfIcons.tenfl_logo,
                     color: TfColors.secondary, size: size.width * 0.2),
               ),
-              // Text(
-              //   'Tenflr'.i18n,
-              //   textAlign: TextAlign.center,
-              //   style: const TextStyle(
-              //     fontWeight: FontWeight.w400,
-              //     color: TfColors.secondary,
-              //     fontSize: 25.0,
-              //   ),
-              // ),
+             
               Expanded(
                   child: Container(
                 margin: EdgeInsets.only(
-                  top: size.height * 0.05,
-                  bottom: size.height * 0.05,
+                  top: size.height * 0.04,
+                  bottom: size.height * 0.04,
                 ),
                 child: const FlareActor(
                   'assets/flare/loading.flr',
@@ -136,8 +105,6 @@ class _SplashScreenState extends State<SplashScreen>
     );
   }
 
-  @override
-  bool get wantKeepAlive => true;
 }
 
 // Advanced using of alerts
