@@ -39,13 +39,18 @@ class _$PaymentFailureTearOff {
   }
 
 // ignore: unused_element
-  _PaymentWithMomoFailed paymentWithMomoFailed() {
+  _PaymentWithMomoFailed creditingWithMomoFailed() {
     return const _PaymentWithMomoFailed();
   }
 
 // ignore: unused_element
   _UserNotFound userNotFound() {
     return const _UserNotFound();
+  }
+
+// ignore: unused_element
+  _WithdrawalIntoMOMOFailed withdrawalIntoMOMOFailed() {
+    return const _WithdrawalIntoMOMOFailed();
   }
 
 // ignore: unused_element
@@ -107,8 +112,9 @@ mixin _$PaymentFailure {
     @required Result unableToSendPayment(),
     @required Result insufficientFundsInTrustedFunds(),
     @required Result userWithIdNotFound(),
-    @required Result paymentWithMomoFailed(),
+    @required Result creditingWithMomoFailed(),
     @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
     @required Result unableToCashPayment(),
     @required Result unableToHidePayment(),
     @required Result unableToUnlockSentPayment(),
@@ -126,8 +132,9 @@ mixin _$PaymentFailure {
     Result unableToSendPayment(),
     Result insufficientFundsInTrustedFunds(),
     Result userWithIdNotFound(),
-    Result paymentWithMomoFailed(),
+    Result creditingWithMomoFailed(),
     Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
     Result unableToCashPayment(),
     Result unableToHidePayment(),
     Result unableToUnlockSentPayment(),
@@ -148,8 +155,9 @@ mixin _$PaymentFailure {
         Result insufficientFundsInTrustedFunds(
             _InsufficientFundsInTrustedFunds value),
     @required Result userWithIdNotFound(_UserWithIdNotFound value),
-    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     @required Result unableToCashPayment(_UnableToCash value),
     @required Result unableToHidePayment(_UnableToHide value),
     @required
@@ -172,8 +180,9 @@ mixin _$PaymentFailure {
     Result insufficientFundsInTrustedFunds(
         _InsufficientFundsInTrustedFunds value),
     Result userWithIdNotFound(_UserWithIdNotFound value),
-    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     Result unableToCashPayment(_UnableToCash value),
     Result unableToHidePayment(_UnableToHide value),
     Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
@@ -247,8 +256,9 @@ class _$_Unexpected implements _Unexpected {
     @required Result unableToSendPayment(),
     @required Result insufficientFundsInTrustedFunds(),
     @required Result userWithIdNotFound(),
-    @required Result paymentWithMomoFailed(),
+    @required Result creditingWithMomoFailed(),
     @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
     @required Result unableToCashPayment(),
     @required Result unableToHidePayment(),
     @required Result unableToUnlockSentPayment(),
@@ -264,8 +274,9 @@ class _$_Unexpected implements _Unexpected {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -286,8 +297,9 @@ class _$_Unexpected implements _Unexpected {
     Result unableToSendPayment(),
     Result insufficientFundsInTrustedFunds(),
     Result userWithIdNotFound(),
-    Result paymentWithMomoFailed(),
+    Result creditingWithMomoFailed(),
     Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
     Result unableToCashPayment(),
     Result unableToHidePayment(),
     Result unableToUnlockSentPayment(),
@@ -316,8 +328,9 @@ class _$_Unexpected implements _Unexpected {
         Result insufficientFundsInTrustedFunds(
             _InsufficientFundsInTrustedFunds value),
     @required Result userWithIdNotFound(_UserWithIdNotFound value),
-    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     @required Result unableToCashPayment(_UnableToCash value),
     @required Result unableToHidePayment(_UnableToHide value),
     @required
@@ -337,8 +350,9 @@ class _$_Unexpected implements _Unexpected {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -360,8 +374,9 @@ class _$_Unexpected implements _Unexpected {
     Result insufficientFundsInTrustedFunds(
         _InsufficientFundsInTrustedFunds value),
     Result userWithIdNotFound(_UserWithIdNotFound value),
-    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     Result unableToCashPayment(_UnableToCash value),
     Result unableToHidePayment(_UnableToHide value),
     Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
@@ -430,8 +445,9 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     @required Result unableToSendPayment(),
     @required Result insufficientFundsInTrustedFunds(),
     @required Result userWithIdNotFound(),
-    @required Result paymentWithMomoFailed(),
+    @required Result creditingWithMomoFailed(),
     @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
     @required Result unableToCashPayment(),
     @required Result unableToHidePayment(),
     @required Result unableToUnlockSentPayment(),
@@ -447,8 +463,9 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -469,8 +486,9 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     Result unableToSendPayment(),
     Result insufficientFundsInTrustedFunds(),
     Result userWithIdNotFound(),
-    Result paymentWithMomoFailed(),
+    Result creditingWithMomoFailed(),
     Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
     Result unableToCashPayment(),
     Result unableToHidePayment(),
     Result unableToUnlockSentPayment(),
@@ -499,8 +517,9 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
         Result insufficientFundsInTrustedFunds(
             _InsufficientFundsInTrustedFunds value),
     @required Result userWithIdNotFound(_UserWithIdNotFound value),
-    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     @required Result unableToCashPayment(_UnableToCash value),
     @required Result unableToHidePayment(_UnableToHide value),
     @required
@@ -520,8 +539,9 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -543,8 +563,9 @@ class _$_InsufficientPermissions implements _InsufficientPermissions {
     Result insufficientFundsInTrustedFunds(
         _InsufficientFundsInTrustedFunds value),
     Result userWithIdNotFound(_UserWithIdNotFound value),
-    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     Result unableToCashPayment(_UnableToCash value),
     Result unableToHidePayment(_UnableToHide value),
     Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
@@ -612,8 +633,9 @@ class _$_UnableToSendPayment implements _UnableToSendPayment {
     @required Result unableToSendPayment(),
     @required Result insufficientFundsInTrustedFunds(),
     @required Result userWithIdNotFound(),
-    @required Result paymentWithMomoFailed(),
+    @required Result creditingWithMomoFailed(),
     @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
     @required Result unableToCashPayment(),
     @required Result unableToHidePayment(),
     @required Result unableToUnlockSentPayment(),
@@ -629,8 +651,9 @@ class _$_UnableToSendPayment implements _UnableToSendPayment {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -651,8 +674,9 @@ class _$_UnableToSendPayment implements _UnableToSendPayment {
     Result unableToSendPayment(),
     Result insufficientFundsInTrustedFunds(),
     Result userWithIdNotFound(),
-    Result paymentWithMomoFailed(),
+    Result creditingWithMomoFailed(),
     Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
     Result unableToCashPayment(),
     Result unableToHidePayment(),
     Result unableToUnlockSentPayment(),
@@ -681,8 +705,9 @@ class _$_UnableToSendPayment implements _UnableToSendPayment {
         Result insufficientFundsInTrustedFunds(
             _InsufficientFundsInTrustedFunds value),
     @required Result userWithIdNotFound(_UserWithIdNotFound value),
-    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     @required Result unableToCashPayment(_UnableToCash value),
     @required Result unableToHidePayment(_UnableToHide value),
     @required
@@ -702,8 +727,9 @@ class _$_UnableToSendPayment implements _UnableToSendPayment {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -725,8 +751,9 @@ class _$_UnableToSendPayment implements _UnableToSendPayment {
     Result insufficientFundsInTrustedFunds(
         _InsufficientFundsInTrustedFunds value),
     Result userWithIdNotFound(_UserWithIdNotFound value),
-    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     Result unableToCashPayment(_UnableToCash value),
     Result unableToHidePayment(_UnableToHide value),
     Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
@@ -799,8 +826,9 @@ class _$_InsufficientFundsInTrustedFunds
     @required Result unableToSendPayment(),
     @required Result insufficientFundsInTrustedFunds(),
     @required Result userWithIdNotFound(),
-    @required Result paymentWithMomoFailed(),
+    @required Result creditingWithMomoFailed(),
     @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
     @required Result unableToCashPayment(),
     @required Result unableToHidePayment(),
     @required Result unableToUnlockSentPayment(),
@@ -816,8 +844,9 @@ class _$_InsufficientFundsInTrustedFunds
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -838,8 +867,9 @@ class _$_InsufficientFundsInTrustedFunds
     Result unableToSendPayment(),
     Result insufficientFundsInTrustedFunds(),
     Result userWithIdNotFound(),
-    Result paymentWithMomoFailed(),
+    Result creditingWithMomoFailed(),
     Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
     Result unableToCashPayment(),
     Result unableToHidePayment(),
     Result unableToUnlockSentPayment(),
@@ -868,8 +898,9 @@ class _$_InsufficientFundsInTrustedFunds
         Result insufficientFundsInTrustedFunds(
             _InsufficientFundsInTrustedFunds value),
     @required Result userWithIdNotFound(_UserWithIdNotFound value),
-    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     @required Result unableToCashPayment(_UnableToCash value),
     @required Result unableToHidePayment(_UnableToHide value),
     @required
@@ -889,8 +920,9 @@ class _$_InsufficientFundsInTrustedFunds
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -912,8 +944,9 @@ class _$_InsufficientFundsInTrustedFunds
     Result insufficientFundsInTrustedFunds(
         _InsufficientFundsInTrustedFunds value),
     Result userWithIdNotFound(_UserWithIdNotFound value),
-    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     Result unableToCashPayment(_UnableToCash value),
     Result unableToHidePayment(_UnableToHide value),
     Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
@@ -982,8 +1015,9 @@ class _$_UserWithIdNotFound implements _UserWithIdNotFound {
     @required Result unableToSendPayment(),
     @required Result insufficientFundsInTrustedFunds(),
     @required Result userWithIdNotFound(),
-    @required Result paymentWithMomoFailed(),
+    @required Result creditingWithMomoFailed(),
     @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
     @required Result unableToCashPayment(),
     @required Result unableToHidePayment(),
     @required Result unableToUnlockSentPayment(),
@@ -999,8 +1033,9 @@ class _$_UserWithIdNotFound implements _UserWithIdNotFound {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -1021,8 +1056,9 @@ class _$_UserWithIdNotFound implements _UserWithIdNotFound {
     Result unableToSendPayment(),
     Result insufficientFundsInTrustedFunds(),
     Result userWithIdNotFound(),
-    Result paymentWithMomoFailed(),
+    Result creditingWithMomoFailed(),
     Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
     Result unableToCashPayment(),
     Result unableToHidePayment(),
     Result unableToUnlockSentPayment(),
@@ -1051,8 +1087,9 @@ class _$_UserWithIdNotFound implements _UserWithIdNotFound {
         Result insufficientFundsInTrustedFunds(
             _InsufficientFundsInTrustedFunds value),
     @required Result userWithIdNotFound(_UserWithIdNotFound value),
-    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     @required Result unableToCashPayment(_UnableToCash value),
     @required Result unableToHidePayment(_UnableToHide value),
     @required
@@ -1072,8 +1109,9 @@ class _$_UserWithIdNotFound implements _UserWithIdNotFound {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -1095,8 +1133,9 @@ class _$_UserWithIdNotFound implements _UserWithIdNotFound {
     Result insufficientFundsInTrustedFunds(
         _InsufficientFundsInTrustedFunds value),
     Result userWithIdNotFound(_UserWithIdNotFound value),
-    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     Result unableToCashPayment(_UnableToCash value),
     Result unableToHidePayment(_UnableToHide value),
     Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
@@ -1145,7 +1184,7 @@ class _$_PaymentWithMomoFailed implements _PaymentWithMomoFailed {
 
   @override
   String toString() {
-    return 'PaymentFailure.paymentWithMomoFailed()';
+    return 'PaymentFailure.creditingWithMomoFailed()';
   }
 
   @override
@@ -1164,8 +1203,9 @@ class _$_PaymentWithMomoFailed implements _PaymentWithMomoFailed {
     @required Result unableToSendPayment(),
     @required Result insufficientFundsInTrustedFunds(),
     @required Result userWithIdNotFound(),
-    @required Result paymentWithMomoFailed(),
+    @required Result creditingWithMomoFailed(),
     @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
     @required Result unableToCashPayment(),
     @required Result unableToHidePayment(),
     @required Result unableToUnlockSentPayment(),
@@ -1181,8 +1221,9 @@ class _$_PaymentWithMomoFailed implements _PaymentWithMomoFailed {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -1192,7 +1233,7 @@ class _$_PaymentWithMomoFailed implements _PaymentWithMomoFailed {
     assert(unableToRateUser != null);
     assert(timeOutOfSync != null);
     assert(requestUnlockFailed != null);
-    return paymentWithMomoFailed();
+    return creditingWithMomoFailed();
   }
 
   @override
@@ -1203,8 +1244,9 @@ class _$_PaymentWithMomoFailed implements _PaymentWithMomoFailed {
     Result unableToSendPayment(),
     Result insufficientFundsInTrustedFunds(),
     Result userWithIdNotFound(),
-    Result paymentWithMomoFailed(),
+    Result creditingWithMomoFailed(),
     Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
     Result unableToCashPayment(),
     Result unableToHidePayment(),
     Result unableToUnlockSentPayment(),
@@ -1217,8 +1259,8 @@ class _$_PaymentWithMomoFailed implements _PaymentWithMomoFailed {
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (paymentWithMomoFailed != null) {
-      return paymentWithMomoFailed();
+    if (creditingWithMomoFailed != null) {
+      return creditingWithMomoFailed();
     }
     return orElse();
   }
@@ -1233,8 +1275,9 @@ class _$_PaymentWithMomoFailed implements _PaymentWithMomoFailed {
         Result insufficientFundsInTrustedFunds(
             _InsufficientFundsInTrustedFunds value),
     @required Result userWithIdNotFound(_UserWithIdNotFound value),
-    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     @required Result unableToCashPayment(_UnableToCash value),
     @required Result unableToHidePayment(_UnableToHide value),
     @required
@@ -1254,8 +1297,9 @@ class _$_PaymentWithMomoFailed implements _PaymentWithMomoFailed {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -1265,7 +1309,7 @@ class _$_PaymentWithMomoFailed implements _PaymentWithMomoFailed {
     assert(unableToRateUser != null);
     assert(timeOutOfSync != null);
     assert(requestUnlockFailed != null);
-    return paymentWithMomoFailed(this);
+    return creditingWithMomoFailed(this);
   }
 
   @override
@@ -1277,8 +1321,9 @@ class _$_PaymentWithMomoFailed implements _PaymentWithMomoFailed {
     Result insufficientFundsInTrustedFunds(
         _InsufficientFundsInTrustedFunds value),
     Result userWithIdNotFound(_UserWithIdNotFound value),
-    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     Result unableToCashPayment(_UnableToCash value),
     Result unableToHidePayment(_UnableToHide value),
     Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
@@ -1291,8 +1336,8 @@ class _$_PaymentWithMomoFailed implements _PaymentWithMomoFailed {
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (paymentWithMomoFailed != null) {
-      return paymentWithMomoFailed(this);
+    if (creditingWithMomoFailed != null) {
+      return creditingWithMomoFailed(this);
     }
     return orElse();
   }
@@ -1346,8 +1391,9 @@ class _$_UserNotFound implements _UserNotFound {
     @required Result unableToSendPayment(),
     @required Result insufficientFundsInTrustedFunds(),
     @required Result userWithIdNotFound(),
-    @required Result paymentWithMomoFailed(),
+    @required Result creditingWithMomoFailed(),
     @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
     @required Result unableToCashPayment(),
     @required Result unableToHidePayment(),
     @required Result unableToUnlockSentPayment(),
@@ -1363,8 +1409,9 @@ class _$_UserNotFound implements _UserNotFound {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -1385,8 +1432,9 @@ class _$_UserNotFound implements _UserNotFound {
     Result unableToSendPayment(),
     Result insufficientFundsInTrustedFunds(),
     Result userWithIdNotFound(),
-    Result paymentWithMomoFailed(),
+    Result creditingWithMomoFailed(),
     Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
     Result unableToCashPayment(),
     Result unableToHidePayment(),
     Result unableToUnlockSentPayment(),
@@ -1415,8 +1463,9 @@ class _$_UserNotFound implements _UserNotFound {
         Result insufficientFundsInTrustedFunds(
             _InsufficientFundsInTrustedFunds value),
     @required Result userWithIdNotFound(_UserWithIdNotFound value),
-    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     @required Result unableToCashPayment(_UnableToCash value),
     @required Result unableToHidePayment(_UnableToHide value),
     @required
@@ -1436,8 +1485,9 @@ class _$_UserNotFound implements _UserNotFound {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -1459,8 +1509,9 @@ class _$_UserNotFound implements _UserNotFound {
     Result insufficientFundsInTrustedFunds(
         _InsufficientFundsInTrustedFunds value),
     Result userWithIdNotFound(_UserWithIdNotFound value),
-    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     Result unableToCashPayment(_UnableToCash value),
     Result unableToHidePayment(_UnableToHide value),
     Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
@@ -1482,6 +1533,195 @@ class _$_UserNotFound implements _UserNotFound {
 
 abstract class _UserNotFound implements PaymentFailure {
   const factory _UserNotFound() = _$_UserNotFound;
+}
+
+/// @nodoc
+abstract class _$WithdrawalIntoMOMOFailedCopyWith<$Res> {
+  factory _$WithdrawalIntoMOMOFailedCopyWith(_WithdrawalIntoMOMOFailed value,
+          $Res Function(_WithdrawalIntoMOMOFailed) then) =
+      __$WithdrawalIntoMOMOFailedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$WithdrawalIntoMOMOFailedCopyWithImpl<$Res>
+    extends _$PaymentFailureCopyWithImpl<$Res>
+    implements _$WithdrawalIntoMOMOFailedCopyWith<$Res> {
+  __$WithdrawalIntoMOMOFailedCopyWithImpl(_WithdrawalIntoMOMOFailed _value,
+      $Res Function(_WithdrawalIntoMOMOFailed) _then)
+      : super(_value, (v) => _then(v as _WithdrawalIntoMOMOFailed));
+
+  @override
+  _WithdrawalIntoMOMOFailed get _value =>
+      super._value as _WithdrawalIntoMOMOFailed;
+}
+
+/// @nodoc
+class _$_WithdrawalIntoMOMOFailed implements _WithdrawalIntoMOMOFailed {
+  const _$_WithdrawalIntoMOMOFailed();
+
+  @override
+  String toString() {
+    return 'PaymentFailure.withdrawalIntoMOMOFailed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _WithdrawalIntoMOMOFailed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result unexpected(),
+    @required Result insufficientPermissions(),
+    @required Result unableToSendPayment(),
+    @required Result insufficientFundsInTrustedFunds(),
+    @required Result userWithIdNotFound(),
+    @required Result creditingWithMomoFailed(),
+    @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
+    @required Result unableToCashPayment(),
+    @required Result unableToHidePayment(),
+    @required Result unableToUnlockSentPayment(),
+    @required Result unableToFreezeSentPayment(),
+    @required Result unableToDeleteReceivedPayment(),
+    @required Result unableToReturnPayment(),
+    @required Result unableToRateUser(),
+    @required Result timeOutOfSync(),
+    @required Result requestUnlockFailed(),
+  }) {
+    assert(unexpected != null);
+    assert(insufficientPermissions != null);
+    assert(unableToSendPayment != null);
+    assert(insufficientFundsInTrustedFunds != null);
+    assert(userWithIdNotFound != null);
+    assert(creditingWithMomoFailed != null);
+    assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
+    assert(unableToCashPayment != null);
+    assert(unableToHidePayment != null);
+    assert(unableToUnlockSentPayment != null);
+    assert(unableToFreezeSentPayment != null);
+    assert(unableToDeleteReceivedPayment != null);
+    assert(unableToReturnPayment != null);
+    assert(unableToRateUser != null);
+    assert(timeOutOfSync != null);
+    assert(requestUnlockFailed != null);
+    return withdrawalIntoMOMOFailed();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result unexpected(),
+    Result insufficientPermissions(),
+    Result unableToSendPayment(),
+    Result insufficientFundsInTrustedFunds(),
+    Result userWithIdNotFound(),
+    Result creditingWithMomoFailed(),
+    Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
+    Result unableToCashPayment(),
+    Result unableToHidePayment(),
+    Result unableToUnlockSentPayment(),
+    Result unableToFreezeSentPayment(),
+    Result unableToDeleteReceivedPayment(),
+    Result unableToReturnPayment(),
+    Result unableToRateUser(),
+    Result timeOutOfSync(),
+    Result requestUnlockFailed(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (withdrawalIntoMOMOFailed != null) {
+      return withdrawalIntoMOMOFailed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result unexpected(_Unexpected value),
+    @required Result insufficientPermissions(_InsufficientPermissions value),
+    @required Result unableToSendPayment(_UnableToSendPayment value),
+    @required
+        Result insufficientFundsInTrustedFunds(
+            _InsufficientFundsInTrustedFunds value),
+    @required Result userWithIdNotFound(_UserWithIdNotFound value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
+    @required Result unableToCashPayment(_UnableToCash value),
+    @required Result unableToHidePayment(_UnableToHide value),
+    @required
+        Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
+    @required
+        Result unableToFreezeSentPayment(_UnableToFreezeSentPayment value),
+    @required
+        Result unableToDeleteReceivedPayment(
+            _UnableToDeleteReceivedPayment value),
+    @required Result unableToReturnPayment(_UnableToReturnPayment value),
+    @required Result unableToRateUser(_UnableToRateUser value),
+    @required Result timeOutOfSync(_TimeOutOfSync value),
+    @required Result requestUnlockFailed(_RequestUnlockFailed value),
+  }) {
+    assert(unexpected != null);
+    assert(insufficientPermissions != null);
+    assert(unableToSendPayment != null);
+    assert(insufficientFundsInTrustedFunds != null);
+    assert(userWithIdNotFound != null);
+    assert(creditingWithMomoFailed != null);
+    assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
+    assert(unableToCashPayment != null);
+    assert(unableToHidePayment != null);
+    assert(unableToUnlockSentPayment != null);
+    assert(unableToFreezeSentPayment != null);
+    assert(unableToDeleteReceivedPayment != null);
+    assert(unableToReturnPayment != null);
+    assert(unableToRateUser != null);
+    assert(timeOutOfSync != null);
+    assert(requestUnlockFailed != null);
+    return withdrawalIntoMOMOFailed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result unexpected(_Unexpected value),
+    Result insufficientPermissions(_InsufficientPermissions value),
+    Result unableToSendPayment(_UnableToSendPayment value),
+    Result insufficientFundsInTrustedFunds(
+        _InsufficientFundsInTrustedFunds value),
+    Result userWithIdNotFound(_UserWithIdNotFound value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
+    Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
+    Result unableToCashPayment(_UnableToCash value),
+    Result unableToHidePayment(_UnableToHide value),
+    Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
+    Result unableToFreezeSentPayment(_UnableToFreezeSentPayment value),
+    Result unableToDeleteReceivedPayment(_UnableToDeleteReceivedPayment value),
+    Result unableToReturnPayment(_UnableToReturnPayment value),
+    Result unableToRateUser(_UnableToRateUser value),
+    Result timeOutOfSync(_TimeOutOfSync value),
+    Result requestUnlockFailed(_RequestUnlockFailed value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (withdrawalIntoMOMOFailed != null) {
+      return withdrawalIntoMOMOFailed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _WithdrawalIntoMOMOFailed implements PaymentFailure {
+  const factory _WithdrawalIntoMOMOFailed() = _$_WithdrawalIntoMOMOFailed;
 }
 
 /// @nodoc
@@ -1528,8 +1768,9 @@ class _$_UnableToCash implements _UnableToCash {
     @required Result unableToSendPayment(),
     @required Result insufficientFundsInTrustedFunds(),
     @required Result userWithIdNotFound(),
-    @required Result paymentWithMomoFailed(),
+    @required Result creditingWithMomoFailed(),
     @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
     @required Result unableToCashPayment(),
     @required Result unableToHidePayment(),
     @required Result unableToUnlockSentPayment(),
@@ -1545,8 +1786,9 @@ class _$_UnableToCash implements _UnableToCash {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -1567,8 +1809,9 @@ class _$_UnableToCash implements _UnableToCash {
     Result unableToSendPayment(),
     Result insufficientFundsInTrustedFunds(),
     Result userWithIdNotFound(),
-    Result paymentWithMomoFailed(),
+    Result creditingWithMomoFailed(),
     Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
     Result unableToCashPayment(),
     Result unableToHidePayment(),
     Result unableToUnlockSentPayment(),
@@ -1597,8 +1840,9 @@ class _$_UnableToCash implements _UnableToCash {
         Result insufficientFundsInTrustedFunds(
             _InsufficientFundsInTrustedFunds value),
     @required Result userWithIdNotFound(_UserWithIdNotFound value),
-    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     @required Result unableToCashPayment(_UnableToCash value),
     @required Result unableToHidePayment(_UnableToHide value),
     @required
@@ -1618,8 +1862,9 @@ class _$_UnableToCash implements _UnableToCash {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -1641,8 +1886,9 @@ class _$_UnableToCash implements _UnableToCash {
     Result insufficientFundsInTrustedFunds(
         _InsufficientFundsInTrustedFunds value),
     Result userWithIdNotFound(_UserWithIdNotFound value),
-    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     Result unableToCashPayment(_UnableToCash value),
     Result unableToHidePayment(_UnableToHide value),
     Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
@@ -1710,8 +1956,9 @@ class _$_UnableToHide implements _UnableToHide {
     @required Result unableToSendPayment(),
     @required Result insufficientFundsInTrustedFunds(),
     @required Result userWithIdNotFound(),
-    @required Result paymentWithMomoFailed(),
+    @required Result creditingWithMomoFailed(),
     @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
     @required Result unableToCashPayment(),
     @required Result unableToHidePayment(),
     @required Result unableToUnlockSentPayment(),
@@ -1727,8 +1974,9 @@ class _$_UnableToHide implements _UnableToHide {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -1749,8 +1997,9 @@ class _$_UnableToHide implements _UnableToHide {
     Result unableToSendPayment(),
     Result insufficientFundsInTrustedFunds(),
     Result userWithIdNotFound(),
-    Result paymentWithMomoFailed(),
+    Result creditingWithMomoFailed(),
     Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
     Result unableToCashPayment(),
     Result unableToHidePayment(),
     Result unableToUnlockSentPayment(),
@@ -1779,8 +2028,9 @@ class _$_UnableToHide implements _UnableToHide {
         Result insufficientFundsInTrustedFunds(
             _InsufficientFundsInTrustedFunds value),
     @required Result userWithIdNotFound(_UserWithIdNotFound value),
-    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     @required Result unableToCashPayment(_UnableToCash value),
     @required Result unableToHidePayment(_UnableToHide value),
     @required
@@ -1800,8 +2050,9 @@ class _$_UnableToHide implements _UnableToHide {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -1823,8 +2074,9 @@ class _$_UnableToHide implements _UnableToHide {
     Result insufficientFundsInTrustedFunds(
         _InsufficientFundsInTrustedFunds value),
     Result userWithIdNotFound(_UserWithIdNotFound value),
-    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     Result unableToCashPayment(_UnableToCash value),
     Result unableToHidePayment(_UnableToHide value),
     Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
@@ -1893,8 +2145,9 @@ class _$_UnableToUnlockSentPayment implements _UnableToUnlockSentPayment {
     @required Result unableToSendPayment(),
     @required Result insufficientFundsInTrustedFunds(),
     @required Result userWithIdNotFound(),
-    @required Result paymentWithMomoFailed(),
+    @required Result creditingWithMomoFailed(),
     @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
     @required Result unableToCashPayment(),
     @required Result unableToHidePayment(),
     @required Result unableToUnlockSentPayment(),
@@ -1910,8 +2163,9 @@ class _$_UnableToUnlockSentPayment implements _UnableToUnlockSentPayment {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -1932,8 +2186,9 @@ class _$_UnableToUnlockSentPayment implements _UnableToUnlockSentPayment {
     Result unableToSendPayment(),
     Result insufficientFundsInTrustedFunds(),
     Result userWithIdNotFound(),
-    Result paymentWithMomoFailed(),
+    Result creditingWithMomoFailed(),
     Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
     Result unableToCashPayment(),
     Result unableToHidePayment(),
     Result unableToUnlockSentPayment(),
@@ -1962,8 +2217,9 @@ class _$_UnableToUnlockSentPayment implements _UnableToUnlockSentPayment {
         Result insufficientFundsInTrustedFunds(
             _InsufficientFundsInTrustedFunds value),
     @required Result userWithIdNotFound(_UserWithIdNotFound value),
-    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     @required Result unableToCashPayment(_UnableToCash value),
     @required Result unableToHidePayment(_UnableToHide value),
     @required
@@ -1983,8 +2239,9 @@ class _$_UnableToUnlockSentPayment implements _UnableToUnlockSentPayment {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -2006,8 +2263,9 @@ class _$_UnableToUnlockSentPayment implements _UnableToUnlockSentPayment {
     Result insufficientFundsInTrustedFunds(
         _InsufficientFundsInTrustedFunds value),
     Result userWithIdNotFound(_UserWithIdNotFound value),
-    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     Result unableToCashPayment(_UnableToCash value),
     Result unableToHidePayment(_UnableToHide value),
     Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
@@ -2076,8 +2334,9 @@ class _$_UnableToFreezeSentPayment implements _UnableToFreezeSentPayment {
     @required Result unableToSendPayment(),
     @required Result insufficientFundsInTrustedFunds(),
     @required Result userWithIdNotFound(),
-    @required Result paymentWithMomoFailed(),
+    @required Result creditingWithMomoFailed(),
     @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
     @required Result unableToCashPayment(),
     @required Result unableToHidePayment(),
     @required Result unableToUnlockSentPayment(),
@@ -2093,8 +2352,9 @@ class _$_UnableToFreezeSentPayment implements _UnableToFreezeSentPayment {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -2115,8 +2375,9 @@ class _$_UnableToFreezeSentPayment implements _UnableToFreezeSentPayment {
     Result unableToSendPayment(),
     Result insufficientFundsInTrustedFunds(),
     Result userWithIdNotFound(),
-    Result paymentWithMomoFailed(),
+    Result creditingWithMomoFailed(),
     Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
     Result unableToCashPayment(),
     Result unableToHidePayment(),
     Result unableToUnlockSentPayment(),
@@ -2145,8 +2406,9 @@ class _$_UnableToFreezeSentPayment implements _UnableToFreezeSentPayment {
         Result insufficientFundsInTrustedFunds(
             _InsufficientFundsInTrustedFunds value),
     @required Result userWithIdNotFound(_UserWithIdNotFound value),
-    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     @required Result unableToCashPayment(_UnableToCash value),
     @required Result unableToHidePayment(_UnableToHide value),
     @required
@@ -2166,8 +2428,9 @@ class _$_UnableToFreezeSentPayment implements _UnableToFreezeSentPayment {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -2189,8 +2452,9 @@ class _$_UnableToFreezeSentPayment implements _UnableToFreezeSentPayment {
     Result insufficientFundsInTrustedFunds(
         _InsufficientFundsInTrustedFunds value),
     Result userWithIdNotFound(_UserWithIdNotFound value),
-    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     Result unableToCashPayment(_UnableToCash value),
     Result unableToHidePayment(_UnableToHide value),
     Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
@@ -2262,8 +2526,9 @@ class _$_UnableToDeleteReceivedPayment
     @required Result unableToSendPayment(),
     @required Result insufficientFundsInTrustedFunds(),
     @required Result userWithIdNotFound(),
-    @required Result paymentWithMomoFailed(),
+    @required Result creditingWithMomoFailed(),
     @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
     @required Result unableToCashPayment(),
     @required Result unableToHidePayment(),
     @required Result unableToUnlockSentPayment(),
@@ -2279,8 +2544,9 @@ class _$_UnableToDeleteReceivedPayment
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -2301,8 +2567,9 @@ class _$_UnableToDeleteReceivedPayment
     Result unableToSendPayment(),
     Result insufficientFundsInTrustedFunds(),
     Result userWithIdNotFound(),
-    Result paymentWithMomoFailed(),
+    Result creditingWithMomoFailed(),
     Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
     Result unableToCashPayment(),
     Result unableToHidePayment(),
     Result unableToUnlockSentPayment(),
@@ -2331,8 +2598,9 @@ class _$_UnableToDeleteReceivedPayment
         Result insufficientFundsInTrustedFunds(
             _InsufficientFundsInTrustedFunds value),
     @required Result userWithIdNotFound(_UserWithIdNotFound value),
-    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     @required Result unableToCashPayment(_UnableToCash value),
     @required Result unableToHidePayment(_UnableToHide value),
     @required
@@ -2352,8 +2620,9 @@ class _$_UnableToDeleteReceivedPayment
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -2375,8 +2644,9 @@ class _$_UnableToDeleteReceivedPayment
     Result insufficientFundsInTrustedFunds(
         _InsufficientFundsInTrustedFunds value),
     Result userWithIdNotFound(_UserWithIdNotFound value),
-    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     Result unableToCashPayment(_UnableToCash value),
     Result unableToHidePayment(_UnableToHide value),
     Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
@@ -2445,8 +2715,9 @@ class _$_UnableToReturnPayment implements _UnableToReturnPayment {
     @required Result unableToSendPayment(),
     @required Result insufficientFundsInTrustedFunds(),
     @required Result userWithIdNotFound(),
-    @required Result paymentWithMomoFailed(),
+    @required Result creditingWithMomoFailed(),
     @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
     @required Result unableToCashPayment(),
     @required Result unableToHidePayment(),
     @required Result unableToUnlockSentPayment(),
@@ -2462,8 +2733,9 @@ class _$_UnableToReturnPayment implements _UnableToReturnPayment {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -2484,8 +2756,9 @@ class _$_UnableToReturnPayment implements _UnableToReturnPayment {
     Result unableToSendPayment(),
     Result insufficientFundsInTrustedFunds(),
     Result userWithIdNotFound(),
-    Result paymentWithMomoFailed(),
+    Result creditingWithMomoFailed(),
     Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
     Result unableToCashPayment(),
     Result unableToHidePayment(),
     Result unableToUnlockSentPayment(),
@@ -2514,8 +2787,9 @@ class _$_UnableToReturnPayment implements _UnableToReturnPayment {
         Result insufficientFundsInTrustedFunds(
             _InsufficientFundsInTrustedFunds value),
     @required Result userWithIdNotFound(_UserWithIdNotFound value),
-    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     @required Result unableToCashPayment(_UnableToCash value),
     @required Result unableToHidePayment(_UnableToHide value),
     @required
@@ -2535,8 +2809,9 @@ class _$_UnableToReturnPayment implements _UnableToReturnPayment {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -2558,8 +2833,9 @@ class _$_UnableToReturnPayment implements _UnableToReturnPayment {
     Result insufficientFundsInTrustedFunds(
         _InsufficientFundsInTrustedFunds value),
     Result userWithIdNotFound(_UserWithIdNotFound value),
-    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     Result unableToCashPayment(_UnableToCash value),
     Result unableToHidePayment(_UnableToHide value),
     Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
@@ -2627,8 +2903,9 @@ class _$_UnableToRateUser implements _UnableToRateUser {
     @required Result unableToSendPayment(),
     @required Result insufficientFundsInTrustedFunds(),
     @required Result userWithIdNotFound(),
-    @required Result paymentWithMomoFailed(),
+    @required Result creditingWithMomoFailed(),
     @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
     @required Result unableToCashPayment(),
     @required Result unableToHidePayment(),
     @required Result unableToUnlockSentPayment(),
@@ -2644,8 +2921,9 @@ class _$_UnableToRateUser implements _UnableToRateUser {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -2666,8 +2944,9 @@ class _$_UnableToRateUser implements _UnableToRateUser {
     Result unableToSendPayment(),
     Result insufficientFundsInTrustedFunds(),
     Result userWithIdNotFound(),
-    Result paymentWithMomoFailed(),
+    Result creditingWithMomoFailed(),
     Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
     Result unableToCashPayment(),
     Result unableToHidePayment(),
     Result unableToUnlockSentPayment(),
@@ -2696,8 +2975,9 @@ class _$_UnableToRateUser implements _UnableToRateUser {
         Result insufficientFundsInTrustedFunds(
             _InsufficientFundsInTrustedFunds value),
     @required Result userWithIdNotFound(_UserWithIdNotFound value),
-    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     @required Result unableToCashPayment(_UnableToCash value),
     @required Result unableToHidePayment(_UnableToHide value),
     @required
@@ -2717,8 +2997,9 @@ class _$_UnableToRateUser implements _UnableToRateUser {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -2740,8 +3021,9 @@ class _$_UnableToRateUser implements _UnableToRateUser {
     Result insufficientFundsInTrustedFunds(
         _InsufficientFundsInTrustedFunds value),
     Result userWithIdNotFound(_UserWithIdNotFound value),
-    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     Result unableToCashPayment(_UnableToCash value),
     Result unableToHidePayment(_UnableToHide value),
     Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
@@ -2809,8 +3091,9 @@ class _$_TimeOutOfSync implements _TimeOutOfSync {
     @required Result unableToSendPayment(),
     @required Result insufficientFundsInTrustedFunds(),
     @required Result userWithIdNotFound(),
-    @required Result paymentWithMomoFailed(),
+    @required Result creditingWithMomoFailed(),
     @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
     @required Result unableToCashPayment(),
     @required Result unableToHidePayment(),
     @required Result unableToUnlockSentPayment(),
@@ -2826,8 +3109,9 @@ class _$_TimeOutOfSync implements _TimeOutOfSync {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -2848,8 +3132,9 @@ class _$_TimeOutOfSync implements _TimeOutOfSync {
     Result unableToSendPayment(),
     Result insufficientFundsInTrustedFunds(),
     Result userWithIdNotFound(),
-    Result paymentWithMomoFailed(),
+    Result creditingWithMomoFailed(),
     Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
     Result unableToCashPayment(),
     Result unableToHidePayment(),
     Result unableToUnlockSentPayment(),
@@ -2878,8 +3163,9 @@ class _$_TimeOutOfSync implements _TimeOutOfSync {
         Result insufficientFundsInTrustedFunds(
             _InsufficientFundsInTrustedFunds value),
     @required Result userWithIdNotFound(_UserWithIdNotFound value),
-    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     @required Result unableToCashPayment(_UnableToCash value),
     @required Result unableToHidePayment(_UnableToHide value),
     @required
@@ -2899,8 +3185,9 @@ class _$_TimeOutOfSync implements _TimeOutOfSync {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -2922,8 +3209,9 @@ class _$_TimeOutOfSync implements _TimeOutOfSync {
     Result insufficientFundsInTrustedFunds(
         _InsufficientFundsInTrustedFunds value),
     Result userWithIdNotFound(_UserWithIdNotFound value),
-    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     Result unableToCashPayment(_UnableToCash value),
     Result unableToHidePayment(_UnableToHide value),
     Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
@@ -2991,8 +3279,9 @@ class _$_RequestUnlockFailed implements _RequestUnlockFailed {
     @required Result unableToSendPayment(),
     @required Result insufficientFundsInTrustedFunds(),
     @required Result userWithIdNotFound(),
-    @required Result paymentWithMomoFailed(),
+    @required Result creditingWithMomoFailed(),
     @required Result userNotFound(),
+    @required Result withdrawalIntoMOMOFailed(),
     @required Result unableToCashPayment(),
     @required Result unableToHidePayment(),
     @required Result unableToUnlockSentPayment(),
@@ -3008,8 +3297,9 @@ class _$_RequestUnlockFailed implements _RequestUnlockFailed {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -3030,8 +3320,9 @@ class _$_RequestUnlockFailed implements _RequestUnlockFailed {
     Result unableToSendPayment(),
     Result insufficientFundsInTrustedFunds(),
     Result userWithIdNotFound(),
-    Result paymentWithMomoFailed(),
+    Result creditingWithMomoFailed(),
     Result userNotFound(),
+    Result withdrawalIntoMOMOFailed(),
     Result unableToCashPayment(),
     Result unableToHidePayment(),
     Result unableToUnlockSentPayment(),
@@ -3060,8 +3351,9 @@ class _$_RequestUnlockFailed implements _RequestUnlockFailed {
         Result insufficientFundsInTrustedFunds(
             _InsufficientFundsInTrustedFunds value),
     @required Result userWithIdNotFound(_UserWithIdNotFound value),
-    @required Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    @required Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     @required Result userNotFound(_UserNotFound value),
+    @required Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     @required Result unableToCashPayment(_UnableToCash value),
     @required Result unableToHidePayment(_UnableToHide value),
     @required
@@ -3081,8 +3373,9 @@ class _$_RequestUnlockFailed implements _RequestUnlockFailed {
     assert(unableToSendPayment != null);
     assert(insufficientFundsInTrustedFunds != null);
     assert(userWithIdNotFound != null);
-    assert(paymentWithMomoFailed != null);
+    assert(creditingWithMomoFailed != null);
     assert(userNotFound != null);
+    assert(withdrawalIntoMOMOFailed != null);
     assert(unableToCashPayment != null);
     assert(unableToHidePayment != null);
     assert(unableToUnlockSentPayment != null);
@@ -3104,8 +3397,9 @@ class _$_RequestUnlockFailed implements _RequestUnlockFailed {
     Result insufficientFundsInTrustedFunds(
         _InsufficientFundsInTrustedFunds value),
     Result userWithIdNotFound(_UserWithIdNotFound value),
-    Result paymentWithMomoFailed(_PaymentWithMomoFailed value),
+    Result creditingWithMomoFailed(_PaymentWithMomoFailed value),
     Result userNotFound(_UserNotFound value),
+    Result withdrawalIntoMOMOFailed(_WithdrawalIntoMOMOFailed value),
     Result unableToCashPayment(_UnableToCash value),
     Result unableToHidePayment(_UnableToHide value),
     Result unableToUnlockSentPayment(_UnableToUnlockSentPayment value),
