@@ -7,6 +7,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kt_dart/collection.dart';
 import 'package:provider/provider.dart';
+import 'package:tenflrpay/presentation/core/styles/decorations.dart';
 
 import '../../../../../application/payment/transaction_list_bloc/transaction_list_bloc.dart';
 import '../../../../../domain/core/settings.dart';
@@ -74,52 +75,36 @@ class TrustedPaymentList extends HookWidget {
 
                         return Slidable(
                           actionPane: const SlidableDrawerActionPane(),
-                          actionExtentRatio: 0.25,
-                          actions: <Widget>[
-                            IconSlideAction(
-                              caption: 'Chat'.i18n,
-                              color: Colors.blue,
-                              icon: Icons.chat,
-                              onTap: () {},
-                            ),
-                            IconSlideAction(
-                              caption: 'Hide'.i18n,
-                              color: Colors.indigo,
-                              icon: Icons.archive,
-                              onTap: () {
-                                BotToast.showSimpleNotification(
-                                    title:
-                                        "Your transaction %s, has been sent to archive"
-                                            .i18n
-                                            .fill([
-                                      payment.id.getOrCrash().substring(0, 6)
-                                    ]),
-                                    duration: const Duration(seconds: 5));
-                                payments.minus(KtList.of(payment));
-                              },
-                            ),
-                          ],
-                          secondaryActions: <Widget>[
-                            IconSlideAction(
-                              caption: 'More'.i18n,
-                              color: Colors.black45,
-                              icon: Icons.more_horiz,
-                              onTap: () {},
-                            ),
-                            IconSlideAction(
-                              caption: 'Unlock'.i18n,
-                              color: Colors.redAccent,
-                              iconWidget: Icon(
-                                FontAwesomeIcons.unlock,
-                                color: Colors.white,
-                              ),
-                              onTap: () {
-                                // setState(() {
-                                //   payments.minus(KtList.of(payment));
-                                // });
-                              },
-                            ),
-                          ],
+                              actionExtentRatio: 0.4,
+
+                              secondaryActions: <Widget>[
+                                Container(
+                                  decoration: DefaultDecoration.slidable,
+                                  margin:
+                                      const EdgeInsets.symmetric(vertical: 5),
+                                  child: InkWell(
+                                    onTap: () 
+                                    {},
+                                    // =>
+                                    //  _confirmForceSavingsUnlock(
+                                    //   context,
+                                    //   context.bloc<SavingsActorBloc>(),
+                                    //   saving,
+                                    // ),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        const Icon(Icons.lock_open_outlined),
+                                        Text(
+                                          'Force Unlock'.i18n,
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
                           key: ObjectKey(payment),
                           child: TrustedPaymentTile(
                             payment: payment,
