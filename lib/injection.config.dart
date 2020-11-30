@@ -23,7 +23,9 @@ import 'application/budget/budget_actor_bloc/budget_actor_bloc.dart';
 import 'application/budget/budget_input_collector/budgetinputcollector_bloc.dart';
 import 'application/budget/budget_list_bloc/budgetlist_bloc.dart';
 import 'infrastructure/budget/budget_repository.dart';
-import 'presentation/screens/main_views/quickpay/widgets/cash_logic.dart';
+import 'presentation/screens/main_views/quickpay/widgets/cash_logic.dart'
+    as tenflrpay;
+import 'presentation/screens/main_views/quickpay/cash_logic.dart';
 import 'application/connectivity_and_time_bloc/connectivity_and_time_bloc.dart';
 import 'application/curren_theme_mode_bloc/curren_theme_mode_bloc.dart';
 import 'infrastructure/repositories/database_repository_facade.dart';
@@ -44,6 +46,7 @@ import 'application/lock_screen_bloc/lock_screen_bloc.dart';
 import 'application/auth/login_bloc/login_bloc.dart';
 import 'application/main_views_bloc/main_views_bloc.dart';
 import 'infrastructure/repositories/momo_api_service.dart';
+import 'presentation/core/money_controller/m_controller.dart';
 import 'domain/core/settings.dart';
 import 'application/payment/payment_actor_bloc/payment_actor_bloc.dart';
 import 'infrastructure/payment/payment_repository.dart';
@@ -78,6 +81,7 @@ Future<GetIt> $initGetIt(
 }) async {
   final gh = GetItHelper(get, environment, environmentFilter);
   final firebaseInjectableModule = _$FirebaseInjectableModule();
+  gh.factory<tenflrpay.Calculator>(() => tenflrpay.Calculator());
   gh.factory<Calculator>(() => Calculator());
   gh.lazySingleton<Crashlytics>(
       () => firebaseInjectableModule.recorerdFlutterError);
@@ -103,6 +107,7 @@ Future<GetIt> $initGetIt(
       () => TransactionStatsRepository(get<Firestore>()));
   gh.lazySingleton<MomoApiService>(
       () => firebaseInjectableModule.momoApiService);
+  // gh.factory<MoneyController>(() => MoneyController());
   final packageInfo = await firebaseInjectableModule.packageInfo;
   gh.factory<PackageInfo>(() => packageInfo);
   gh.factory<PhoneInitBloc>(() => PhoneInitBloc());
