@@ -5,7 +5,7 @@ part 'momo_api_service.chopper.dart';
 @ChopperApi()
 abstract class MomoApiService extends ChopperService {
   @Post(path: '/transfer')
-  Future<Response> transfer({
+  Future<Response> withdrawToMTN({
     @Header('amount') String amount,
     @Header('currency') String currency,
     @Header('externalId') String externalId,
@@ -14,7 +14,7 @@ abstract class MomoApiService extends ChopperService {
   });
 
   @Post(path: '/requesttopay')
-  Future<Response> requestToPay({
+  Future<Response> creditTenflrWithMTN({
     @Header('amount') String amount,
     @Header('currency') String currency,
     @Header('externalId') String externalId,
