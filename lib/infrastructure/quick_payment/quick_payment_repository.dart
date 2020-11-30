@@ -77,7 +77,7 @@ class QuickPaymentRepository implements IQuickPaymentRepository {
             .deductOrCreditTrustedFunds(payment.amount, deduct: true);
 
         if (!withdrawn) {
-          response = await _momoApiService.requestToPay(
+          response = await _momoApiService.creditTenflrWithMTN(
             amount: payment.amount.getOrCrash().toString(),
             currency: "EUR",
             number: user.phoneNumber.getOrCrash(),
@@ -88,7 +88,7 @@ class QuickPaymentRepository implements IQuickPaymentRepository {
       // withdrawal.setData to momo account only
 
       else if (_mySettings.withdrawalWithMomo) {
-        response = await _momoApiService.requestToPay(
+        response = await _momoApiService.creditTenflrWithMTN(
           amount: payment.amount.getOrCrash().toString(),
           currency: "EUR",
           number: user.phoneNumber.getOrCrash(),
