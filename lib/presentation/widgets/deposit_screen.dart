@@ -56,12 +56,15 @@ class DepositForm extends StatelessWidget {
                                 "Failed to credit account! Try again and make sure you validate the MOMO transaction!"
                                     .i18n))
                       ..show(context), (r) {
-                  FlushbarHelper.createSuccess(
-                          duration: const Duration(seconds: 3),
-                          message:
-                              "You have successfully created a Savings Account 😃"
-                                  .i18n)
-                      .show(context);
+                  // Navigator.of(context).pop();
+                  Future.delayed(const Duration(seconds: 2), () {
+                    FlushbarHelper.createSuccess(
+                            // duration: const Duration(seconds: 3),
+                            message:
+                                "You have successfully credited your Tenflr Account 😃"
+                                    .i18n)
+                        .show(context);
+                  });
                 }));
       },
       buildWhen: (p, c) =>
