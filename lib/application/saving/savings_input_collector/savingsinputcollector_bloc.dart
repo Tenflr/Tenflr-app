@@ -31,28 +31,7 @@ class SavingsInputCollectorBloc
   SavingsInputCollectorBloc(this.savingsRepository)
       : super(SavingsInputCollectorState.empty());
 
-  // @override
-  // Stream<Transition<SavingsInputCollectorEvent, SavingsInputCollectorState>>
-  //     transformEvents(
-  //   Stream<SavingsInputCollectorEvent> events,
-  //   TransitionFunction<SavingsInputCollectorEvent, SavingsInputCollectorState>
-  //       transitionFn,
-  // ) {
-  //   final nonDebounceStream = events.where((event) {
-  //     return event is! _AmountChanged &&
-  //         event is! _WithDrawalDateChanged &&
-  //         event is! _AccountNameChanged;
-  //   });
-  //   final debounceStream = events.where((event) {
-  //     return event is _AmountChanged ||
-  //         event is _WithDrawalDateChanged ||
-  //         event is _AccountNameChanged;
-  //   }).debounceTime(const Duration(milliseconds: 300));
-  //   return super.transformEvents(
-  //     nonDebounceStream.mergeWith([debounceStream]),
-  //     transitionFn,
-  //   );
-  // }
+ 
 
   @override
   Stream<SavingsInputCollectorState> mapEventToState(
@@ -155,7 +134,7 @@ Logs _generateLogs(Savings saving) {
     amount: saving.amount,
     payer: saving.id,
     receiver: UniqueId.fromUniqueString('me'),
-    type: TransactionType(transactionTypeList[2]),
+    type: TransactionType(kTransactionType.s.val ),
     operation: 'created',
     createdAt: DateTime.now(),
   );
