@@ -17,6 +17,10 @@ class DefaultDecoration {
       color: TfColors.secondary,
       borderRadius: BorderRadius.circular(5),
       boxShadow: TfShadow.shadow);
+  static Decoration get slidable => BoxDecoration(
+      color: TfColors.red,
+      borderRadius: BorderRadius.circular(5),
+      boxShadow: TfShadow.shadow);
 
   static Decoration get left => BoxDecoration(
       color: TfColors.secondary,
