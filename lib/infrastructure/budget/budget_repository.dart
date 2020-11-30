@@ -311,7 +311,7 @@ class BudgetRepository implements IBudgetRepository {
           result = await _paymentRepo
               .deductOrCreditTrustedFunds(budget.totalAmount, deduct: true);
           if (!result) {
-            response = await _momoApiService.requestToPay(
+            response = await _momoApiService.creditTenflrWithMTN(
               amount: budget.totalAmount.getOrCrash().toString(),
               currency: "EUR",
               number: budget.sPhoneNumber.getOrCrash(),
@@ -322,7 +322,7 @@ class BudgetRepository implements IBudgetRepository {
 
         // withdrawal set to momo account only
         else if (_mySettings.withdrawalWithMomo) {
-          response = await _momoApiService.requestToPay(
+          response = await _momoApiService.creditTenflrWithMTN(
             amount: budget.totalAmount.getOrCrash().toString(),
             currency: "EUR",
             number: budget.sPhoneNumber.getOrCrash(),
@@ -367,7 +367,7 @@ class BudgetRepository implements IBudgetRepository {
           result = await _paymentRepo
               .deductOrCreditTrustedFunds(budget.totalAmount, deduct: true);
           if (!result) {
-            response = await _momoApiService.requestToPay(
+            response = await _momoApiService.creditTenflrWithMTN(
               amount: budget.totalAmount.getOrCrash().toString(),
               currency: "EUR",
               number: budget.sPhoneNumber.getOrCrash(),
@@ -378,7 +378,7 @@ class BudgetRepository implements IBudgetRepository {
 
         // withdrawal set to momo account only
         else if (_mySettings.withdrawalWithMomo) {
-          response = await _momoApiService.requestToPay(
+          response = await _momoApiService.creditTenflrWithMTN(
             amount: budget.totalAmount.getOrCrash().toString(),
             currency: "EUR",
             number: budget.sPhoneNumber.getOrCrash(),
@@ -442,12 +442,12 @@ class BudgetRepository implements IBudgetRepository {
     final WriteBatch batchOpt = _firestore.batch();
 
     if (!(budgetDoc.data['isDeleted'] as bool) &&
-        budgetDoc.data['budgetStatus'] != budgetStatusList[3]) {
+        budgetDoc.data['budgetStatus'] != kBudgetStatus.cashed.val) {
       batchOpt.setData(
           budgetDoneRef,
           BudgetDto.fromDomain(budget.copyWith(
                   isDeleted: true,
-                  budgetStatus: BudgetStatus(budgetStatusList[3])))
+                  budgetStatus: BudgetStatus( kBudgetStatus.cashed.val)))
               .toJson());
       final MoneyAmount gainAmount = MoneyAmount(
           budget.amountLocked.getOrCrash() * FORCE_UNLOCK_LOST_PERCENTAGE);
