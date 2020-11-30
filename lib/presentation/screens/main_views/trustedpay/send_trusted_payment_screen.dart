@@ -69,7 +69,9 @@ class SendTrustedPaymentForm extends HookWidget {
                               insufficientFundsInTrustedFunds: (_) =>
                                   "Insufficient Funds in TrustedPay wallet!"
                                       .i18n,
-                              paymentWithMomoFailed: (_) =>
+                              withdrawalIntoMOMOFailed: (_) =>
+                                  "Withdrawal into MOMO failed".i18n,
+                              creditingWithMomoFailed: (_) =>
                                   "Payment with MOMO account failed! Please try again!"
                                       .i18n,
                               timeOutOfSync: (_) =>
@@ -78,17 +80,17 @@ class SendTrustedPaymentForm extends HookWidget {
                             ),
                           )..show(context), (r) {
                     Navigator.of(context).pop();
-
-                    Future.delayed(const Duration(seconds: 3), () {
-                      FlushbarHelper.createInformation(
-                          title: "Payment successful".i18n,
-                          // duration: const Duration(seconds: 4),
-                          message: "A payment of %s was successfully sent to %s"
-                              .i18n
-                              .fill([
-                            state.payment.amount.getOrCrash(),
-                            state.payment.rDisplayName.getOrCrash()
-                          ])).show(context);
+                    Future.delayed(const Duration(seconds: 1), () {
+                      Navigator.of(context).pop();
+                       FlushbarHelper.createInformation(
+                        title: "Payment successful".i18n,
+                        // duration: const Duration(seconds: 4),
+                        message: "A payment of %s was successfully sent to %s"
+                            .i18n
+                            .fill([
+                          state.payment.amount.getOrCrash(),
+                          state.payment.rDisplayName.getOrCrash()
+                        ])).show(context);
                     });
                   }));
           if (!state.payment.unlockDate.isValid() && state.showErrorMessage) {
@@ -105,6 +107,7 @@ class SendTrustedPaymentForm extends HookWidget {
           if (state.isSaving) {
             FlushbarHelper.createLoading(
                     message: 'Sending payment...'.i18n,
+                       duration: const Duration(seconds: 9),
                     linearProgressIndicator: const LinearProgressIndicator())
                 .show(context);
           }
@@ -119,7 +122,6 @@ class SendTrustedPaymentForm extends HookWidget {
                   },
                 ),
                 description: Text("Send Trusted Payment".i18n,
-
                     style: SavingsScreenTextStyle.addSavingsDescription(size)),
                 trailing: const Opacity(
                     opacity: 0,
