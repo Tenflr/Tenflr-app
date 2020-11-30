@@ -192,8 +192,9 @@ class Router extends RouterBase {
       );
     },
     WithdrawScren: (data) {
+      final args = data.getArgs<WithdrawScrenArguments>(nullOk: false);
       return MaterialPageRoute<dynamic>(
-        builder: (context) => WithdrawScren(),
+        builder: (context) => WithdrawScren(user: args.user),
         settings: data,
       );
     },
@@ -287,7 +288,13 @@ extension RouterExtendedNavigatorStateX on ExtendedNavigatorState {
         arguments: DepositScreenArguments(user: user),
       );
 
-  Future<dynamic> pushWithdrawScren() => push<dynamic>(Routes.withdrawScren);
+  Future<dynamic> pushWithdrawScren({
+    @required User user,
+  }) =>
+      push<dynamic>(
+        Routes.withdrawScren,
+        arguments: WithdrawScrenArguments(user: user),
+      );
 
   Future<dynamic> pushChangePinScreen() =>
       push<dynamic>(Routes.changePinScreen);
@@ -341,4 +348,10 @@ class RequestPaymentScreenArguments {
 class DepositScreenArguments {
   final User user;
   DepositScreenArguments({@required this.user});
+}
+
+/// WithdrawScren arguments holder class
+class WithdrawScrenArguments {
+  final User user;
+  WithdrawScrenArguments({@required this.user});
 }
