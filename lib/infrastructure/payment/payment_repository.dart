@@ -38,13 +38,13 @@ class PaymentRepository implements IPaymentRepository {
 
   PaymentRepository(this._firestore, this._momoApiService, this._mySettings,
       this._authFacade);
-  Future<Either<PaymentFailure, Unit>> _isTimeSync() async {
+  Future<Either<PaymentFailure, bool>> _isTimeSync() async {
     final int timeOfSet =
         await NTP.getNtpOffset(lookUpAddress: primaryLockupAddress);
     if (timeOfSet > maxTimeOffset) {
       return left(const PaymentFailure.timeOutOfSync());
     }
-    return right(unit);
+    return right(true);
   }
 
   @override
@@ -308,7 +308,11 @@ class PaymentRepository implements IPaymentRepository {
     final result = await _firestore.runTransaction((transaction) {
       return transaction.get(tpRef).then((value) {
         if (!value.exists) {
-          transaction.set(tpRef, {'amount': amount.getOrCrash()});
+          if (deduct) {
+            return false;
+          } else {
+            transaction.set(tpRef, {'amount': amount.getOrCrash()});
+          }
         }
 
         final double newAmount = deduct
@@ -326,7 +330,7 @@ class PaymentRepository implements IPaymentRepository {
   }
 
   @override
-  Future<Either<PaymentFailure, Unit>> unlockSentPayment(
+  Future<Either<PaymentFailure, bool>> unlockSentPayment(
       Payment payment) async {
     final userOption = await _authFacade.getSignedInUser();
     final user = userOption.getOrElse(() => throw NotAuthenticatedError());
@@ -336,7 +340,7 @@ class PaymentRepository implements IPaymentRepository {
     }
     final Map<String, dynamic> updatePaymentData =
         PaymentDto.fromDomain(payment.copyWith(
-      paymentStatus: PaymentStatus(paymentStatusList[2]),
+      paymentStatus: PaymentStatus(kPaymentStatus.unlocked.val),
       unlockDate: ValidDate(DateTime.now()),
       cashed: true,
     )).toJson();
@@ -344,7 +348,7 @@ class PaymentRepository implements IPaymentRepository {
     return _actionOnPaymentForBothParties(updatePaymentData, payment);
   }
 
-  Future<Either<PaymentFailure, Unit>> _actionOnPaymentForBothParties(
+  Future<Either<PaymentFailure, bool>> _actionOnPaymentForBothParties(
       Map<String, dynamic> updatePaymentData, Payment payment) async {
     try {
       final DocumentReference payerPaymentRef = await _firestore
@@ -360,7 +364,7 @@ class PaymentRepository implements IPaymentRepository {
 
       opBatch.commit();
 
-      return right(unit);
+      return right(true);
     } on PlatformException catch (e) {
       if (e.code == PERMISSION_DENIED) {
         return left(const PaymentFailure.insufficientPermissions());
@@ -370,7 +374,7 @@ class PaymentRepository implements IPaymentRepository {
     }
   }
 
-  Future<Either<PaymentFailure, Unit>> _actionOnPaymentForPayer(
+  Future<Either<PaymentFailure, bool>> _actionOnPaymentForPayer(
       Map<String, dynamic> updatePaymentData, Payment payment) async {
     try {
       final DocumentReference payerPaymentRef = await _firestore
@@ -386,7 +390,7 @@ class PaymentRepository implements IPaymentRepository {
 
       opBatch.commit();
 
-      return right(unit);
+      return right(true);
     } on PlatformException catch (e) {
       if (e.code == PERMISSION_DENIED) {
         return left(const PaymentFailure.insufficientPermissions());
@@ -397,7 +401,7 @@ class PaymentRepository implements IPaymentRepository {
   }
 
   @override
-  Future<Either<PaymentFailure, Unit>> freezeSentPayment(
+  Future<Either<PaymentFailure, bool>> freezeSentPayment(
       Payment payment) async {
     final userOption = await _authFacade.getSignedInUser();
     final user = userOption.getOrElse(() => throw NotAuthenticatedError());
@@ -407,20 +411,21 @@ class PaymentRepository implements IPaymentRepository {
     }
     final Map<String, dynamic> updatePaymentData =
         PaymentDto.fromDomain(payment.copyWith(
-      paymentStatus: PaymentStatus(paymentStatusList[1]),
+      paymentStatus: PaymentStatus(kPaymentStatus.blocked.val),
     )).toJson();
 
     return _actionOnPaymentForBothParties(updatePaymentData, payment);
   }
 
   @override
-  Future<Either<PaymentFailure, Unit>> deleteCashedPayment(
+  Future<Either<PaymentFailure, bool>> deleteCashedPayment(
       Payment payment) async {
     final userOption = await _authFacade.getSignedInUser();
     final user = userOption.getOrElse(() => throw NotAuthenticatedError());
     try {
       if (!payment.cashed &&
-          payment.paymentStatus.getOrCrash() != paymentStatusList[4]) {
+          payment.paymentStatus.getOrCrash() !=
+              kPaymentStatus.credit.val) {
         return left(const PaymentFailure.unableToDeleteReceivedPayment());
       }
       final Map<String, dynamic> updatePaymentData =
@@ -439,7 +444,7 @@ class PaymentRepository implements IPaymentRepository {
       batch.setData(paymentDoneRef, updatePaymentData);
       batch.delete(paymentRef);
       batch.commit();
-      return right(unit);
+      return right(true);
     } catch (e) {
       debugPrint("Error occurred: code: ${e.code} , message: ${e.message}");
 
@@ -450,7 +455,7 @@ class PaymentRepository implements IPaymentRepository {
   }
 
   @override
-  Future<Either<PaymentFailure, Unit>> hidePayment(Payment payment) async {
+  Future<Either<PaymentFailure, bool>> hidePayment(Payment payment) async {
     // final userOption = await _authFacade.getSignedInUser();
     // final user = userOption.getOrElse(() => throw NotAuthenticatedError());
 
@@ -466,7 +471,7 @@ class PaymentRepository implements IPaymentRepository {
   }
 
   @override
-  Future<Either<PaymentFailure, Unit>> sendPayment(
+  Future<Either<PaymentFailure, bool>> sendPayment(
       Payment payment, Logs log) async {
     final WriteBatch paymentBatch = _firestore.batch();
 
@@ -495,7 +500,7 @@ class PaymentRepository implements IPaymentRepository {
       if (availableFunds && _mySettings.isSmartFundsActive) {
         result = await deductOrCreditTrustedFunds(payment.amount, deduct: true);
         if (!result) {
-          response = await _momoApiService.requestToPay(
+          response = await _momoApiService.creditTenflrWithMTN(
             amount: payment.amount.getOrCrash().toString(),
             currency: "EUR",
             number: payment.pPhoneNumber.getOrCrash(),
@@ -506,7 +511,7 @@ class PaymentRepository implements IPaymentRepository {
       // withdrawal.setData to momo account only
 
       else if (_mySettings.withdrawalWithMomo) {
-        response = await _momoApiService.requestToPay(
+        response = await _momoApiService.creditTenflrWithMTN(
           amount: payment.amount.getOrCrash().toString(),
           currency: "EUR",
           number: payment.pPhoneNumber.getOrCrash(),
@@ -524,7 +529,7 @@ class PaymentRepository implements IPaymentRepository {
         }
       }
       if (!result && response.body == 'Error requesting to pay') {
-        return left(const PaymentFailure.paymentWithMomoFailed());
+        return left(const PaymentFailure.creditingWithMomoFailed());
       }
 
       if (result ||
@@ -536,7 +541,7 @@ class PaymentRepository implements IPaymentRepository {
               cashIn: true);
         }
         await writeTransactionsLogs(log);
-        return right(unit);
+        return right(true);
       }
       return left(const PaymentFailure.unableToSendPayment());
     } on PlatformException catch (e) {
@@ -568,18 +573,18 @@ class PaymentRepository implements IPaymentRepository {
   }
 
   @override
-  Future<Either<PaymentFailure, Unit>> creditTrustedPay(
+  Future<Either<PaymentFailure, bool>> creditTenflrWithMTN(
       Payment payment, Logs log) async {
     Response response;
     try {
-      response = await _momoApiService.requestToPay(
+      response = await _momoApiService.creditTenflrWithMTN(
         amount: payment.amount.getOrCrash().toString(),
         currency: "EUR",
         number: payment.pPhoneNumber.getOrCrash(),
         externalId: payment.id.getOrCrash(),
       );
       if (response.body == 'Error requesting to pay') {
-        return left(const PaymentFailure.paymentWithMomoFailed());
+        return left(const PaymentFailure.creditingWithMomoFailed());
       }
 
       if (response.body['transaction_info']['status'] == "SUCCESSFUL") {
@@ -601,9 +606,9 @@ class PaymentRepository implements IPaymentRepository {
 
         await writeTrustedPayFundsRechargeLogs(payment.id.getOrCrash(), log,
             cashIn: true);
-        return right(unit);
+        return right(true);
       }
-      return left(const PaymentFailure.paymentWithMomoFailed());
+      return left(const PaymentFailure.creditingWithMomoFailed());
     } on PlatformException catch (e) {
       if (e.code == PERMISSION_DENIED) {
         return left(const PaymentFailure.insufficientPermissions());
@@ -614,9 +619,9 @@ class PaymentRepository implements IPaymentRepository {
   }
 
   @override
-  Future<Either<PaymentFailure, Unit>> autoCashPayment(Payment payment) async {
+  Future<Either<PaymentFailure, bool>> autoCashPayment(Payment payment) async {
     // check if app time is in sync
-    final Either<PaymentFailure, Unit> timeIs = await _isTimeSync();
+    final Either<PaymentFailure, bool> timeIs = await _isTimeSync();
     if (timeIs.isLeft()) return left(const PaymentFailure.timeOutOfSync());
 
     final DocumentReference payerPaymentRef = await _firestore
@@ -639,12 +644,13 @@ class PaymentRepository implements IPaymentRepository {
     final int offset = rUnlockDate.difference(DateTime.now()).inSeconds;
     final WriteBatch writeBatch = _firestore.batch();
     final updatedPayment = PaymentDto.fromDomain(payment.copyWith(
-      paymentStatus: PaymentStatus(paymentStatusList[5]),
+      paymentStatus: PaymentStatus(kPaymentStatus.cashed.val),
       cashed: true,
     )).toJson();
     if (!(receiverDoc.data['cashed'] as bool) &&
         (pUnlockDate == rUnlockDate && offset <= 0 ||
-            pPaymentS == rPaymentS && rPaymentS == paymentStatusList[2])) {
+            pPaymentS == rPaymentS &&
+                rPaymentS == kPaymentStatus.unlocked.val)) {
       writeBatch.setData(payerPaymentRef, updatedPayment);
       writeBatch.setData(receiverPaymentRef, updatedPayment);
       final isCredited =
@@ -652,28 +658,28 @@ class PaymentRepository implements IPaymentRepository {
 
       if (isCredited) {
         writeBatch.commit();
-        return right(unit);
+        return right(true);
       }
     }
     return left(const PaymentFailure.unableToCashPayment());
   }
 
   @override
-  Future<Either<PaymentFailure, Unit>> rateUser(
+  Future<Either<PaymentFailure, bool>> rateUser(
       Payment payment, bool isUp) async {
     // Todo: implement Code
     return left(const PaymentFailure.unableToRateUser());
   }
 
   @override
-  Future<Either<PaymentFailure, Unit>> requestUnlockOfReceivedPayment(
+  Future<Either<PaymentFailure, bool>> requestUnlockOfReceivedPayment(
       Payment payment) async {
     // Todo: implement Code
     return left(const PaymentFailure.requestUnlockFailed());
   }
 
   @override
-  Future<Either<PaymentFailure, Unit>> returnPayment(Payment payment) async {
+  Future<Either<PaymentFailure, bool>> returnPayment(Payment payment) async {
     // Todo: implement Code
     return left(const PaymentFailure.unableToReturnPayment());
   }
@@ -776,5 +782,102 @@ class PaymentRepository implements IPaymentRepository {
       return right(user);
     }
     return left(const PaymentFailure.unexpected());
+  }
+
+  @override
+  Future<Either<PaymentFailure, bool>> creditTenflrWithOrange(
+      Payment payment, Logs log) async {
+    // Todo: Replace with orange money functions.
+    Response response;
+    try {
+      response = await _momoApiService.creditTenflrWithMTN(
+        amount: payment.amount.getOrCrash().toString(),
+        currency: "EUR",
+        number: payment.pPhoneNumber.getOrCrash(),
+        externalId: payment.id.getOrCrash(),
+      );
+      if (response.body == 'Error requesting to pay') {
+        return left(const PaymentFailure.creditingWithMomoFailed());
+      }
+
+      if (response.body['transaction_info']['status'] == "SUCCESSFUL") {
+        final DocumentReference trustedPayRef =
+            await _firestore.trustedPayBalanceDocument();
+
+        final creditResult = _firestore.runTransaction((transaction) {
+          return transaction.get(trustedPayRef).then((doc) {
+            if (!doc.exists) {
+              transaction
+                  .set(trustedPayRef, {'amount': payment.amount.getOrCrash()});
+            } else {
+              final double newAmount =
+                  (doc.data['amount'] as double) + payment.amount.getOrCrash();
+              transaction.update(trustedPayRef, {'amount': newAmount});
+            }
+          });
+        });
+
+        await writeTrustedPayFundsRechargeLogs(payment.id.getOrCrash(), log,
+            cashIn: true);
+        return right(true);
+      }
+      return left(const PaymentFailure.creditingWithMomoFailed());
+    } on PlatformException catch (e) {
+      if (e.code == PERMISSION_DENIED) {
+        return left(const PaymentFailure.insufficientPermissions());
+      }
+      debugPrint("Error occured: code: ${e.code} , message: ${e.message}");
+      return left(const PaymentFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Either<PaymentFailure, bool>> withdrawTenflrToMTN(
+      Payment payment, Logs log,
+      {bool transfer = false}) async {
+    final hasEnoughFunds = await hasEnoughTrustedFunds(payment.amount);
+    if (hasEnoughFunds) {
+      final hasDeducted =
+          await deductOrCreditTrustedFunds(payment.amount, deduct: true);
+
+      if (hasDeducted) {
+        Response response;
+        try {
+          response = await _momoApiService.withdrawToMTN(
+            amount: payment.amount.getOrCrash().toString(),
+            currency: "EUR",
+            number: transfer
+                ? payment.rPhoneNumber.getOrCrash()
+                : payment.pPhoneNumber.getOrCrash(),
+            externalId: payment.id.getOrCrash(),
+          );
+
+          if (response.body['transaction_info']['status'] == "SUCCESSFUL") {
+            await writeTrustedPayFundsRechargeLogs(payment.id.getOrCrash(), log,
+                cashIn: false);
+            return right(true);
+          } else {
+            await deductOrCreditTrustedFunds(payment.amount, deduct: false);
+            return left(const PaymentFailure.withdrawalIntoMOMOFailed());
+          }
+        } on PlatformException catch (e) {
+          if (e.code == PERMISSION_DENIED) {
+            return left(const PaymentFailure.insufficientPermissions());
+          }
+          debugPrint("Error occured: code: ${e.code} , message: ${e.message}");
+          return left(const PaymentFailure.unexpected());
+        }
+      }
+      return left(const PaymentFailure.withdrawalIntoMOMOFailed());
+    } else {
+      return left(const PaymentFailure.insufficientFundsInTrustedFunds());
+    }
+  }
+
+  @override
+  Future<Either<PaymentFailure, bool>> withdrawTenflrToOrange(
+      Payment payment, Logs log) {
+    // TODO: implement withdrawTenflrToOrange
+    throw UnimplementedError();
   }
 }
