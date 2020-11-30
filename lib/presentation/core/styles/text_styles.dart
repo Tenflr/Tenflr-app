@@ -252,3 +252,14 @@ class TrustedPayScreenTextStyles {
         fontWeight: FontWeight.w500,
       );
 }
+
+
+class DefaultTextStyles {
+
+  static TextStyle get cupertinoScroll => const TextStyle(
+        // fontFamily: 'Apple Symbols',
+        color: TfColors.primary,
+        // fontSize: size.width * 0.04,
+        fontWeight: FontWeight.w300,
+      );
+}
