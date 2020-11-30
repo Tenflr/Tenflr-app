@@ -27,59 +27,20 @@ const List<String> KCountries = [
   "EG"
 ];
 
-const List<String> savingStatusList = [
-  "locked",
-  "unlocked",
-  "frozen",
-  "cashed"
-];
-
-const List<String> budgetStatusList = [
-  "active",
-  "complete",
-  "frozen",
-  "cashed"
-];
-const List<String> payoutModeList = [
-  "day",
-  "week",
-  "month",
-  "year",
-];
-const List<String> paymentStatusList = [
-  "locked",
-  "blocked",
-  "unlocked",
-  "cancel",
-  "credit",
-  "cashed"
-];
-
-const List<String> transactionTypeList = [
-  'qp', // quick payment
-  'tp', // trusted payment
-  's', // savings
-  'b', // budget manager
-];
-
-const List<String> subscriptionModeList = [
-  'per-transaction',
-  'monthly',
-  'yearly',
-];
+const List<String> kSubscriptionModeList = ["per-transaction"];
 
 const List<String> suportedLanguagesList = [
   'en',
   'fn',
 ];
-const List<String> budgetPeriodList = ["days", 'weeks', 'months', 'years'];
+// const List<String> budgetPeriodList = ["days", 'weeks', 'months', 'years'];
 
 const String primaryLockupAddress = 'time.google.com';
 const String secondaryLockupAddress = 'time.cloudfare.com';
 const int maxTimeOffset = 5000;
 
 const String NO_PROFILE_PIC = '';
-    // 'https://www.clipartmax.com/png/small/296-2969961_no-image-user-profile-icon.png';
+// 'https://www.clipartmax.com/png/small/296-2969961_no-image-user-profile-icon.png';
 
 // Budget Constants
 const MIN_DAILY_PR = 200;
@@ -109,3 +70,51 @@ List<String> translatedStrings = [
   'months'.i18n,
   'years'.i18n
 ];
+enum kSavingStatus { locked, unlocked, frozen, cashed }
+
+extension ParsekSavingStatus on kSavingStatus {
+  String get val => this.toString().split('.').last;
+}
+
+enum kBudgetStatus { active, complete, frozen, cashed }
+
+extension ParsekBudgetStatus on kBudgetStatus {
+  String get val => this.toString().split('.').last;
+}
+
+enum kPayoutMode { day, week, month, year }
+
+extension ParsekPayoutMode on kPayoutMode {
+  String get val => this.toString().split('.').last;
+}
+
+enum kPaymentStatus { locked, blocked, unlocked, cancel, credit, cashed }
+
+extension ParsekPaymentStatus on kPaymentStatus {
+  String get val => this.toString().split('.').last;
+}
+
+enum kSubscriptionMode { transaction, monthly, yearly }
+
+extension ParsekSubscriptionMode on kSubscriptionMode {
+  String get val => this.toString().split('.').last;
+}
+
+enum kBudgetPeriodList { days, weeks, months, years }
+
+extension ParsekBudgetPeriodList on kBudgetPeriodList {
+  String get val => this.toString().split('.').last;
+}
+
+enum kTransactionType {
+  qp, // quick payment
+  tp, // trusted payment
+  s, // savings
+  b, // budget manager
+  mt, // mtn transfer
+  ot, // orange tranfer
+}
+
+extension ParsekTransactionType on kTransactionType {
+  String get val => this.toString().split('.').last;
+}
