@@ -60,7 +60,7 @@ class AuthenticationBloc
             final _user = userOptionFromDatabase.getOrElse(() => null);
 
             UserSettings userSettings;
-            if (_user.isNewUser) {
+            if (_user == null) {
               _settings.setTrustedPayPin('2580');
             } else {
               final Either<UserSettingsFailure, UserSettings>
@@ -70,15 +70,15 @@ class AuthenticationBloc
                 userSettings = failureOrUserSettings.getOrElse(() => null);
                 await _settings.setAll(userSettings, _user);
               }
-            }
+            
 
             /*
                 Let set some settings in sharePreferences which can be access globally
                 all over the app using the settings class.
                */
-            if (_user != null) {
+            
               _settings.setAutomaticSavingsUnlock(unlockAuto: true);
-              _settings.setSmartFundsUse(useSmartFunds: true);
+              // _settings.setSmartFundsUse(useSmartFunds: true);
               _settings.setMomoOrTrustedFunds(withdrawalWithMomo: true);
               // _settings.setTrustedPayPin('2580');
               await _settings.setUserNumber(_user.phoneNumber);
@@ -106,25 +106,32 @@ class AuthenticationBloc
 
             DeviceId deviceId;
             UserSettings userSettings;
-            // get UserAddress
-            final Either<UserSettingsFailure, UserSettings>
-                failureOrUserSettings =
-                await _iSettingsFacade.getUserSettings();
-            // Get local device Id
-            if (failureOrUserSettings.isRight()) {
-              userSettings = failureOrUserSettings.getOrElse(() => null);
-              await _settings.setAll(userSettings, _user);
-              final DeviceId localDeviceId =
-                  await _idFacade.getDeviceDetails(_user);
-              deviceId = await _idFacade.getDeviceIdFromFirebase(localDeviceId);
-            }
+
             /*
                 Let set some settings in sharePreferences which can be access globally
                 all over the app using the settings class.
                */
             if (_user != null) {
+              // get UserAddress
+              final Either<UserSettingsFailure, UserSettings>
+                  failureOrUserSettings =
+                  await _iSettingsFacade.getUserSettings();
+              // Get local device Id
+              if (failureOrUserSettings.isRight()) {
+                userSettings = failureOrUserSettings.getOrElse(() => null);
+                await _settings.setAll(userSettings, _user);
+                final DeviceId localDeviceId =
+                    await _idFacade.getDeviceDetails(_user);
+                deviceId =
+                    await _idFacade.getDeviceIdFromFirebase(localDeviceId);
+              }
+
+
+              //
+
+              //
               _settings.setAutomaticSavingsUnlock(unlockAuto: true);
-              _settings.setSmartFundsUse(useSmartFunds: true);
+              // _settings.setSmartFundsUse(useSmartFunds: true);
               _settings.setMomoOrTrustedFunds(withdrawalWithMomo: true);
               // _settings.setTrustedPayPin('2580');
               await _settings.setUserNumber(_user.phoneNumber);
