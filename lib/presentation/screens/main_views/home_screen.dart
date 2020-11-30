@@ -79,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                   p.isLocked != c.isLocked && _settings.isLockEnabled,
               builder: (context, state) {
                 if (!state.isLocked) {
-                  Future.delayed(const Duration(seconds: 4), () {
+                  Future.delayed(const Duration(seconds: 1), () {
                     context
                         .bloc<LockScreenBloc>()
                         .add(const LockScreenEvent.shouldPaused(false));
