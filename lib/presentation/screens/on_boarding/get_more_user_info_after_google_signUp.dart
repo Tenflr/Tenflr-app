@@ -173,6 +173,7 @@ class GetMoreInfoForm extends HookWidget {
                     },
                   ),
                   PhoneInputTextField(
+                    initialValue: _number.value,
                     width: size.width * 0.8,
                     controller: phoneController,
                     textInputAction: TextInputAction.done,
