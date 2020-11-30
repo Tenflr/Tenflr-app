@@ -1,8 +1,8 @@
-
 import 'package:flushbar/flushbar.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -32,19 +32,14 @@ class WelcomeLoginScreen extends StatelessWidget {
   }
 }
 
-class WelcomeLoginForm extends StatefulWidget {
-  @override
-  _WelcomeLoginFormState createState() => _WelcomeLoginFormState();
-}
-
-class _WelcomeLoginFormState extends State<WelcomeLoginForm> {
-  final phoneController = TextEditingController();
-  PhoneNumber _number = PhoneNumber(isoCode: 'CM');
-
+class WelcomeLoginForm extends HookWidget {
+  // static PhoneNumber _number = PhoneNumber(isoCode: 'CM');
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+    final phoneController = useTextEditingController();
 
+    final _number = useState(PhoneNumber(isoCode: 'CM'));
     final Flushbar loading = FlushbarHelper.createLoading(
         message: 'Logging In...'.i18n,
         linearProgressIndicator: const LinearProgressIndicator(),
@@ -139,14 +134,16 @@ class _WelcomeLoginFormState extends State<WelcomeLoginForm> {
                         children: [
                           PhoneInputTextField(
                             // focusNode: ,
+                            initialValue: _number.value,
                             width: size.width * 0.75,
                             controller: phoneController,
-                            textInputAction:  TextInputAction.done,
+
+                            textInputAction: TextInputAction.done,
                             onInputChanged: (PhoneNumber number) {
                               phoneController.selection =
                                   TextSelection.fromPosition(TextPosition(
                                       offset: phoneController.text.length));
-                              _number = number;
+                              _number.value = number;
 
                               if (number.phoneNumber.length > 11) {
                                 context.bloc<LoginBloc>().add(
