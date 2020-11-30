@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_masked_text/flutter_masked_text.dart';
+// import 'package:flutter_masked_text/flutter_masked_text.dart';
+import 'package:tenflrpay/presentation/core/money_controller/m_controller.dart';
 
 import '../../../../../application/budget/budget_input_collector/budgetinputcollector_bloc.dart';
 import '../../../../../domain/core/valid_objects.dart';
+import '../../../../../injection.dart';
 import '../../../../core/styles/text_styles.dart';
 import '../../../../core/translations/translations.i18n.dart';
 import '../../../../widgets/button.dart';
@@ -14,8 +16,7 @@ class BudgetManagerAmountPage extends StatelessWidget {
   const BudgetManagerAmountPage({@required this.controller});
   @override
   Widget build(BuildContext context) {
-    final MoneyMaskedTextController moneyController = MoneyMaskedTextController(
-        decimalSeparator: '.', precision: 1, thousandSeparator: ',');
+    // final MoneyMaskedTextController moneyController = getIt<MoneyController>().controller;
 
     final Size size = MediaQuery.of(context).size;
     return Container(
@@ -47,12 +48,27 @@ class BudgetManagerAmountPage extends StatelessWidget {
                       children: [
                     Text('Enter the amount...'.i18n),
                     DefaultPrimaryMoneyInput(
-                      imagePath: null,
+                      svgPath: null,
+                      // moneyMaskEditingController: moneyController,
                       onChanged: (value) {
                         context.bloc<BudgetInputCollectorBloc>().add(
                             BudgetInputCollectorEvent.amountToManageChanged(
-                                amount: MoneyAmount(double.parse(value))));
+                                amount: MoneyAmount(double.parse(value.replaceAll(',','')))));
                       },
+                      initialValue: context
+                              .bloc<BudgetInputCollectorBloc>()
+                              .state
+                              .budget
+                              .totalAmount
+                              .isValid()
+                          ? context
+                              .bloc<BudgetInputCollectorBloc>()
+                              .state
+                              .budget
+                              .totalAmount
+                              .getOrCrash().toString()
+                          : "10,000",
+
                       onEditingComplete: () {
                         // node.nextFocus();
 
