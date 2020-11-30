@@ -15,10 +15,11 @@ class PhoneInputTextField extends HookWidget {
   final void Function(PhoneNumber) onInputChanged;
   final TextEditingController controller;
   final AutovalidateMode autovalidateMode;
-
+  final PhoneNumber initialValue;
   const PhoneInputTextField(
       {Key key,
       this.width,
+      @required this.initialValue,
       this.textController,
       this.focusNode,
       this.textInputAction,
@@ -43,7 +44,7 @@ class PhoneInputTextField extends HookWidget {
           autoValidateMode: autovalidateMode,
           ignoreBlank: true,
           textFieldController: controller,
-          countries: flavor != "com.tenfr.tenflrPay"? null : KCountries,
+          countries: flavor != "com.tenfr.tenflrPay" ? null : KCountries,
           onInputChanged: onInputChanged,
 
           // keyboardAction: textInputAction,
@@ -51,7 +52,7 @@ class PhoneInputTextField extends HookWidget {
               selectorType: PhoneInputSelectorType.BOTTOM_SHEET),
           focusNode: focusNode,
           keyboardAction: textInputAction ?? TextInputAction.continueAction,
-          initialValue: PhoneNumber(isoCode: 'CM'),
+          initialValue: initialValue,
           inputDecoration: WelcomeScreenTextStyles.phoneInputDecoration(size)),
     );
   }
