@@ -1,10 +1,11 @@
+import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+
 import '../core/constant_list.dart';
 import '../core/failures.dart';
 import '../core/valid_objects.dart';
 import '../core/value_object.dart';
-import 'package:dartz/dartz.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 
 part 'payment.freezed.dart';
 
@@ -34,7 +35,7 @@ abstract class Payment implements _$Payment {
         id: UniqueId(),
         receiverId: UniqueId(),
         payerId: UniqueId(),
-        paymentStatus: PaymentStatus(paymentStatusList[0]),
+        paymentStatus: PaymentStatus(kPaymentStatus.blocked.val),
         amount: MoneyAmount(10000),
         unlockDate: ValidDate(DateTime.now()),
         cashed: false,
