@@ -220,6 +220,7 @@ class RequestPaymentForm extends HookWidget {
                 ButtonRow(
                   children: [
                     NeuCalculatorButton(
+                      textSize:  size.width * 0.08,
                       text: 'Request'.i18n,
                       onPressed: () {
                         final amount = MoneyAmount(
@@ -255,7 +256,7 @@ class RequestPaymentForm extends HookWidget {
           initial: (e) => _child,
           loadInProgress: (e) => _child,
           loadSuccess: (e) {
-            if(e.quickPayment.size > oldSize.value){
+            if (e.quickPayment.size > oldSize.value) {
               Navigator.of(context).pop();
             }
             oldSize.value = e.quickPayment.size;
