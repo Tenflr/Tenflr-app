@@ -206,7 +206,7 @@ class FirebaseAuthFacade implements IAuthFacade {
 
   @override
   Future<bool> hasRegisteredBefore() async {
-    final user = auth.FirebaseAuth.instance.currentUser;
+    final user = await auth.FirebaseAuth.instance.currentUser();
     return user != null;
   }
 }
