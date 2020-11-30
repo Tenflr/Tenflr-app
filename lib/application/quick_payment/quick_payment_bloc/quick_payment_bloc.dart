@@ -75,7 +75,7 @@ class QuickPaymentBloc extends Bloc<QuickPaymentEvent, QuickPaymentState> {
       
       
       ''');
-      
+
         final key = Key.fromUtf8(encryptionKey);
         final encrypter = Encrypter(AES(key, mode: AESMode.ctr));
         realToken = state.token.copyWith(
@@ -111,87 +111,89 @@ class QuickPaymentBloc extends Bloc<QuickPaymentEvent, QuickPaymentState> {
           shouldValidatePayment: false,
           saveFailureOrSuccessOption: none());
     }, tokenScanned: (e) async* {
-      QuickPaymentToken receivedToken;
-      try {
-        encryptionKey = await _config.getString("quick_payment_key");
-        iv_String = _config.getString("iv_string");
+      if (e.scannedToken != null && e.scannedToken.isNotEmpty) {
+        QuickPaymentToken receivedToken;
+        try {
+          encryptionKey = await _config.getString("quick_payment_key");
+          iv_String = _config.getString("iv_string");
 
-        debugPrint('''
+          debugPrint('''
       
       The encryption Key is :: $encryptionKey
       The Iv is:: $iv_String
       
       
       ''');
-        final key = Key.fromUtf8(encryptionKey);
-        final encrypter = Encrypter(AES(key, mode: AESMode.ctr));
-        final decreptedToken = encrypter.decrypt64(
-          e.scannedToken,
-          iv: IV.fromUtf8(iv_String),
-        );
+          final key = Key.fromUtf8(encryptionKey);
+          final encrypter = Encrypter(AES(key, mode: AESMode.ctr));
+          final decreptedToken = encrypter.decrypt64(
+            e.scannedToken,
+            iv: IV.fromUtf8(iv_String),
+          );
 
-        final Map<String, dynamic> decodeTokenString =
-            json.decode(decreptedToken) as Map<String, dynamic>;
+          final Map<String, dynamic> decodeTokenString =
+              json.decode(decreptedToken) as Map<String, dynamic>;
 
-        receivedToken =
-            QuickPaymentTokenDto.fromJson(decodeTokenString).toDomain();
-        debugPrint('''
+          receivedToken =
+              QuickPaymentTokenDto.fromJson(decodeTokenString).toDomain();
+          debugPrint('''
       
      The decrepted token is  :: $decodeTokenString
       
       
       ''');
-      } catch (e) {
-        debugPrint('''
+        } catch (e) {
+          debugPrint('''
       
      Error Decrepting QR code  :: $e
       
       
       ''');
-        yield state.copyWith(
-          saveFailureOrSuccessOption:
-              some(left(const QuickPaymentFailure.errorScanningQRCode())),
-        );
-      }
-      if (receivedToken.requesterId.getOrCrash() ==
-          state.payment.payerId.getOrCrash()) {
-        final quickPaymentToken = QuickPaymentToken.empty();
-        yield state.copyWith(
-            encryptedToken: '',
-            amountToRequest: MoneyAmount(0),
-            token: quickPaymentToken,
-            shouldValidatePayment: false,
+          yield state.copyWith(
             saveFailureOrSuccessOption:
-                some(left(const QuickPaymentFailure.youCantPayYourSelf())));
-      } else if (receivedToken.tokenValidUntil
-              .getOrCrash()
-              .difference(today)
-              .inSeconds <=
-          0) {
-        yield state.copyWith(
-            encryptedToken: '',
-            amountToRequest: MoneyAmount(0),
-            token: QuickPaymentToken.empty(),
-            shouldValidatePayment: false,
-            saveFailureOrSuccessOption:
-                some(left(const QuickPaymentFailure.tokenExpired())));
-      } else {
-        yield state.copyWith(
-            payment: state.payment.copyWith(
-              id: UniqueId(),
-              requesterId: receivedToken.requesterId,
-              amount: receivedToken.amount,
-              rTel: receivedToken.requesterNumber,
-            ),
-            token: state.token.copyWith(
-              requesterId: receivedToken.requesterId,
-              requesterName: receivedToken.requesterName,
-              requesterNumber: receivedToken.requesterNumber,
-              requesterPhotoUrl: receivedToken.requesterPhotoUrl,
-            ),
-            encryptedToken: '',
-            shouldValidatePayment: true,
-            saveFailureOrSuccessOption: none());
+                some(left(const QuickPaymentFailure.errorScanningQRCode())),
+          );
+        }
+        if (receivedToken.requesterId.getOrCrash() ==
+            state.payment.payerId.getOrCrash()) {
+          final quickPaymentToken = QuickPaymentToken.empty();
+          yield state.copyWith(
+              encryptedToken: '',
+              amountToRequest: MoneyAmount(0),
+              token: quickPaymentToken,
+              shouldValidatePayment: false,
+              saveFailureOrSuccessOption:
+                  some(left(const QuickPaymentFailure.youCantPayYourSelf())));
+        } else if (receivedToken.tokenValidUntil
+                .getOrCrash()
+                .difference(today)
+                .inSeconds <=
+            0) {
+          yield state.copyWith(
+              encryptedToken: '',
+              amountToRequest: MoneyAmount(0),
+              token: QuickPaymentToken.empty(),
+              shouldValidatePayment: false,
+              saveFailureOrSuccessOption:
+                  some(left(const QuickPaymentFailure.tokenExpired())));
+        } else {
+          yield state.copyWith(
+              payment: state.payment.copyWith(
+                id: UniqueId(),
+                requesterId: receivedToken.requesterId,
+                amount: receivedToken.amount,
+                rTel: receivedToken.requesterNumber,
+              ),
+              token: state.token.copyWith(
+                requesterId: receivedToken.requesterId,
+                requesterName: receivedToken.requesterName,
+                requesterNumber: receivedToken.requesterNumber,
+                requesterPhotoUrl: receivedToken.requesterPhotoUrl,
+              ),
+              encryptedToken: '',
+              shouldValidatePayment: true,
+              saveFailureOrSuccessOption: none());
+        }
       }
     }, resetToken: (e) async* {
       // yield state.copyWith();
@@ -252,7 +254,7 @@ Logs generateLogs(QuickPayment payment) {
     amount: payment.amount,
     payer: payment.payerId,
     receiver: payment.requesterId,
-    type: TransactionType(transactionTypeList[0]),
+    type: TransactionType(kTransactionType.qp.val),
     operation: '-',
     createdAt: DateTime.now(),
   );
