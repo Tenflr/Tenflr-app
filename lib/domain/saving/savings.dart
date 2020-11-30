@@ -29,7 +29,7 @@ abstract class Savings implements _$Savings {
         savingsName: AccountName(''),
         timeLeft: ValidDuration(const Duration(days: 365 * 3)),
         withdrawalDate: ValidDate(DateTime(DateTime.now().day + 2)),
-        savingStatus: SavingStatus(savingStatusList[0]),
+        savingStatus: SavingStatus(kSavingStatus.locked.val),
         isDeleted: false,
         isFrozen: false,
         isHidden: false,
