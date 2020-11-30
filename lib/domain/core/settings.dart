@@ -24,6 +24,7 @@ const DEFAULT_LANG = "DEFAULT_LANG";
 const USER_EMAIL = "USER_EMAIL";
 const DEVICE_ID = "DEVICE_ID";
 const NEW_USER = "NEW_USER";
+const TF_BALANCE = "TF_BALANCE";
 
 @lazySingleton
 class MySettings {
@@ -50,6 +51,13 @@ class MySettings {
       setSubScriptionMode(userSettings.subscriptionMode.getOrCrash()),
     ]);
   }
+
+  // set TenflrBalance
+  Future<void> setTenflrBalance(MoneyAmount amount) async {
+    await _preferences.setDouble(TF_BALANCE, amount?.getOrCrash() ?? 0.0);
+  }
+
+  double get getTenflrBalance => _preferences.getDouble(TF_BALANCE) ?? 0.0;
 
   // set new or old user
   Future<void> setOldUser(bool isNewUser) async {
