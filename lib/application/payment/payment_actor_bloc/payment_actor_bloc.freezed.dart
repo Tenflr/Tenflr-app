@@ -1755,7 +1755,7 @@ class _$PaymentActorStateTearOff {
       {@required
           bool isSaving,
       @required
-          Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption}) {
+          Option<Either<PaymentFailure, bool>> saveFailureOrSuccessOption}) {
     return _PaymentActorState(
       isSaving: isSaving,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption,
@@ -1770,7 +1770,7 @@ const $PaymentActorState = _$PaymentActorStateTearOff();
 /// @nodoc
 mixin _$PaymentActorState {
   bool get isSaving;
-  Option<Either<PaymentFailure, Unit>> get saveFailureOrSuccessOption;
+  Option<Either<PaymentFailure, bool>> get saveFailureOrSuccessOption;
 
   $PaymentActorStateCopyWith<PaymentActorState> get copyWith;
 }
@@ -1782,7 +1782,7 @@ abstract class $PaymentActorStateCopyWith<$Res> {
       _$PaymentActorStateCopyWithImpl<$Res>;
   $Res call(
       {bool isSaving,
-      Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<PaymentFailure, bool>> saveFailureOrSuccessOption});
 }
 
 /// @nodoc
@@ -1803,7 +1803,7 @@ class _$PaymentActorStateCopyWithImpl<$Res>
       isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption as Option<Either<PaymentFailure, Unit>>,
+          : saveFailureOrSuccessOption as Option<Either<PaymentFailure, bool>>,
     ));
   }
 }
@@ -1817,7 +1817,7 @@ abstract class _$PaymentActorStateCopyWith<$Res>
   @override
   $Res call(
       {bool isSaving,
-      Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<PaymentFailure, bool>> saveFailureOrSuccessOption});
 }
 
 /// @nodoc
@@ -1840,7 +1840,7 @@ class __$PaymentActorStateCopyWithImpl<$Res>
       isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption as Option<Either<PaymentFailure, Unit>>,
+          : saveFailureOrSuccessOption as Option<Either<PaymentFailure, bool>>,
     ));
   }
 }
@@ -1857,7 +1857,7 @@ class _$_PaymentActorState extends _PaymentActorState
   @override
   final bool isSaving;
   @override
-  final Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption;
+  final Option<Either<PaymentFailure, bool>> saveFailureOrSuccessOption;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1905,13 +1905,13 @@ abstract class _PaymentActorState extends PaymentActorState {
       {@required
           bool isSaving,
       @required
-          Option<Either<PaymentFailure, Unit>>
+          Option<Either<PaymentFailure, bool>>
               saveFailureOrSuccessOption}) = _$_PaymentActorState;
 
   @override
   bool get isSaving;
   @override
-  Option<Either<PaymentFailure, Unit>> get saveFailureOrSuccessOption;
+  Option<Either<PaymentFailure, bool>> get saveFailureOrSuccessOption;
   @override
   _$PaymentActorStateCopyWith<_PaymentActorState> get copyWith;
 }
