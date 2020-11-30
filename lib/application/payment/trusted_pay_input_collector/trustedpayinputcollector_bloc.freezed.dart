@@ -62,8 +62,28 @@ class _$TrustedPayInputCollectorEventTearOff {
   }
 
 // ignore: unused_element
-  _CreditTrustedPay creditTrustedPay() {
+  _CreditTrustedPay creditTenflrPayWithMTN() {
     return const _CreditTrustedPay();
+  }
+
+// ignore: unused_element
+  _WithdrawTrustedPay withdrawTenflrPayToMTN({ValidPhoneNumber phoneNumber}) {
+    return _WithdrawTrustedPay(
+      phoneNumber: phoneNumber,
+    );
+  }
+
+// ignore: unused_element
+  _CreditTrustedPayWithOrange creditTenflrPayWithOrange() {
+    return const _CreditTrustedPayWithOrange();
+  }
+
+// ignore: unused_element
+  _WithdrawTrustedPayToOrange withdrawTenflrPayToOrange(
+      {ValidPhoneNumber phoneNumber}) {
+    return _WithdrawTrustedPayToOrange(
+      phoneNumber: phoneNumber,
+    );
   }
 
 // ignore: unused_element
@@ -89,7 +109,10 @@ mixin _$TrustedPayInputCollectorEvent {
     @required Result submitted(),
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
-    @required Result creditTrustedPay(),
+    @required Result creditTenflrPayWithMTN(),
+    @required Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    @required Result creditTenflrPayWithOrange(),
+    @required Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     @required Result searchUser(String userQuery),
   });
   @optionalTypeArgs
@@ -101,7 +124,10 @@ mixin _$TrustedPayInputCollectorEvent {
     Result submitted(),
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
-    Result creditTrustedPay(),
+    Result creditTenflrPayWithMTN(),
+    Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    Result creditTenflrPayWithOrange(),
+    Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     Result searchUser(String userQuery),
     @required Result orElse(),
   });
@@ -114,7 +140,12 @@ mixin _$TrustedPayInputCollectorEvent {
     @required Result submitted(_Submitted value),
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
-    @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    @required Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    @required
+        Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    @required
+        Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     @required Result searchUser(_UserSearch value),
   });
   @optionalTypeArgs
@@ -126,7 +157,10 @@ mixin _$TrustedPayInputCollectorEvent {
     Result submitted(_Submitted value),
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
-    Result creditTrustedPay(_CreditTrustedPay value),
+    Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     Result searchUser(_UserSearch value),
     @required Result orElse(),
   });
@@ -226,7 +260,10 @@ class _$_AmountChanged with DiagnosticableTreeMixin implements _AmountChanged {
     @required Result submitted(),
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
-    @required Result creditTrustedPay(),
+    @required Result creditTenflrPayWithMTN(),
+    @required Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    @required Result creditTenflrPayWithOrange(),
+    @required Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     @required Result searchUser(String userQuery),
   }) {
     assert(amountChanged != null);
@@ -236,7 +273,10 @@ class _$_AmountChanged with DiagnosticableTreeMixin implements _AmountChanged {
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
     return amountChanged(amount);
   }
@@ -251,7 +291,10 @@ class _$_AmountChanged with DiagnosticableTreeMixin implements _AmountChanged {
     Result submitted(),
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
-    Result creditTrustedPay(),
+    Result creditTenflrPayWithMTN(),
+    Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    Result creditTenflrPayWithOrange(),
+    Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
@@ -272,7 +315,12 @@ class _$_AmountChanged with DiagnosticableTreeMixin implements _AmountChanged {
     @required Result submitted(_Submitted value),
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
-    @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    @required Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    @required
+        Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    @required
+        Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     @required Result searchUser(_UserSearch value),
   }) {
     assert(amountChanged != null);
@@ -282,7 +330,10 @@ class _$_AmountChanged with DiagnosticableTreeMixin implements _AmountChanged {
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
     return amountChanged(this);
   }
@@ -297,7 +348,10 @@ class _$_AmountChanged with DiagnosticableTreeMixin implements _AmountChanged {
     Result submitted(_Submitted value),
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
-    Result creditTrustedPay(_CreditTrustedPay value),
+    Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     Result searchUser(_UserSearch value),
     @required Result orElse(),
   }) {
@@ -409,7 +463,10 @@ class _$_ReceiverChanged
     @required Result submitted(),
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
-    @required Result creditTrustedPay(),
+    @required Result creditTenflrPayWithMTN(),
+    @required Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    @required Result creditTenflrPayWithOrange(),
+    @required Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     @required Result searchUser(String userQuery),
   }) {
     assert(amountChanged != null);
@@ -419,7 +476,10 @@ class _$_ReceiverChanged
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
     return receiverChanged(reciever);
   }
@@ -434,7 +494,10 @@ class _$_ReceiverChanged
     Result submitted(),
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
-    Result creditTrustedPay(),
+    Result creditTenflrPayWithMTN(),
+    Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    Result creditTenflrPayWithOrange(),
+    Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
@@ -455,7 +518,12 @@ class _$_ReceiverChanged
     @required Result submitted(_Submitted value),
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
-    @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    @required Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    @required
+        Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    @required
+        Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     @required Result searchUser(_UserSearch value),
   }) {
     assert(amountChanged != null);
@@ -465,7 +533,10 @@ class _$_ReceiverChanged
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
     return receiverChanged(this);
   }
@@ -480,7 +551,10 @@ class _$_ReceiverChanged
     Result submitted(_Submitted value),
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
-    Result creditTrustedPay(_CreditTrustedPay value),
+    Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     Result searchUser(_UserSearch value),
     @required Result orElse(),
   }) {
@@ -581,7 +655,10 @@ class _$_UnlockDateChanged
     @required Result submitted(),
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
-    @required Result creditTrustedPay(),
+    @required Result creditTenflrPayWithMTN(),
+    @required Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    @required Result creditTenflrPayWithOrange(),
+    @required Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     @required Result searchUser(String userQuery),
   }) {
     assert(amountChanged != null);
@@ -591,7 +668,10 @@ class _$_UnlockDateChanged
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
     return unlockDateChanged(unlockDate);
   }
@@ -606,7 +686,10 @@ class _$_UnlockDateChanged
     Result submitted(),
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
-    Result creditTrustedPay(),
+    Result creditTenflrPayWithMTN(),
+    Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    Result creditTenflrPayWithOrange(),
+    Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
@@ -627,7 +710,12 @@ class _$_UnlockDateChanged
     @required Result submitted(_Submitted value),
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
-    @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    @required Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    @required
+        Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    @required
+        Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     @required Result searchUser(_UserSearch value),
   }) {
     assert(amountChanged != null);
@@ -637,7 +725,10 @@ class _$_UnlockDateChanged
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
     return unlockDateChanged(this);
   }
@@ -652,7 +743,10 @@ class _$_UnlockDateChanged
     Result submitted(_Submitted value),
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
-    Result creditTrustedPay(_CreditTrustedPay value),
+    Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     Result searchUser(_UserSearch value),
     @required Result orElse(),
   }) {
@@ -756,7 +850,10 @@ class _$_ReceiverSearchTermChanged
     @required Result submitted(),
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
-    @required Result creditTrustedPay(),
+    @required Result creditTenflrPayWithMTN(),
+    @required Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    @required Result creditTenflrPayWithOrange(),
+    @required Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     @required Result searchUser(String userQuery),
   }) {
     assert(amountChanged != null);
@@ -766,7 +863,10 @@ class _$_ReceiverSearchTermChanged
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
     return receiverSerchTermChanged(searchTerm);
   }
@@ -781,7 +881,10 @@ class _$_ReceiverSearchTermChanged
     Result submitted(),
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
-    Result creditTrustedPay(),
+    Result creditTenflrPayWithMTN(),
+    Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    Result creditTenflrPayWithOrange(),
+    Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
@@ -802,7 +905,12 @@ class _$_ReceiverSearchTermChanged
     @required Result submitted(_Submitted value),
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
-    @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    @required Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    @required
+        Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    @required
+        Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     @required Result searchUser(_UserSearch value),
   }) {
     assert(amountChanged != null);
@@ -812,7 +920,10 @@ class _$_ReceiverSearchTermChanged
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
     return receiverSerchTermChanged(this);
   }
@@ -827,7 +938,10 @@ class _$_ReceiverSearchTermChanged
     Result submitted(_Submitted value),
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
-    Result creditTrustedPay(_CreditTrustedPay value),
+    Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     Result searchUser(_UserSearch value),
     @required Result orElse(),
   }) {
@@ -901,7 +1015,10 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     @required Result submitted(),
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
-    @required Result creditTrustedPay(),
+    @required Result creditTenflrPayWithMTN(),
+    @required Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    @required Result creditTenflrPayWithOrange(),
+    @required Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     @required Result searchUser(String userQuery),
   }) {
     assert(amountChanged != null);
@@ -911,7 +1028,10 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
     return submitted();
   }
@@ -926,7 +1046,10 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     Result submitted(),
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
-    Result creditTrustedPay(),
+    Result creditTenflrPayWithMTN(),
+    Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    Result creditTenflrPayWithOrange(),
+    Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
@@ -947,7 +1070,12 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     @required Result submitted(_Submitted value),
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
-    @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    @required Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    @required
+        Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    @required
+        Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     @required Result searchUser(_UserSearch value),
   }) {
     assert(amountChanged != null);
@@ -957,7 +1085,10 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
     return submitted(this);
   }
@@ -972,7 +1103,10 @@ class _$_Submitted with DiagnosticableTreeMixin implements _Submitted {
     Result submitted(_Submitted value),
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
-    Result creditTrustedPay(_CreditTrustedPay value),
+    Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     Result searchUser(_UserSearch value),
     @required Result orElse(),
   }) {
@@ -1076,7 +1210,10 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     @required Result submitted(),
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
-    @required Result creditTrustedPay(),
+    @required Result creditTenflrPayWithMTN(),
+    @required Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    @required Result creditTenflrPayWithOrange(),
+    @required Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     @required Result searchUser(String userQuery),
   }) {
     assert(amountChanged != null);
@@ -1086,7 +1223,10 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
     return initialized(payer);
   }
@@ -1101,7 +1241,10 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     Result submitted(),
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
-    Result creditTrustedPay(),
+    Result creditTenflrPayWithMTN(),
+    Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    Result creditTenflrPayWithOrange(),
+    Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
@@ -1122,7 +1265,12 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     @required Result submitted(_Submitted value),
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
-    @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    @required Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    @required
+        Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    @required
+        Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     @required Result searchUser(_UserSearch value),
   }) {
     assert(amountChanged != null);
@@ -1132,7 +1280,10 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
     return initialized(this);
   }
@@ -1147,7 +1298,10 @@ class _$_Initialized with DiagnosticableTreeMixin implements _Initialized {
     Result submitted(_Submitted value),
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
-    Result creditTrustedPay(_CreditTrustedPay value),
+    Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     Result searchUser(_UserSearch value),
     @required Result orElse(),
   }) {
@@ -1246,7 +1400,10 @@ class _$_AmountToCreditChanged
     @required Result submitted(),
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
-    @required Result creditTrustedPay(),
+    @required Result creditTenflrPayWithMTN(),
+    @required Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    @required Result creditTenflrPayWithOrange(),
+    @required Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     @required Result searchUser(String userQuery),
   }) {
     assert(amountChanged != null);
@@ -1256,7 +1413,10 @@ class _$_AmountToCreditChanged
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
     return amountToCreditChanged(amount);
   }
@@ -1271,7 +1431,10 @@ class _$_AmountToCreditChanged
     Result submitted(),
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
-    Result creditTrustedPay(),
+    Result creditTenflrPayWithMTN(),
+    Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    Result creditTenflrPayWithOrange(),
+    Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
@@ -1292,7 +1455,12 @@ class _$_AmountToCreditChanged
     @required Result submitted(_Submitted value),
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
-    @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    @required Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    @required
+        Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    @required
+        Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     @required Result searchUser(_UserSearch value),
   }) {
     assert(amountChanged != null);
@@ -1302,7 +1470,10 @@ class _$_AmountToCreditChanged
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
     return amountToCreditChanged(this);
   }
@@ -1317,7 +1488,10 @@ class _$_AmountToCreditChanged
     Result submitted(_Submitted value),
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
-    Result creditTrustedPay(_CreditTrustedPay value),
+    Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     Result searchUser(_UserSearch value),
     @required Result orElse(),
   }) {
@@ -1364,7 +1538,7 @@ class _$_CreditTrustedPay
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'TrustedPayInputCollectorEvent.creditTrustedPay()';
+    return 'TrustedPayInputCollectorEvent.creditTenflrPayWithMTN()';
   }
 
   @override
@@ -1372,7 +1546,7 @@ class _$_CreditTrustedPay
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'TrustedPayInputCollectorEvent.creditTrustedPay'));
+          'type', 'TrustedPayInputCollectorEvent.creditTenflrPayWithMTN'));
   }
 
   @override
@@ -1393,7 +1567,10 @@ class _$_CreditTrustedPay
     @required Result submitted(),
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
-    @required Result creditTrustedPay(),
+    @required Result creditTenflrPayWithMTN(),
+    @required Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    @required Result creditTenflrPayWithOrange(),
+    @required Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     @required Result searchUser(String userQuery),
   }) {
     assert(amountChanged != null);
@@ -1403,9 +1580,12 @@ class _$_CreditTrustedPay
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
-    return creditTrustedPay();
+    return creditTenflrPayWithMTN();
   }
 
   @override
@@ -1418,13 +1598,16 @@ class _$_CreditTrustedPay
     Result submitted(),
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
-    Result creditTrustedPay(),
+    Result creditTenflrPayWithMTN(),
+    Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    Result creditTenflrPayWithOrange(),
+    Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (creditTrustedPay != null) {
-      return creditTrustedPay();
+    if (creditTenflrPayWithMTN != null) {
+      return creditTenflrPayWithMTN();
     }
     return orElse();
   }
@@ -1439,7 +1622,12 @@ class _$_CreditTrustedPay
     @required Result submitted(_Submitted value),
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
-    @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    @required Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    @required
+        Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    @required
+        Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     @required Result searchUser(_UserSearch value),
   }) {
     assert(amountChanged != null);
@@ -1449,9 +1637,12 @@ class _$_CreditTrustedPay
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
-    return creditTrustedPay(this);
+    return creditTenflrPayWithMTN(this);
   }
 
   @override
@@ -1464,13 +1655,16 @@ class _$_CreditTrustedPay
     Result submitted(_Submitted value),
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
-    Result creditTrustedPay(_CreditTrustedPay value),
+    Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     Result searchUser(_UserSearch value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (creditTrustedPay != null) {
-      return creditTrustedPay(this);
+    if (creditTenflrPayWithMTN != null) {
+      return creditTenflrPayWithMTN(this);
     }
     return orElse();
   }
@@ -1478,6 +1672,561 @@ class _$_CreditTrustedPay
 
 abstract class _CreditTrustedPay implements TrustedPayInputCollectorEvent {
   const factory _CreditTrustedPay() = _$_CreditTrustedPay;
+}
+
+/// @nodoc
+abstract class _$WithdrawTrustedPayCopyWith<$Res> {
+  factory _$WithdrawTrustedPayCopyWith(
+          _WithdrawTrustedPay value, $Res Function(_WithdrawTrustedPay) then) =
+      __$WithdrawTrustedPayCopyWithImpl<$Res>;
+  $Res call({ValidPhoneNumber phoneNumber});
+}
+
+/// @nodoc
+class __$WithdrawTrustedPayCopyWithImpl<$Res>
+    extends _$TrustedPayInputCollectorEventCopyWithImpl<$Res>
+    implements _$WithdrawTrustedPayCopyWith<$Res> {
+  __$WithdrawTrustedPayCopyWithImpl(
+      _WithdrawTrustedPay _value, $Res Function(_WithdrawTrustedPay) _then)
+      : super(_value, (v) => _then(v as _WithdrawTrustedPay));
+
+  @override
+  _WithdrawTrustedPay get _value => super._value as _WithdrawTrustedPay;
+
+  @override
+  $Res call({
+    Object phoneNumber = freezed,
+  }) {
+    return _then(_WithdrawTrustedPay(
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber as ValidPhoneNumber,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_WithdrawTrustedPay
+    with DiagnosticableTreeMixin
+    implements _WithdrawTrustedPay {
+  const _$_WithdrawTrustedPay({this.phoneNumber});
+
+  @override
+  final ValidPhoneNumber phoneNumber;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'TrustedPayInputCollectorEvent.withdrawTenflrPayToMTN(phoneNumber: $phoneNumber)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'TrustedPayInputCollectorEvent.withdrawTenflrPayToMTN'))
+      ..add(DiagnosticsProperty('phoneNumber', phoneNumber));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _WithdrawTrustedPay &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                const DeepCollectionEquality()
+                    .equals(other.phoneNumber, phoneNumber)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(phoneNumber);
+
+  @override
+  _$WithdrawTrustedPayCopyWith<_WithdrawTrustedPay> get copyWith =>
+      __$WithdrawTrustedPayCopyWithImpl<_WithdrawTrustedPay>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result amountChanged(MoneyAmount amount),
+    @required Result receiverChanged(User reciever),
+    @required Result unlockDateChanged(ValidDate unlockDate),
+    @required Result receiverSerchTermChanged(String searchTerm),
+    @required Result submitted(),
+    @required Result initialized(User payer),
+    @required Result amountToCreditChanged(MoneyAmount amount),
+    @required Result creditTenflrPayWithMTN(),
+    @required Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    @required Result creditTenflrPayWithOrange(),
+    @required Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
+    @required Result searchUser(String userQuery),
+  }) {
+    assert(amountChanged != null);
+    assert(receiverChanged != null);
+    assert(unlockDateChanged != null);
+    assert(receiverSerchTermChanged != null);
+    assert(submitted != null);
+    assert(initialized != null);
+    assert(amountToCreditChanged != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
+    assert(searchUser != null);
+    return withdrawTenflrPayToMTN(phoneNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result amountChanged(MoneyAmount amount),
+    Result receiverChanged(User reciever),
+    Result unlockDateChanged(ValidDate unlockDate),
+    Result receiverSerchTermChanged(String searchTerm),
+    Result submitted(),
+    Result initialized(User payer),
+    Result amountToCreditChanged(MoneyAmount amount),
+    Result creditTenflrPayWithMTN(),
+    Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    Result creditTenflrPayWithOrange(),
+    Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
+    Result searchUser(String userQuery),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (withdrawTenflrPayToMTN != null) {
+      return withdrawTenflrPayToMTN(phoneNumber);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result amountChanged(_AmountChanged value),
+    @required Result receiverChanged(_ReceiverChanged value),
+    @required Result unlockDateChanged(_UnlockDateChanged value),
+    @required Result receiverSerchTermChanged(_ReceiverSearchTermChanged value),
+    @required Result submitted(_Submitted value),
+    @required Result initialized(_Initialized value),
+    @required Result amountToCreditChanged(_AmountToCreditChanged value),
+    @required Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    @required Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    @required
+        Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    @required
+        Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
+    @required Result searchUser(_UserSearch value),
+  }) {
+    assert(amountChanged != null);
+    assert(receiverChanged != null);
+    assert(unlockDateChanged != null);
+    assert(receiverSerchTermChanged != null);
+    assert(submitted != null);
+    assert(initialized != null);
+    assert(amountToCreditChanged != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
+    assert(searchUser != null);
+    return withdrawTenflrPayToMTN(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result amountChanged(_AmountChanged value),
+    Result receiverChanged(_ReceiverChanged value),
+    Result unlockDateChanged(_UnlockDateChanged value),
+    Result receiverSerchTermChanged(_ReceiverSearchTermChanged value),
+    Result submitted(_Submitted value),
+    Result initialized(_Initialized value),
+    Result amountToCreditChanged(_AmountToCreditChanged value),
+    Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
+    Result searchUser(_UserSearch value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (withdrawTenflrPayToMTN != null) {
+      return withdrawTenflrPayToMTN(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _WithdrawTrustedPay implements TrustedPayInputCollectorEvent {
+  const factory _WithdrawTrustedPay({ValidPhoneNumber phoneNumber}) =
+      _$_WithdrawTrustedPay;
+
+  ValidPhoneNumber get phoneNumber;
+  _$WithdrawTrustedPayCopyWith<_WithdrawTrustedPay> get copyWith;
+}
+
+/// @nodoc
+abstract class _$CreditTrustedPayWithOrangeCopyWith<$Res> {
+  factory _$CreditTrustedPayWithOrangeCopyWith(
+          _CreditTrustedPayWithOrange value,
+          $Res Function(_CreditTrustedPayWithOrange) then) =
+      __$CreditTrustedPayWithOrangeCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$CreditTrustedPayWithOrangeCopyWithImpl<$Res>
+    extends _$TrustedPayInputCollectorEventCopyWithImpl<$Res>
+    implements _$CreditTrustedPayWithOrangeCopyWith<$Res> {
+  __$CreditTrustedPayWithOrangeCopyWithImpl(_CreditTrustedPayWithOrange _value,
+      $Res Function(_CreditTrustedPayWithOrange) _then)
+      : super(_value, (v) => _then(v as _CreditTrustedPayWithOrange));
+
+  @override
+  _CreditTrustedPayWithOrange get _value =>
+      super._value as _CreditTrustedPayWithOrange;
+}
+
+/// @nodoc
+class _$_CreditTrustedPayWithOrange
+    with DiagnosticableTreeMixin
+    implements _CreditTrustedPayWithOrange {
+  const _$_CreditTrustedPayWithOrange();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'TrustedPayInputCollectorEvent.creditTenflrPayWithOrange()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'TrustedPayInputCollectorEvent.creditTenflrPayWithOrange'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _CreditTrustedPayWithOrange);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result amountChanged(MoneyAmount amount),
+    @required Result receiverChanged(User reciever),
+    @required Result unlockDateChanged(ValidDate unlockDate),
+    @required Result receiverSerchTermChanged(String searchTerm),
+    @required Result submitted(),
+    @required Result initialized(User payer),
+    @required Result amountToCreditChanged(MoneyAmount amount),
+    @required Result creditTenflrPayWithMTN(),
+    @required Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    @required Result creditTenflrPayWithOrange(),
+    @required Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
+    @required Result searchUser(String userQuery),
+  }) {
+    assert(amountChanged != null);
+    assert(receiverChanged != null);
+    assert(unlockDateChanged != null);
+    assert(receiverSerchTermChanged != null);
+    assert(submitted != null);
+    assert(initialized != null);
+    assert(amountToCreditChanged != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
+    assert(searchUser != null);
+    return creditTenflrPayWithOrange();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result amountChanged(MoneyAmount amount),
+    Result receiverChanged(User reciever),
+    Result unlockDateChanged(ValidDate unlockDate),
+    Result receiverSerchTermChanged(String searchTerm),
+    Result submitted(),
+    Result initialized(User payer),
+    Result amountToCreditChanged(MoneyAmount amount),
+    Result creditTenflrPayWithMTN(),
+    Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    Result creditTenflrPayWithOrange(),
+    Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
+    Result searchUser(String userQuery),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (creditTenflrPayWithOrange != null) {
+      return creditTenflrPayWithOrange();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result amountChanged(_AmountChanged value),
+    @required Result receiverChanged(_ReceiverChanged value),
+    @required Result unlockDateChanged(_UnlockDateChanged value),
+    @required Result receiverSerchTermChanged(_ReceiverSearchTermChanged value),
+    @required Result submitted(_Submitted value),
+    @required Result initialized(_Initialized value),
+    @required Result amountToCreditChanged(_AmountToCreditChanged value),
+    @required Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    @required Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    @required
+        Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    @required
+        Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
+    @required Result searchUser(_UserSearch value),
+  }) {
+    assert(amountChanged != null);
+    assert(receiverChanged != null);
+    assert(unlockDateChanged != null);
+    assert(receiverSerchTermChanged != null);
+    assert(submitted != null);
+    assert(initialized != null);
+    assert(amountToCreditChanged != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
+    assert(searchUser != null);
+    return creditTenflrPayWithOrange(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result amountChanged(_AmountChanged value),
+    Result receiverChanged(_ReceiverChanged value),
+    Result unlockDateChanged(_UnlockDateChanged value),
+    Result receiverSerchTermChanged(_ReceiverSearchTermChanged value),
+    Result submitted(_Submitted value),
+    Result initialized(_Initialized value),
+    Result amountToCreditChanged(_AmountToCreditChanged value),
+    Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
+    Result searchUser(_UserSearch value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (creditTenflrPayWithOrange != null) {
+      return creditTenflrPayWithOrange(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CreditTrustedPayWithOrange
+    implements TrustedPayInputCollectorEvent {
+  const factory _CreditTrustedPayWithOrange() = _$_CreditTrustedPayWithOrange;
+}
+
+/// @nodoc
+abstract class _$WithdrawTrustedPayToOrangeCopyWith<$Res> {
+  factory _$WithdrawTrustedPayToOrangeCopyWith(
+          _WithdrawTrustedPayToOrange value,
+          $Res Function(_WithdrawTrustedPayToOrange) then) =
+      __$WithdrawTrustedPayToOrangeCopyWithImpl<$Res>;
+  $Res call({ValidPhoneNumber phoneNumber});
+}
+
+/// @nodoc
+class __$WithdrawTrustedPayToOrangeCopyWithImpl<$Res>
+    extends _$TrustedPayInputCollectorEventCopyWithImpl<$Res>
+    implements _$WithdrawTrustedPayToOrangeCopyWith<$Res> {
+  __$WithdrawTrustedPayToOrangeCopyWithImpl(_WithdrawTrustedPayToOrange _value,
+      $Res Function(_WithdrawTrustedPayToOrange) _then)
+      : super(_value, (v) => _then(v as _WithdrawTrustedPayToOrange));
+
+  @override
+  _WithdrawTrustedPayToOrange get _value =>
+      super._value as _WithdrawTrustedPayToOrange;
+
+  @override
+  $Res call({
+    Object phoneNumber = freezed,
+  }) {
+    return _then(_WithdrawTrustedPayToOrange(
+      phoneNumber: phoneNumber == freezed
+          ? _value.phoneNumber
+          : phoneNumber as ValidPhoneNumber,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_WithdrawTrustedPayToOrange
+    with DiagnosticableTreeMixin
+    implements _WithdrawTrustedPayToOrange {
+  const _$_WithdrawTrustedPayToOrange({this.phoneNumber});
+
+  @override
+  final ValidPhoneNumber phoneNumber;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'TrustedPayInputCollectorEvent.withdrawTenflrPayToOrange(phoneNumber: $phoneNumber)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'TrustedPayInputCollectorEvent.withdrawTenflrPayToOrange'))
+      ..add(DiagnosticsProperty('phoneNumber', phoneNumber));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _WithdrawTrustedPayToOrange &&
+            (identical(other.phoneNumber, phoneNumber) ||
+                const DeepCollectionEquality()
+                    .equals(other.phoneNumber, phoneNumber)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(phoneNumber);
+
+  @override
+  _$WithdrawTrustedPayToOrangeCopyWith<_WithdrawTrustedPayToOrange>
+      get copyWith => __$WithdrawTrustedPayToOrangeCopyWithImpl<
+          _WithdrawTrustedPayToOrange>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result amountChanged(MoneyAmount amount),
+    @required Result receiverChanged(User reciever),
+    @required Result unlockDateChanged(ValidDate unlockDate),
+    @required Result receiverSerchTermChanged(String searchTerm),
+    @required Result submitted(),
+    @required Result initialized(User payer),
+    @required Result amountToCreditChanged(MoneyAmount amount),
+    @required Result creditTenflrPayWithMTN(),
+    @required Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    @required Result creditTenflrPayWithOrange(),
+    @required Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
+    @required Result searchUser(String userQuery),
+  }) {
+    assert(amountChanged != null);
+    assert(receiverChanged != null);
+    assert(unlockDateChanged != null);
+    assert(receiverSerchTermChanged != null);
+    assert(submitted != null);
+    assert(initialized != null);
+    assert(amountToCreditChanged != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
+    assert(searchUser != null);
+    return withdrawTenflrPayToOrange(phoneNumber);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result amountChanged(MoneyAmount amount),
+    Result receiverChanged(User reciever),
+    Result unlockDateChanged(ValidDate unlockDate),
+    Result receiverSerchTermChanged(String searchTerm),
+    Result submitted(),
+    Result initialized(User payer),
+    Result amountToCreditChanged(MoneyAmount amount),
+    Result creditTenflrPayWithMTN(),
+    Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    Result creditTenflrPayWithOrange(),
+    Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
+    Result searchUser(String userQuery),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (withdrawTenflrPayToOrange != null) {
+      return withdrawTenflrPayToOrange(phoneNumber);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result amountChanged(_AmountChanged value),
+    @required Result receiverChanged(_ReceiverChanged value),
+    @required Result unlockDateChanged(_UnlockDateChanged value),
+    @required Result receiverSerchTermChanged(_ReceiverSearchTermChanged value),
+    @required Result submitted(_Submitted value),
+    @required Result initialized(_Initialized value),
+    @required Result amountToCreditChanged(_AmountToCreditChanged value),
+    @required Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    @required Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    @required
+        Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    @required
+        Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
+    @required Result searchUser(_UserSearch value),
+  }) {
+    assert(amountChanged != null);
+    assert(receiverChanged != null);
+    assert(unlockDateChanged != null);
+    assert(receiverSerchTermChanged != null);
+    assert(submitted != null);
+    assert(initialized != null);
+    assert(amountToCreditChanged != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
+    assert(searchUser != null);
+    return withdrawTenflrPayToOrange(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result amountChanged(_AmountChanged value),
+    Result receiverChanged(_ReceiverChanged value),
+    Result unlockDateChanged(_UnlockDateChanged value),
+    Result receiverSerchTermChanged(_ReceiverSearchTermChanged value),
+    Result submitted(_Submitted value),
+    Result initialized(_Initialized value),
+    Result amountToCreditChanged(_AmountToCreditChanged value),
+    Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
+    Result searchUser(_UserSearch value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (withdrawTenflrPayToOrange != null) {
+      return withdrawTenflrPayToOrange(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _WithdrawTrustedPayToOrange
+    implements TrustedPayInputCollectorEvent {
+  const factory _WithdrawTrustedPayToOrange({ValidPhoneNumber phoneNumber}) =
+      _$_WithdrawTrustedPayToOrange;
+
+  ValidPhoneNumber get phoneNumber;
+  _$WithdrawTrustedPayToOrangeCopyWith<_WithdrawTrustedPayToOrange>
+      get copyWith;
 }
 
 /// @nodoc
@@ -1557,7 +2306,10 @@ class _$_UserSearch with DiagnosticableTreeMixin implements _UserSearch {
     @required Result submitted(),
     @required Result initialized(User payer),
     @required Result amountToCreditChanged(MoneyAmount amount),
-    @required Result creditTrustedPay(),
+    @required Result creditTenflrPayWithMTN(),
+    @required Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    @required Result creditTenflrPayWithOrange(),
+    @required Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     @required Result searchUser(String userQuery),
   }) {
     assert(amountChanged != null);
@@ -1567,7 +2319,10 @@ class _$_UserSearch with DiagnosticableTreeMixin implements _UserSearch {
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
     return searchUser(userQuery);
   }
@@ -1582,7 +2337,10 @@ class _$_UserSearch with DiagnosticableTreeMixin implements _UserSearch {
     Result submitted(),
     Result initialized(User payer),
     Result amountToCreditChanged(MoneyAmount amount),
-    Result creditTrustedPay(),
+    Result creditTenflrPayWithMTN(),
+    Result withdrawTenflrPayToMTN(ValidPhoneNumber phoneNumber),
+    Result creditTenflrPayWithOrange(),
+    Result withdrawTenflrPayToOrange(ValidPhoneNumber phoneNumber),
     Result searchUser(String userQuery),
     @required Result orElse(),
   }) {
@@ -1603,7 +2361,12 @@ class _$_UserSearch with DiagnosticableTreeMixin implements _UserSearch {
     @required Result submitted(_Submitted value),
     @required Result initialized(_Initialized value),
     @required Result amountToCreditChanged(_AmountToCreditChanged value),
-    @required Result creditTrustedPay(_CreditTrustedPay value),
+    @required Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    @required Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    @required
+        Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    @required
+        Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     @required Result searchUser(_UserSearch value),
   }) {
     assert(amountChanged != null);
@@ -1613,7 +2376,10 @@ class _$_UserSearch with DiagnosticableTreeMixin implements _UserSearch {
     assert(submitted != null);
     assert(initialized != null);
     assert(amountToCreditChanged != null);
-    assert(creditTrustedPay != null);
+    assert(creditTenflrPayWithMTN != null);
+    assert(withdrawTenflrPayToMTN != null);
+    assert(creditTenflrPayWithOrange != null);
+    assert(withdrawTenflrPayToOrange != null);
     assert(searchUser != null);
     return searchUser(this);
   }
@@ -1628,7 +2394,10 @@ class _$_UserSearch with DiagnosticableTreeMixin implements _UserSearch {
     Result submitted(_Submitted value),
     Result initialized(_Initialized value),
     Result amountToCreditChanged(_AmountToCreditChanged value),
-    Result creditTrustedPay(_CreditTrustedPay value),
+    Result creditTenflrPayWithMTN(_CreditTrustedPay value),
+    Result withdrawTenflrPayToMTN(_WithdrawTrustedPay value),
+    Result creditTenflrPayWithOrange(_CreditTrustedPayWithOrange value),
+    Result withdrawTenflrPayToOrange(_WithdrawTrustedPayToOrange value),
     Result searchUser(_UserSearch value),
     @required Result orElse(),
   }) {
@@ -1664,7 +2433,7 @@ class _$TrustedPayInputCollectorStateTearOff {
       @required
           Payment payment,
       @required
-          Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption}) {
+          Option<Either<PaymentFailure, bool>> saveFailureOrSuccessOption}) {
     return _TrustedPayInputCollectorState(
       showErrorMessage: showErrorMessage,
       isSaving: isSaving,
@@ -1687,7 +2456,7 @@ mixin _$TrustedPayInputCollectorState {
   bool get isEditing;
   bool get userFound;
   Payment get payment;
-  Option<Either<PaymentFailure, Unit>> get saveFailureOrSuccessOption;
+  Option<Either<PaymentFailure, bool>> get saveFailureOrSuccessOption;
 
   $TrustedPayInputCollectorStateCopyWith<TrustedPayInputCollectorState>
       get copyWith;
@@ -1705,7 +2474,7 @@ abstract class $TrustedPayInputCollectorStateCopyWith<$Res> {
       bool isEditing,
       bool userFound,
       Payment payment,
-      Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<PaymentFailure, bool>> saveFailureOrSuccessOption});
 
   $PaymentCopyWith<$Res> get payment;
 }
@@ -1738,7 +2507,7 @@ class _$TrustedPayInputCollectorStateCopyWithImpl<$Res>
       payment: payment == freezed ? _value.payment : payment as Payment,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption as Option<Either<PaymentFailure, Unit>>,
+          : saveFailureOrSuccessOption as Option<Either<PaymentFailure, bool>>,
     ));
   }
 
@@ -1767,7 +2536,7 @@ abstract class _$TrustedPayInputCollectorStateCopyWith<$Res>
       bool isEditing,
       bool userFound,
       Payment payment,
-      Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption});
+      Option<Either<PaymentFailure, bool>> saveFailureOrSuccessOption});
 
   @override
   $PaymentCopyWith<$Res> get payment;
@@ -1805,7 +2574,7 @@ class __$TrustedPayInputCollectorStateCopyWithImpl<$Res>
       payment: payment == freezed ? _value.payment : payment as Payment,
       saveFailureOrSuccessOption: saveFailureOrSuccessOption == freezed
           ? _value.saveFailureOrSuccessOption
-          : saveFailureOrSuccessOption as Option<Either<PaymentFailure, Unit>>,
+          : saveFailureOrSuccessOption as Option<Either<PaymentFailure, bool>>,
     ));
   }
 }
@@ -1839,7 +2608,7 @@ class _$_TrustedPayInputCollectorState
   @override
   final Payment payment;
   @override
-  final Option<Either<PaymentFailure, Unit>> saveFailureOrSuccessOption;
+  final Option<Either<PaymentFailure, bool>> saveFailureOrSuccessOption;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -1916,7 +2685,7 @@ abstract class _TrustedPayInputCollectorState
       @required
           Payment payment,
       @required
-          Option<Either<PaymentFailure, Unit>>
+          Option<Either<PaymentFailure, bool>>
               saveFailureOrSuccessOption}) = _$_TrustedPayInputCollectorState;
 
   @override
@@ -1930,7 +2699,7 @@ abstract class _TrustedPayInputCollectorState
   @override
   Payment get payment;
   @override
-  Option<Either<PaymentFailure, Unit>> get saveFailureOrSuccessOption;
+  Option<Either<PaymentFailure, bool>> get saveFailureOrSuccessOption;
   @override
   _$TrustedPayInputCollectorStateCopyWith<_TrustedPayInputCollectorState>
       get copyWith;
