@@ -19,10 +19,12 @@ class DefaultPrimaryTextInputField extends HookWidget {
   final void Function() onEditingComplete;
   final TextInputAction textInputAction;
   final TextInputType keyboardType;
+  final String initialValue;
 
   const DefaultPrimaryTextInputField(
       {this.focusNode,
       this.maxLength,
+      this.initialValue,
       this.keyboardType,
       this.onEditingComplete,
       this.textInputAction,
@@ -57,13 +59,14 @@ class DefaultPrimaryTextInputField extends HookWidget {
               buildCounter: (context, {currentLength, isFocused, maxLength}) {
                 if (maxLength != null && currentLength > maxLength) {
                   controller?.text = controller?.text?.substring(0, 20);
-                  return  Text("Max lenght reached".i18n,
+                  return Text("Max lenght reached".i18n,
                       style: TextStyle(
                         color: TfColors.red,
                       ));
                 }
                 return null;
               },
+              initialValue: initialValue,
               controller: controller,
               onChanged: onChanged,
               focusNode: focusNode,
@@ -74,8 +77,10 @@ class DefaultPrimaryTextInputField extends HookWidget {
               decoration: InputDecoration(
                   border: InputBorder.none,
                   hintText: hintText,
-                  hintStyle: const TextStyle(
-                      color: TfColors.primary, fontFamily: 'Apple Symbols')),
+                  hintStyle: TextStyle(
+                    color: TfColors.primary.withOpacity(0.5),
+                    fontFamily: 'Apple Symbols',
+                  )),
               textAlign: TextAlign.end,
               cursorColor: TfColors.primary,
             ),
